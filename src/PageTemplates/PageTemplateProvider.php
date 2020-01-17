@@ -1,15 +1,15 @@
 <?php
 
-namespace Motionlab\TogetherDentalGroup\PageTemplates;
+namespace Motionlab\Sauce\PageTemplates;
 
-use Motionlab\TogetherDentalGroup\PageTemplates\Generic\GenericTemplate;
-use Motionlab\TogetherDentalGroup\PageTemplates\Jobs\JobsTemplate;
-use Motionlab\TogetherDentalGroup\PageTemplates\JobsListing\JobsListingTemplate;
-use Motionlab\TogetherDentalGroup\PageTemplates\News\NewsTemplate;
-use Motionlab\TogetherDentalGroup\PageTemplates\PracticeFinder\PracticeFinderTemplate;
-use Motionlab\TogetherDentalGroup\PageTemplates\Team\TeamTemplate;
-use Motionlab\TogetherDentalGroup\PageTemplates\Testimonials\TestimonialsTemplate;
-use Motionlab\TogetherDentalGroup\PageTemplates\Treatments\TreatmentsTemplate;
+use Motionlab\Sauce\PageTemplates\Generic\GenericTemplate;
+use Motionlab\Sauce\PageTemplates\Jobs\JobsTemplate;
+use Motionlab\Sauce\PageTemplates\JobsListing\JobsListingTemplate;
+use Motionlab\Sauce\PageTemplates\News\NewsTemplate;
+use Motionlab\Sauce\PageTemplates\PracticeFinder\PracticeFinderTemplate;
+use Motionlab\Sauce\PageTemplates\Team\TeamTemplate;
+use Motionlab\Sauce\PageTemplates\Testimonials\TestimonialsTemplate;
+use Motionlab\Sauce\PageTemplates\Treatments\TreatmentsTemplate;
 
 class PageTemplateProvider
 {

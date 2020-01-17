@@ -1,6 +1,6 @@
 <?php
 
-use Motionlab\TogetherDentalGroup\PageTemplates\Treatments\TreatmentsTemplate;
+use Motionlab\Sauce\PageTemplates\Treatments\TreatmentsTemplate;
 
 $templateController = new TreatmentsTemplate();
 $blocks = $templateController->getBlocks(get_the_id());

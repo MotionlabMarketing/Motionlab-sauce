@@ -1,8 +1,8 @@
 <?php
 
-namespace Motionlab\TogetherDentalGroup\PageTemplates\Treatments;
+namespace Motionlab\Sauce\PageTemplates\Treatments;
 
-use Motionlab\TogetherDentalGroup\PageTemplates\TemplateBase;
+use Motionlab\Sauce\PageTemplates\TemplateBase;
 
 class TreatmentsTemplate extends TemplateBase
 {

@@ -1,9 +1,9 @@
 <?php
 
 
-namespace Motionlab\TogetherDentalGroup\Blocks\CaseStudiesBlock;
+namespace Motionlab\Sauce\Blocks\CaseStudiesBlock;
 
-use Motionlab\TogetherDentalGroup\Blocks\Block;
+use Motionlab\Sauce\Blocks\Block;
 
 class CaseStudiesBlock extends Block
 {

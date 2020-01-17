@@ -1,6 +1,6 @@
 <?php
 
-use Motionlab\TogetherDentalGroup\PageTemplates\Team\NewsTemplate;
+use Motionlab\Sauce\PageTemplates\Team\NewsTemplate;
 
 $templateController = new NewsTemplate();
 $blocks = $templateController->getBlocks(get_the_id());

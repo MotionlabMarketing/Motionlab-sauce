@@ -1,9 +1,9 @@
 <?php
 
 
-namespace Motionlab\TogetherDentalGroup\Blocks\AlternatingMediaBlock;
+namespace Motionlab\Sauce\Blocks\AlternatingMediaBlock;
 
-use Motionlab\TogetherDentalGroup\Blocks\Block;
+use Motionlab\Sauce\Blocks\Block;
 
 class AlternatingMediaBlock extends Block
 {

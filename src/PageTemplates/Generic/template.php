@@ -1,6 +1,6 @@
 <?php
 
-use Motionlab\TogetherDentalGroup\PageTemplates\Generic\GenericTemplate;
+use Motionlab\Sauce\PageTemplates\Generic\GenericTemplate;
 
 $templateController = new GenericTemplate();
 $blocks = $templateController->getBlocks(get_the_id());

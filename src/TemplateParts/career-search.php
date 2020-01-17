@@ -1,6 +1,6 @@
 <?php
-use Motionlab\TogetherDentalGroup\Blocks\JobVacanciesBlock\JobVacanciesBlock;
-use Motionlab\TogetherDentalGroup\PageTemplates\JobsListing\JobsListingTemplate;
+use Motionlab\Sauce\Blocks\JobVacanciesBlock\JobVacanciesBlock;
+use Motionlab\Sauce\PageTemplates\JobsListing\JobsListingTemplate;
 
 $templateController = new JobsListingTemplate();
 $jobController = new JobVacanciesBlock(null, false);

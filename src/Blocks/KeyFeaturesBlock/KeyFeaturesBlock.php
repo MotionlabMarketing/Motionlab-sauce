@@ -1,9 +1,9 @@
 <?php
 
 
-namespace Motionlab\TogetherDentalGroup\Blocks\KeyFeaturesBlock;
+namespace Motionlab\Sauce\Blocks\KeyFeaturesBlock;
 
-use Motionlab\TogetherDentalGroup\Blocks\Block;
+use Motionlab\Sauce\Blocks\Block;
 
 class KeyFeaturesBlock extends Block
 {

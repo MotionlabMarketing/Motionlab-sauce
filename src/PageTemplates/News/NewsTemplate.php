@@ -1,6 +1,6 @@
 <?php
 
-namespace Motionlab\TogetherDentalGroup\PageTemplates\News;
+namespace Motionlab\Sauce\PageTemplates\News;
 
 class NewsTemplate
 {

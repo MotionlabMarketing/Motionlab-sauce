@@ -1,9 +1,9 @@
 <?php
 
 
-namespace Motionlab\TogetherDentalGroup\Blocks\TwoColumnBlock;
+namespace Motionlab\Sauce\Blocks\TwoColumnBlock;
 
-use Motionlab\TogetherDentalGroup\Blocks\Block;
+use Motionlab\Sauce\Blocks\Block;
 
 class TwoColumnBlock extends Block
 {
