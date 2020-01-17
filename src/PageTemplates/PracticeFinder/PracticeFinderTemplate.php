@@ -1,8 +1,8 @@
 <?php
 
-namespace Motionlab\TogetherDentalGroup\PageTemplates\PracticeFinder;
+namespace Motionlab\Sauce\PageTemplates\PracticeFinder;
 
-use Motionlab\TogetherDentalGroup\PageTemplates\TemplateBase;
+use Motionlab\Sauce\PageTemplates\TemplateBase;
 
 class PracticeFinderTemplate extends TemplateBase
 {

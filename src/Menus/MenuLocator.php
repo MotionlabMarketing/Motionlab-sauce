@@ -1,6 +1,6 @@
 <?php
 
-namespace Motionlab\TogetherDentalGroup\Menus;
+namespace Motionlab\Sauce\Menus;
 
 class MenuLocator
 {

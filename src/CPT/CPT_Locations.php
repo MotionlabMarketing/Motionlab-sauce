@@ -1,6 +1,6 @@
 <?php
 
-namespace Motionlab\TogetherDentalGroup\CPT;
+namespace Motionlab\Sauce\CPT;
 
 class CPT_Locations
 {

@@ -1,28 +1,28 @@
 <?php
 
 
-namespace Motionlab\TogetherDentalGroup\Blocks;
+namespace Motionlab\Sauce\Blocks;
 
-use Motionlab\TogetherDentalGroup\Blocks\AccreditationsBlock\AccreditationsBlock;
-use Motionlab\TogetherDentalGroup\Blocks\BannerBlock\BannerBlock;
-use Motionlab\TogetherDentalGroup\Blocks\BlogBlock\BlogBlock;
-use Motionlab\TogetherDentalGroup\Blocks\ButtonBlock\ButtonBlock;
-use Motionlab\TogetherDentalGroup\Blocks\CaseStudiesBlock\CaseStudiesBlock;
-use Motionlab\TogetherDentalGroup\Blocks\FormBlock\FormBlock;
-use Motionlab\TogetherDentalGroup\Blocks\JobVacanciesBlock\JobVacanciesBlock;
-use Motionlab\TogetherDentalGroup\Blocks\KeyFeaturesBlock\KeyFeaturesBlock;
-use Motionlab\TogetherDentalGroup\Blocks\LocationBlock\LocationBlock;
-use Motionlab\TogetherDentalGroup\Blocks\LocationFinderBlock\LocationFinderBlock;
-use Motionlab\TogetherDentalGroup\Blocks\SliderTabsBlock\SliderTabsBlock;
-use Motionlab\TogetherDentalGroup\Blocks\SpacerBlock\SpacerBlock;
-use Motionlab\TogetherDentalGroup\Blocks\StandardContentBlock\StandardContentBlock;
-use Motionlab\TogetherDentalGroup\Blocks\TabsBlock\TabsBlock;
-use Motionlab\TogetherDentalGroup\Blocks\TestimonialsBlock\TestimonialsBlock;
-use Motionlab\TogetherDentalGroup\Blocks\TreatmentsBlock\TreatmentsBlock;
-use Motionlab\TogetherDentalGroup\Blocks\FullTreatmentsBlock\FullTreatmentsBlock;
-use Motionlab\TogetherDentalGroup\Blocks\TwoColumnBlock\TwoColumnBlock;
-use Motionlab\TogetherDentalGroup\Blocks\AlternatingMediaBlock\AlternatingMediaBlock;
-use Motionlab\TogetherDentalGroup\Blocks\MeetTheTeamBlock\MeetTheTeamBlock;
+use Motionlab\Sauce\Blocks\AccreditationsBlock\AccreditationsBlock;
+use Motionlab\Sauce\Blocks\BannerBlock\BannerBlock;
+use Motionlab\Sauce\Blocks\BlogBlock\BlogBlock;
+use Motionlab\Sauce\Blocks\ButtonBlock\ButtonBlock;
+use Motionlab\Sauce\Blocks\CaseStudiesBlock\CaseStudiesBlock;
+use Motionlab\Sauce\Blocks\FormBlock\FormBlock;
+use Motionlab\Sauce\Blocks\JobVacanciesBlock\JobVacanciesBlock;
+use Motionlab\Sauce\Blocks\KeyFeaturesBlock\KeyFeaturesBlock;
+use Motionlab\Sauce\Blocks\LocationBlock\LocationBlock;
+use Motionlab\Sauce\Blocks\LocationFinderBlock\LocationFinderBlock;
+use Motionlab\Sauce\Blocks\SliderTabsBlock\SliderTabsBlock;
+use Motionlab\Sauce\Blocks\SpacerBlock\SpacerBlock;
+use Motionlab\Sauce\Blocks\StandardContentBlock\StandardContentBlock;
+use Motionlab\Sauce\Blocks\TabsBlock\TabsBlock;
+use Motionlab\Sauce\Blocks\TestimonialsBlock\TestimonialsBlock;
+use Motionlab\Sauce\Blocks\TreatmentsBlock\TreatmentsBlock;
+use Motionlab\Sauce\Blocks\FullTreatmentsBlock\FullTreatmentsBlock;
+use Motionlab\Sauce\Blocks\TwoColumnBlock\TwoColumnBlock;
+use Motionlab\Sauce\Blocks\AlternatingMediaBlock\AlternatingMediaBlock;
+use Motionlab\Sauce\Blocks\MeetTheTeamBlock\MeetTheTeamBlock;
 
 class BlockProvider
 {

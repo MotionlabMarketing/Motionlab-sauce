@@ -1,8 +1,8 @@
 <?php
 
-namespace Motionlab\TogetherDentalGroup\PageTemplates\Jobs;
+namespace Motionlab\Sauce\PageTemplates\Jobs;
 
-use Motionlab\TogetherDentalGroup\PageTemplates\TemplateBase;
+use Motionlab\Sauce\PageTemplates\TemplateBase;
 
 class JobsTemplate extends TemplateBase
 {

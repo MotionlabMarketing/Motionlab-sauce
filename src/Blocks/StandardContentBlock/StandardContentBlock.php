@@ -1,9 +1,9 @@
 <?php
 
 
-namespace Motionlab\TogetherDentalGroup\Blocks\StandardContentBlock;
+namespace Motionlab\Sauce\Blocks\StandardContentBlock;
 
-use Motionlab\TogetherDentalGroup\Blocks\Block;
+use Motionlab\Sauce\Blocks\Block;
 
 class StandardContentBlock extends Block
 {

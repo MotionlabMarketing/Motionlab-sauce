@@ -1,7 +1,7 @@
 <?php
 
-use Motionlab\TogetherDentalGroup\PageTemplates\JobsListing\JobsListingTemplate;
-use Motionlab\TogetherDentalGroup\Blocks\JobVacanciesBlock\JobVacanciesBlock;
+use Motionlab\Sauce\PageTemplates\JobsListing\JobsListingTemplate;
+use Motionlab\Sauce\Blocks\JobVacanciesBlock\JobVacanciesBlock;
 
 $templateController = new JobsListingTemplate();
 $blocks = $templateController->getBlocks(get_the_id());

@@ -1,9 +1,9 @@
 <?php
 
 
-namespace Motionlab\TogetherDentalGroup\Blocks\SliderTabsBlock;
+namespace Motionlab\Sauce\Blocks\SliderTabsBlock;
 
-use Motionlab\TogetherDentalGroup\Blocks\Block;
+use Motionlab\Sauce\Blocks\Block;
 
 class SliderTabsBlock extends Block
 {

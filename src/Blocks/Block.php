@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Motionlab\TogetherDentalGroup\Blocks;
+namespace Motionlab\Sauce\Blocks;
 
 class Block
 {
