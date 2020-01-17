@@ -1,9 +1,9 @@
 <?php
 
 
-namespace Motionlab\TogetherDentalGroup\Blocks\JobVacanciesBlock;
+namespace Motionlab\Sauce\Blocks\JobVacanciesBlock;
 
-use Motionlab\TogetherDentalGroup\Blocks\Block;
+use Motionlab\Sauce\Blocks\Block;
 use Carbon\Carbon;
 
 class JobVacanciesBlock extends Block

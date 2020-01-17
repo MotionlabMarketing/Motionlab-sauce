@@ -1,9 +1,9 @@
 <?php
 
 
-namespace Motionlab\TogetherDentalGroup\Blocks\LocationFinderBlock;
+namespace Motionlab\Sauce\Blocks\LocationFinderBlock;
 
-use Motionlab\TogetherDentalGroup\Blocks\Block;
+use Motionlab\Sauce\Blocks\Block;
 
 class LocationFinderBlock extends Block
 {

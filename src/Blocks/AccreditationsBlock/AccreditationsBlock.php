@@ -1,9 +1,9 @@
 <?php
 
 
-namespace Motionlab\TogetherDentalGroup\Blocks\AccreditationsBlock;
+namespace Motionlab\Sauce\Blocks\AccreditationsBlock;
 
-use Motionlab\TogetherDentalGroup\Blocks\Block;
+use Motionlab\Sauce\Blocks\Block;
 
 class AccreditationsBlock extends Block
 {

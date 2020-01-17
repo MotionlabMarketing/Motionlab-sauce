@@ -1,9 +1,9 @@
 <?php
 
 
-namespace Motionlab\TogetherDentalGroup\Blocks\MeetTheTeamBlock;
+namespace Motionlab\Sauce\Blocks\MeetTheTeamBlock;
 
-use Motionlab\TogetherDentalGroup\Blocks\Block;
+use Motionlab\Sauce\Blocks\Block;
 
 class MeetTheTeamBlock extends Block
 {

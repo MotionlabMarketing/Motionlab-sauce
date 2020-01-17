@@ -1,6 +1,6 @@
 <?php
 
-use Motionlab\TogetherDentalGroup\PageTemplates\PracticeFinder\PracticeFinderTemplate;
+use Motionlab\Sauce\PageTemplates\PracticeFinder\PracticeFinderTemplate;
 
 $templateController = new PracticeFinderTemplate();
 $blocks = $templateController->getBlocks(get_the_id());

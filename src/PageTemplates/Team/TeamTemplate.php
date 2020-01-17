@@ -1,6 +1,6 @@
 <?php
 
-namespace Motionlab\TogetherDentalGroup\PageTemplates\Team;
+namespace Motionlab\Sauce\PageTemplates\Team;
 
 class TeamTemplate
 {

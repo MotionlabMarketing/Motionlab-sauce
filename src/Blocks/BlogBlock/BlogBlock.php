@@ -1,9 +1,9 @@
 <?php
 
 
-namespace Motionlab\TogetherDentalGroup\Blocks\BlogBlock;
+namespace Motionlab\Sauce\Blocks\BlogBlock;
 
-use Motionlab\TogetherDentalGroup\Blocks\Block;
+use Motionlab\Sauce\Blocks\Block;
 use WP_Query;
 
 class BlogBlock extends Block

@@ -1,6 +1,6 @@
 <?php
 
-use Motionlab\TogetherDentalGroup\PageTemplates\Jobs\JobsTemplate;
+use Motionlab\Sauce\PageTemplates\Jobs\JobsTemplate;
 
 $templateController = new JobsTemplate();
 $blocks = $templateController->getBlocks(get_the_id());

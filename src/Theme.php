@@ -1,11 +1,11 @@
 <?php
 
-namespace Motionlab\TogetherDentalGroup;
+namespace Motionlab\Sauce;
 
-use Motionlab\TogetherDentalGroup\CPT\CPTProvider;
-use Motionlab\TogetherDentalGroup\PageTemplates\PageTemplateProvider;
-use Motionlab\TogetherDentalGroup\PageTemplates\JobsListing\JobsListingTemplate;
-use Motionlab\TogetherDentalGroup\Blocks\JobVacanciesBlock\JobVacanciesBlock;
+use Motionlab\Sauce\CPT\CPTProvider;
+use Motionlab\Sauce\PageTemplates\PageTemplateProvider;
+use Motionlab\Sauce\PageTemplates\JobsListing\JobsListingTemplate;
+use Motionlab\Sauce\Blocks\JobVacanciesBlock\JobVacanciesBlock;
 
 class Theme
 {

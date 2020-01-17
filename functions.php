@@ -52,7 +52,7 @@ if (function_exists('acf_add_options_page')) {
 if (! function_exists("together_dental_setup")) {
     function together_dental_setup()
     {
-        $theme_instance = \Motionlab\TogetherDentalGroup\Theme::instance();
+        $theme_instance = \Motionlab\Sauce\Theme::instance();
 
         $theme_instance->init();
         $theme_instance->loadTemplates();

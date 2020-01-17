@@ -1,8 +1,8 @@
 <?php
 
-namespace Motionlab\TogetherDentalGroup\PageTemplates\Generic;
+namespace Motionlab\Sauce\PageTemplates\Generic;
 
-use Motionlab\TogetherDentalGroup\PageTemplates\TemplateBase;
+use Motionlab\Sauce\PageTemplates\TemplateBase;
 
 class GenericTemplate extends TemplateBase
 {

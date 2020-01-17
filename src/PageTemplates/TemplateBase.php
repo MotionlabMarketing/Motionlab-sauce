@@ -1,8 +1,8 @@
 <?php
 
-namespace Motionlab\TogetherDentalGroup\PageTemplates;
+namespace Motionlab\Sauce\PageTemplates;
 
-use Motionlab\TogetherDentalGroup\Blocks\BlockProvider;
+use Motionlab\Sauce\Blocks\BlockProvider;
 
 class TemplateBase
 {

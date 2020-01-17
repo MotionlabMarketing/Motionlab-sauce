@@ -1,6 +1,6 @@
 <?php
 
-use \Motionlab\TogetherDentalGroup\PageTemplates\Testimonials\TestimonialsTemplate;
+use \Motionlab\Sauce\PageTemplates\Testimonials\TestimonialsTemplate;
 
 $templateController = new TestimonialsTemplate();
 $blocks = $templateController->getBlocks(get_the_id());

@@ -5,7 +5,7 @@
 
 get_header();
 
-$genericTemplate = new \Motionlab\TogetherDentalGroup\PageTemplates\Generic\GenericTemplate();
+$genericTemplate = new \Motionlab\Sauce\PageTemplates\Generic\GenericTemplate();
 
 ?>
 

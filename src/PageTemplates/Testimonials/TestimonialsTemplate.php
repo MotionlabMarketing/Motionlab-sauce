@@ -1,8 +1,8 @@
 <?php
 
-namespace Motionlab\TogetherDentalGroup\PageTemplates\Testimonials;
+namespace Motionlab\Sauce\PageTemplates\Testimonials;
 
-use Motionlab\TogetherDentalGroup\PageTemplates\TemplateBase;
+use Motionlab\Sauce\PageTemplates\TemplateBase;
 
 class TestimonialsTemplate extends TemplateBase
 {
