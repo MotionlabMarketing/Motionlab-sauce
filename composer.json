@@ -1,0 +1,79 @@
+{
+  "name": "wordpress-themes/motionlab-sauce",
+  "description": "The default motionlab framework, for use by Motionlab",
+  "type": "wordpress-theme",
+  "license": "Copyright Motionlab Ltd",
+  "autoload": {
+    "psr-4": {
+      "Motionlab\\Sauce\\": "wp-content/themes/motionlab-sauce/src/"
+    }
+  },
+  "repositories" : [
+    {
+      "type": "composer",
+      "url": "https://wpackagist.org"
+    },
+    {
+      "type": "package",
+      "package": {
+        "name": "advanced-custom-fields/advanced-custom-fields-pro",
+        "version": "5.8.3",
+        "type": "wordpress-plugin",
+        "dist": {
+          "type": "zip",
+          "url": "https://connect.advancedcustomfields.com/index.php?a=download&p=pro&k={%ACF_PRO_KEY}&t={%version}"
+        },
+        "require": {
+          "composer/installers": "^1.4",
+          "ffraenz/private-composer-installer": "^2.0"
+        }
+      }
+    },
+    {
+      "type": "vcs",
+      "url": "ssh://git@gits.motionlabclients.co.uk:766/wordpress-plugins-purchased/NinjaFormsCore.git"
+    },
+    {
+      "type": "vcs",
+      "url": "ssh://git@gits.motionlabclients.co.uk:766/wordpress-plugins-purchased/NinjaFormsAddonManager.git"
+    },
+    {
+      "type": "vcs",
+      "url": "ssh://git@gits.motionlabclients.co.uk:766/wordpress-plugins-purchased/NinjaFormsStyles.git"
+    },
+    {
+      "type": "vcs",
+      "url": "ssh://git@gits.motionlabclients.co.uk:766/wordpress-plugins-purchased/NinjaFormsMailchimp.git"
+    },
+    {
+      "type": "vcs",
+      "url": "ssh://git@gits.motionlabclients.co.uk:766/wordpress-plugins-purchased/NinjaFormsUploads.git"
+    }
+  ],
+  "require": {
+    "vlucas/phpdotenv": "^3.4.0",
+    "bostondv/acf-ninja-forms": "^1.0",
+    "advanced-custom-fields/advanced-custom-fields-pro": "^5.8",
+    "wordpress-plugins-purchased/ninja-forms-addon-manager": "^3.0",
+    "wordpress-plugins-purchased/ninja-forms-core": "^3.4",
+    "wordpress-plugins-purchased/ninja-forms-mailchimp": "^3.1",
+    "wordpress-plugins-purchased/ninja-forms-styles": "^3.0",
+    "wordpress-plugins-purchased/ninja-forms-uploads": "^3.2",
+    "wpackagist-plugin/advanced-custom-fields-font-awesome":  "^3.1.1",
+    "wpackagist-plugin/classic-editor":  "^1.5",
+    "wpackagist-plugin/cookie-bar": "^1.8",
+    "wpackagist-plugin/kraken-image-optimizer": "^2.6.4",
+    "wpackagist-plugin/post-duplicator":  "^2.20",
+    "wpackagist-plugin/post-smtp":  "^2.0.6",
+    "wpackagist-plugin/seo-by-rank-math":  "^1.0.35.2",
+    "wpackagist-plugin/redirection":  "^4.4.2",
+    "wpackagist-plugin/regenerate-thumbnails-advanced":  "^2.1.0",
+    "wpackagist-plugin/w3-total-cache":  "^0.10.2",
+    "wpackagist-plugin/wordfence":  "^7.4.1",
+    "wpackagist-plugin/wp-security-audit-log": "^3.5.1.1",
+    "wpackagist-plugin/wp-updates-notifier": "^1.4.4",
+    "wpackagist-plugin/wordpress-importer": "^0.6.4",
+    "nesbot/carbon": "^2.27",
+    "wpackagist-plugin/megamenu": "^2.7.3"
+  }
+}
