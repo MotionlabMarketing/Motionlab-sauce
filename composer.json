@@ -5,7 +5,9 @@
   "license": "Copyright Motionlab Ltd",
   "autoload": {
     "psr-4": {
-      "Motionlab\\Sauce\\": "wp-content/themes/motionlab-sauce/src/"
+      "Motionlab\\Sauce\\": "wp-content/themes/motionlab-sauce/src/",
+      "Motionlab\\Sauce\\": "web/app/themes/motionlab-sauce/src/",
+      "Motionlab\\Sauce\\": "src/"
     }
   },
   "repositories" : [
