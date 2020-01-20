@@ -25,8 +25,10 @@ class CPTProvider
         new CPT_Treatments();
         new CPT_Jobs();
 
-        if(\get_network()->site_id == \get_current_blog_id()) {
-            $this->registerMasterSitePostTypes();
+        if(function_exists("get_network")) {
+            if(\get_network()->site_id == \get_current_blog_id()) {
+                $this->registerMasterSitePostTypes();
+            }
         }
     }
 

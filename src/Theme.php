@@ -2,10 +2,10 @@
 
 namespace Motionlab\Sauce;
 
+use Motionlab\Sauce\Blocks\BlockInitialiser;
 use Motionlab\Sauce\CPT\CPTProvider;
+use Motionlab\Sauce\PageTemplates\TemplateInitialiser;
 use Motionlab\Sauce\PageTemplates\PageTemplateProvider;
-use Motionlab\Sauce\PageTemplates\JobsListing\JobsListingTemplate;
-use Motionlab\Sauce\Blocks\JobVacanciesBlock\JobVacanciesBlock;
 
 class Theme
 {
@@ -28,6 +28,10 @@ class Theme
      */
     public function init()
     {
+        //Load in ACF from PHP for standard
+        new BlockInitialiser();
+        new TemplateInitialiser();
+
         new CPTProvider();
         new MenuLocations();
         $this->registerImageSizes();
