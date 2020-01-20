@@ -21,6 +21,7 @@ class MeetTheTeamBlock extends Block
         $teamMembers = new \WP_Query(array(
             'post_type' => 'teammembers',
             'post_status' => 'publish',
+            'posts_per_page' => -1
         ));
 
         $membersToPrint = [];
