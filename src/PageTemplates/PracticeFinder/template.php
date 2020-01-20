@@ -1,8 +1,8 @@
 <?php
 
-use Motionlab\Sauce\PageTemplates\PracticeFinder\PracticeFinderTemplate;
+use Motionlab\Sauce\PageTemplates\LocationFinder\LocationFinderTemplate;
 
-$templateController = new PracticeFinderTemplate();
+$templateController = new LocationFinderTemplate();
 $blocks = $templateController->getBlocks(get_the_id());
 
 $locations = $templateController->searchByPostcode();

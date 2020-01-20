@@ -22,8 +22,8 @@ the_post();
             <div class="wysiwyg">
 
                 <h1 class="h0 mb4"><?php echo get_the_title(); ?></h1>
-                <?php if (!empty(get_field('case_study_practice')->post_title)) : ?>
-                <p><?php echo get_field('case_study_practice')->post_title; ?> - <?php echo get_field('case_study_practice')->guid;?></p>
+                <?php if (!empty(get_field('case_study_location')->post_title)) : ?>
+                <p><?php echo get_field('case_study_location')->post_title; ?> - <?php echo get_field('case_study_location')->guid;?></p>
                 <?php endif; ?>
 
                 <?php echo get_field('case_study_content'); ?>

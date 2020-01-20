@@ -1,10 +1,10 @@
 <?php
 
-namespace Motionlab\Sauce\PageTemplates\PracticeFinder;
+namespace Motionlab\Sauce\PageTemplates\LocationFinder;
 
 use Motionlab\Sauce\PageTemplates\TemplateBase;
 
-class PracticeFinderTemplate extends TemplateBase
+class LocationFinderTemplate extends TemplateBase
 {
 
     private $locations;

@@ -572,13 +572,6 @@ if( function_exists('acf_add_local_field_group') ):
             ),
             array(
                 array(
-                    'param' => 'post_type',
-                    'operator' => '==',
-                    'value' => 'treatments',
-                ),
-            ),
-            array(
-                array(
                     'param' => 'page_template',
                     'operator' => '==',
                     'value' => 'jobs-template.php',

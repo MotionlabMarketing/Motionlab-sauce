@@ -47,7 +47,6 @@ class TestimonialsTemplate extends TemplateBase
             $_testimonial['reviewer'] = \get_field('testimonial_reviewer_name', $testimonial->ID);
             $_testimonial['date'] = \get_field('testimonial_date', $testimonial->ID);
             $_testimonial['star_rating'] = \get_field('testimonial_star_rating', $testimonial->ID);
-            $_testimonial['related_treatment'] = \get_field('testimonial_treatment', $testimonial->ID);
 
             $testimonialsToPrint[] = $_testimonial;
         }

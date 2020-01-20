@@ -61,9 +61,7 @@ class Theme
         \add_shortcode('email-address', [$this, "renderGlobalEmailAddress"]);
         \add_shortcode('careers-search', [$this, "renderCareersSearchBox"]);
         \add_shortcode('enquiry-button', [$this, "renderEnquiryButton"]);
-        \add_shortcode('practice-name', [$this, "renderPracticeName"]);
-        \add_shortcode('previous-practice-name', [$this, "renderPreviousPracticeName"]);
-        \add_shortcode('booking-button', [$this, "renderBookAppointmentButton"]);
+        \add_shortcode('organisation-name', [$this, "renderOrganisationName"]);
     }
 
     public function renderGlobalPhoneNumber()
@@ -127,25 +125,8 @@ class Theme
         return "<a class='btn white uppercase bg-primary h5 rounded text-decoration-none' href='$url'>$text <i class='fa fa-chevron-right white ml2'></i></a>";
     }
 
-    public function renderPracticeName($args)
+    public function renderOrganisationName($args)
     {
         return \get_field('options_organisation_name', 'option');
-    }
-
-    public function renderPreviousPracticeName($args)
-    {
-        return \get_field('options_previous_practice_name', 'option');
-    }
-
-    public function renderBookAppointmentButton($args)
-    {
-        $bookingLink = \get_field('options_online_booking_url', 'option');
-
-        if (!empty($bookingLink)) {
-            return '<a href="'.$bookingLink.'" class="px4 btn btn-primary white bg-primary h3">
-                    <span class="h3 mr2"><i class="far fa-calendar-alt" aria-hidden="true"></i></span>
-                    Book An Appointment Online
-                </a>';
-        }
     }
 }
