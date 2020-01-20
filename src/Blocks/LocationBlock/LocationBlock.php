@@ -23,9 +23,9 @@ class LocationBlock extends Block
             $location['email'] = \get_field('location_email_address', $locationID);
             $location['phone'] = \get_field('location_phone_number', $locationID);
         } else {
-            $location['name'] = \get_field('options_practice_name', 'option');
-            $location['address'] = \get_field('options_practice_address', 'option');
-            $location['postcode'] = \get_field('options_practice_postcode', 'option');
+            $location['name'] = \get_field('options_organisation_name', 'option');
+            $location['address'] = \get_field('options_organisation_address', 'option');
+            $location['postcode'] = \get_field('options_organisation_postcode', 'option');
             $location['opening_times'] = \get_field('option_opening_hours', 'option');
             $location['email'] = \get_field('options_contact_email', 'option');
             $location['phone'] = \get_field('options_contact_phone', 'option');

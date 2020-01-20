@@ -129,7 +129,7 @@ class Theme
 
     public function renderPracticeName($args)
     {
-        return \get_field('options_practice_name', 'option');
+        return \get_field('options_organisation_name', 'option');
     }
 
     public function renderPreviousPracticeName($args)
