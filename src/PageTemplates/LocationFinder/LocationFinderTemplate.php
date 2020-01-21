@@ -33,7 +33,7 @@ class LocationFinderTemplate extends TemplateBase
     }
 
     public function addGoogleMapsScript() {
-        echo '<script async defer src="https://maps.googleapis.com/maps/api/js?key='.get_env('GOOGLE_MAPS_KEY').'&callback=initMap"> </script>';
+        echo '<script async defer src="https://maps.googleapis.com/maps/api/js?key='.getenv('GOOGLE_MAPS_KEY').'&callback=initMap"> </script>';
     }
 
     public function searchByPostcode() {
@@ -100,7 +100,7 @@ class LocationFinderTemplate extends TemplateBase
         }
 
         foreach( $locations as &$location ) {
-            $apiUrl = "https://maps.googleapis.com/maps/api/staticmap?center=".urlencode( $location['name']." ".$location['postcode'] )."&zoom=".get_env('GOOGLE_MAPS_PRACTICE_FINDER_ZOOM')."&size=600x400&maptype=roadmap&markers=color:purple%7Clabel:T%7C".urlencode($location['name']." ".$location['postcode'])."&style=feature:poi|visibility:off&key=".get_env('GOOGLE_MAPS_KEY_CURL');
+            $apiUrl = "https://maps.googleapis.com/maps/api/staticmap?center=".urlencode( $location['name']." ".$location['postcode'] )."&zoom=".getenv('GOOGLE_MAPS_PRACTICE_FINDER_ZOOM')."&size=600x400&maptype=roadmap&markers=color:purple%7Clabel:T%7C".urlencode($location['name']." ".$location['postcode'])."&style=feature:poi|visibility:off&key=".getenv('GOOGLE_MAPS_KEY_CURL');
             $filename = md5($apiUrl).".png";
             $fullPath = $folderPath."/".$filename;
             $age = time() - filemtime( $fullPath );
@@ -147,7 +147,7 @@ class LocationFinderTemplate extends TemplateBase
     }
 
     private function fetchPlacesInformation ($postcode) {
-        $base_url = get_env('PLACES_URL');
+        $base_url = getenv('PLACES_URL');
         $full_url = $base_url . "?q=" . urlencode(trim(str_replace(" ","",$postcode)));
 
         $ch = curl_init($full_url);
@@ -160,7 +160,7 @@ class LocationFinderTemplate extends TemplateBase
     }
 
     private function fetchPostcodeInformation ($postcode) {
-        $base_url = get_env('POSTCODES_URL');
+        $base_url = getenv('POSTCODES_URL');
         $full_url = $base_url . urlencode(trim(str_replace(" ","",$postcode)));
 
         $ch = curl_init($full_url);
