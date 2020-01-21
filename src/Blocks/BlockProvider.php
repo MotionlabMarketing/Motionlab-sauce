@@ -18,8 +18,6 @@ use Motionlab\Sauce\Blocks\SpacerBlock\SpacerBlock;
 use Motionlab\Sauce\Blocks\StandardContentBlock\StandardContentBlock;
 use Motionlab\Sauce\Blocks\TabsBlock\TabsBlock;
 use Motionlab\Sauce\Blocks\TestimonialsBlock\TestimonialsBlock;
-use Motionlab\Sauce\Blocks\TreatmentsBlock\TreatmentsBlock;
-use Motionlab\Sauce\Blocks\FullTreatmentsBlock\FullTreatmentsBlock;
 use Motionlab\Sauce\Blocks\TwoColumnBlock\TwoColumnBlock;
 use Motionlab\Sauce\Blocks\AlternatingMediaBlock\AlternatingMediaBlock;
 use Motionlab\Sauce\Blocks\MeetTheTeamBlock\MeetTheTeamBlock;
@@ -45,8 +43,6 @@ class BlockProvider
         'standard_content' => StandardContentBlock::class,
         'tabs' => TabsBlock::class,
         'testimonials' => TestimonialsBlock::class,
-        'treatments' => TreatmentsBlock::class,
-        'treatments_full' => FullTreatmentsBlock::class,
         'two_columns' => TwoColumnBlock::class,
     ];
 

@@ -48,7 +48,7 @@ get_header();
                                 <?php if (isset($job['location_name'])): ?>
                                     <p class="m0"><?php echo $job['location_name']; ?></p>
                                 <?php else: ?>
-                                    <?php echo \get_field('options_practice_name', 'option');?>
+                                    <?php echo \get_field('options_organisation_name', 'option');?>
                                 <?php endif; ?>
                             </div>
                             <div class="" style="white-space:nowrap;">

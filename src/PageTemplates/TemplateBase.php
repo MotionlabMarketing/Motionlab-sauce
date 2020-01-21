@@ -13,22 +13,6 @@ class TemplateBase
         //Use this to collect any other information about the template.
         \add_filter('page_template', [$this, "generate"]);
         \add_filter('theme_page_templates', [$this, "load"], 10, 4);
-
-        if(strpos($_SERVER['REQUEST_URI'], '/treatments/') !== FALSE) {
-            \add_filter( 'rank_math/frontend/canonical', [$this, "checkForCanonical"], 10, 4 );
-        }
-    }
-
-    public function checkForCanonical($canonical) {
-
-        $httpPrefix = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off' ? 'https://' : 'http://';
-
-        $canonicalURL = $httpPrefix . $_SERVER['SERVER_NAME'];
-        $requestSplit = explode('/treatments', $_SERVER['REQUEST_URI']);
-        $canonicalURL = $canonicalURL . "/treatments" . $requestSplit[1];
-
-        //split the $canonicalURL to remove the practice name
-        return $canonicalURL;
     }
 
     public function renderBlocks($post_id) {

@@ -13,7 +13,6 @@ get_header();
     <p><?php echo get_field('testimonial_reviewer_name'); ?> </p>
     <p><?php echo get_field('testimonial_date'); ?></p>
     <p><?php echo get_field('testimonial_star_rating'); ?></p>
-    <p><?php echo get_field('testimonial_treatment'); ?></p>
 </main><!-- #site-content -->
 
 <?php get_footer(); ?>
