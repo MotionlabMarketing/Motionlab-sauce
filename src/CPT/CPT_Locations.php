@@ -76,7 +76,7 @@ class CPT_Locations
     }
 
     private function fetchPostcodeInformation ($postcode) {
-        $base_url = POSTCODES_URL;
+        $base_url = get_env('POSTCODES_URL');
         $full_url = $base_url . urlencode($postcode);
 
         $ch = curl_init($full_url);

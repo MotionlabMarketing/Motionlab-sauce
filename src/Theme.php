@@ -6,6 +6,7 @@ use Motionlab\Sauce\Blocks\BlockInitialiser;
 use Motionlab\Sauce\CPT\CPTProvider;
 use Motionlab\Sauce\PageTemplates\TemplateInitialiser;
 use Motionlab\Sauce\PageTemplates\PageTemplateProvider;
+use Motionlab\Sauce\MenuLocations;
 
 class Theme
 {

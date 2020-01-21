@@ -15,18 +15,18 @@ get_header();
 
 <section class="px4 py5">
     <div class="container mb5">
-        <h1 class="mb0 text-center">Our Practices Near You</h1>
+        <h1 class="mb0 text-center">Locations Near You</h1>
         <?php if (isset($_GET['p']) || !empty($_GET['p'])) : ?>
-            <p class="mb0 text-center">Based on your search of "<strong class="uppercase"><?php echo $_GET['p']; ?></strong>" we have found the following practices in your area.</p>
+            <p class="mb0 text-center">Based on your search of "<strong class="uppercase"><?php echo $_GET['p']; ?></strong>" we have found the following locations in your area.</p>
         <?php endif; ?>
     </div>
 
 <?php if (!isset($_GET['p']) || empty($_GET['p'])) : ?>
     <div class="container text-center mb5 bg-smoke flex items-center justify-center mtn3 p4 md-p3 rounded">
         <div class="md-flex items-center">
-            <form class="md-flex items-center"  action="/practice-finder-listings//" methord="GET">
+            <form class="md-flex items-center"  action="/location-search-listings//" methord="GET">
                 <h3 class="mb0 mr3 text-center mb3 md-mb0">Search By Postcode <br class="md-display-none" />or Location Name:</h3>
-                <input type="text" name="p" class="input mt0 text-center md-text-left" value="<?php echo $_GET['p']; ?>" placeholder="Find a dentist by postcode" style="width:20rem;">
+                <input type="text" name="p" class="input mt0 text-center md-text-left" value="<?php echo $_GET['p']; ?>" placeholder="Search by postcode" style="width:20rem;">
                 <button type="submit" class="btn ml2 bg-primary py2 white" style="height: 50px;">Search</button>
             </form>
         </div>
@@ -45,7 +45,7 @@ get_header();
                     <?php if ($location['distance']): ?>
                         <span class="block md-inline-block h5 white mr3 bold mb2 md-mb0 opacity-5"><?php echo $location['distance']; ?> miles away</span>
                     <?php endif; ?>
-                    <a href="<?php echo $location['website']; ?>" class="btn btn-primary px4 mt3 md-mt0 bg-white purple h5 uppercase block text-center md-inline-block">View Practice</a>
+                    <a href="<?php echo $location['website']; ?>" class="btn btn-primary px4 mt3 md-mt0 bg-white purple h5 uppercase block text-center md-inline-block">More Info</a>
                 </div>
             </div>
 

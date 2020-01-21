@@ -178,57 +178,7 @@ class CPT_TeamMembers
             array(
                 'plural' => "Roles",
                 'singular' => "Role",
-                'terms' => array(
-                    array(
-                        'name' => "Dentist",
-                        'alias_of' => '',
-                        'description' => '',
-                        'parent' => '',
-                        'slug' => 'dentists'
-                    ),
-                    array(
-                        'name' => "Hygienist",
-                        'alias_of' => '',
-                        'description' => '',
-                        'parent' => '',
-                        'slug' => 'hygienists'
-                    ),
-                    array(
-                        'name' => "Practice Manager",
-                        'alias_of' => '',
-                        'description' => '',
-                        'parent' => '',
-                        'slug' => 'practice-managers'
-                    ),
-                    array(
-                        'name' => "Dental Nurse",
-                        'alias_of' => '',
-                        'description' => '',
-                        'parent' => '',
-                        'slug' => 'dental-nurses'
-                    ),
-                    array(
-                        'name' => "Trainee Dental Nurses",
-                        'alias_of' => '',
-                        'description' => '',
-                        'parent' => '',
-                        'slug' => 'trainee-dental-nurses'
-                    ),
-                    array(
-                        'name' => "Receptionist",
-                        'alias_of' => '',
-                        'description' => '',
-                        'parent' => '',
-                        'slug' => 'reception-team'
-                    ),
-                    array(
-                        'name' => "Treatment Coordinator",
-                        'alias_of' => '',
-                        'description' => '',
-                        'parent' => '',
-                        'slug' => 'treatment-coordinators'
-                    )
-                )
+                'terms' => array()
             )
         );
     }
