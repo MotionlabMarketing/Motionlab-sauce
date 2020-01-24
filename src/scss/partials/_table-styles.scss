@@ -1,0 +1,60 @@
+/**
+ * SET THE STYLING FOR TABLES.
+ */
+
+table {
+  margin: 0;
+  padding: 0;
+  background-color: $white;
+
+  thead {
+    font-weight: bold;
+    background-color: darken(#f1f1f1, 4%);
+  }
+
+  tbody tr {
+
+    &:hover {
+      background-color: #f1f1f1;
+    }
+  }
+}
+
+.table-limited {
+  width: 80%;
+  margin: 0 auto;
+}
+
+// ADD BORDERS TO THE TABLE
+.table-bordered {
+  border: 1px solid darken($smoke, 10%);
+  border-collapse: collapse;
+
+  th, td {
+    border: 1px solid darken($smoke, 10%);
+  }
+
+  th {
+    border-bottom: 2px solid darken($smoke, 20%);
+  }
+}
+
+// STRIP THE EVEN TABLE ROWS
+.table-striped {
+
+  tr:nth-child(even) {
+    background-color: lighten(#f1f1f1, 4%);
+
+    &:hover {
+      background-color: #f1f1f1;
+    }
+  }
+}
+
+// BOLD THE FIRST COLUMN OF EACH ROW
+.table-bold-first {
+
+  tr td:first-child {
+    font-weight: bold;
+  }
+}

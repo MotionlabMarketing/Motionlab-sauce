@@ -1,0 +1,83 @@
+// Position
+
+
+.static { position: static; }
+.relative { position: relative; }
+.absolute { position: absolute; }
+.fixed { position: fixed; }
+
+
+// Sides
+
+.top-auto { top: auto; }
+.top-0 { top: 0; }
+.top-50 { top: 50%; }
+.top-100 { top: 100%; }
+
+.right-auto { right: auto; }
+.right-0 { right: 0; }
+.right-50 { right: 50%; }
+.right-100 { right: 100%; }
+
+.bottom-auto { bottom: auto; }
+.bottom-0 { bottom: 0; }
+.bottom-50 { bottom: 50%; }
+.bottom-100 { bottom: 100%; }
+
+.left-auto { left: auto; }
+.left-0 { left: 0; }
+.left-50 { left: 50%; }
+.left-100 { left: 100%; }
+
+.bottom-1 {bottom: 1rem;}
+.bottom-2 {bottom: 2rem;}
+.bottom-3 {bottom: 3rem;}
+.bottom-4 {bottom: 4rem;}
+.bottom-5 {bottom: 5rem;}
+
+.left-1 { left: 1rem}
+.left-2 { left: 2rem}
+.left-3 { left: 3rem}
+.left-4 { left: 4rem}
+.left-5 { left: 5rem}
+
+.right-1 { right: 1rem}
+.right-2 { right: 2rem}
+.right-3 { right: 3rem}
+.right-4 { right: 4rem}
+.right-5 { right: 5rem}
+
+// Translate
+
+.translate { transform: translate(-50%, -50%); }
+.translate-y { transform: translateY(-50%); }
+.translate-x { transform: translateX(-50%); }
+
+
+@include generate-breakpoint-prefixes {
+
+  &static { position: static; }
+  &relative { position: relative; }
+  &absolute { position: absolute; }
+  &fixed { position: fixed; }
+  &top-auto { top: auto; }
+  &top-0 { top: 0; }
+  &top-50 { top: 50%; }
+  &top-100 { top: 100%; }
+  &right-auto { right: auto; }
+  &right-0 { right: 0; }
+  &right-50 { right: 50%; }
+  &right-100 { right: 100%; }
+  &bottom-auto { bottom: auto; }
+  &bottom-0 { bottom: 0; }
+  &bottom-50 { bottom: 50%; }
+  &bottom-100 { bottom: 100%; }
+  &left-auto { left: auto; }
+  &left-0 { left: 0; }
+  &left-50 { left: 50%; }
+  &left-100 { left: 100%; }
+  &translate { transform: translate(-50%, -50%); }
+  &translate-y { transform: translateY(-50%); }
+  &translate-x { transform: translateX(-50%); }
+
+}
