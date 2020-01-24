@@ -1,0 +1,40 @@
+{
+  "name": "motionlab-sauce",
+  "version": "1.0.0",
+  "description": "It's getting saucey! Motionlab Style",
+  "scripts": {
+    "gulp": "./node_modules/gulp/bin/gulp.js"
+  },
+  "author": "Joe Curran (joe.curran@motionlab.co.uk)",
+  "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
+    "autoprefixer": "^9.1.0",
+    "babel-core": "^6.26.3",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-register": "^6.26.0",
+    "browser-sync": "^2.26.7",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^5.0.0",
+    "gulp-babel": "^8.0.0",
+    "gulp-clean": "^0.4.0",
+    "gulp-clean-css": "^3.10.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-imagemin": "^6.0.0",
+    "gulp-plumber": "^1.2.0",
+    "gulp-postcss": "^8.0.0",
+    "gulp-rename": "^1.4.0",
+    "gulp-sass": "^3.1.0",
+    "gulp-uglify": "^3.0.0",
+    "isomorphic-fetch": "^2.2.1",
+    "merge-stream": "^2.0.0"
+  },
+  "dependencies": {
+    "core-js": "^3.6.4",
+    "es6-promise": "^4.2.4",
+    "fs": "0.0.1-security",
+    "gulp-sourcemaps": "^2.6.5",
+    "path": "^0.12.7"
+  }
+}

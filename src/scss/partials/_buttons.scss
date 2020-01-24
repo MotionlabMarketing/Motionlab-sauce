@@ -1,0 +1,72 @@
+// Buttons
+
+
+.btn {
+  appearance: none;
+  border: $border-width solid transparent;
+  //border-radius: $border-radius;
+  color: inherit;
+  display: inline-block;
+  font-size: $button-font-size;
+  font-weight: $button-font-weight;
+  line-height: $button-line-height;
+  padding: $button-padding-top $button-padding-x $button-padding-bottom;
+  text-decoration: none;
+  transition: background $transition, border $transition, box-shadow $transition, color $transition;
+  align-items: center;
+  &:focus {
+    outline: 0;
+  }
+
+  &:disabled {
+    opacity: .5;
+  }
+}
+
+
+// Variations
+
+
+// Variations
+
+.btn-primary {
+  border-color: $button-background-color;
+  background-color: $button-background-color;
+  color: $button-color;
+
+  &:hover {
+    color: $button-color;
+  }
+}
+
+.btn-primary,
+.btn-outline {
+  //border-radius: $border-radius;
+  transition: background $transition, box-shadow $transition, color $transition;
+
+  &:disabled,
+  &.is-disabled {
+    opacity: .5;
+  }
+}
+
+
+// Sizes
+
+.btn-small {
+  font-size: $button-small-font-size;
+  padding: $button-small-padding-top $button-small-padding-x $button-small-padding-bottom;
+}
+
+.btn-big {
+  font-size: $button-big-font-size;
+  padding: $button-big-padding-top $button-big-padding-x $button-big-padding-bottom;
+}
+
+
+@include generate-breakpoint-prefixes {
+
+  &btn-small { font-size: $button-small-font-size; padding: $button-small-padding-top $button-small-padding-x $button-small-padding-bottom; }
+  &btn-big { font-size: $button-big-font-size; padding: $button-big-padding-top $button-big-padding-x $button-big-padding-bottom; }
+
+}
