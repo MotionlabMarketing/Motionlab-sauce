@@ -4,21 +4,22 @@ namespace Motionlab\Sauce;
 
 class MenuLocations
 {
+    
+    public $menu = "";
+
     public function __construct()
     {
         $this->bootstrap();
+
+
     }
 
     private function bootstrap()
     {
         \register_nav_menus(array(
-            'header_group' => 'Header – Group',
             'header_main_desktop' => 'Header – Main (Desktop)',
             'header_main_mobile' => 'Header – Main (Mobile)',
             'footer_legal' => 'Footer – Legal',
-            'footer_locations' => 'Footer – Locations',
-            'footer_treatments' => 'Footer – Treatments',
-            'footer_group' => 'Footer – Group',
         ));
     }
 
@@ -58,4 +59,27 @@ class MenuLocations
         // Return menu post objects
         return $return;
     }
+
+    public function get_nav_menu_title_by_location($location, $args = [])
+    {
+
+        // Get all locations
+        $locations = \get_nav_menu_locations();
+
+        // Get object id by location
+        $object = \wp_get_nav_menu_object($locations[$location]);
+
+        // Get menu items by menu name
+
+        $return = "";
+        if( preg_match('/[(](.*)[)]/', $object->name, $matches) ) {
+            $return = $matches[1];
+        } else {
+            return $object->name;
+        }
+
+        // Return menu post objects
+        return $return;
+    }
+
 }
