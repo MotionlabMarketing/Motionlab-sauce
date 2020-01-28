@@ -8,25 +8,11 @@
 // Make use of the primary and secondary naming convention to easily change colours site wide. Extend as required.
 
 $black: #111 !default;
-$white: #fff !default;
-$red: #CC3737 !default;
-$smoke: #e7e6e6 !default;
-$charcoal: #393939 !default;
- 
-$body: $charcoal !default;
-$primary: $black !default;
-$secondary: $black !default;
 
 $colors: (
-	"primary": $primary,
-	"secondary": $secondary,
-	"body": $body, 
-
-	"red": $red,
-	"black": $black,
-	"smoke": $smoke,
-	"white": $white, 
-	"charcoal": $charcoal,
+	"body": $black,
+	"primary": $black,
+	"secondary": $black,
 );
 
 
@@ -255,7 +241,7 @@ $table-padding-bottom: .5rem !default;
 // Borders
 
 $border-width: 1px !default;
-$border-radius: 8px !default;
+$border-radius: 0px !default;
 $border-styles: dotted, dashed !default;
 $border-width-loop: 3 !default;
 
