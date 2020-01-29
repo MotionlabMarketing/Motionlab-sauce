@@ -3,11 +3,18 @@
 namespace Motionlab\Sauce\PageTemplates;
 
 use Motionlab\Sauce\Blocks\BlockProvider;
+use Motionlab\Sauce\Components\Breadcrumbs;
 
 class TemplateBase
 {
 
     private $blocks = null;
+    private $breadcrumbs;
+
+    public function __construct()
+    {
+        $this->breadcrumbs = new Breadcrumbs();
+    }
 
     public function init() {
         //Use this to collect any other information about the template.
@@ -43,6 +50,11 @@ class TemplateBase
 
             }
         }
+    }
+
+    public function renderBreadcrumbs($template = null)
+    {
+        $this->breadcrumbs->render($template);
     }
 
     public function getBlocks($post_id) {
