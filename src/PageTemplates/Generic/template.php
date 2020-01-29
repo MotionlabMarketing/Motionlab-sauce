@@ -9,6 +9,7 @@ get_header();
 ?>
 
 <div class="content-wrap">
+    <?php $templateController->renderBreadcrumbs(get_stylesheet_directory().'/src/template_parts/breadcrumbs.php'); ?>
     <?php $templateController->renderFlexibleContent(get_the_id()); ?>
 </div>
 
