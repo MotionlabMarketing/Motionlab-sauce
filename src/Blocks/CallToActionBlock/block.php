@@ -23,3 +23,4 @@
 </section> */
 
 var_dump($this->blockConfiguration);
+var_dump($this->callToAction);
