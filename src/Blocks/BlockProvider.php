@@ -31,6 +31,7 @@ class BlockProvider
         'banner' =>  BannerBlock::class,
         'blog'  => BlogBlock::class,
         'button' => ButtonBlock::class,
+        'call_to_action' => CallToActionBlock::class,
         'case_studies' => CaseStudiesBlock::class,
         'form' => FormBlock::class,
         'job_vacancies' => JobVacanciesBlock::class,
