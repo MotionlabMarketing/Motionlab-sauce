@@ -1,0 +1,54 @@
+
+.pagination {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+
+    .page-numbers {
+        width: 12px;
+        height: 12px;
+        padding: 10px;
+        color: $black;
+        font-size: $h4;
+        display: block;
+        margin: 0 0.5rem;
+        line-height: 0.8;
+        text-align: center;
+        background-color: $white;
+        border: 2px solid $smoke;
+
+        &:hover {
+            color: $white;
+            background: $primary;
+            border-color: $primary;
+        }
+
+        &.current {
+            color: $black;
+            cursor: no-drop;
+            font-weight: bold;
+            background: $smoke;
+
+            &:hover {
+                border-color: $smoke;
+            }
+        }
+
+        &.dots {
+            color: $black;
+            cursor: no-drop;
+            font-weight: bold;
+
+            &:hover {
+                background: $smoke;
+                border-color: $smoke;
+            }
+        }
+    }
+
+    .prev,
+    .next {
+        display: none;
+    }
+}
