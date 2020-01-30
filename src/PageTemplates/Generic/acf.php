@@ -174,6 +174,37 @@ if( function_exists('acf_add_local_field_group') ):
                         'min' => '',
                         'max' => '',
                     ),
+                    'layout_dbdcadfbe8dbf' => array(
+                        'key' => 'layout_dbdcadfbe8dbf',
+                        'name' => 'call_to_action',
+                        'label' => 'CTA',
+                        'display' => 'block',
+                        'sub_fields' => array(
+                            array(
+                                'key' => 'field_dbdcadfbe8dbf',
+                                'label' => 'CTA',
+                                'name' => 'call_to_action',
+                                'type' => 'clone',
+                                'instructions' => '',
+                                'required' => 0,
+                                'conditional_logic' => 0,
+                                'wrapper' => array(
+                                    'width' => '',
+                                    'class' => '',
+                                    'id' => '',
+                                ),
+                                'clone' => array(
+                                    0 => 'group_5e32ee74688bc',
+                                ),
+                                'display' => 'seamless',
+                                'layout' => 'block',
+                                'prefix_label' => 0,
+                                'prefix_name' => 0,
+                            ),
+                        ),
+                        'min' => '',
+                        'max' => '',
+                    ),
                     'layout_5ddd65eaa5bf4' => array(
                         'key' => 'layout_5ddd65eaa5bf4',
                         'name' => 'case_studies',
