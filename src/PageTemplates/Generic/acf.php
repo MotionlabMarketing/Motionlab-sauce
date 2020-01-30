@@ -194,7 +194,7 @@ if( function_exists('acf_add_local_field_group') ):
                                     'id' => '',
                                 ),
                                 'clone' => array(
-                                    0 => 'group_5e32ee74688bc',
+                                    0 => 'group_5e32f55d2ec84',
                                 ),
                                 'display' => 'seamless',
                                 'layout' => 'block',
