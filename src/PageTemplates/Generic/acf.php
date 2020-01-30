@@ -391,6 +391,37 @@ if( function_exists('acf_add_local_field_group') ):
                         'min' => '',
                         'max' => '',
                     ),
+                    'layout_7cb4a2bb35366' => array(
+                        'key' => 'layout_7cb4a2bb35366',
+                        'name' => 'pods',
+                        'label' => 'Pods',
+                        'display' => 'block',
+                        'sub_fields' => array(
+                            array(
+                                'key' => 'field_7cb4a2ca35366',
+                                'label' => 'Pods',
+                                'name' => 'pods',
+                                'type' => 'clone',
+                                'instructions' => '',
+                                'required' => 0,
+                                'conditional_logic' => 0,
+                                'wrapper' => array(
+                                    'width' => '',
+                                    'class' => '',
+                                    'id' => '',
+                                ),
+                                'clone' => array(
+                                    0 => 'group_5e32b00e4ba77',
+                                ),
+                                'display' => 'seamless',
+                                'layout' => 'block',
+                                'prefix_label' => 0,
+                                'prefix_name' => 0,
+                            ),
+                        ),
+                        'min' => '',
+                        'max' => '',
+                    ),
                     'layout_5ddd66c5a5bfe' => array(
                         'key' => 'layout_5ddd66c5a5bfe',
                         'name' => 'slider_and_tabs',
