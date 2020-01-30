@@ -13,6 +13,7 @@ use Motionlab\Sauce\Blocks\JobVacanciesBlock\JobVacanciesBlock;
 use Motionlab\Sauce\Blocks\KeyFeaturesBlock\KeyFeaturesBlock;
 use Motionlab\Sauce\Blocks\LocationBlock\LocationBlock;
 use Motionlab\Sauce\Blocks\LocationFinderBlock\LocationFinderBlock;
+use Motionlab\Sauce\Blocks\PodsBlock\PodsBlock;
 use Motionlab\Sauce\Blocks\SliderTabsBlock\SliderTabsBlock;
 use Motionlab\Sauce\Blocks\SpacerBlock\SpacerBlock;
 use Motionlab\Sauce\Blocks\StandardContentBlock\StandardContentBlock;
@@ -38,6 +39,7 @@ class BlockProvider
         'location' => LocationBlock::class,
         'location_finder' => LocationFinderBlock::class,
         'meet_the_team' => MeetTheTeamBlock::class,
+        'pods' => PodsBlock::class,
         'slider_and_tabs' => SliderTabsBlock::class,
         'spacer' => SpacerBlock::class,
         'standard_content' => StandardContentBlock::class,
