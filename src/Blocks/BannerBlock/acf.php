@@ -67,7 +67,7 @@ if( function_exists('acf_add_local_field_group') ):
                 ),
                 'choices' => array(
                     'justify-start' => 'Left',
-                    'justifty-center' => 'Center',
+                    'justify-center' => 'Center',
                     'justify-end' => 'Right',
                 ),
                 'default_value' => array(
