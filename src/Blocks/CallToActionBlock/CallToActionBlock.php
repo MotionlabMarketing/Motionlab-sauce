@@ -3,7 +3,6 @@
 namespace Motionlab\Sauce\Blocks\CallToActionBlock;
 
 use Motionlab\Sauce\Blocks\Block;
-use Motionlab\Sauce\CPT\CPT_CallToActions;
 
 class CallToActionBlock extends Block
 {
@@ -12,9 +11,12 @@ class CallToActionBlock extends Block
 
     public function __construct($blockConfiguration, $initialize = true)
     {
-        parent::__construct($blockConfiguration, $initialize);
+        parent::__construct($blockConfiguration, false);
         if($blockConfiguration !== null){
             $this->setCallToAction($this->blockConfiguration['call_to_action']);
+        }
+        if($initialize){
+            $this->init();
         }
     }
 
@@ -30,8 +32,9 @@ class CallToActionBlock extends Block
 
     public static function unleash(int $post_id)
     {
-        $instance = new CPT_CallToActions(null);
+        $instance = new CallToActionBlock(null,false);
         $instance->setCallToAction($post_id);
+        $instance->init();
         return $instance;
     }
 
