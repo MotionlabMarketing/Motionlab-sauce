@@ -6,6 +6,7 @@ namespace Motionlab\Sauce\Blocks;
 use Motionlab\Sauce\Blocks\AccreditationsBlock\AccreditationsBlock;
 use Motionlab\Sauce\Blocks\BannerBlock\BannerBlock;
 use Motionlab\Sauce\Blocks\BlogBlock\BlogBlock;
+use Motionlab\Sauce\Blocks\BreadcrumbsBlock\BreadcrumbsBlock;
 use Motionlab\Sauce\Blocks\ButtonBlock\ButtonBlock;
 use Motionlab\Sauce\Blocks\CallToActionBlock\CallToActionBlock;
 use Motionlab\Sauce\Blocks\CaseStudiesBlock\CaseStudiesBlock;
@@ -32,6 +33,7 @@ class BlockProvider
         'alternating_media' => AlternatingMediaBlock::class,
         'banner' =>  BannerBlock::class,
         'blog'  => BlogBlock::class,
+        'breadcrumbs' => BreadcrumbsBlock::class,
         'button' => ButtonBlock::class,
         'call_to_action' => CallToActionBlock::class,
         'case_studies' => CaseStudiesBlock::class,

@@ -143,6 +143,37 @@ if( function_exists('acf_add_local_field_group') ):
                         'min' => '',
                         'max' => '',
                     ),
+                    'layout_3d51dcc7c5651' => array(
+                        'key' => 'layout_3d51dcc7c5651',
+                        'name' => 'breadcrumbs',
+                        'label' => 'Breadcrumbs',
+                        'display' => 'block',
+                        'sub_fields' => array(
+                            array(
+                                'key' => 'field_3d51dcc7c5651',
+                                'label' => 'Breadcrumbs',
+                                'name' => 'breadcrumbs',
+                                'type' => 'clone',
+                                'instructions' => '',
+                                'required' => 0,
+                                'conditional_logic' => 0,
+                                'wrapper' => array(
+                                    'width' => '',
+                                    'class' => '',
+                                    'id' => '',
+                                ),
+                                'clone' => array(
+                                    0 => 'group_bfb475e1524a5',
+                                ),
+                                'display' => 'seamless',
+                                'layout' => 'block',
+                                'prefix_label' => 0,
+                                'prefix_name' => 0,
+                            ),
+                        ),
+                        'min' => '',
+                        'max' => '',
+                    ),
                     'layout_5ddbdc92feb9a' => array(
                         'key' => 'layout_5ddbdc92feb9a',
                         'name' => 'button',
