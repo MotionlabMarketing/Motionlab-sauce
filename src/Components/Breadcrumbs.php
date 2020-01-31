@@ -14,7 +14,7 @@ class Breadcrumbs
     {
         if($template === null){
             $childTemplate = get_stylesheet_directory().'/src/template_parts/breadcrumbs.php';
-            $sauceTemplate = get_theme_directory().'/src/template_parts/breadcrumbs.php';
+            $sauceTemplate = get_template_directory().'/src/template_parts/breadcrumbs.php';
             if(file_exists($childTemplate)){
                 $template = $childTemplate;
             } elseif(file_exists($sauceTemplate)) {
