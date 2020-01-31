@@ -13,7 +13,15 @@ class Breadcrumbs
     public function render($template = null)
     {
         if($template === null){
-            throw new \Exception('No breadcrumbs template given.');
+            $childTemplate = get_stylesheet_directory().'/src/template_parts/breadcrumbs.php';
+            $sauceTemplate = get_theme_directory().'/src/template_parts/breadcrumbs.php';
+            if(file_exists($childTemplate)){
+                $template = $childTemplate;
+            } elseif(file_exists($sauceTemplate)) {
+                $template = $sauceTemplate;
+            } else {
+                throw new \Exception('No breadcrumbs template was found.');
+            }
         }
 
         $crumbs = $this->getCrumbs();
