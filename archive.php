@@ -25,7 +25,7 @@ $breadcrumbs = new Breadcrumbs();
         <?php
         // Breadcrumbs
         //TODO: Please move this from the child to the master theme.
-        $breadcrumbs->render(get_stylesheet_directory().'/src/template_parts/breadcrumbs.php');
+        $breadcrumbs->render();
         ?>
 
         <main class="container clearfix py4">
