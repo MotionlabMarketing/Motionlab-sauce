@@ -14,7 +14,7 @@ class Breadcrumbs
     {
         if($template === null){
             $childTemplate = get_stylesheet_directory().'/src/template_parts/breadcrumbs.php';
-            $sauceTemplate = get_template_directory().'/src/template_parts/breadcrumbs.php';
+            $sauceTemplate = get_template_directory().'/TemplateParts/breadcrumbs.php';
             if(file_exists($childTemplate)){
                 $template = $childTemplate;
             } elseif(file_exists($sauceTemplate)) {
@@ -33,8 +33,10 @@ class Breadcrumbs
         global $post;
         $crumbs = [['label' => 'Home', 'href' => '/', 'class' => 'mlsbc-home']];
 
-        if(is_single()){
+        if (is_single()) {
             $trail = $this->getPostCrumbs($post);
+        } elseif(is_archive()) {
+            $trail = $this->getArchiveCrumbs();
         } else {
             $trail = $this->getPageCrumbs($post);
         }
@@ -88,6 +90,35 @@ class Breadcrumbs
                 'href' => get_permalink($ancestorId),
                 'class' => 'mlsbc-parent-page'
             ]);
+        }
+
+        return array_reverse($trail);
+    }
+
+    private function getArchiveCrumbs() : array
+    {
+        $trail = [];
+
+        if(is_post_type_archive()){
+            // TODO - get the post type name
+        } else {
+            $term = get_term(get_queried_object()->term_id);
+
+            array_push($trail, [
+                'label' => $term->name,
+                'href' => get_term_link($term->term_id),
+                'class' => 'mlsbc-archive'
+            ]);
+
+            $parentTerm = $term; // this just starts the loop correctly
+            while($parentTermId = wp_get_term_taxonomy_parent_id($parentTerm->term_id, $parentTerm->taxonomy)){
+                $parentTerm = get_term($parentTermId);
+                array_push($trail, [
+                    'label' => $parentTerm->name,
+                    'href' => get_term_link($parentTerm->term_id),
+                    'class' => 'mlsbc-archive'
+                ]);
+            }
         }
 
         return array_reverse($trail);
