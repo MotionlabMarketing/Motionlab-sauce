@@ -5,21 +5,31 @@ use Motionlab\Sauce\Components\Breadcrumbs;
 get_header();
 
 $breadcrumbs = new Breadcrumbs();
+
+// set some category specific variables or grab defaults
+if(is_category()){
+    $term = get_term(get_queried_object()->term_id);
+    $termIdentifier = $term->taxonomy.'_'.$term->term_id;
+    $backgroundImageSrc = get_field('archive_background', $termIdentifier);
+    $description = get_field('archive_description', $termIdentifier);
+} else {
+    $backgroundImageSrc = get_field('default_archive_background','options');
+    $description = get_field('default_archive_description','options');
+}
+
 ?>
 
     <section class="">
 
-        <?php //TODO: BG - Background Image from Category Page ?>
-        <div class="col col-12 py6 relative bg-cover bg-center py4 px4 mb4" style="background-image: url('http://local.sashwindows.d3z.uk/app/uploads/2020/01/steinar-engeland-hmIFzdQ6U5k-unsplash.jpg');" data-element="download-booklet">
+        <div class="col col-12 py6 relative bg-cover bg-center py4 px4 mb4" style="background-image: url('<?php echo $backgroundImageSrc; ?>');" data-element="download-booklet">
             <div class="absolute top-0 left-0 right-0 bottom-0 bg-overlay width-100 height-100 z1"></div>
 
             <div class="container relative z2 white py6">
-                <?php //TODO: Hook this up plz. Cat Title & Description ?>
-                <h1 class="h0 text-center mb3 h2">Category Title</h1>
-                <p class="mb0 text-center h4 md-col-8 lg-col-6 mx-auto">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.</p>
-
+                <h1 class="h0 text-center mb3 h2"><?php echo get_the_archive_title(); ?></h1>
+                <?php if($description !== null): ?>
+                    <p class="mb0 text-center h4 md-col-8 lg-col-6 mx-auto"><?php echo $description; ?></p>
+                <?php endif; ?>
             </div>
-        </div>
         </div>
 
         <?php
