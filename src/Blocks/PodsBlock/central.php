@@ -18,7 +18,7 @@ $rightPods = array_slice($this->blockConfiguration['pods_pods'], 3, 2);
                             <div class="p4 absolute left-0 top-0 width-100 height-100 flex items-center">
                                 <div class="">
                                     <h2 class="white mb2"><?php echo $lPod['pod_title']; ?></h2>
-                                    <p class="white h5 display-none md-block"><?php echo $lPod['pod_content'] ?></p>
+                                    <div class="white h5 display-none md-block"><?php echo $lPod['pod_content'] ?></div>
                                     <a href="<?php echo $lPod['pod_link']; ?>" class="btn btn-secondary h4">Discover More</a>
                                 </div>
                             </div>
@@ -30,7 +30,7 @@ $rightPods = array_slice($this->blockConfiguration['pods_pods'], 3, 2);
                         <div class="py3 px4 absolute top-0 height-100 width-100 bg-black flex items-center z2 reveal">
                             <div class="">
                                 <h3 class="white width-100"><?php echo $lPod['pod_title']; ?></h3>
-                                <p class="white h5 display-none md-block"><?php echo $lPod['pod_content'] ?></p>
+                                <div class="white h5 display-none md-block"><?php echo $lPod['pod_content'] ?></div>
                             </div>
                             <i class="fa fa-chevron-down white absolute bottom-0 right-0 p4"></i>
                         </div>
@@ -48,7 +48,7 @@ $rightPods = array_slice($this->blockConfiguration['pods_pods'], 3, 2);
                         <div class="py3 px4 absolute top-0 height-100 width-100 bg-black flex items-center z2 reveal">
                             <div class="">
                                 <h3 class="white width-100"><?php echo $cPod['pod_title']; ?></h3>
-                                <p class="white h5 display-none md-block"><?php echo $cPod['pod_content'] ?></p>
+                                <div class="white h5 display-none md-block"><?php echo $cPod['pod_content'] ?></div>
                             </div>
                             <i class="fa fa-chevron-down white absolute bottom-0 right-0 p4"></i>
                         </div>
@@ -69,7 +69,7 @@ $rightPods = array_slice($this->blockConfiguration['pods_pods'], 3, 2);
                                 <div class="py3 px4 absolute top-0 height-100 width-100 bg-black flex items-center z2 reveal">
                                     <div class="">
                                         <h3 class="white width-100"><?php echo $rPod['pod_title']; ?></h3>
-                                        <p class="white h5 display-none md-block"><?php echo $rPod['pod_content'] ?></p>
+                                        <div class="white h5 display-none md-block"><?php echo $rPod['pod_content'] ?></div>
                                     </div>
                                     <i class="fa fa-chevron-down white absolute bottom-0 right-0 p4"></i>
                                 </div>
