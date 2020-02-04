@@ -39,9 +39,9 @@ if( function_exists('acf_add_local_field_group') ):
                     'id' => '',
                 ),
                 'choices' => array(
-                    'xl-min-height-v100' => 'Full Screen Height',
-                    'xl-min-height-v75' => '75% Screen Height',
-                    'xl-min-height-v50' => '50% Screen Height',
+                    'min-height-v100' => 'Full Screen Height',
+                    'min-height-v75' => '75% Screen Height',
+                    'min-height-v50' => '50% Screen Height',
                 ),
                 'default_value' => array(
                 ),
