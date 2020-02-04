@@ -1,18 +1,30 @@
 <?php
 /*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*|Block Settings|~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*/
-    // Full Width: $this->blockConfiguration['banner_full_width'];
-    // Background Height: $this->blockConfiguration['banner_height'];
-    // Background Image: $this->blockConfiguration['banner_background_image'];
-    // Background Image Positino: $this->blockConfiguration['banner_background_position'];
-    // Background Overlay: $this->blockConfiguration['banner_overlay_colour'];
-    // Background Overlay Opacity: $this->blockConfiguration['banner_overlay_opacity'];
-    // Content : $this->blockConfiguration['banner_content'];
-    // Content HTML : $this->blockConfiguration['banner_content_html'];
-    // Content Position : $this->blockConfiguration['banner_content_alignment'];
+// Full Width: $this->blockConfiguration['banner_full_width'];
+// Background Height: $this->blockConfiguration['banner_height'];
+// Background Image: $this->blockConfiguration['banner_background_image'];
+// Background Image Positino: $this->blockConfiguration['banner_background_position'];
+// Background Overlay: $this->blockConfiguration['banner_overlay_colour'];
+// Background Overlay Opacity: $this->blockConfiguration['banner_overlay_opacity'];
+// Content : $this->blockConfiguration['banner_content'];
+// Content HTML : $this->blockConfiguration['banner_content_html'];
+// Content Position : $this->blockConfiguration['banner_content_alignment'];
 /*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*|Block Settings|~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*/
 $bannerImage = $this->blockConfiguration['banner_background_image'];
 $buttons = $this->blockConfiguration['banner_buttons'];
+
+$banners = $this->blockConfiguration['banner_banners'];
+
 ?>
+
+<?php foreach($banners as $banner) : ?>
+
+    <?php //@Chris here you need to loop over the banners and put each one in markup.
+    //          'banner_full_width' and 'banner_height' will stay the same but all of the
+    //          settings specific to a banner will need to be pulled in from the repeater
+    //          using similar code to this: get_field('banner_overlay_opacity', $banner->ID); ?>
+
+<?php endforeach; ?>
 
 <section class="banner-block relative <?php echo $this->blockConfiguration['banner_full_width'] == true ? '' : 'container' ?> px4 py5 <?php echo $this->blockConfiguration['banner_height']; ?> flex items-center">
 
@@ -43,7 +55,7 @@ $buttons = $this->blockConfiguration['banner_buttons'];
 
     <?php if (!empty($this->blockConfiguration['banner_offer_roundel']['sizes']['roundel'])) : ?>
         <div class="container absolute bottom-0 right-0 left-0">
-                <img class="roundel lg-absolute" src="<?php echo $this->blockConfiguration['banner_offer_roundel']['sizes']['roundel']; ?>" alt="<?php echo $this->blockConfiguration['banner_offer_roundel']['alt']; ?>">
+            <img class="roundel lg-absolute" src="<?php echo $this->blockConfiguration['banner_offer_roundel']['sizes']['roundel']; ?>" alt="<?php echo $this->blockConfiguration['banner_offer_roundel']['alt']; ?>">
         </div>
     <?php endif; ?>
 
@@ -54,14 +66,14 @@ $buttons = $this->blockConfiguration['banner_buttons'];
         <?php echo $this->blockConfiguration['banner_content']; ?>
         <?php echo $this->blockConfiguration['banner_content_html']; ?>
         <?php if ($buttons):?>
-        <div class="mxn1">
-            <?php foreach ($buttons as $button): ?>
-            <a href="<?php echo $button['button']['url'];?>" class="btn btn-primary white bg-primary mx1">
-                <?php echo $button['button']['title'];?>
-                <span class="h5 ml2"><?php echo $button['icon'] ?></span>
-            </a>
-            <?php endforeach;?>
-        </div>
+            <div class="mxn1">
+                <?php foreach ($buttons as $button): ?>
+                    <a href="<?php echo $button['button']['url'];?>" class="btn btn-primary white bg-primary mx1">
+                        <?php echo $button['button']['title'];?>
+                        <span class="h5 ml2"><?php echo $button['icon'] ?></span>
+                    </a>
+                <?php endforeach;?>
+            </div>
         <?php endif;?>
     </div>
 </section>
