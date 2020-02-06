@@ -41,7 +41,7 @@ img {
 svg { max-height: 100%; }
 
 hr {
-  border-color: $smoke;
+  border-color: grey;
   border-width: 1px 0 0 0;
   border-style: solid;
   box-sizing: content-box;
@@ -66,5 +66,5 @@ button::-moz-focus-inner,
 
 select:-moz-focusring {
   color: transparent;
-  text-shadow: 0 0 0 $black;
+  text-shadow: 0 0 0 #000;
 }

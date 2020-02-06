@@ -34,9 +34,9 @@ gulp.task(
         _productionStart,
         gulp.parallel(
             _handleSCSS,
-            _handleScripts,
             _handleProductionSCSS,
             _handleProductionScripts,
+            _handleProductionScriptsPlugins,
             _handleImages
         )
     )
@@ -44,12 +44,12 @@ gulp.task(
 
 // Single tasks
 gulp.task("scss", _handleSCSS);
-gulp.task("js", _handleScripts);
 gulp.task("images", _handleImages);
 
 // Production tasks
 gulp.task("production-scss", _handleProductionSCSS);
 gulp.task("production-js", _handleProductionScripts);
+gulp.task("production-js-plugins", _handleProductionScriptsPlugins);
 gulp.task("production-package", _productionPackage);
 
 
@@ -66,7 +66,7 @@ function _watcher(done) {
     // Source file watchers
     gulp.watch(
         "src/js/**/*.js",
-        gulp.parallel(_handleScripts, _handleProductionScripts)
+        gulp.parallel(_handleProductionScripts, _handleProductionScriptsPlugins)
     );
     gulp.watch(
         "src/**/*.scss",
@@ -77,7 +77,6 @@ function _watcher(done) {
     // Distination file watchers
     done();
 }
-
 
 // Handle the proccessing of SCSS
 function _handleSCSS(done) {
@@ -114,22 +113,19 @@ function _handleProductionSCSS(done) {
     done();
 }
 
-// Handle the proccessing of any JavaScript files
-function _handleScripts(done) {
-    gulp.src(["src/js/**/*.js"])
-        .pipe(babel({ presets: ["env"] }))
-        .pipe(concat("app.js"))
+// Handle the proccessing of any JavaScript files with compression
+function _handleProductionScripts(done) {
+    gulp.src(["src/js/*.js"])
+        .pipe(concat("app.min.js"))
+        .pipe(uglify())
         .pipe(gulp.dest("dist/js"));
     done();
 }
 
-// Handle the proccessing of any JavaScript files with compression
-function _handleProductionScripts(done) {
-    gulp.src("src/js/**/*.js")
-        .pipe(babel({ presets: ["env"] }))
-        .pipe(concat("app.js"))
+function _handleProductionScriptsPlugins(done) {
+    gulp.src(["src/js/lib/*.js"])
+        .pipe(concat("app-plugins.min.js"))
         .pipe(uglify())
-        .pipe(rename({ suffix: ".min" }))
         .pipe(gulp.dest("dist/js"));
     done();
 }
