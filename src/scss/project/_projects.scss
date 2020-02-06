@@ -1,0 +1,446 @@
+
+// Tabs
+
+[data-tabs="buttons"]{
+    button:not(.tab-active){
+        opacity: 0.75;
+        background: none;
+        @media (min-width: $breakpoint-md) {
+            margin-top: $space-1;
+            margin-bottom: $space-1;
+        }
+    }
+    button{
+        width: 100%;
+        &.tab-active{
+        }
+        @media (min-width: $breakpoint-md) {
+            position: relative;
+            &:after{
+                content: "";
+                display: block;
+                position: absolute;
+                left:0;
+                right:0;
+                bottom:-20px;
+                height: 20px;
+            }
+            &.tab-active{
+                &:after{
+                }
+            }
+            width: auto;
+            margin-left: $space-1;
+            margin-right: $space-1;
+        }
+    }
+}
+@media (min-width: $breakpoint-md) {
+    [data-tabs="content"] img + div > ul{
+        position: relative;
+        left: $space-3;
+    }
+}
+
+.tab-active {
+    box-shadow: none;
+    &:hover, &:focus{
+        box-shadow: none;
+    }
+}
+
+
+// Standard
+
+address {
+  font-style: normal;
+}
+
+
+.one-col {
+  column-count: 1;
+}
+
+.two-col {
+  column-count: 2;
+  column-gap: $space-2;
+}
+
+@include generate-breakpoint-prefixes {
+  &one-col { column-count: 1; }
+  &two-col { column-count: 2; column-gap: $space-4; }
+}
+
+
+// WYSIWYG
+
+.wysiwyg {
+
+  a:not(.btn) {
+    text-decoration: underline;
+  }
+
+  p {
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+ul{
+    padding-left: 1rem;
+}
+
+.wysiwyg {
+
+  :first-child {
+    margin-top: 0;
+  }
+
+  :last-child {
+    margin-bottom: 0;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+
+    + ul,
+    + figure {
+      margin-top: 0;
+    }
+  }
+
+  p {
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    & + h1,
+    & + h2,
+    & + h3,
+    & + h4,
+    & + h5,
+    & + h6 {
+      margin-top: $space-4;
+    }
+  }
+
+  img[style*="float:left"],
+  img[style*="float: left"],
+  .alignleft,
+  img[style*="float:right"],
+  img[style*="float: right"],
+  .alignright {
+    max-width: 40%;
+  }
+
+  img[style*="float:left"],
+  img[style*="float: left"],
+  .alignleft{
+    float: left;
+    margin: $space-1 $space-4 $space-4 0;
+  }
+
+  img[style*="float:right"],
+  img[style*="float: right"],
+  .alignright {
+    float: right;
+    margin: $space-1 0 $space-4 $space-4;
+  }
+
+  figure {
+    margin: $space-4 0;
+
+    img {
+      display: block;
+    }
+
+    figcaption {
+      font-size: $h5;
+      margin-top: $space-1;
+    }
+  }
+
+  ul {
+    margin: $space-2 0;
+    list-style-type: none;
+    li{
+        position: relative;
+        display: flex;
+    }
+    li:before{
+        content:'>';
+        font-family: "Font Awesome 5 Pro";
+        position: relative;
+        left: $space-2 * - 1;
+        content: "\f054";
+        font-weight: bold;
+        top: 0.1rem;
+    }
+
+    ul {
+      margin: 0;
+    }
+  }
+}
+
+
+
+// NINJA FORMS
+.nf-form-title h3{
+    font-size: 2rem !important;
+}
+
+.nf-form-wrap{
+    .nf-form-content {
+        max-width: none;
+        margin-left: -5px;
+        margin-right: -5px;
+        padding: 0;
+        .nf-field-container.submit-container .nf-field-element .ninja-forms-field{
+            margin: 0 !important;
+        }
+    }
+
+    // HIDES FIELDS MARKED CONTENT
+    .nf-form-fields-required{
+        display: none;
+    }
+
+    // FIXES ALIGNMENT ISSUE OF CHECKBOX
+    .mailchimp-optin-wrap{
+        label{
+            height: auto !important;
+            padding-left: 30px !important;
+            &:before, &:after{
+                bottom: auto;
+                top: 0;
+            }
+        }
+    }
+
+    .nf-form-content .nf-field-container.submit-container .nf-field-element .ninja-forms-field{
+        font-family: inherit;
+        font-weight: bold;
+        font-size: inherit;
+        &:hover{
+            cursor: pointer;
+        }
+    }
+
+    .g-recaptcha > div{
+        position: relative;
+    }
+
+}
+
+
+/**
+ * COMPENSATE FOR WHEN WP ADMIN BAR IS ENABLED
+ */
+#wpadminbar {
+  top: 0;
+  position: fixed;
+}
+
+.admin-bar {
+
+  header {
+    top: 46px;
+
+    @media (min-width: $breakpoint-md) {
+      top: 32px;
+    }
+  }
+
+  [data-element="mobile-menu"] {
+    top: 46px;
+  }
+}
+
+
+
+
+.headroom {
+    will-change: transform;
+    transition: transform 200ms linear;
+}
+.headroom--pinned {
+    transform: translateY(0%);
+}
+.headroom--unpinned {
+    transform: translateY(-100%);
+}
+
+
+
+
+
+
+@media (min-width: $breakpoint-md) {
+    header:not([data-element="mobile-header"]){
+        height:$header-height;
+    }
+
+    html{
+        padding-top: $header-height;
+    }
+}
+
+@media (max-width: $breakpoint-md) {
+    html{
+        padding-top: $mobile-menu-height;
+    }
+}
+
+
+
+html.menu-open {
+    body {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+    }
+
+    [data-element="mobile-menu"] {
+        transition: all 0.2s ease;
+        transform: translateX(0%);
+        visibility: visible;
+    }
+}
+
+[data-element="mobile-header"]{
+    .mobile-header-container{
+        height: $mobile-menu-height;
+    }
+}
+
+[data-element="mobile-menu"] {
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 600;
+    position: fixed;
+    visibility: hidden;
+    transition: all 0.2s ease;
+    transform: translateX(100%);
+    padding-top: $mobile-menu-height;
+
+    @media (min-width: $breakpoint-lg) {
+        display: none;
+    }
+
+    .menu-mobile {
+        height: 100%;
+
+        > ul,
+        > div {
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
+            height: 100%;
+        }
+    }
+
+    ul, div {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+
+        > li {
+            cursor: pointer;
+            margin-bottom: 0;
+            position: relative;
+
+            > a {
+                display: flex;
+                padding-left: 1rem;
+                align-items: center;
+                height: 60px;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            }
+
+            ul {
+                margin: 0;
+                display: none;
+                list-style: none;
+
+                > li {
+                    background-color: rgba(0,0,0,0.2);
+
+                    > a {
+                        padding-left: 2rem;
+                    }
+
+                    > ul {
+                        margin: 0;
+                        display: none;
+                        list-style: none;
+
+                        > li {
+                            background-color: rgba(0,0,0,0.2);
+
+                            > a {
+                                padding-left: 3rem;
+                            }
+                        }
+                    }
+                }
+            }
+
+            > &.current-menu-item {
+                > a {
+                }
+            }
+
+            &.menu-item-has-children {
+                .menu-item-child-trigger {
+                    top: 0;
+                    right: 0;
+                    font-size: 1.5rem;
+                    font-weight: 700;
+                    position: absolute;
+                    transition: all 0.5s ease;
+                    width: $mobile-menu-height;
+                    height: $mobile-menu-height;
+                    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+
+                    &:after {
+                        top: 50%;
+                        right: 35px;
+                        opacity: 0.9;
+                        content: "\f078";
+                        font-weight: 700;
+                        position: absolute;
+                        transform: translate(50%, -50%);
+                        font-family: "Font Awesome 5 Pro";
+                    }
+                }
+
+                &.menu-item-child-active > .menu-item-child-trigger::after {
+                    transform: rotate(180deg);
+                    transform-origin: 75% 25%;
+                }
+            }
+
+            &.menu-item-child-active {
+                > .sub-menu {
+                    display: block;
+                }
+            }
+        }
+    }
+}
