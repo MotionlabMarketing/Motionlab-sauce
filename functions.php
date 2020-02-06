@@ -63,8 +63,7 @@ add_action('after_setup_theme', 'together_dental_setup');
 add_action('wp_enqueue_scripts', 'main_styles_enqueue');
 function main_styles_enqueue()
 {
-    wp_enqueue_style('parent-style', get_template_directory_uri() . '/dist/css/main.css');
-    wp_enqueue_script('fitvid', get_template_directory_uri() . '/assets/js/plugins/fitvid/jquery.fitvids.js', array('jquery'), '1.00.000', false);
+    wp_enqueue_style('parent-style', get_template_directory_uri() . '/dist/css/frontend.min.css');
 }
 
 /**
@@ -244,17 +243,22 @@ function twentytwenty_register_scripts()
         wp_enqueue_script('comment-reply');
     }
 
-    /** TYPEKIT **/
-    wp_register_script('TypeKit', 'https://kit.fontawesome.com/895942eb5d.js', null, null, true);
-    wp_enqueue_script('TypeKit');
-
-    /** MAIN THEME JS **/
-    wp_register_script('MainJS', get_template_directory_uri() . '/dist/js/min/main-min.js', array('jquery'), null, true);
-    wp_enqueue_script('MainJS');
+    /** FONTAWESOME **/
+    wp_register_script('Fontawesome', 'https://kit.fontawesome.com/895942eb5d.js', null, null, true);
+    wp_enqueue_script('Fontawesome');
 
     /** GOOGLE FONTS **/
     wp_enqueue_style('wpb-google-fonts', 'https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700&display=swap', false);
     wp_enqueue_script('wpb-google-fonts');
+
+    /** MAIN THEME JS PLUGINS **/
+    wp_register_script('MainJS-Plugins', get_template_directory_uri() . '/dist/js/app-plugins.min.js', array('jquery'), null, true);
+    wp_enqueue_script('MainJS-Plugins');
+
+    /** MAIN THEME JS **/
+    wp_register_script('MainJS', get_template_directory_uri() . '/dist/js/app.min.js', array('jquery','MainJS-Plugins'), null, true);
+    wp_enqueue_script('MainJS');
+
 }
 
 
