@@ -10,11 +10,17 @@ $breadcrumbs = new Breadcrumbs();
 if(is_category()){
     $term = get_term(get_queried_object()->term_id);
     $termIdentifier = $term->taxonomy.'_'.$term->term_id;
-    $backgroundImageSrc = get_field('archive_background', $termIdentifier);
+    $backgroundImageSrc = get_field('archive_background', $termIdentifier)['url'];
     $description = get_field('archive_description', $termIdentifier);
+    if (!$backgroundImageSrc) {
+        $backgroundImageSrc = get_field('options_archive_defaults','option')['default_archive_background']['url'];
+    }
+    if (!$description) {
+        $description = get_field('options_archive_defaults','option')['default_archive_description'];
+    }
 } else {
-    $backgroundImageSrc = get_field('default_archive_background','options');
-    $description = get_field('default_archive_description','options');
+    $backgroundImageSrc = get_field('options_archive_defaults','option')['default_archive_background']['url'];
+    $description = get_field('options_archive_defaults','option')['default_archive_description'];
 }
 
 ?>
