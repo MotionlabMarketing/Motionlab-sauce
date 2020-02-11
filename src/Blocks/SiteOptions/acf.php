@@ -663,3 +663,95 @@ if( function_exists('acf_add_local_field_group') ):
     ));
 
 endif;
+
+#Social Settings
+if( function_exists('acf_add_local_field_group') ):
+
+    acf_add_local_field_group(array(
+        'key' => 'group_5e203f3c95a9f',
+        'title' => 'Social Accounts',
+        'fields' => array(
+            array(
+                'key' => 'field_5e203ff020d9a',
+                'label' => 'Social Accounts',
+                'name' => 'options_social_accounts',
+                'type' => 'repeater',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'collapsed' => '',
+                'min' => 0,
+                'max' => 0,
+                'layout' => 'table',
+                'button_label' => '',
+                'sub_fields' => array(
+                    array(
+                        'key' => 'field_5e20404c20d9b',
+                        'label' => 'Profile Link',
+                        'name' => 'link',
+                        'type' => 'link',
+                        'instructions' => 'Enter the URL of your social profile.',
+                        'required' => 0,
+                        'conditional_logic' => 0,
+                        'wrapper' => array(
+                            'width' => '66',
+                            'class' => '',
+                            'id' => '',
+                        ),
+                        'return_format' => 'array',
+                    ),
+                    array(
+                        'key' => 'field_5e20408c20d9c',
+                        'label' => 'Icon',
+                        'name' => 'icon',
+                        'type' => 'font-awesome',
+                        'instructions' => 'Select the correct social icon.',
+                        'required' => 0,
+                        'conditional_logic' => 0,
+                        'wrapper' => array(
+                            'width' => '33',
+                            'class' => '',
+                            'id' => '',
+                        ),
+                        'icon_sets' => array(
+                            0 => 'fab',
+                        ),
+                        'custom_icon_set' => '',
+                        'default_label' => '',
+                        'default_value' => '',
+                        'save_format' => 'element',
+                        'allow_null' => 0,
+                        'show_preview' => 1,
+                        'enqueue_fa' => 0,
+                        'fa_live_preview' => '',
+                        'choices' => array(
+                        ),
+                    ),
+                ),
+            ),
+        ),
+        'location' => array(
+            array(
+                array(
+                    'param' => 'options_page',
+                    'operator' => '==',
+                    'value' => 'acf-options',
+                ),
+            ),
+        ),
+        'menu_order' => 0,
+        'position' => 'normal',
+        'style' => 'default',
+        'label_placement' => 'top',
+        'instruction_placement' => 'label',
+        'hide_on_screen' => '',
+        'active' => true,
+        'description' => '',
+    ));
+
+endif;
