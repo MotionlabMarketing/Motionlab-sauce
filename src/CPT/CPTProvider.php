@@ -11,7 +11,10 @@ class CPTProvider
         $this->bootstrap();
     }
 
-    /* Initialize all global CPTs - if a CPT should only register on the master site, add their declaration to registerMasterSitePostTypes() */
+    /* Initialize all global CPTs
+     * - if a CPT should only register on the master site,
+     * add their declaration to registerMasterSitePostTypes()
+     */
     private function bootstrap()
     {
         new CPT_CallToActions();
@@ -20,6 +23,7 @@ class CPTProvider
         new CPT_Testimonials();
         new CPT_Jobs();
         new CPT_Locations();
+        new CPT_Installers();
     }
 
 }
