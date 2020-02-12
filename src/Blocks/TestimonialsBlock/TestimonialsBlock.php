@@ -9,6 +9,7 @@ class TestimonialsBlock extends Block
 {
     public function init() {
         if($this->blockConfiguration['testimonials_full_size'] == 'mini') {
+            $this->layout = 'mini_block';
             include(__DIR__ . '/mini_block.php');
         }else{
             include(__DIR__ . '/block.php');

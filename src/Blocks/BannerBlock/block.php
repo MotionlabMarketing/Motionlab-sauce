@@ -15,7 +15,7 @@
 $banners = $this->blockConfiguration['banner_banners'];
 ?>
 
-<section class="js-hero-slider">
+<section class="js-hero-slider" <?php echo $this->getAttributeString() ?>>
 
     <?php foreach($banners as $banner) : ?>
 

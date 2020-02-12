@@ -9,7 +9,7 @@
 $buttons = $this->blockConfiguration['alternating_media_buttons'];
 ?>
 
-<section class="px4 <?php echo $this->blockConfiguration['alternating_media_padding'] == true ? 'py5' : '' ?> <?php echo $this->blockConfiguration['alternating_media_background_colour']; ?>">
+<section class="px4 <?php echo $this->blockConfiguration['alternating_media_padding'] == true ? 'py5' : '' ?> <?php echo $this->blockConfiguration['alternating_media_background_colour']; ?>"  <?php echo $this->getAttributeString() ?>>
     <div class="container">
         <div class="mxn3 md-flex <?php echo $this->blockConfiguration['alternating_media_image_position'] == 'left' ? '' : 'flex-row-reverse' ?> ">
             <div class="col-12 px3 min-height-100">

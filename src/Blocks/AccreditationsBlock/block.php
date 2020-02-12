@@ -7,7 +7,7 @@
 /*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*|Block Settings|~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*/
 ?>
 
-<section class="<?php echo $this->blockConfiguration['button_full_width'] == true ? '' : 'px4' ?> py3 <?php echo $this->blockConfiguration['background_colour'] ? $this->blockConfiguration['background_colour']  : ''; ?> ">
+<section class="<?php echo $this->blockConfiguration['button_full_width'] == true ? '' : 'px4' ?> py3 <?php echo $this->blockConfiguration['background_colour'] ? $this->blockConfiguration['background_colour']  : ''; ?> "  <?php echo $this->getAttributeString() ?>>
 
     <div class="" data-element="accreditations-slider-<?php echo $row_index; ?>">
     <?php foreach ($this->blockConfiguration['accreditations_accreditations'] as $accreditation) : ?>
