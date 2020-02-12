@@ -10,7 +10,7 @@ $testimonials = $this->getTestimonials();
 //$this->blockConfiguration['background_colour'] ? $this->blockConfiguration['background_colour']  : 'bg-light-grey';
 ?>
 
-<section class="bg-light-grey py5">
+<section class="bg-light-grey py5" <?php echo $this->getAttributeString() ?>>
     <div class="js-testimonial-carousel pb4">
 
         <?php foreach ($testimonials as $testimonial) : ?>

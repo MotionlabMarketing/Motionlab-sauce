@@ -7,7 +7,7 @@
 ~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*|Block Settings|~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*/
 ?>
 
-<section class="block_2column clearfix px4 py5 <?php echo $this->blockConfiguration['background_colour'] ? $this->blockConfiguration['background_colour']  : ''; ?>">
+<section class="block_2column clearfix px4 py5 <?php echo $this->blockConfiguration['background_colour'] ? $this->blockConfiguration['background_colour']  : ''; ?>" <?php echo $this->getAttributeString() ?>>
     <div class="container">
     <?php if (!empty($this->blockConfiguration['two_columns_introduction'])) : ?>
     <div class="<?php echo (!empty($this->blockConfiguration['two_columns_left_column']) || !empty($this->blockConfiguration['two_columns_right_column'])) ? "mb5":""; ?> wysiwyg">

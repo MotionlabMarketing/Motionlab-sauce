@@ -8,7 +8,7 @@
 /*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*|Block Settings|~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*/
 ?>
 
-<section class="<?php echo $this->blockConfiguration['background_colour'] ? $this->blockConfiguration['background_colour']  : 'bg-light-grey'; ?> px4 py5">
+<section class="<?php echo $this->blockConfiguration['background_colour'] ? $this->blockConfiguration['background_colour']  : 'bg-light-grey'; ?> px4 py5" <?php echo $this->getAttributeString() ?>>
     <div class="container text-center">
         <h2 class="h1 dark-purple"><?php echo $this->blockConfiguration['form_title'];?></h2>
         <p><?php echo $this->blockConfiguration['form_subtitle']; ?></p>
