@@ -4,7 +4,7 @@
 /*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*|Block Settings|~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*/
 ?>
 
-<section class="<?php echo $this->blockConfiguration['button_full_width'] == True ? '' : 'px4' ?> py5 <?php echo $this->blockConfiguration['background_colour'] ? $this->blockConfiguration['background_colour']  : ''; ?>">
+<section class="<?php echo $this->blockConfiguration['button_full_width'] == True ? '' : 'px4' ?> py5 <?php echo $this->blockConfiguration['background_colour'] ? $this->blockConfiguration['background_colour']  : ''; ?>"  <?php echo $this->getAttributeString() ?>>
 
     <div class="<?php echo $this->blockConfiguration['button_full_width'] == True ? '' : 'container' ?>">
 

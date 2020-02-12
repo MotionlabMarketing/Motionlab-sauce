@@ -10,7 +10,7 @@ $testimonials = $this->getTestimonials();
 
 ?>
 
-<section class="bg-secondary">
+<section class="bg-secondary" <?php echo $this->getAttributeString() ?>>
     <ul class="js-webticker">
         <?php foreach($testimonials as $testimonial) :?>
             <li data-update="item<?php echo $i;?>">

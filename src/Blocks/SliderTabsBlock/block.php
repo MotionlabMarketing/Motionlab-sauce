@@ -16,7 +16,7 @@
 $row_index = get_row_index();
 ?>
 
-<section class="slider-tabs-block bg-light-grey <?php echo ($this->blockConfiguration["full_width"]) ? "":"container"; ?>" data-block-name="slider-tabs-block">
+<section class="slider-tabs-block bg-light-grey <?php echo ($this->blockConfiguration["full_width"]) ? "":"container"; ?>" data-block-name="slider-tabs-block" <?php echo $this->getAttributeString() ?>>
 
     <?php if (count($this->blockConfiguration["slider_and_tabs_slides"]) > 1): ?>
         <div class="" data-element="slider-tabs-block-<?php echo $row_index; ?>">

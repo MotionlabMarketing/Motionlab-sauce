@@ -6,7 +6,7 @@ $rightPods = array_slice($this->blockConfiguration['pods_pods'], 3, 2);
 
 ?>
 
-<section class="py6 px4 display-none md-block">
+<section class="py6 px4 display-none md-block"  <?php echo $this->getAttributeString() ?>>
     <div class="container">
         <div class="mxn3 flex flex-wrap lg-flex-nowrap">
             <div class="px3 col-12 sm-col-6 lg-col-6 lg-mb0">

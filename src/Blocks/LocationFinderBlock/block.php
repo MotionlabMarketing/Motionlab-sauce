@@ -5,7 +5,7 @@
 ~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*|Block Settings|~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*/
 ?>
 
-<section class="px4 py4" <?php echo (!empty($this->blockConfiguration["location_finder_background_colour"])) ? "style='background-color: {$this->blockConfiguration["location_finder_background_colour"]}'":""; ?>>
+<section class="px4 py4" <?php echo (!empty($this->blockConfiguration["location_finder_background_colour"])) ? "style='background-color: {$this->blockConfiguration["location_finder_background_colour"]}'":""; ?> <?php echo $this->getAttributeString() ?>>
     <div class="container md-flex justify-center items-center">
         <div class="mr4 text-center md-text-left">
             <h3 class="black h2 md-mb0"><?php echo $this->blockConfiguration["location_finder_content"]; ?></h3>
