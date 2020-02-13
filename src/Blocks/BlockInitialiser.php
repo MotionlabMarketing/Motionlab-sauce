@@ -20,8 +20,8 @@ class BlockInitialiser
 
         //Loop over remaining folders to find acf.php for each block
         foreach($blockFolders as $bf) {
-            if(file_exists(get_stylesheet_directory_uri() . "/src/Blocks/$bf/acf.php")) {
-                include get_stylesheet_directory_uri() . "/src/Blocks/$bf/acf.php";
+            if(file_exists(get_stylesheet_directory() . "/src/Blocks/$bf/acf.php")) {
+                include get_stylesheet_directory() . "/src/Blocks/$bf/acf.php";
             } else if(file_exists(__DIR__ . "/$bf/acf.php")) {
                 include __DIR__ . "/$bf/acf.php";
             }
