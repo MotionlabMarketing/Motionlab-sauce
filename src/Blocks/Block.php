@@ -37,7 +37,7 @@ class Block
     {
         $attributeString = 'data-block-id="%s" data-block-name="%s" data-block-position="%d" data-block-layout="%s"';
         $position = BlockPositionAuthority::instance()->getCurrentBlockPosition();
-        $name = self::class;
+        $name = static::class;
         $pageId = BlockPositionAuthority::instance()->getPageId();
         $id = $pageId.'-'.$position;
         return sprintf($attributeString, $id, $name, $position, $this->layout);
