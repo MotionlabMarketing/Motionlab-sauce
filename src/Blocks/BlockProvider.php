@@ -28,7 +28,7 @@ use Motionlab\Sauce\Blocks\MeetTheTeamBlock\MeetTheTeamBlock;
 class BlockProvider
 {
 
-    protected $blocks = [
+    private static $blocks = [
         'accreditations' => AccreditationsBlock::class,
         'alternating_media' => AlternatingMediaBlock::class,
         'banner' =>  BannerBlock::class,
@@ -58,12 +58,25 @@ class BlockProvider
         if(isset($layout["acf_fc_layout"]))
             $layoutName = $layout["acf_fc_layout"];
 
-        if(isset($this->blocks[$layoutName])){
-            new $this->blocks[$layoutName]($layout);
+        if(isset(self::$blocks[$layoutName])){
+            new self::$blocks[$layoutName]($layout);
         } else {
             echo "Missing block : " . $layoutName;
         }
 
+
+    }
+
+    /**
+     * @param string $blockSlug
+     * @param Block $classOverride
+     *
+     * This will be used to overwrite Sauce blocks with blocks in the child theme. This should be called with
+     * the slug of the block to be replaced (list of blocks in $this->blocks) and the class of the block.
+     */
+    public static function overrideBlockClass(string $blockSlug, string $classOverride) {
+
+        self::$blocks[$blockSlug] = $classOverride;
 
     }
 }
