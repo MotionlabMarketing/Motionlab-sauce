@@ -34,7 +34,7 @@ class Theme
         new TemplateInitialiser();
 
         $cptProvider = new CPTProvider();
-        add_action('after_setup_theme', [$cptProvider, 'bootstrap']);
+        add_action('init', [$cptProvider, 'bootstrap']);
 
         new MenuLocations();
         $this->registerImageSizes();
