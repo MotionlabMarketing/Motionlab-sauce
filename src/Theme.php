@@ -33,7 +33,9 @@ class Theme
         new BlockInitialiser();
         new TemplateInitialiser();
 
-        new CPTProvider();
+        $cptProvider = new CPTProvider();
+        add_action('after_setup_theme', [$cptProvider, 'bootstrap']);
+
         new MenuLocations();
         $this->registerImageSizes();
         $this->registerShortcodes();
