@@ -40,6 +40,10 @@ class BlogBlock extends Block
 
         if ($this->blockConfiguration['blog_display_type'] === 'manual') {
             $args['post__in'] = $this->blockConfiguration['blog_selected'];
+        } else if($this->blockConfiguration['blog_display_type'] === 'category') {
+            if(isset($this->blockConfiguration['blog_selected_category']) && $this->blockConfiguration['blog_selected_category']->term_id) {
+                $args['cat'] = $this->blockConfiguration['blog_selected_category']->term_id;
+            }
         }
 
         $query = new WP_Query($args);
