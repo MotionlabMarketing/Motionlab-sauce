@@ -180,7 +180,22 @@ if( function_exists('acf_add_local_field_group') ):
                 'min' => 3,
                 'max' => 12,
                 'return_format' => 'id',
-            )
+            ),
+            array(
+                'key' => 'field_ 0fb5b8ec42c0',
+                'label' => 'Footer Button',
+                'name' => 'blog_footer_button',
+                'type' => 'link',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'return_format' => 'array',
+            ),
         ),
         'location' => array(
             array(
