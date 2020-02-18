@@ -5,6 +5,33 @@ if( function_exists('acf_add_local_field_group') ):
         'title' => 'Block - Blog',
         'fields' => array(
             array(
+                'key' => 'field_6cb93f41c7bd382c',
+                'label' => 'Layout',
+                'name' => 'blog_layout',
+                'type' => 'select',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'choices' => array(
+                    'basic' => '3 Column',
+                    '4col' => '4 Column',
+                    'slider' => 'Slider (9 posts)',
+                ),
+                'default_value' => array(
+                ),
+                'allow_null' => 0,
+                'multiple' => 0,
+                'ui' => 1,
+                'ajax' => 0,
+                'return_format' => 'value',
+                'placeholder' => '',
+            ),
+            array(
                 'key' => 'field_5dfb9bf164ae5',
                 'label' => 'Background Colour',
                 'name' => 'background_colour',
@@ -60,6 +87,7 @@ if( function_exists('acf_add_local_field_group') ):
                 'choices' => array(
                     'manual' => 'Manually Select',
                     'latest' => 'Latest Posts',
+                    'category' => 'By Category'
                 ),
                 'default_value' => array(
                 ),
@@ -122,6 +150,36 @@ if( function_exists('acf_add_local_field_group') ):
                 'min' => 3,
                 'max' => 12,
                 'return_format' => 'id',
+            ),
+            array(
+                'key' => 'field_5e4c1268d0371',
+                'label' => 'Selected Category',
+                'name' => 'blog_selected_category',
+                'type' => 'taxonomy',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => array(
+                    array(
+                        array(
+                            'field' => 'field_5dd6c574915aa',
+                            'operator' => '==',
+                            'value' => 'category',
+                        ),
+                    ),
+                ),
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'taxonomy' => 'category',
+                'field_type' => 'select',
+                'allow_null' => 0,
+                'add_term' => 0,
+                'save_terms' => 0,
+                'load_terms' => 0,
+                'return_format' => 'object',
+                'multiple' => 0,
             ),
         ),
         'location' => array(
