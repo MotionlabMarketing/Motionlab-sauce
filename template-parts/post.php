@@ -1,3 +1,9 @@
+<?php
+$post->category_id = get_post_meta($post->id, 'rank_math_primary_category', true);
+$post->category_id = $post->category_id ? $post->category_id : wp_get_post_categories($post->ID)[0];
+$post->category_primary = get_term($post->category_id);
+?>
+
 <div class="p3 mb4 hover-zoom" data-mh="post">
 
     <a href="<?php the_permalink(); ?>" class="block box-shadow zoom">
@@ -23,8 +29,11 @@
 
         <div class="px4 py4 black" data-mh="post-content">
 
-            <?php //TODO: Please hook this up; ?>
-            <p class="h5 ls1 uppercase mb2 black">Category</p>
+            <p class="h5 ls1 uppercase mb2 black">
+                <?php if (!empty($post->category_primary)) :
+                    echo $post->category_primary->name;
+                endif; ?>
+            </p>
             <h5 class="h4 black mb0"><?php echo $post->post_title ?></h5>
             <?php if (!empty($post->post_excerpt)) : ?>
                 <p class="mt2 mb0 inherit"><?php echo $post->post_excerpt ?></p>
