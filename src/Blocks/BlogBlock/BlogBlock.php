@@ -12,26 +12,34 @@ class BlogBlock extends Block
 
     public function init()
     {
-        $this->loadPosts();
-        include(__DIR__ . '/block.php');
+        switch($this->blockConfiguration['blog_layout']) {
+            case 'slider':
+                $this->loadPosts(9);
+                include (__DIR__ . '/slider.php');
+                break;
+            case '4col':
+                $this->loadPosts(4);
+                include (__DIR__ . '/four-column.php');
+                break;
+            default:
+                $this->loadPosts(3);
+                include(__DIR__ . '/block.php'); // 3 col
+                break;
+        }
     }
 
-    private function loadPosts()
-    {
+    private function loadPosts($count) {
         $returnPosts = [];
         $args = [
             'post_type' => 'post',
             'post_status' => 'publish',
-            'posts_per_page' => 3,
+            'posts_per_page' => $count,
             'orderby' => 'date',
             'order' => 'DESC'
         ];
 
         if ($this->blockConfiguration['blog_display_type'] === 'manual') {
             $args['post__in'] = $this->blockConfiguration['blog_selected'];
-        } elseif ($this->blockConfiguration['blog_display_type'] === 'latest') {
-            // switch to the master site
-            switch_to_blog(get_network()->site_id);
         }
 
         $query = new WP_Query($args);
@@ -51,8 +59,6 @@ class BlogBlock extends Block
             $returnPosts[] = $post;
         }
 
-        // return to the current site
-        restore_current_blog();
         $this->posts = $returnPosts;
     }
 
