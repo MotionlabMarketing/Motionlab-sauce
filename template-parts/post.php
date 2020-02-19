@@ -4,7 +4,7 @@ $post->category_id = $post->category_id ? $post->category_id : wp_get_post_categ
 $post->category_primary = get_term($post->category_id);
 ?>
 
-<div class="p3 mb4 hover-zoom" data-mh="post">
+<article class="p3 mb4 hover-zoom" data-mh="post">
 
     <a href="<?php the_permalink(); ?>" class="block box-shadow zoom">
 
@@ -43,4 +43,4 @@ $post->category_primary = get_term($post->category_id);
 
     </a>
 
-</div>
+</article>
