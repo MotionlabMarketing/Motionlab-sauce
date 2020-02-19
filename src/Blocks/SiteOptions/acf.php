@@ -494,6 +494,82 @@ if( function_exists('acf_add_local_field_group') ):
                     ),
                 ),
             ),
+            array(
+                'key' => 'field_221682d217732',
+                'label' => 'Defaults and Fallbacks',
+                'name' => '',
+                'type' => 'tab',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'placement' => 'top',
+                'endpoint' => 0,
+            ),
+            array(
+                'key' => 'field_3bc9b0bfb4806',
+                'label' => 'Archive Defaults',
+                'name' => 'options_archive_defaults',
+                'type' => 'group',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'layout' => 'block',
+                'sub_fields' => array(
+                    array(
+                        'key' => 'field_1aacdb11971b4',
+                        'label' => 'Archive Description',
+                        'name' => 'default_archive_description',
+                        'type' => 'text',
+                        'instructions' => '',
+                        'required' => 0,
+                        'conditional_logic' => 0,
+                        'wrapper' => array(
+                            'width' => '',
+                            'class' => '',
+                            'id' => '',
+                        ),
+                        'default_value' => '',
+                        'placeholder' => '',
+                        'prepend' => '',
+                        'append' => '',
+                        'maxlength' => '',
+                    ),
+                    array(
+                        'key' => 'field_ecfd459bf02f7',
+                        'label' => 'Archive Background',
+                        'name' => 'default_archive_background',
+                        'type' => 'image',
+                        'instructions' => '',
+                        'required' => 0,
+                        'conditional_logic' => 0,
+                        'wrapper' => array(
+                            'width' => '',
+                            'class' => '',
+                            'id' => '',
+                        ),
+                        'return_format' => 'array',
+                        'preview_size' => 'medium',
+                        'library' => 'all',
+                        'min_width' => '',
+                        'min_height' => '',
+                        'min_size' => '',
+                        'max_width' => '',
+                        'max_height' => '',
+                        'max_size' => '',
+                        'mime_types' => '',
+                    ),
+                ),
+            ),
         ),
         'location' => array(
             array(
@@ -506,6 +582,170 @@ if( function_exists('acf_add_local_field_group') ):
         ),
         'menu_order' => 0,
         'position' => 'acf_after_title',
+        'style' => 'default',
+        'label_placement' => 'top',
+        'instruction_placement' => 'label',
+        'hide_on_screen' => '',
+        'active' => true,
+        'description' => '',
+    ));
+
+endif;
+
+# Archive settings
+if( function_exists('acf_add_local_field_group') ):
+
+    acf_add_local_field_group(array(
+        'key' => 'group_5e4289376c0e5',
+        'title' => 'Archive Settings',
+        'fields' => array(
+            array(
+                'key' => 'field_5e4289a0b7bbe',
+                'label' => 'Archive Description',
+                'name' => 'archive_description',
+                'type' => 'text',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'default_value' => '',
+                'placeholder' => '',
+                'prepend' => '',
+                'append' => '',
+                'maxlength' => '',
+            ),
+            array(
+                'key' => 'field_5e4289b5b7bbf',
+                'label' => 'Archive Background',
+                'name' => 'archive_background',
+                'type' => 'image',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'return_format' => 'array',
+                'preview_size' => 'medium',
+                'library' => 'all',
+                'min_width' => '',
+                'min_height' => '',
+                'min_size' => '',
+                'max_width' => '',
+                'max_height' => '',
+                'max_size' => '',
+                'mime_types' => '',
+            ),
+        ),
+        'location' => array(
+            array(
+                array(
+                    'param' => 'taxonomy',
+                    'operator' => '==',
+                    'value' => 'all',
+                ),
+            ),
+        ),
+        'menu_order' => 0,
+        'position' => 'normal',
+        'style' => 'default',
+        'label_placement' => 'top',
+        'instruction_placement' => 'label',
+        'hide_on_screen' => '',
+        'active' => true,
+        'description' => '',
+    ));
+
+endif;
+
+#Social Settings
+if( function_exists('acf_add_local_field_group') ):
+
+    acf_add_local_field_group(array(
+        'key' => 'group_5e203f3c95a9f',
+        'title' => 'Social Accounts',
+        'fields' => array(
+            array(
+                'key' => 'field_5e203ff020d9a',
+                'label' => 'Social Accounts',
+                'name' => 'options_social_accounts',
+                'type' => 'repeater',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'collapsed' => '',
+                'min' => 0,
+                'max' => 0,
+                'layout' => 'table',
+                'button_label' => '',
+                'sub_fields' => array(
+                    array(
+                        'key' => 'field_5e20404c20d9b',
+                        'label' => 'Profile Link',
+                        'name' => 'link',
+                        'type' => 'link',
+                        'instructions' => 'Enter the URL of your social profile.',
+                        'required' => 0,
+                        'conditional_logic' => 0,
+                        'wrapper' => array(
+                            'width' => '66',
+                            'class' => '',
+                            'id' => '',
+                        ),
+                        'return_format' => 'array',
+                    ),
+                    array(
+                        'key' => 'field_5e20408c20d9c',
+                        'label' => 'Icon',
+                        'name' => 'icon',
+                        'type' => 'font-awesome',
+                        'instructions' => 'Select the correct social icon.',
+                        'required' => 0,
+                        'conditional_logic' => 0,
+                        'wrapper' => array(
+                            'width' => '33',
+                            'class' => '',
+                            'id' => '',
+                        ),
+                        'icon_sets' => array(
+                            0 => 'fab',
+                        ),
+                        'custom_icon_set' => '',
+                        'default_label' => '',
+                        'default_value' => '',
+                        'save_format' => 'element',
+                        'allow_null' => 0,
+                        'show_preview' => 1,
+                        'enqueue_fa' => 0,
+                        'fa_live_preview' => '',
+                        'choices' => array(
+                        ),
+                    ),
+                ),
+            ),
+        ),
+        'location' => array(
+            array(
+                array(
+                    'param' => 'options_page',
+                    'operator' => '==',
+                    'value' => 'acf-options',
+                ),
+            ),
+        ),
+        'menu_order' => 0,
+        'position' => 'normal',
         'style' => 'default',
         'label_placement' => 'top',
         'instruction_placement' => 'label',

@@ -143,6 +143,37 @@ if( function_exists('acf_add_local_field_group') ):
                         'min' => '',
                         'max' => '',
                     ),
+                    'layout_3d51dcc7c5651' => array(
+                        'key' => 'layout_3d51dcc7c5651',
+                        'name' => 'breadcrumbs',
+                        'label' => 'Breadcrumbs',
+                        'display' => 'block',
+                        'sub_fields' => array(
+                            array(
+                                'key' => 'field_3d51dcc7c5651',
+                                'label' => 'Breadcrumbs',
+                                'name' => 'breadcrumbs',
+                                'type' => 'clone',
+                                'instructions' => '',
+                                'required' => 0,
+                                'conditional_logic' => 0,
+                                'wrapper' => array(
+                                    'width' => '',
+                                    'class' => '',
+                                    'id' => '',
+                                ),
+                                'clone' => array(
+                                    0 => 'group_bfb475e1524a5',
+                                ),
+                                'display' => 'seamless',
+                                'layout' => 'block',
+                                'prefix_label' => 0,
+                                'prefix_name' => 0,
+                            ),
+                        ),
+                        'min' => '',
+                        'max' => '',
+                    ),
                     'layout_5ddbdc92feb9a' => array(
                         'key' => 'layout_5ddbdc92feb9a',
                         'name' => 'button',
@@ -164,6 +195,37 @@ if( function_exists('acf_add_local_field_group') ):
                                 ),
                                 'clone' => array(
                                     0 => 'group_5dd684d60393b',
+                                ),
+                                'display' => 'seamless',
+                                'layout' => 'block',
+                                'prefix_label' => 0,
+                                'prefix_name' => 0,
+                            ),
+                        ),
+                        'min' => '',
+                        'max' => '',
+                    ),
+                    'layout_dbdcadfbe8dbf' => array(
+                        'key' => 'layout_dbdcadfbe8dbf',
+                        'name' => 'call_to_action',
+                        'label' => 'CTA',
+                        'display' => 'block',
+                        'sub_fields' => array(
+                            array(
+                                'key' => 'field_dbdcadfbe8dbf',
+                                'label' => 'CTA',
+                                'name' => 'call_to_action',
+                                'type' => 'clone',
+                                'instructions' => '',
+                                'required' => 0,
+                                'conditional_logic' => 0,
+                                'wrapper' => array(
+                                    'width' => '',
+                                    'class' => '',
+                                    'id' => '',
+                                ),
+                                'clone' => array(
+                                    0 => 'group_5e32f55d2ec84',
                                 ),
                                 'display' => 'seamless',
                                 'layout' => 'block',
@@ -391,6 +453,37 @@ if( function_exists('acf_add_local_field_group') ):
                         'min' => '',
                         'max' => '',
                     ),
+                    'layout_7cb4a2bb35366' => array(
+                        'key' => 'layout_7cb4a2bb35366',
+                        'name' => 'pods',
+                        'label' => 'Pods',
+                        'display' => 'block',
+                        'sub_fields' => array(
+                            array(
+                                'key' => 'field_7cb4a2ca35366',
+                                'label' => 'Pods',
+                                'name' => 'pods',
+                                'type' => 'clone',
+                                'instructions' => '',
+                                'required' => 0,
+                                'conditional_logic' => 0,
+                                'wrapper' => array(
+                                    'width' => '',
+                                    'class' => '',
+                                    'id' => '',
+                                ),
+                                'clone' => array(
+                                    0 => 'group_5e32b00e4ba77',
+                                ),
+                                'display' => 'seamless',
+                                'layout' => 'block',
+                                'prefix_label' => 0,
+                                'prefix_name' => 0,
+                            ),
+                        ),
+                        'min' => '',
+                        'max' => '',
+                    ),
                     'layout_5ddd66c5a5bfe' => array(
                         'key' => 'layout_5ddd66c5a5bfe',
                         'name' => 'slider_and_tabs',
@@ -568,6 +661,13 @@ if( function_exists('acf_add_local_field_group') ):
                     'param' => 'post_template',
                     'operator' => '==',
                     'value' => 'generic-template.php',
+                ),
+            ),
+            array(
+                array(
+                    'param' => 'post_template',
+                    'operator' => '==',
+                    'value' => 'template-flat-blocks.php',
                 ),
             ),
             array(

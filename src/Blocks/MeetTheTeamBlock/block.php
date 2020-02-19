@@ -9,7 +9,7 @@ $members = $this->getTeamMembers();
 
 ?>
 <?php if(!empty($members)) : ?>
-<section class="clearfix px4 py5 <?php echo $this->blockConfiguration['background_colour'] ? $this->blockConfiguration['background_colour']  : ''; ?> || filtering">
+<section class="clearfix px4 py5 <?php echo $this->blockConfiguration['background_colour'] ? $this->blockConfiguration['background_colour']  : ''; ?> || filtering" <?php echo $this->getAttributeString() ?>>
     <div class="container">
         <h2 class="h1 text-center"><?php echo $this->blockConfiguration['team_title']; ?></h2>
 

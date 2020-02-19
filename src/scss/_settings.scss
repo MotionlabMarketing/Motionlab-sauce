@@ -7,12 +7,20 @@
 // This map is used to automatically create the utility classes for colors, backgrounds and borders.
 // Make use of the primary and secondary naming convention to easily change colours site wide. Extend as required.
 
-$black: #111 !default;
+$black: #111111 !default;
+$body: $black;
+$primary: $black;
+$secondary: $black;
+$white: #ffffff !default;
+$smoke: #fdfdfd;
 
 $colors: (
+    "black": $black,
 	"body": $black,
 	"primary": $black,
 	"secondary": $black,
+    "white": $white,
+    "smoke": $smoke
 );
 
 
@@ -171,6 +179,7 @@ $link-hover-color: $primary !default;
 $measure: 30em !default;
 $measure-narrow: 14em !default;
 $measure-wide: 50em !default;
+$measure-super-wide: 60em !default;
 
 
 // Preformatted
@@ -318,3 +327,11 @@ $breakpoints: (
 	xl: $breakpoint-xl,
 	xxl: $breakpoint-xxl
 );
+
+
+
+
+// Header height and mobile min-height
+
+$mobile-menu-height: 61px;
+$header-height: 160px;

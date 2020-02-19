@@ -6,19 +6,35 @@ namespace Motionlab\Sauce\CPT;
 class CPTProvider
 {
 
+    protected static $customPostTypes = [
+        'CallToActions' => CPT_CallToActions::class,
+        'CaseStudies' => CPT_CaseStudies::class,
+        'TeamMembers' => CPT_TeamMembers::class,
+        'Testimonials' => CPT_Testimonials::class,
+        'Jobs' => CPT_Jobs::class,
+        'Locations' => CPT_Locations::class,
+    ];
+
     public function __construct()
     {
-        $this->bootstrap();
+        // not doing things here
     }
 
-    /* Initialize all global CPTs - if a CPT should only register on the master site, add their declaration to registerMasterSitePostTypes() */
-    private function bootstrap()
+    public function bootstrap()
     {
-        new CPT_CaseStudies();
-        new CPT_TeamMembers();
-        new CPT_Testimonials();
-        new CPT_Jobs();
-        new CPT_Locations();
+        $this->registerCustomPostTypes();
+    }
+
+    private function registerCustomPostTypes()
+    {
+        foreach(self::$customPostTypes as $customPostType){
+            $cptInstance = new $customPostType();
+        }
+    }
+
+    public static function orverrideCptClass(string $key, string $className)
+    {
+        self::$customPostTypes[$key] = $className;
     }
 
 }
