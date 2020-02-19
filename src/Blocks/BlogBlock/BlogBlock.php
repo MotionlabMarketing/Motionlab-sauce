@@ -22,7 +22,7 @@ class BlogBlock extends Block
                 include (__DIR__ . '/four-column.php');
                 break;
             default:
-                $this->loadPosts(3);
+                $this->loadPosts(6);
                 include(__DIR__ . '/block.php'); // 3 col
                 break;
         }
@@ -49,17 +49,19 @@ class BlogBlock extends Block
         $query = new WP_Query($args);
 
         foreach ($query->posts as $latestPost) {
+
+            $fallbackImage = get_field('options_archive_defaults','option');
             $post = new \stdClass();
             $post->ID = $latestPost->ID;
             $post->date = $latestPost->post_date;
             $post->title = $latestPost->post_title;
             $post->excerpt = strlen($latestPost->post_excerpt)
                 ? $latestPost->post_excerpt
-                : __('NO EXCERPT – Please include one on this post!');
+                : __('');
             $post->permalink = get_post_permalink($post->ID);
             $post->featuredImage = strlen(get_the_post_thumbnail_url($post->ID, 'blog-block-image'))
                 ? get_the_post_thumbnail_url($post->ID, 'blog-block-image')
-                : \get_template_directory_uri() . "/dist/images/news-thumbnail-default.jpg";
+                : $fallbackImage['default_archive_background']['sizes']['post-thumbnail'];
             $returnPosts[] = $post;
         }
 

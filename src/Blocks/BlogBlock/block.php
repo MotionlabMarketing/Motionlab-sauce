@@ -5,9 +5,6 @@
 // Selected Posts: $this->blockConfiguration['blog_selected'];
 // Content: $this->blockConfiguration['blog_content'];
 /*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*|Block Settings|~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*/
-
-
-
 ?>
 
 <?php if (!empty($this->posts)): ?>
@@ -17,20 +14,30 @@
 
         <h2 class="text-center h1"><?php echo $this->blockConfiguration['blog_title'] ?></h2>
 
-        <div class="mxn3 flex flex-wrap md-flex-nowrap">
-            <?php foreach ($this->posts as $p):?>
-                <article class="bg-white col-12 mx3 rounded overflow-hidden shadow hover-zoom mb4 md-mb0">
-                    <a href="<?php echo $p->permalink ?>" class="overflow-hidden block">
-                        <div class="bg-smoke overflow-hidden" style="height: 16rem;">
-                            <div style="height: 16rem; background-image: url('<?php echo $p->featuredImage; ?>');" class="zoom bg-cover bg-bottom-right"></div>
+        <div class="mxn3 flex flex-wrap">
+            <?php foreach ($this->posts as $p):
+                $p->category_id = get_post_meta($p->ID, 'rank_math_primary_category', true);
+                $p->category_id = $p->category_id ? $p->category_id : wp_get_post_categories($p->ID)[0];
+                $p->category_primary = get_term($p->category_id);
+            ?>
+                <article class="bg-white p3 col-12 md-col-4 rounded hover-zoom mb3">
+                    <div class="bg-white shadow overflow-hidden zoom">
+                        <a href="<?php echo $p->permalink ?>" class="overflow-hidden block">
+                            <div class="bg-charcoal overflow-hidden bg-cover bg-center" style="height: 16rem; background-image: url('<?php echo $p->featuredImage; ?>');"></div>
+                        </a>
+                        <div class="js-match-height py3 px4">
+                            <?php if (!empty($p->category_primary)) : ?>
+                                <p class="h5 ls1 uppercase mb2 black">
+                                    <?php echo $p->category_primary->name; ?>
+                                </p>
+                            <?php endif; ?>
+                            <?php if (!empty($p->title)) : ?>
+                                <h5 class="h4 black mb0"><?php echo $p->title; ?></h5>
+                            <?php endif; ?>
+                            <?php if (!empty($p->excerpt)) : ?>
+                                <p class="lh3 h5 mt0 ml0 mr0"><?php echo wp_trim_words( $p->excerpt, 22, '...' ); ?></p>
+                            <?php endif; ?>
                         </div>
-                    </a>
-                    <div class="js-match-height py3 px4">
-                        <h4 class="grey h5"><?php echo date('l jS F Y', strtotime($p->date)); ?></h4>
-                        <h3 class="lh2 mb2">
-                            <a href="<?php echo $p->permalink ?>" class="text-decoration-none"><?php echo $p->title ?></a>
-                        </h3>
-                        <p class="lh3 h5 mt0 ml0 mr0"><?php echo wp_trim_words( $p->excerpt, 22, '...' ); ?></p>
                     </div>
                 </article>
             <?php endforeach; ?>
