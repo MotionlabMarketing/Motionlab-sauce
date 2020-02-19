@@ -8,7 +8,7 @@
 ?>
 
 <?php if (!empty($this->posts)): ?>
-<section class="<?php echo $this->blockConfiguration['background_colour'] ? $this->blockConfiguration['background_colour']  : 'bg-light-grey'; ?> px4 py5"  <?php echo $this->getAttributeString() ?>>
+<section class="<?php echo $this->blockConfiguration['background_colour'] ? $this->blockConfiguration['background_colour']  : 'bg-light-grey'; ?> px4 py5 lg-mx0"  <?php echo $this->getAttributeString() ?>>
 
     <div class="container">
 
@@ -20,7 +20,7 @@
                 $p->category_id = $p->category_id ? $p->category_id : wp_get_post_categories($p->ID)[0];
                 $p->category_primary = get_term($p->category_id);
             ?>
-                <article class="bg-white p3 col-12 md-col-4 rounded hover-zoom mb3">
+                <article class="p3 col-12 md-col-4 rounded hover-zoom mb3">
                     <div class="bg-white shadow overflow-hidden zoom">
                         <a href="<?php echo $p->permalink ?>" class="overflow-hidden block">
                             <div class="bg-charcoal overflow-hidden bg-cover bg-center" style="height: 16rem; background-image: url('<?php echo $p->featuredImage; ?>');"></div>
@@ -41,8 +41,13 @@
                     </div>
                 </article>
             <?php endforeach; ?>
-        </div>
 
+        </div>
+        <?php if (!empty($this->blockConfiguration['blog_footer_button']['url'])) : ?>
+        <div class="text-center mt4">
+            <a href="<?php echo $this->blockConfiguration['blog_footer_button']['url']; ?>" class="btn btn-secondary h4"><?php echo $this->blockConfiguration['blog_footer_button']['title']; ?></a>
+        </div>
+        <?php endif; ?>
     </div>
 
 </section>
