@@ -26,6 +26,10 @@ class BlockInitialiser
             } else if(file_exists(__DIR__ . "/$blockDirectory/acf.php")) {
                 include __DIR__ . "/$blockDirectory/acf.php";
             }
+
+            if(function_exists('registerACF')) {
+                registerACF($acf);
+            }
         }
 
         foreach($this->blockProvider->getHelperBlocks() as $helperName => $helperBlock ) {

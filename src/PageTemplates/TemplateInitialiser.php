@@ -22,6 +22,11 @@ class TemplateInitialiser
         foreach($templateFolders as $tf) {
             if(file_exists(__DIR__ . "/$tf/acf.php")) {
                 include __DIR__ . "/$tf/acf.php";
+
+                if(function_exists('loadTemplateACF')) {
+                    loadTemplateACF($templateACF);
+                }
+
             }
         }
     }

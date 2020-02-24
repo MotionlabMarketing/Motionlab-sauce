@@ -81,7 +81,13 @@ class BlockProvider
      */
     public static function overrideBlockClass(string $blockSlug, string $classOverride) {
 
+        $addition = true;
+        if(isset(self::$blocks[$blockSlug]))
+            $addition = false;
+
         self::$blocks[$blockSlug] = $classOverride;
+
+        return $addition;
 
     }
 

@@ -65,4 +65,18 @@ class TemplateBase
 
         return $this->blocks;
     }
+
+    public static function loadTemplateACF() {
+        if( function_exists('acf_add_local_field_group') ):
+            acf_add_local_field_group(self::$templateACF);
+        endif;
+    }
+
+    public static function addFlexibleLayout($layout) {
+        //generate unique layout id
+        //take argument and add to new layout structure within generic.
+        $layoutID = $layout['key'];
+
+//        self::$templateAcf[''];
+    }
 }
