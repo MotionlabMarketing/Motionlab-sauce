@@ -52,6 +52,11 @@ class BlockProvider
         'two_columns' => TwoColumnBlock::class,
     ];
 
+    private static $helperBlocks = [
+        'background_color' => "BackgroundColour",
+        'site_options' => "SiteOptions",
+    ];
+
     public function load(array $layout) {
 
         $layoutName = null;
@@ -78,5 +83,13 @@ class BlockProvider
 
         self::$blocks[$blockSlug] = $classOverride;
 
+    }
+
+    public function getBlocks() {
+        return self::$blocks;
+    }
+
+    public function getHelperBlocks() {
+        return self::$helperBlocks;
     }
 }
