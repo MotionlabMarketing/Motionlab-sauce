@@ -17,6 +17,7 @@ class BlockInitialiser
     }
 
     private function initialiseBlocks() {
+
         foreach($this->blockProvider->getBlocks() as $blockName => $blockClass ) {
             $blockClassString = explode("\\", $blockClass);
             $blockDirectory = $blockClassString[sizeof($blockClassString) - 1];
@@ -27,7 +28,7 @@ class BlockInitialiser
                 include __DIR__ . "/$blockDirectory/acf.php";
             }
 
-            if(function_exists('registerACF')) {
+            if(function_exists('registerACF') && $acf != null) {
                 registerACF($acf);
             }
         }

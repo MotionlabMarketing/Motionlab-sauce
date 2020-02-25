@@ -718,4 +718,10 @@ class GenericTemplate extends TemplateBase
 
         return $page_template;
     }
+
+    public static function addFlexibleLayout($layout) {
+        $layoutID = $layout['key'];
+
+        self::$templateAcf['fields'][0]['layouts'][$layoutID] = $layout;
+    }
 }

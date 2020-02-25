@@ -11,6 +11,7 @@ class TemplateBase
 
     private $blocks = null;
     private $breadcrumbs;
+    public static $templateAcf = array();
 
     public function __construct()
     {
@@ -68,15 +69,7 @@ class TemplateBase
 
     public static function loadTemplateACF() {
         if( function_exists('acf_add_local_field_group') ):
-            acf_add_local_field_group(self::$templateACF);
+            acf_add_local_field_group(static::$templateAcf);
         endif;
-    }
-
-    public static function addFlexibleLayout($layout) {
-        //generate unique layout id
-        //take argument and add to new layout structure within generic.
-        $layoutID = $layout['key'];
-
-//        self::$templateAcf[''];
     }
 }
