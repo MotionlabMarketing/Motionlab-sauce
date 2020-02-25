@@ -22,8 +22,5 @@ class BlockInitialiser
             (new $blockClass(null, false))->registerBlockACF();
         }
 
-        foreach($this->blockProvider->getHelperBlocks() as $helperName => $helperBlock ) {
-            (new $helperBlock(null, false))->registerBlockACF();
-        }
     }
 }
