@@ -23,11 +23,7 @@ class BlockInitialiser
         }
 
         foreach($this->blockProvider->getHelperBlocks() as $helperName => $helperBlock ) {
-            if(file_exists(get_stylesheet_directory() . "/src/Blocks/$helperBlock/acf.php")) {
-                include get_stylesheet_directory() . "/src/Blocks/$helperBlock/acf.php";
-            } else if(file_exists(__DIR__ . "/$helperBlock/acf.php")) {
-                include __DIR__ . "/$helperBlock/acf.php";
-            }
+            (new $helperBlock(null, false))->registerBlockACF();
         }
     }
 }
