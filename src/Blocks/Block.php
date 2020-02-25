@@ -50,4 +50,8 @@ class Block
             acf_add_local_field_group(static::$blockAcf);
         endif;
     }
+
+    public static function getAcf() {
+        return static::$blockAcf;
+    }
 }
