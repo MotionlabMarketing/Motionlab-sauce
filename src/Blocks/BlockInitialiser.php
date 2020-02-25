@@ -19,7 +19,7 @@ class BlockInitialiser
     private function initialiseBlocks() {
 
         foreach($this->blockProvider->getBlocks() as $blockName => $blockClass ) {
-            (new $blockClass())->registerBlockACF();
+            (new $blockClass(null, false))->registerBlockACF();
         }
 
         foreach($this->blockProvider->getHelperBlocks() as $helperName => $helperBlock ) {
