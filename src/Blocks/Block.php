@@ -7,6 +7,8 @@ use Motionlab\Sauce\Blocks\BlockPositionAuthority;
 
 class Block
 {
+
+    public static $blockAcf = array();
     public $blockConfiguration = null;
     public $buid = null;
 
@@ -41,5 +43,11 @@ class Block
         $pageId = BlockPositionAuthority::instance()->getPageId();
         $id = $pageId.'-'.$position;
         return sprintf($attributeString, $id, $name, $position, $this->layout);
+    }
+
+    public static function registerBlockACF() {
+        if( function_exists('acf_add_local_field_group') ):
+            acf_add_local_field_group(static::$blockAcf);
+        endif;
     }
 }
