@@ -1,8 +1,14 @@
 <?php
 
-if( function_exists('acf_add_local_field_group') ):
 
-    acf_add_local_field_group(array(
+namespace Motionlab\Sauce\Blocks\SiteOptions;
+
+use Motionlab\Sauce\Blocks\Block;
+
+class SiteOptions extends Block
+{
+
+    public static $blockAcf = array(
         'key' => 'group_5dd559eabcd83',
         'title' => 'General - Site Options',
         'fields' => array(
@@ -570,40 +576,11 @@ if( function_exists('acf_add_local_field_group') ):
                     ),
                 ),
             ),
-        ),
-        'location' => array(
             array(
-                array(
-                    'param' => 'options_page',
-                    'operator' => '==',
-                    'value' => 'acf-options',
-                ),
-            ),
-        ),
-        'menu_order' => 0,
-        'position' => 'acf_after_title',
-        'style' => 'default',
-        'label_placement' => 'top',
-        'instruction_placement' => 'label',
-        'hide_on_screen' => '',
-        'active' => true,
-        'description' => '',
-    ));
-
-endif;
-
-# Archive settings
-if( function_exists('acf_add_local_field_group') ):
-
-    acf_add_local_field_group(array(
-        'key' => 'group_5e4289376c0e5',
-        'title' => 'Archive Settings',
-        'fields' => array(
-            array(
-                'key' => 'field_5e4289a0b7bbe',
-                'label' => 'Archive Description',
-                'name' => 'archive_description',
-                'type' => 'text',
+                'key' => 'field_5e203f3c95a9f',
+                'label' => 'Social Accounts',
+                'name' => '',
+                'type' => 'tab',
                 'instructions' => '',
                 'required' => 0,
                 'conditional_logic' => 0,
@@ -612,65 +589,9 @@ if( function_exists('acf_add_local_field_group') ):
                     'class' => '',
                     'id' => '',
                 ),
-                'default_value' => '',
-                'placeholder' => '',
-                'prepend' => '',
-                'append' => '',
-                'maxlength' => '',
+                'placement' => 'top',
+                'endpoint' => 0,
             ),
-            array(
-                'key' => 'field_5e4289b5b7bbf',
-                'label' => 'Archive Background',
-                'name' => 'archive_background',
-                'type' => 'image',
-                'instructions' => '',
-                'required' => 0,
-                'conditional_logic' => 0,
-                'wrapper' => array(
-                    'width' => '',
-                    'class' => '',
-                    'id' => '',
-                ),
-                'return_format' => 'array',
-                'preview_size' => 'medium',
-                'library' => 'all',
-                'min_width' => '',
-                'min_height' => '',
-                'min_size' => '',
-                'max_width' => '',
-                'max_height' => '',
-                'max_size' => '',
-                'mime_types' => '',
-            ),
-        ),
-        'location' => array(
-            array(
-                array(
-                    'param' => 'taxonomy',
-                    'operator' => '==',
-                    'value' => 'all',
-                ),
-            ),
-        ),
-        'menu_order' => 0,
-        'position' => 'normal',
-        'style' => 'default',
-        'label_placement' => 'top',
-        'instruction_placement' => 'label',
-        'hide_on_screen' => '',
-        'active' => true,
-        'description' => '',
-    ));
-
-endif;
-
-#Social Settings
-if( function_exists('acf_add_local_field_group') ):
-
-    acf_add_local_field_group(array(
-        'key' => 'group_5e203f3c95a9f',
-        'title' => 'Social Accounts',
-        'fields' => array(
             array(
                 'key' => 'field_5e203ff020d9a',
                 'label' => 'Social Accounts',
@@ -745,13 +666,16 @@ if( function_exists('acf_add_local_field_group') ):
             ),
         ),
         'menu_order' => 0,
-        'position' => 'normal',
+        'position' => 'acf_after_title',
         'style' => 'default',
         'label_placement' => 'top',
         'instruction_placement' => 'label',
         'hide_on_screen' => '',
         'active' => true,
         'description' => '',
-    ));
+    );
 
-endif;
+    public function init() {
+
+    }
+}

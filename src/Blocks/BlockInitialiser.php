@@ -6,25 +6,21 @@ namespace Motionlab\Sauce\Blocks;
 
 class BlockInitialiser
 {
+
+    private $blockProvider;
+
     public function __construct()
     {
+        //We are going to use this to grab the list of registered blocks.
+        $this->blockProvider = new BlockProvider();
         $this->initialiseBlocks();
     }
 
     private function initialiseBlocks() {
-        $blockFolders = scandir(__DIR__);
 
-        //Remove . and .. directory links
-        unset($blockFolders[array_search('.', $blockFolders, true)]);
-        unset($blockFolders[array_search('..', $blockFolders, true)]);
-
-        //Loop over remaining folders to find acf.php for each block
-        foreach($blockFolders as $bf) {
-            if(file_exists(get_stylesheet_directory() . "/src/Blocks/$bf/acf.php")) {
-                include get_stylesheet_directory() . "/src/Blocks/$bf/acf.php";
-            } else if(file_exists(__DIR__ . "/$bf/acf.php")) {
-                include __DIR__ . "/$bf/acf.php";
-            }
+        foreach($this->blockProvider->getBlocks() as $blockName => $blockClass ) {
+            (new $blockClass(null, false))->registerBlockACF();
         }
+
     }
 }

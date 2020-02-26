@@ -8,6 +8,222 @@ use WP_Query;
 
 class BlogBlock extends Block
 {
+    public static $blockAcf = array(
+        'key' => 'group_5dd6c5705ed5e',
+        'title' => 'Block - Blog',
+        'fields' => array(
+            array(
+                'key' => 'field_6cb93f41c7bd382c',
+                'label' => 'Layout',
+                'name' => 'blog_layout',
+                'type' => 'select',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'choices' => array(
+                    'basic' => '3 Column',
+                    '4col' => '4 Column',
+                    'slider' => 'Slider (9 posts)',
+                ),
+                'default_value' => array(
+                ),
+                'allow_null' => 0,
+                'multiple' => 0,
+                'ui' => 1,
+                'ajax' => 0,
+                'return_format' => 'value',
+                'placeholder' => '',
+            ),
+            array(
+                'key' => 'field_5dfb9bf164ae5',
+                'label' => 'Background Colour',
+                'name' => 'background_colour',
+                'type' => 'clone',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'clone' => array(
+                    0 => 'group_5dfb879fe9a51',
+                ),
+                'display' => 'seamless',
+                'layout' => 'block',
+                'prefix_label' => 0,
+                'prefix_name' => 0,
+            ),
+            array(
+                'key' => 'field_5df250e2e5b9e',
+                'label' => 'Title',
+                'name' => 'blog_title',
+                'type' => 'text',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'default_value' => '',
+                'placeholder' => '',
+                'prepend' => '',
+                'append' => '',
+                'maxlength' => '',
+            ),
+            array(
+                'key' => 'field_5dd6c5c3915ab',
+                'label' => 'Content',
+                'name' => 'blog_content',
+                'type' => 'wysiwyg',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'default_value' => '',
+                'tabs' => 'all',
+                'toolbar' => 'full',
+                'media_upload' => 1,
+                'delay' => 0,
+            ),
+            array(
+                'key' => 'field_5dd6c574915aa',
+                'label' => 'Display Type',
+                'name' => 'blog_display_type',
+                'type' => 'select',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'choices' => array(
+                    'manual' => 'Manually Select',
+                    'latest' => 'Latest Posts',
+                    'category' => 'By Category'
+                ),
+                'default_value' => array(
+                ),
+                'allow_null' => 0,
+                'multiple' => 0,
+                'ui' => 1,
+                'ajax' => 0,
+                'return_format' => 'value',
+                'placeholder' => '',
+            ),
+            array(
+                'key' => 'field_5e4c1268d0371',
+                'label' => 'Selected Category',
+                'name' => 'blog_selected_category',
+                'type' => 'taxonomy',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => array(
+                    array(
+                        array(
+                            'field' => 'field_5dd6c574915aa',
+                            'operator' => '==',
+                            'value' => 'category',
+                        ),
+                    ),
+                ),
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'taxonomy' => 'category',
+                'field_type' => 'select',
+                'allow_null' => 0,
+                'add_term' => 0,
+                'save_terms' => 0,
+                'load_terms' => 0,
+                'return_format' => 'object',
+                'multiple' => 0,
+            ),
+            array(
+                'key' => 'field_5dd6c5dd915ad',
+                'label' => 'Selected',
+                'name' => 'blog_selected',
+                'type' => 'relationship',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => array(
+                    array(
+                        array(
+                            'field' => 'field_5dd6c574915aa',
+                            'operator' => '==',
+                            'value' => 'manual',
+                        ),
+                    ),
+                ),
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'post_type' => array(
+                    0 => 'post',
+                ),
+                'taxonomy' => '',
+                'filters' => array(
+                    0 => 'search',
+                    1 => 'taxonomy',
+                ),
+                'elements' => '',
+                'min' => 3,
+                'max' => 12,
+                'return_format' => 'id',
+            ),
+            array(
+                'key' => 'field_ 0fb5b8ec42c0',
+                'label' => 'Footer Button',
+                'name' => 'blog_footer_button',
+                'type' => 'link',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'return_format' => 'array',
+            ),
+        ),
+        'location' => array(
+            array(
+                array(
+                    'param' => 'post_type',
+                    'operator' => '==',
+                    'value' => 'post',
+                ),
+            ),
+        ),
+        'menu_order' => 0,
+        'position' => 'normal',
+        'style' => 'default',
+        'label_placement' => 'top',
+        'instruction_placement' => 'label',
+        'hide_on_screen' => '',
+        'active' => false,
+        'description' => '',
+    );
+
     public $posts = [];
 
     public function init()

@@ -4,6 +4,7 @@
 namespace Motionlab\Sauce\Blocks;
 
 use Motionlab\Sauce\Blocks\AccreditationsBlock\AccreditationsBlock;
+use Motionlab\Sauce\Blocks\BackgroundColor\BackgroundColor;
 use Motionlab\Sauce\Blocks\BannerBlock\BannerBlock;
 use Motionlab\Sauce\Blocks\BlogBlock\BlogBlock;
 use Motionlab\Sauce\Blocks\BreadcrumbsBlock\BreadcrumbsBlock;
@@ -16,6 +17,7 @@ use Motionlab\Sauce\Blocks\KeyFeaturesBlock\KeyFeaturesBlock;
 use Motionlab\Sauce\Blocks\LocationBlock\LocationBlock;
 use Motionlab\Sauce\Blocks\LocationFinderBlock\LocationFinderBlock;
 use Motionlab\Sauce\Blocks\PodsBlock\PodsBlock;
+use Motionlab\Sauce\Blocks\SiteOptions\SiteOptions;
 use Motionlab\Sauce\Blocks\SliderTabsBlock\SliderTabsBlock;
 use Motionlab\Sauce\Blocks\SpacerBlock\SpacerBlock;
 use Motionlab\Sauce\Blocks\StandardContentBlock\StandardContentBlock;
@@ -50,6 +52,13 @@ class BlockProvider
         'tabs' => TabsBlock::class,
         'testimonials' => TestimonialsBlock::class,
         'two_columns' => TwoColumnBlock::class,
+
+        'background_color' => BackgroundColor::class,
+        'site_options' => SiteOptions::class,
+    ];
+
+    private static $helperBlocks = [
+
     ];
 
     public function load(array $layout) {
@@ -76,7 +85,20 @@ class BlockProvider
      */
     public static function overrideBlockClass(string $blockSlug, string $classOverride) {
 
+        if($classOverride === "")
+            return 0;
+
+        $returnFlag = 1; //Added new
+        if(isset(self::$blocks[$blockSlug]))
+            $returnFlag = 2; // Edited existing
+
         self::$blocks[$blockSlug] = $classOverride;
 
+        return $returnFlag;
+
+    }
+
+    public function getBlocks() {
+        return self::$blocks;
     }
 }
