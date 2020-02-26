@@ -1,11 +1,11 @@
 <?php
 
 
-namespace Motionlab\Sauce\Blocks\BackgroundColor;
+namespace Motionlab\Sauce\Blocks\BackgroundColour;
 
 use Motionlab\Sauce\Blocks\Block;
 
-class BackgroundColor extends Block
+class BackgroundColour extends Block
 {
 
     public static $blockAcf = array(

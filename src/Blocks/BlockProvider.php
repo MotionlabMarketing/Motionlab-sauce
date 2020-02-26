@@ -4,7 +4,7 @@
 namespace Motionlab\Sauce\Blocks;
 
 use Motionlab\Sauce\Blocks\AccreditationsBlock\AccreditationsBlock;
-use Motionlab\Sauce\Blocks\BackgroundColor\BackgroundColor;
+use Motionlab\Sauce\Blocks\BackgroundColour\BackgroundColour;
 use Motionlab\Sauce\Blocks\BannerBlock\BannerBlock;
 use Motionlab\Sauce\Blocks\BlogBlock\BlogBlock;
 use Motionlab\Sauce\Blocks\BreadcrumbsBlock\BreadcrumbsBlock;
@@ -53,7 +53,7 @@ class BlockProvider
         'testimonials' => TestimonialsBlock::class,
         'two_columns' => TwoColumnBlock::class,
 
-        'background_color' => BackgroundColor::class,
+        'background_colour' => BackgroundColour::class,
         'site_options' => SiteOptions::class,
     ];
 
