@@ -34,7 +34,6 @@ class CPTProvider
     }
 
     private function registerCustomPostTypesAcf() {
-        die(pa(__DIR__ . '/cpt-acf.php'));
         include __DIR__ . '/cpt-acf.php';
     }
 
