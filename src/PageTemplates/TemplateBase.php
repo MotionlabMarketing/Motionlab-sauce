@@ -11,6 +11,7 @@ class TemplateBase
 
     private $blocks = null;
     private $breadcrumbs;
+    public static $templateAcf = array();
 
     public function __construct()
     {
@@ -64,5 +65,11 @@ class TemplateBase
         $this->blocks = \get_fields($post_id);
 
         return $this->blocks;
+    }
+
+    public static function loadTemplateACF() {
+        if( function_exists('acf_add_local_field_group') ):
+            acf_add_local_field_group(static::$templateAcf);
+        endif;
     }
 }

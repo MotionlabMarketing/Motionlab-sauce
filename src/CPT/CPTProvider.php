@@ -23,6 +23,7 @@ class CPTProvider
     public function bootstrap()
     {
         $this->registerCustomPostTypes();
+        $this->registerCustomPostTypesAcf();
     }
 
     private function registerCustomPostTypes()
@@ -30,6 +31,10 @@ class CPTProvider
         foreach(self::$customPostTypes as $customPostType){
             $cptInstance = new $customPostType();
         }
+    }
+
+    private function registerCustomPostTypesAcf() {
+        include __DIR__ . '/cpt-acf.php';
     }
 
     public static function orverrideCptClass(string $key, string $className)
