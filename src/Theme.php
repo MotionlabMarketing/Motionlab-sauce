@@ -36,6 +36,9 @@ class Theme
         $cptProvider = new CPTProvider();
         add_action('init', [$cptProvider, 'bootstrap']);
 
+        // Rank Math - Remove Query String on Redirect.
+        add_filter( 'rank_math/redirection/add_query_string', '__return_false' );
+
         new MenuLocations();
         $this->registerImageSizes();
         $this->registerShortcodes();

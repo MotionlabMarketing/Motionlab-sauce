@@ -1,8 +1,14 @@
 <?php
 
-if( function_exists('acf_add_local_field_group') ):
 
-    acf_add_local_field_group(array(
+namespace Motionlab\Sauce\Blocks\BackgroundColour;
+
+use Motionlab\Sauce\Blocks\Block;
+
+class BackgroundColour extends Block
+{
+
+    public static $blockAcf = array(
         'key' => 'group_5dfb879fe9a51',
         'title' => 'Component - Background Colour',
         'fields' => array(
@@ -53,6 +59,9 @@ if( function_exists('acf_add_local_field_group') ):
         'hide_on_screen' => '',
         'active' => false,
         'description' => '',
-    ));
+    );
 
-endif;
+    public function init() {
+        include(__DIR__ . '/block.php');
+    }
+}
