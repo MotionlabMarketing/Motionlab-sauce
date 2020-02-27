@@ -48,4 +48,15 @@ class TestimonialsBlock extends Block
         return $testimonialsToPrint;
 
     }
+
+    public static function unleash($layout = 'default')
+    {
+        $instance = new TestimonialsBlock([
+            'testimonials_posts_to_display' => 'latest',
+            'testimonials_full_size' => $layout
+        ],false);
+        $instance->init();
+        return $instance;
+    }
+
 }
