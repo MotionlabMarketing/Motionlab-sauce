@@ -12,17 +12,24 @@ $post->category_primary = get_term($post->category_id);
 
             <?php
 
-                $thumbnail_id = get_post_thumbnail_id($post->ID);
+            $thumbnail_id = get_post_thumbnail_id($post->ID);
+
+            if($thumbnail_id) {
                 $raw_thumbail = wp_get_attachment_metadata($thumbnail_id);
                 $post_img_src = wp_get_attachment_image_src($thumbnail_id, 'blog-block-image')[0];
                 $post_img_alt = (get_post_meta($thumbnail_id, '_wp_attachment_image_alt', TRUE)) ? "alt='" . get_post_meta($thumbnail_id, '_wp_attachment_image_alt', TRUE) . "'" : "";
+            } else {
+                $post_img_array = get_field('options_archive_defaults','option');
+                $post_img_src = $post_img_array['default_archive_background']['sizes']['post-thumbnail'];
+                $post_img_alt = $post_img_array['default_archive_background']['alt'];
+            }
 
             ?>
 
             <img
-                src="<?php echo $post_img_src ?>"
-                alt="<?php echo $post_img_alt ?>"
-                class="post-thumbnail « width-100 block"
+                    src="<?php echo $post_img_src ?>"
+                    alt="<?php echo $post_img_alt ?>"
+                    class="post-thumbnail « width-100 block"
             />
 
         </div>
