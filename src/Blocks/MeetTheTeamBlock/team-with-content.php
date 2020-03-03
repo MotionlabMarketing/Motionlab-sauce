@@ -14,10 +14,15 @@
             <div class="flex flex-wrap min-height-100" style="margin: -2px;">
                 <?php foreach($this->blockConfiguration['team_members_selected'] as $teamMember):?>
                     <div class="col-4 bg-cover bg-center border border-white relative hover-reveal" style="background-image:url('<?php echo wp_get_attachment_image_url(get_post_thumbnail_id($teamMember->ID), 'medium')?>');border-width:2px; cursor: help;">
-                        <div style="padding-bottom: 105%;"></div>
-                        <div class="reveal md-block absolute top-0 left-0 width-100 height-100 bg-darken-5 flex items-center justify-center">
-                            <h3 class="white mb0 bold"><?php echo $teamMember->post_title; ?></h3>
-                        </div>
+                        <a href="/" class="block">
+                            <div style="padding-bottom: 105%;"></div>
+                            <div class="reveal md-block absolute top-0 left-0 width-100 height-100 bg-darken-5 flex flex-column items-center justify-center">
+                                <h3 class="white <?php $link = true ? 'mb0' : '';?> bold"><?php echo $teamMember->post_title; ?></h3>
+                                <?php if('$link'):?>
+                                    <p class="white">View Profile</p>
+                                <?php endif;?>
+                            </div>
+                        </a>
                     </div>
                 <?php endforeach; ?>
             </div>
