@@ -1,6 +1,6 @@
 <?php
 $post->category_id = get_post_meta($post->id, 'rank_math_primary_category', true);
-$post->category_id = $post->category_id ? $post->category_id : wp_get_post_categories($post->ID)[0];
+$post->category_id = $post->category_id ? $post->category_id : isset(wp_get_post_categories($post->ID)[0]) ? wp_get_post_categories($post->ID)[0] : '';
 $post->category_primary = get_term($post->category_id);
 ?>
 
@@ -37,7 +37,7 @@ $post->category_primary = get_term($post->category_id);
         <div class="px4 py4 black" data-mh="post-content">
 
             <p class="h5 ls1 uppercase mb2 black">
-                <?php if (!empty($post->category_primary)) :
+                <?php if (!empty($post->category_primary) && !isset($post->category_primary->errors)) :
                     echo $post->category_primary->name;
                 endif; ?>
             </p>
