@@ -119,6 +119,16 @@ class CPT_CaseStudies extends CPTBase
         'description' => '',
     );
 
+    public function registerSingleTemplate($single) {
+        global $post;
+
+        if($post->post_type == strtolower(str_replace(' ', '', $this->name))) {
+            return __DIR__ . "/single-casestudies.php";
+        }
+
+        return $single;
+    }
+
     /**
      * GET TAXONOMIES DETAILS
      * This function returns an array of taxonomies for registation.
