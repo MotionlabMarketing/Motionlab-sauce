@@ -13,6 +13,8 @@ class CPT_CallToActions
     private $dashicon   = "dashicons-warning";
     private $taxonomies = [];
 
+    public static $acf = array();
+
     public function __construct()
     {
         //Register the single template for this post type.
@@ -164,5 +166,15 @@ class CPT_CallToActions
     public function get_taxonomies_details()
     {
         return [];
+    }
+
+    public static function registerACF() {
+        if( function_exists('acf_add_local_field_group') ):
+            acf_add_local_field_group(static::$acf);
+        endif;
+    }
+
+    public static function getAcf() {
+        return static::$acf;
     }
 }

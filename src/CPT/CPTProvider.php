@@ -23,13 +23,20 @@ class CPTProvider
     public function bootstrap()
     {
         $this->registerCustomPostTypes();
-        $this->registerCustomPostTypesAcf();
+//        $this->registerCustomPostTypesAcf();
     }
 
     private function registerCustomPostTypes()
     {
         foreach(self::$customPostTypes as $customPostType){
             $cptInstance = new $customPostType();
+            $this->loadACF($cptInstance);
+        }
+    }
+
+    private function loadACF($cptInstance) {
+        if(method_exists($cptInstance, 'registerACF')) {
+            $cptInstance->registerACF();
         }
     }
 
