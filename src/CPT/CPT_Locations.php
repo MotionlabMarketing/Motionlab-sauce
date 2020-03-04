@@ -6,12 +6,12 @@ class CPT_Locations extends CPTBase
 {
 
     // Set CPT options.
-    private $name       = "Locations"; // Name of the CPT on Registration
-    private $group      = "Locations";
-    private $singular   = "Location";
-    private $plural     = "Locations";
-    private $dashicon   = "dashicons-location-alt";
-    private $taxonomies = [];
+    protected $name       = "Locations"; // Name of the CPT on Registration
+    protected $group      = "Locations";
+    protected $singular   = "Location";
+    protected $plural     = "Locations";
+    protected $dashicon   = "dashicons-location-alt";
+    protected $taxonomies = [];
 
     public static $acf = array(
         'key' => 'group_5de1382249349',
