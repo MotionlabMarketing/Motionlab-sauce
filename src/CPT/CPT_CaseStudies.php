@@ -6,12 +6,12 @@ class CPT_CaseStudies extends CPTBase
 {
 
     // Set CPT options.
-    private $name       = "Case Studies"; // Name of the CPT on Registration
-    private $group      = "Case Studies";
-    private $singular   = "Case Study";
-    private $plural     = "Case Studies";
-    private $dashicon   = "dashicons-id-alt";
-    private $taxonomies = [];
+    protected $name       = "Case Studies"; // Name of the CPT on Registration
+    protected $group      = "Case Studies";
+    protected $singular   = "Case Study";
+    protected $plural     = "Case Studies";
+    protected $dashicon   = "dashicons-id-alt";
+    protected $taxonomies = [];
 
     public static $acf = array(
         'key' => 'group_5de1361b98501',

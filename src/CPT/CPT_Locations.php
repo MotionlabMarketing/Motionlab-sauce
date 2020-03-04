@@ -334,7 +334,7 @@ class CPT_Locations extends CPTBase
         return $single;
     }
 
-    private function registerHooks() {
+    public function registerHooks() {
         \add_action('save_post', [$this, 'updateLatLng']);
     }
 

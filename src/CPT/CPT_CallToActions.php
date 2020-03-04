@@ -6,12 +6,12 @@ class CPT_CallToActions extends CPTBase
 {
 
     // Set CPT options.
-    private $name       = "CTAs"; // Name of the CPT on Registration
-    private $group      = "CTAs";
-    private $singular   = "CTA";
-    private $plural     = "CTAs";
-    private $dashicon   = "dashicons-warning";
-    private $taxonomies = [];
+    protected $name       = "CTAs"; // Name of the CPT on Registration
+    protected $group      = "CTAs";
+    protected $singular   = "CTA";
+    protected $plural     = "CTAs";
+    protected $dashicon   = "dashicons-warning";
+    protected $taxonomies = [];
 
     public static $acf = array();
 

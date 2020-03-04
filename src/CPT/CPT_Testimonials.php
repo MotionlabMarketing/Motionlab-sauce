@@ -6,12 +6,12 @@ class CPT_Testimonials extends CPTBase
 {
 
     // Set CPT options.
-    private $name       = "Testimonials"; // Name of the CPT on Registration
-    private $group      = "Testimonials";
-    private $singular   = "Testimonial";
-    private $plural     = "Testimonials";
-    private $dashicon   = "dashicons-universal-access";
-    private $taxonomies = [];
+    protected $name       = "Testimonials"; // Name of the CPT on Registration
+    protected $group      = "Testimonials";
+    protected $singular   = "Testimonial";
+    protected $plural     = "Testimonials";
+    protected $dashicon   = "dashicons-universal-access";
+    protected $taxonomies = [];
 
     public static $acf = array(
         'key' => 'group_5de527c43a866',

@@ -6,12 +6,12 @@ class CPT_Jobs extends CPTBase
 {
 
     // Set CPT options.
-    private $name       = "Jobs"; // Name of the CPT on Registration
-    private $group      = "Jobs";
-    private $singular   = "Job";
-    private $plural     = "Jobs";
-    private $dashicon   = "dashicons-businessman";
-    private $taxonomies = [];
+    protected $name       = "Jobs"; // Name of the CPT on Registration
+    protected $group      = "Jobs";
+    protected $singular   = "Job";
+    protected $plural     = "Jobs";
+    protected $dashicon   = "dashicons-businessman";
+    protected $taxonomies = [];
 
     public static $acf = array(
         'key' => 'group_5de529d5a97c7',

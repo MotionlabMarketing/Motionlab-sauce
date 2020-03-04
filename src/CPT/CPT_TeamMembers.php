@@ -6,12 +6,12 @@ class CPT_TeamMembers extends CPTBase
 {
 
     // Set CPT options.
-    private $name       = "Team Members"; // Name of the CPT on Registration
-    private $group      = "Team Members";
-    private $singular   = "Team Member";
-    private $plural     = "Team Members";
-    private $dashicon   = "dashicons-groups";
-    private $taxonomies = [];
+    protected $name       = "Team Members"; // Name of the CPT on Registration
+    protected $group      = "Team Members";
+    protected $singular   = "Team Member";
+    protected $plural     = "Team Members";
+    protected $dashicon   = "dashicons-groups";
+    protected $taxonomies = [];
 
     public static $acf = array(
         'key' => 'group_5de532d716386',

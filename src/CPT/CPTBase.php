@@ -7,12 +7,12 @@ namespace Motionlab\Sauce\CPT;
 class CPTBase
 {
     // Set CPT options.
-    private $name       = ""; // Name of the CPT on Registration
-    private $group      = "";
-    private $singular   = "";
-    private $plural     = "";
-    private $dashicon   = "";
-    private $taxonomies = [];
+    protected $name       = ""; // Name of the CPT on Registration
+    protected $group      = "";
+    protected $singular   = "";
+    protected $plural     = "";
+    protected $dashicon   = "";
+    protected $taxonomies = [];
 
     public static $acf = [];
 
