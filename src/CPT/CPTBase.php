@@ -6,6 +6,14 @@ namespace Motionlab\Sauce\CPT;
 
 class CPTBase
 {
+    // Set CPT options.
+    private $name       = ""; // Name of the CPT on Registration
+    private $group      = "";
+    private $singular   = "";
+    private $plural     = "";
+    private $dashicon   = "";
+    private $taxonomies = [];
+
     public static $acf = [];
 
     public function __construct()
@@ -31,7 +39,6 @@ class CPTBase
      */
     private function register_CPT()
     {
-
         // Set the menu labels
         $labels = array(
             'name'                           => __($this->plural),
