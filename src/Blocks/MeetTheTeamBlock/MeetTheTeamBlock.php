@@ -34,6 +34,32 @@ class MeetTheTeamBlock extends Block
                 'prefix_name' => 0,
             ),
             array(
+                'key' => 'field_f6a5c009a6f20',
+                'label' => 'Layout',
+                'name' => 'meet_the_team_layout',
+                'type' => 'select',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'choices' => array(
+                    'filterable-list' => 'Filterable List',
+                    'team-with-content' => 'Team with Content',
+                ),
+                'default_value' => array(
+                ),
+                'allow_null' => 0,
+                'multiple' => 0,
+                'ui' => 1,
+                'ajax' => 0,
+                'return_format' => 'value',
+                'placeholder' => '',
+            ),
+            array(
                 'key' => 'field_5df0c60d4793f',
                 'label' => 'Title',
                 'name' => 'team_title',
@@ -51,6 +77,67 @@ class MeetTheTeamBlock extends Block
                 'prepend' => '',
                 'append' => '',
                 'maxlength' => '',
+            ),
+            array(
+                'key' => 'field_bb46b59f0af50',
+                'label' => 'Content',
+                'name' => 'team_content',
+                'type' => 'wysiwyg',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => array(
+                    array(
+                        array(
+                            'field' => 'field_f6a5c009a6f20',
+                            'operator' => '==',
+                            'value' => 'team-with-content',
+                        ),
+                    ),
+                ),
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'default_value' => '',
+                'placeholder' => '',
+                'prepend' => '',
+                'append' => '',
+                'maxlength' => '',
+            ),
+            array(
+                'key' => 'field_0274dba9b347b',
+                'label' => 'Selected Team Members',
+                'name' => 'team_members_selected',
+                'type' => 'relationship',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => array(
+                    array(
+                        array(
+                            'field' => 'field_f6a5c009a6f20',
+                            'operator' => '==',
+                            'value' => 'team-with-content',
+                        ),
+                    ),
+                ),
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'post_type' => array(
+                    0 => 'teammembers',
+                ),
+                'taxonomy' => '',
+                'filters' => array(
+                    0 => 'search',
+                    1 => 'taxonomy',
+                ),
+                'elements' => '',
+                'min' => 0,
+                'max' => 6,
+                'return_format' => 'object',
             ),
         ),
         'location' => array(
@@ -77,7 +164,13 @@ class MeetTheTeamBlock extends Block
     public function init()
     {
         $this->loadTeamMembers();
-        include(__DIR__ . '/block.php');
+        switch($this->blockConfiguration['meet_the_team_layout']) {
+            case 'team-with-content':
+                include(__DIR__ . '/team-with-content.php');
+                break;
+            default:
+                include(__DIR__ . '/block.php');
+        }
     }
 
     private function loadTeamMembers()

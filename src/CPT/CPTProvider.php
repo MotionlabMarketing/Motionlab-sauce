@@ -23,18 +23,27 @@ class CPTProvider
     public function bootstrap()
     {
         $this->registerCustomPostTypes();
-        $this->registerCustomPostTypesAcf();
     }
 
     private function registerCustomPostTypes()
     {
         foreach(self::$customPostTypes as $customPostType){
             $cptInstance = new $customPostType();
+            $this->loadACF($cptInstance);
+            $this->registerHooks($cptInstance);
         }
     }
 
-    private function registerCustomPostTypesAcf() {
-        include __DIR__ . '/cpt-acf.php';
+    private function loadACF($cptInstance) {
+        if(method_exists($cptInstance, 'registerACF')) {
+            $cptInstance->registerACF();
+        }
+    }
+
+    private function registerHooks($cptInstance) {
+        if(method_exists($cptInstance, 'registerHooks')) {
+            $cptInstance->registerHooks();
+        }
     }
 
     public static function orverrideCptClass(string $key, string $className)
