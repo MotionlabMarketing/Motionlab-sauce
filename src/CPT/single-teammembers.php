@@ -11,37 +11,49 @@ get_header();
 
 <main id="site-content" role="main">
 
-    <section class="orverflow-hidden bg-grey" style="background-image:url('http://staging.masterframe.d3z.uk/wp-content/themes/masterframe-consumer/src/img/bygone-pattern@2x.png');">
-        <div class="md-flex flex-row-reverse">
-            <div class="col-12 md-col-6 lg-col-7 min-height-100 relative">
-                <div class="bg-cover bg-center height-100 img-rounded" style="background-image:url('http://staging.masterframe.d3z.uk/wp-content/uploads/2020/02/DSC0272@2x-768x507.png');">
-                    <div class="ratio-4-3"></div>
+        <section class="py4 lg-py6 overflow-hidden">
+            <div class="lh4 measure-super-wide mx-auto">
+                <div class="relative">
+                    <div class="absolute bottom-0 left-0 width-100 bg-grad-darken-5 p4">
+                        <h1 class="white h2 md-h1 mb0 text-left"><?php echo get_the_title(); ?></h1>
+                    </div>
+                    <img src="<?php echo wp_get_attachment_url( get_post_thumbnail_id(), 'thumbnail' );?>" alt="" class="block">
                 </div>
-                <div class="bg-white absolute left-0 top-0 height-100 display-none md-block" style="width:4px;margin-left:-2px;"></div>
-            </div>
-            <div class="col-12 md-col-6 lg-col-5 flex items-center">
-                <div class="p4 lg-p6 wysiwyg width-100">
-                    <h1 class="white h2 md-h1 mb2 text-left"><?php echo get_the_title(); ?></h1>
-                    <h3 class="white bold"><?php echo get_field('team_member_role'); ?>Designer</h3>
-                    <div class="white flex mt5 pt5 border-top border-lighten-5">
-                        <div class="mb4 col-6">
-                            <h4 class="bold white mb0">Phone</h4>
-                            <p><?php echo get_field('team_member_phone_number'); ?>0123 456789</p>
+                <div class="px4 mt6">
+                    <div class="mxn3 md-flex">
+                        <div class="px3">
+                            <h3 class="bold" style="width:7rem;">Info</h3>
                         </div>
-                        <div class="mb4 col-6">
-                            <h4 class="bold white mb0">Email</h4>
-                            <p><?php echo get_field('team_member_email_address'); ?>hello@hikarl.co.uk</p>
+                        <div class="px3 width-100">
+                            <div class="mxn3 md-flex">
+                                <div class="mb4 md-mb0 col-6 px3">
+                                    <h4 class="bold">Role</h4>
+                                    <p class="mb0"><?php echo get_field('team_member_role'); ?>Designer</p>
+                                </div>
+                                <div class="mb4 md-mb0 col-6 px3">
+                                    <h4 class="bold">Phone</h4>
+                                    <p class="mb0"><?php echo get_field('team_member_phone_number'); ?>0123 456789</p>
+                                </div>
+                                <div class="mb4 md-mb0 col-6 px3">
+                                    <h4 class="bold">Email</h4>
+                                    <p class="mb0"><?php echo get_field('team_member_email_address'); ?>hello@hikarl.co.uk</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt6 py6 border-top border-darken-2">
+                        <div class="mxn3 md-flex">
+                            <div class="px3">
+                                <h3 class="bold" style="width:7rem;">Biography</h3>
+                            </div>
+                            <div class="px3">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                <?php echo get_field('team_member_bio'); ?>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
-
-        <section class="px4 py4 lg-py6">
-            <div class="lh4 measure-super-wide mx-auto">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                <?php echo get_field('team_member_bio'); ?>
             </div>
         </section>
 
