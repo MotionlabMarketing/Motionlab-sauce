@@ -4,9 +4,9 @@ get_header();
 
 ?>
 
-<section class="">
+<section class="px4 py5 bg-white">
 
-    <main class="container clearfix py4">
+    <main class="container clearfix">
 
         <div class="col col-12">
             <h1 class="text-center">
