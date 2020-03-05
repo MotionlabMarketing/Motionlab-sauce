@@ -9,7 +9,10 @@ get_header();
     <main class="container clearfix py4">
 
         <div class="col col-12">
-            <h1 class="h0 text-center"><?php echo get_the_title(get_option('page_for_posts')); ?></h1>
+            <h1 class="h0 text-center">
+                <?php if(isset($_GET['s'])) { echo "Site Search"; } else { echo get_the_title(get_option('page_for_posts')); } ?>
+            </h1>
+            <?php get_search_form(); ?>
         </div>
 
         <div class="clearfix">
