@@ -4,9 +4,9 @@ get_header();
 
 ?>
 
-<section class="content-wrap">
+<div class="content-wrap">
 
-    <div class="px4 py5 bg-white">
+    <section class="px4 py5 bg-white">
 
         <main class="container clearfix">
 
@@ -43,9 +43,9 @@ get_header();
 
         </main>
 
-    </div>
+    </section>
 
-</section>
+</div>
 
 <?php
 
