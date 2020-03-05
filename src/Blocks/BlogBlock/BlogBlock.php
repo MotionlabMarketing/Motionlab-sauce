@@ -114,7 +114,7 @@ class BlogBlock extends Block
                 'choices' => array(
                     'manual' => 'Manually Select',
                     'latest' => 'Latest Posts',
-                    'category' => 'By Category'
+                    'category' => 'By Category',
                 ),
                 'default_value' => array(
                 ),
@@ -124,6 +124,76 @@ class BlogBlock extends Block
                 'ajax' => 0,
                 'return_format' => 'value',
                 'placeholder' => '',
+            ),
+            array(
+                'key' => 'field_4aee7efe8816a',
+                'label' => 'Blog Count',
+                'name' => 'blog_count',
+                'type' => 'number',
+                'instructions' => 'How many posts do you want to display? Only applicable for 3 Column and 4 Column layouts. Leave post count field 0 to use the default for each layout.',
+                'required' => 0,
+                'conditional_logic' => array(
+                    array(
+                        array(
+                            'field' => 'field_5dd6c574915aa',
+                            'operator' => '==',
+                            'value' => 'latest',
+                        ),
+                        array(
+                            'field' => 'field_6cb93f41c7bd382c',
+                            'operator' => '==',
+                            'value' => '4col',
+                        ),
+                    ),
+                    array(
+                        array(
+                            'field' => 'field_5dd6c574915aa',
+                            'operator' => '==',
+                            'value' => 'latest',
+                        ),
+                        array(
+                            'field' => 'field_6cb93f41c7bd382c',
+                            'operator' => '==',
+                            'value' => 'basic',
+                        ),
+                    ),
+                    array(
+                        array(
+                            'field' => 'field_5dd6c574915aa',
+                            'operator' => '==',
+                            'value' => 'category',
+                        ),
+                        array(
+                            'field' => 'field_6cb93f41c7bd382c',
+                            'operator' => '==',
+                            'value' => 'basic',
+                        ),
+                    ),
+                    array(
+                        array(
+                            'field' => 'field_5dd6c574915aa',
+                            'operator' => '==',
+                            'value' => 'category',
+                        ),
+                        array(
+                            'field' => 'field_6cb93f41c7bd382c',
+                            'operator' => '==',
+                            'value' => '4col',
+                        ),
+                    ),
+                ),
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'default_value' => 0,
+                'placeholder' => '',
+                'prepend' => '',
+                'append' => '',
+                'min' => '',
+                'max' => '',
+                'step' => '',
             ),
             array(
                 'key' => 'field_5e4c1268d0371',
@@ -190,7 +260,7 @@ class BlogBlock extends Block
                 'return_format' => 'id',
             ),
             array(
-                'key' => 'field_ 0fb5b8ec42c0',
+                'key' => 'field_-0fb5b8ec42c0',
                 'label' => 'Footer Button',
                 'name' => 'blog_footer_button',
                 'type' => 'link',
@@ -230,15 +300,15 @@ class BlogBlock extends Block
     {
         switch($this->blockConfiguration['blog_layout']) {
             case 'slider':
-                $this->loadPosts(9);
+                $this->loadPosts($this->blockConfiguration['blog_count'] == 0 ? 9 : $this->blockConfiguration['blog_count']);
                 include (__DIR__ . '/slider.php');
                 break;
             case '4col':
-                $this->loadPosts(4);
+                $this->loadPosts($this->blockConfiguration['blog_count'] == 0 ? 4 : $this->blockConfiguration['blog_count']);
                 include (__DIR__ . '/four-column.php');
                 break;
             default:
-                $this->loadPosts(6);
+                $this->loadPosts($this->blockConfiguration['blog_count'] == 0 ? 6 : $this->blockConfiguration['blog_count']);
                 include(__DIR__ . '/block.php'); // 3 col
                 break;
         }

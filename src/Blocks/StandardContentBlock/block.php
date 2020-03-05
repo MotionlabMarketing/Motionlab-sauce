@@ -6,7 +6,7 @@ Link Title: $button['standard_content_button']['title']
 ~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*|Block Settings|~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*/
 ?>
 
-<section class="px4 py5 text-center <?php echo $this->blockConfiguration['background_colour'] ? $this->blockConfiguration['background_colour']  : ''; ?>" <?php echo $this->getAttributeString() ?>>
+<section class="px4 py5 <?php echo $this->blockConfiguration['background_colour'] ? $this->blockConfiguration['background_colour']  : ''; ?>" <?php echo $this->getAttributeString() ?>>
     <div class="lh4 wysiwyg measure-super-wide mx-auto">
         <?php echo $this->blockConfiguration['standard_content_content']; ?>
     </div>
