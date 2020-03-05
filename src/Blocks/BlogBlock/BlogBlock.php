@@ -114,7 +114,7 @@ class BlogBlock extends Block
                 'choices' => array(
                     'manual' => 'Manually Select',
                     'latest' => 'Latest Posts',
-                    'category' => 'By Category'
+                    'category' => 'By Category',
                 ),
                 'default_value' => array(
                 ),
@@ -137,17 +137,43 @@ class BlogBlock extends Block
                         array(
                             'field' => 'field_5dd6c574915aa',
                             'operator' => '==',
-                            'value' => 'Latest Posts',
+                            'value' => 'latest',
                         ),
+                        array(
+                            'field' => 'field_6cb93f41c7bd382c',
+                            'operator' => '==',
+                            'value' => '4col',
+                        ),
+                    ),
+                    array(
                         array(
                             'field' => 'field_5dd6c574915aa',
                             'operator' => '==',
-                            'value' => 'By Category',
+                            'value' => 'latest',
                         ),
                         array(
                             'field' => 'field_6cb93f41c7bd382c',
                             'operator' => '==',
                             'value' => 'basic',
+                        ),
+                    ),
+                    array(
+                        array(
+                            'field' => 'field_5dd6c574915aa',
+                            'operator' => '==',
+                            'value' => 'category',
+                        ),
+                        array(
+                            'field' => 'field_6cb93f41c7bd382c',
+                            'operator' => '==',
+                            'value' => 'basic',
+                        ),
+                    ),
+                    array(
+                        array(
+                            'field' => 'field_5dd6c574915aa',
+                            'operator' => '==',
+                            'value' => 'category',
                         ),
                         array(
                             'field' => 'field_6cb93f41c7bd382c',
@@ -161,7 +187,7 @@ class BlogBlock extends Block
                     'class' => '',
                     'id' => '',
                 ),
-                'default_value' => 50,
+                'default_value' => 1,
                 'placeholder' => '',
                 'prepend' => '',
                 'append' => '',
@@ -234,7 +260,7 @@ class BlogBlock extends Block
                 'return_format' => 'id',
             ),
             array(
-                'key' => 'field_ 0fb5b8ec42c0',
+                'key' => 'field_-0fb5b8ec42c0',
                 'label' => 'Footer Button',
                 'name' => 'blog_footer_button',
                 'type' => 'link',
@@ -274,15 +300,15 @@ class BlogBlock extends Block
     {
         switch($this->blockConfiguration['blog_layout']) {
             case 'slider':
-                $this->loadPosts(9);
+                $this->loadPosts($this->blockConfiguration['blog_count'] == 0 ? 9 : $this->blockConfiguration['blog_count']);
                 include (__DIR__ . '/slider.php');
                 break;
             case '4col':
-                $this->loadPosts(4);
+                $this->loadPosts($this->blockConfiguration['blog_count'] == 0 ? 4 : $this->blockConfiguration['blog_count']);
                 include (__DIR__ . '/four-column.php');
                 break;
             default:
-                $this->loadPosts(6);
+                $this->loadPosts($this->blockConfiguration['blog_count'] == 0 ? 6 : $this->blockConfiguration['blog_count']);
                 include(__DIR__ . '/block.php'); // 3 col
                 break;
         }
