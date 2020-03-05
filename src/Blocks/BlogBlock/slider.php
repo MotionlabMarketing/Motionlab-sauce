@@ -26,9 +26,8 @@
                         <a href="<?php echo get_the_permalink($p->ID); ?>" class="block black hover-primary">
                             <h2 class="h3 bold"><?php echo get_the_title($p->ID)?></h2>
                         </a>
-
-                        <p><?php echo get_the_excerpt($p->ID); ?></p>
-
+                        <?php $excerpt = get_the_excerpt($p->ID); ?>
+                        <p class="lh3 h5 mt0 ml0 mr0"><?php echo wp_trim_words( $excerpt, 22, '...' ); ?></p>
                     </div>
                     <a href="<?php echo get_the_permalink($p->ID); ?>" class="btn btn-secondary hover-bg-primary">Read More</a>
                 </article>
