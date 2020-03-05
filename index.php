@@ -14,9 +14,11 @@ get_header();
                 <h1 class="text-center">
                     <?php if(isset($_GET['s'])) { echo "Site Search"; } else { echo get_the_title(get_option('page_for_posts')); } ?>
                 </h1>
-                <div class="page-search">
-                    <?php get_search_form(); ?>
-                </div>
+                <?php if(isset($_GET['s'])) : ?>
+                    <div class="page-search">
+                        <?php get_search_form(); ?>
+                    </div>
+                <?php endif; ?>
             </div>
 
             <div class="clearfix">
