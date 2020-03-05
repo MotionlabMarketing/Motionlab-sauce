@@ -22,7 +22,7 @@
             ?>
                 <article class="p3 col-12 md-col-4 rounded hover-zoom mb3">
                     <div class="bg-white shadow overflow-hidden zoom">
-                        <a href="<?php echo $p->permalink ?>" class="overflow-hidden block">
+                        <a href="<?php echo get_the_permalink($p->ID); ?>" class="overflow-hidden block">
                             <div class="bg-charcoal overflow-hidden bg-cover bg-center" style="height: 16rem; background-image: url('<?php echo $p->featuredImage; ?>');"></div>
                         </a>
                         <div class="js-match-height py3 px4">
