@@ -16,6 +16,10 @@
       "url": "https://wpackagist.org"
     },
     {
+      "type": "composer",
+      "url": "https://packages.d3z.uk"
+    },
+    {
       "type": "package",
       "package": {
         "name": "advanced-custom-fields/advanced-custom-fields-pro",
@@ -30,26 +34,6 @@
           "ffraenz/private-composer-installer": "^2.0"
         }
       }
-    },
-    {
-      "type": "vcs",
-      "url": "ssh://git@gits.motionlabclients.co.uk:766/wordpress-plugins-purchased/NinjaFormsCore.git"
-    },
-    {
-      "type": "vcs",
-      "url": "ssh://git@gits.motionlabclients.co.uk:766/wordpress-plugins-purchased/NinjaFormsAddonManager.git"
-    },
-    {
-      "type": "vcs",
-      "url": "ssh://git@gits.motionlabclients.co.uk:766/wordpress-plugins-purchased/NinjaFormsStyles.git"
-    },
-    {
-      "type": "vcs",
-      "url": "ssh://git@gits.motionlabclients.co.uk:766/wordpress-plugins-purchased/NinjaFormsMailchimp.git"
-    },
-    {
-      "type": "vcs",
-      "url": "ssh://git@gits.motionlabclients.co.uk:766/wordpress-plugins-purchased/NinjaFormsUploads.git"
     }
   ],
   "require": {
