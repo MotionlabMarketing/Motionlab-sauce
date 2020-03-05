@@ -4,40 +4,50 @@ get_header();
 
 ?>
 
-<section class="">
+<div class="content-wrap">
 
-    <main class="container clearfix py4">
+    <section class="px4 py5 bg-white">
 
-        <div class="col col-12">
-            <h1 class="h0 text-center"><?php echo get_the_title(get_option('page_for_posts')); ?></h1>
-        </div>
+        <main class="container clearfix">
 
-        <div class="clearfix">
-            <?php
+            <div class="col col-12">
+                <h1 class="text-center">
+                    <?php if(isset($_GET['s'])) { echo "Site Search"; } else { echo get_the_title(get_option('page_for_posts')); } ?>
+                </h1>
+                <?php if(isset($_GET['s'])) : ?>
+                    <div class="page-search">
+                        <?php get_search_form(); ?>
+                    </div>
+                <?php endif; ?>
+            </div>
 
-            if (have_posts()) :
-                $i = 0;
-                while (have_posts()) : the_post();
+            <div class="clearfix">
+                <?php
 
-                    echo "<div class='col col-12 md-col-5 lg-col-4 md-hover-zoom'>";
-                    include('template-parts/post.php');
-                    echo "</div>";
-                    $i++;
+                if (have_posts()) :
+                    $i = 0;
+                    while (have_posts()) : the_post();
 
-                endwhile;
-            endif;
+                        echo "<div class='col col-12 md-col-5 lg-col-4 md-hover-zoom'>";
+                        include('template-parts/post.php');
+                        echo "</div>";
+                        $i++;
 
-            ?>
-        </div>
+                    endwhile;
+                endif;
 
-        <div class="pagination my4">
-            <?php echo paginate_links(); ?>
-        </div>
+                ?>
+            </div>
 
-    </main>
+            <div class="pagination my4">
+                <?php echo paginate_links(); ?>
+            </div>
 
-</section>
+        </main>
 
+    </section>
+
+</div>
 
 <?php
 
