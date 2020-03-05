@@ -130,7 +130,7 @@ class BlogBlock extends Block
                 'label' => 'Blog Count',
                 'name' => 'blog_count',
                 'type' => 'number',
-                'instructions' => 'How many posts do you want to display? Only applicable for 3 Column and 4 Column layouts.',
+                'instructions' => 'How many posts do you want to display? Only applicable for 3 Column and 4 Column layouts. Leave post count field 0 to use the default for each layout.',
                 'required' => 0,
                 'conditional_logic' => array(
                     array(
@@ -187,7 +187,7 @@ class BlogBlock extends Block
                     'class' => '',
                     'id' => '',
                 ),
-                'default_value' => 1,
+                'default_value' => 0,
                 'placeholder' => '',
                 'prepend' => '',
                 'append' => '',
