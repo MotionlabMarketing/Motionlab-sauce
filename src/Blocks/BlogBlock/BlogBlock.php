@@ -126,6 +126,50 @@ class BlogBlock extends Block
                 'placeholder' => '',
             ),
             array(
+                'key' => 'field_4aee7efe8816a',
+                'label' => 'Blog Count',
+                'name' => 'blog_count',
+                'type' => 'number',
+                'instructions' => 'How many posts do you want to display? Only applicable for 3 Column and 4 Column layouts.',
+                'required' => 0,
+                'conditional_logic' => array(
+                    array(
+                        array(
+                            'field' => 'field_5dd6c574915aa',
+                            'operator' => '==',
+                            'value' => 'Latest Posts',
+                        ),
+                        array(
+                            'field' => 'field_5dd6c574915aa',
+                            'operator' => '==',
+                            'value' => 'By Category',
+                        ),
+                        array(
+                            'field' => 'field_6cb93f41c7bd382c',
+                            'operator' => '==',
+                            'value' => 'basic',
+                        ),
+                        array(
+                            'field' => 'field_6cb93f41c7bd382c',
+                            'operator' => '==',
+                            'value' => '4col',
+                        ),
+                    ),
+                ),
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'default_value' => 50,
+                'placeholder' => '',
+                'prepend' => '',
+                'append' => '',
+                'min' => '',
+                'max' => '',
+                'step' => '',
+            ),
+            array(
                 'key' => 'field_5e4c1268d0371',
                 'label' => 'Selected Category',
                 'name' => 'blog_selected_category',
