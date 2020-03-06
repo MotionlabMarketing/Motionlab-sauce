@@ -8,6 +8,17 @@
                     <?php echo $this->blockConfiguration['team_title']; ?>
                 </h3>
                 <?php echo $this->blockConfiguration['team_content']; ?>
+
+                <?php if($this->blockConfiguration['team_page_link']) :?>
+                    <a
+                            href="<?php echo $this->blockConfiguration['team_page_link']['url']; ?>"
+                            target="<?php echo $this->blockConfiguration['team_page_link']['target']; ?>"
+                            class="btn border border-grey grey mx1 uppercase"
+                    >
+                        <?php echo $this->blockConfiguration['team_page_link']['title'] ?>
+                    </a>
+                <?php endif; ?>
+
             </div>
         </div>
         <div class="col-12 md-col-6 lg-col-7 min-height-100">
