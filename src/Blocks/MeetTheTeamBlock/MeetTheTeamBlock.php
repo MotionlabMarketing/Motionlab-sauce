@@ -106,6 +106,21 @@ class MeetTheTeamBlock extends Block
                 'maxlength' => '',
             ),
             array(
+                'key' => 'field_58b0893866862',
+                'label' => 'Page Link',
+                'name' => 'team_page_link',
+                'type' => 'link',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'return_format' => 'array',
+            ),
+            array(
                 'key' => 'field_0274dba9b347b',
                 'label' => 'Selected Team Members',
                 'name' => 'team_members_selected',
