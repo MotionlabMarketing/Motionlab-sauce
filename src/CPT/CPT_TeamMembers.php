@@ -11,6 +11,10 @@ class CPT_TeamMembers extends CPTBase
     protected $singular   = "Team Member";
     protected $plural     = "Team Members";
     protected $dashicon   = "dashicons-groups";
+
+    protected $hasArchive = true;
+    protected $hierarchical = true;
+
     protected $taxonomies = [];
 
     public static $acf = array(

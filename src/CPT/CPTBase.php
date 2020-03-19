@@ -13,6 +13,8 @@ class CPTBase
     protected $plural     = "";
     protected $dashicon   = "";
     protected $taxonomies = [];
+    protected $hasArchive = false;
+    protected $hierarchical = true;
 
     public static $acf = [];
 
@@ -71,12 +73,12 @@ class CPTBase
             'labels'                         => $labels,
             'supports'                       => array('title', 'thumbnail'),
             'public'                         => true,
-            'hierarchical'                   => false,
+            'hierarchical'                   => $this->hierarchical,
             'show_ui'                        => true,
             'show_in_menu'                   => true,
             'show_in_nav_menus'              => true,
             'show_in_admin_bar'              => true,
-            'has_archive'                    => true,
+            'has_archive'                    => $this->hasArchive,
             'can_export'                     => true,
             'exclude_from_search'            => false,
             'yarpp_support'                  => true,
@@ -127,7 +129,7 @@ class CPTBase
 
             // Setup the taxonomy options
             $args = array(
-                'hierarchical'               => true,
+                'hierarchical'               => $this->hierarchical,
                 'labels'                     => $labels,
                 'show_ui'                    => true,
                 'show_admin_column'          => true,
