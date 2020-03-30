@@ -10,17 +10,35 @@ use Motionlab\Sauce\PageTemplates\Testimonials\TestimonialsTemplate;
 
 class PageTemplateProvider
 {
+
+    protected static $pageTemplates = [
+        'generic'           => GenericTemplate::class,
+        'jobs'              => JobsTemplate::class,
+        'jobs_listing'      => JobsListingTemplate::class,
+        'location_finder'   => LocationFinderTemplate::class,
+        'testimonials'      => TestimonialsTemplate::class
+    ];
+
     public function __construct()
     {
-        $this->bootstrap();
+
     }
 
-    private function bootstrap()
+    public function bootstrap()
     {
-        (new GenericTemplate())->init();
-        (new JobsTemplate())->init();
-        (new JobsListingTemplate())->init();
-        (new LocationFinderTemplate())->init();
-        (new TestimonialsTemplate())->init();
+        $this->registerPageTemplates();
+    }
+
+    private function registerPageTemplates()
+    {
+        foreach(self::$pageTemplates as $pageTemplate){
+            $pageTemplateInstance = new $pageTemplate();
+            $pageTemplateInstance->init();
+        }
+    }
+
+    public static function overrideTemplate(string $key, string $className)
+    {
+        self::$customPostTypes[$key] = $className;
     }
 }

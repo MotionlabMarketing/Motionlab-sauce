@@ -46,7 +46,8 @@ class Theme
 
     public function loadTemplates()
     {
-        new PageTemplateProvider();
+        $ptp = new PageTemplateProvider();
+        $ptp->bootstrap();
     }
 
     public function registerImageSizes()
