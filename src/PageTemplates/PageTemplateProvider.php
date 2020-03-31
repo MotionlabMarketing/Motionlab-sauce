@@ -39,6 +39,6 @@ class PageTemplateProvider
 
     public static function overrideTemplate(string $key, string $className)
     {
-        self::$customPostTypes[$key] = $className;
+        self::$pageTemplates[$key] = $className;
     }
 }
