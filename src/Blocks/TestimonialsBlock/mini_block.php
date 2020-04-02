@@ -12,8 +12,8 @@ $testimonials = $this->getTestimonials();
 
 <section class="bg-secondary" <?php echo $this->getAttributeString() ?>>
     <ul class="js-webticker">
-        <?php foreach($testimonials as $testimonial) :?>
-            <li data-update="item<?php echo $i;?>">
+        <?php foreach($testimonials as $key => $testimonial) :?>
+            <li data-update="item<?php echo $key;?>">
                 <p class="white m0 h5 regular mx4">
                     <span class="mr2">
                     <?php for($i = 0; $i < $testimonial['star_rating']; $i++) :?>
