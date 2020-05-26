@@ -23,7 +23,7 @@
                 </div>
             <?php endif; ?>
 
-            <p class="mb0 uppercase h6"><a href="<?php echo $this->callToAction['privacy_policy']['link']; ?>" class="white hover-black"><?php echo $this->callToAction['privacy_policy']['text']; ?></a></p>
+            <p class="mb0 uppercase h6"><a href="<?php echo $this->callToAction['privacy_policy']; ?>" class="white hover-black">Our Privacy Policy</a></p>
 
         </div>
     </div>
