@@ -1,7 +1,6 @@
 
 <?php
     $featuredImageUrl = get_the_post_thumbnail_url($this->blockConfiguration['call_to_action'], 'large');
-    pa($this->blockConfiguration);
 ?>
 
 <section class="relative bg-cover bg-center py4 px4" style="background-image: url('<?php echo $featuredImageUrl; ?>');" data-element="download-booklet" <?php echo $this->getAttributeString() ?>>
@@ -24,7 +23,7 @@
                 </div>
             <?php endif; ?>
 
-            <p class="mb0 uppercase h6"><a href="#" class="white hover-black">Our Privacy Policy</a></p>
+            <p class="mb0 uppercase h6"><a href="<?php echo $this->callToAction['privacy_policy']['link']; ?>" class="white hover-black"><?php echo $this->callToAction['privacy_policy']['text']; ?></a></p>
 
         </div>
     </div>
