@@ -5,6 +5,7 @@
     Padding: $this->blockConfiguration['alternating_media_padding']
     Image Position: $this->blockConfiguration['alternating_media_image_position']
     Background Colour: $this->blockConfiguration['alternating_media_background_colour']
+    Contain To Grid: $this->blockConfiguration['alternating_media_contain_to_grid']
 ~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*|Block Settings|~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*/
 $buttons = $this->blockConfiguration['alternating_media_buttons'];
 ?>
