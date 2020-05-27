@@ -22,7 +22,7 @@
             </div>
         </div>
         <div class="col-12 md-col-6 lg-col-7 min-height-100">
-            <div class="flex flex-wrap min-height-100" style="margin: -2px;">
+            <div class="flex flex-wrap min-height-100">
                 <?php foreach($this->blockConfiguration['team_members_selected'] as $teamMember):?>
                     <div class="col-4 bg-cover bg-center border border-white relative hover-reveal" style="background-image:url('<?php echo wp_get_attachment_image_url(get_post_thumbnail_id($teamMember->ID), 'medium')?>');border-width:2px; cursor: help;">
                         <a href="/" class="block">

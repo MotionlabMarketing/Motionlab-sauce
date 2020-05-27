@@ -190,6 +190,25 @@ class AlternatingMediaBlock extends Block
                 'ui_on_text' => '',
                 'ui_off_text' => '',
             ),
+            array(
+                'key' => 'field_e671a88dd282f',
+                'label' => 'Contain To Grid',
+                'name' => 'alternating_media_contain_to_grid',
+                'type' => 'true_false',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'message' => '',
+                'default_value' => 0,
+                'ui' => 1,
+                'ui_on_text' => '',
+                'ui_off_text' => '',
+            )
         ),
         'location' => array(
             array(
