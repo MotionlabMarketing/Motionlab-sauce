@@ -37,12 +37,12 @@ class Block
 
     public function getAttributeString()
     {
-        $attributeString = 'data-block-id="%s" data-block-name="%s" data-block-position="%d" data-block-layout="%s"';
+        $attributeString = 'data-block-id="%s" data-block-name="%s" data-block-position="%d" data-block-layout="%s" id="%s"';
         $position = BlockPositionAuthority::instance()->getCurrentBlockPosition();
         $name = static::class;
         $pageId = BlockPositionAuthority::instance()->getPageId();
         $id = $pageId.'-'.$position;
-        return sprintf($attributeString, $id, $name, $position, $this->layout);
+        return sprintf($attributeString, $id, $name, $position, $this->layout, $id);
     }
 
     public static function registerBlockACF() {
