@@ -1,10 +1,12 @@
 <?php $this->setCallToAction($this->blockConfiguration['call_to_action']); ?>
 <section class="footer-installer <?php echo $this->callToAction['background_colour'] ? $this->callToAction['background_colour']  : ''; ?> mb4" <?php echo $this->getAttributeString() ?>>
 
-    <div class="content wysiwyg mx-auto relative <?php echo $this->callToAction['cta_bordered_content'] ? 'border border-lighten-10 cta-bordered' : ''; ?>">
+    <div class="content mx-auto relative <?php echo $this->callToAction['cta_bordered_content'] ? 'border border-lighten-10 cta-bordered' : ''; ?>">
         <img src="<?php echo $this->callToAction['cta_image']['sizes']['medium']; ?>" />
 
-        <?php echo $this->callToAction['cta_content'] ?>
+        <div class="wysiwyg">
+            <?php echo $this->callToAction['cta_content'] ?>
+        </div>
 
         <div data-element="buttons" data-button-alignment="<?php echo $this->callToAction['cta_button_alignment']; ?>">
             <?php
