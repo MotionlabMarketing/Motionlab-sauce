@@ -29,8 +29,8 @@ $row_index = get_row_index();
 
                         <div class="relative px4 py5 lg-min-height-v50 flex items-center justify-center" data-mh="slider-tab-slides" style="display: flex !important; min-height: 50vh;">
 
-                            <div class="absolute top-0 left-0 width-100 height-100 z1 bg-cover xl-show lg-min-height-v50" style="background-image:url('<?php echo $value['slide_background_image']['sizes']['banner']; ?>'); background-position: 100% 50%;"></div>
-                            <div class="absolute top-0 left-0 width-100 height-100 z1 bg-cover xl-hide lg-min-height-v50" style="background-image:url('<?php echo $value['slide_background_image']['sizes']['banner']; ?>'); background-position: 60% 100%;"></div>
+                            <div class="absolute top-0 left-0 width-100 height-100 z1 bg-cover xl-show <?php echo $this->blockConfiguration['slider_tabs_height']; ?>" style="background-image:url('<?php echo $value['slide_background_image']['sizes']['banner']; ?>'); background-position: 100% 50%;"></div>
+                            <div class="absolute top-0 left-0 width-100 height-100 z1 bg-cover xl-hide <?php echo $this->blockConfiguration['slider_tabs_height']; ?>" style="background-image:url('<?php echo $value['slide_background_image']['sizes']['banner']; ?>'); background-position: 60% 100%;"></div>
 
                             <div class="container width-100 flex md-block items-center">
                                 <div class="col-9 lg-col-6 relative z3" <?php echo ($value["slide_content_oveylay"])? 'style="background-color:rgba(255,255,255,0.5);"':''; ?>>
@@ -85,7 +85,7 @@ jQuery(document).ready(function ($) {
     $('[data-element="slider-tabs-block-<?php echo $row_index; ?>"]').slick({
         autoplay: false,
         autoplaySpeed: 5000,
-        arrows: false,
+        arrows: <?php echo $this->blockConfiguration['slider_tabs_arrows'] ? 'true' : 'false'; ?>,
         infinite: true,
         dots: true,
     });
