@@ -187,28 +187,12 @@ class CPT_Jobs extends CPTBase
      * GET TAXONOMIES DETAILS
      * This function returns an array of taxonomies for registation.
      */
-    public function get_taxonomies_details()
+    protected function get_taxonomies_details()
     {
         return array(
             array(
                 'plural' => "Job Types",
-                'singular' => "Job Type",
-                'terms' => array(
-                    array(
-                        'name' => "Full Time",
-                        'alias_of' => '',
-                        'description' => '',
-                        'parent' => '',
-                        'slug' => 'full-time'
-                    ),
-                    array(
-                        'name' => "Part Time",
-                        'alias_of' => '',
-                        'description' => '',
-                        'parent' => '',
-                        'slug' => 'part-time'
-                    )
-                )
+                'singular' => "Job Type"
             )
         );
     }

@@ -381,7 +381,7 @@ class CPT_Locations extends CPTBase
      * GET TAXONOMIES DETAILS
      * This function returns an array of taxonomies for registation.
      */
-    public function get_taxonomies_details()
+    protected function get_taxonomies_details()
     {
 
     }
