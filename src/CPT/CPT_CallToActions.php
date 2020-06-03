@@ -219,12 +219,4 @@ class CPT_CallToActions extends CPTBase
 
     public function registerSingleTemplate($single) { return $single; }
 
-    /**
-     * GET TAXONOMIES DETAILS
-     * This function returns an array of taxonomies for registation.
-    */
-    public function get_taxonomies_details()
-    {
-        return [];
-    }
 }

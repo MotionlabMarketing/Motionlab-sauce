@@ -21,9 +21,6 @@ class CPTBase
         //Register the single template for this post type.
         \add_filter('single_template', [$this, "registerSingleTemplate"]);
 
-        // Register the CPT
-        $this->register_CPT();
-
         // Get taxonomies details
         $this->taxonomies = $this->get_taxonomies_details();
 
@@ -31,13 +28,17 @@ class CPTBase
         if (!empty($this->taxonomies)) {
             $this->register_taxonomy();
         }
+
+        // Register the CPT
+        $this->register_CPT();
+
     }
 
     /**
      * REGISTER THE CPT
      * This function setup and registers the custom CPT.
      */
-    private function register_CPT()
+    protected function register_CPT()
     {
         // Set the menu labels
         $labels = array(
@@ -56,6 +57,13 @@ class CPTBase
             'not_found_in_trash'             => __('Not found in Bin')
         );
 
+        $taxNames = [];
+        if(!empty($this->taxonomies)) {
+            foreach($this->taxonomies as $tax) {
+                $taxNames[] = str_replace(' ', '-', strtolower($tax['plural']));
+            }
+        }
+
         // Set the CPT options
         $args = array(
             'label'                          => __(strtolower($this->group)),
@@ -63,16 +71,16 @@ class CPTBase
             'labels'                         => $labels,
             'supports'                       => array('title', 'thumbnail'),
             'public'                         => true,
-            'hierarchical'                   => true,
+            'hierarchical'                   => false,
             'show_ui'                        => true,
             'show_in_menu'                   => true,
             'show_in_nav_menus'              => true,
             'show_in_admin_bar'              => true,
-            'has_archive'                    => false,
+            'has_archive'                    => true,
             'can_export'                     => true,
             'exclude_from_search'            => false,
             'yarpp_support'                  => true,
-            'taxonomies'                      => array('Verticals','Departments'),
+            'taxonomies'                     => $taxNames,
             'publicly_queryable'             => true,
             'capability_type'                => 'page',
             'menu_icon'                      => $this->dashicon,
@@ -83,14 +91,14 @@ class CPTBase
         );
 
         // Register the post type
-        \register_post_type($this->name, $args);
+        \register_post_type(strtolower($this->name), $args);
     }
 
     /**
      * REGISTER CUSTOM CPT TAXONOMIES
      * This function sets up and registered the custom taxonomies for the CPT.
      */
-    private function register_taxonomy()
+    protected function register_taxonomy()
     {
         foreach ((object) $this->taxonomies as $tax) {
 
@@ -119,7 +127,7 @@ class CPTBase
 
             // Setup the taxonomy options
             $args = array(
-                'hierarchical'               => false,
+                'hierarchical'               => true,
                 'labels'                     => $labels,
                 'show_ui'                    => true,
                 'show_admin_column'          => true,
@@ -132,7 +140,7 @@ class CPTBase
             );
 
             // Register the taxonomy
-            \register_taxonomy(str_replace(' ', '-', strtolower($tax->plural)), strtolower($this->name), $args);
+            $error = \register_taxonomy(str_replace(' ', '-', strtolower($tax->plural)), strtolower($this->name), $args);
 
             // Register preset terms
             if (!empty($tax->terms)) {
@@ -154,6 +162,10 @@ class CPTBase
                 }
             }
         }
+    }
+
+    protected function get_taxonomies_details() {
+        return false;
     }
 
     public static function registerACF() {

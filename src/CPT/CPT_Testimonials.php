@@ -157,13 +157,4 @@ class CPT_Testimonials extends CPTBase
 
         return $single;
     }
-
-    /**
-     * GET TAXONOMIES DETAILS
-     * This function returns an array of taxonomies for registation.
-     */
-    public function get_taxonomies_details()
-    {
-
-    }
 }
