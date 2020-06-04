@@ -40,7 +40,7 @@ class BlockProvider
         'button' => ButtonBlock::class,
         'call_to_action' => CallToActionBlock::class,
         'case_studies' => CaseStudiesBlock::class,
-        'faq' => FAQBlock::class,
+        'faqs' => FAQBlock::class,
         'form' => FormBlock::class,
         'job_vacancies' => JobVacanciesBlock::class,
         'key_features' => KeyFeaturesBlock::class,
