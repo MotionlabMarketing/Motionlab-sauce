@@ -11,6 +11,7 @@ use Motionlab\Sauce\Blocks\BreadcrumbsBlock\BreadcrumbsBlock;
 use Motionlab\Sauce\Blocks\ButtonBlock\ButtonBlock;
 use Motionlab\Sauce\Blocks\CallToActionBlock\CallToActionBlock;
 use Motionlab\Sauce\Blocks\CaseStudiesBlock\CaseStudiesBlock;
+use Motionlab\Sauce\Blocks\FAQBlock\FAQBlock;
 use Motionlab\Sauce\Blocks\FormBlock\FormBlock;
 use Motionlab\Sauce\Blocks\JobVacanciesBlock\JobVacanciesBlock;
 use Motionlab\Sauce\Blocks\KeyFeaturesBlock\KeyFeaturesBlock;
@@ -39,6 +40,7 @@ class BlockProvider
         'button' => ButtonBlock::class,
         'call_to_action' => CallToActionBlock::class,
         'case_studies' => CaseStudiesBlock::class,
+        'faq' => FAQBlock::class,
         'form' => FormBlock::class,
         'job_vacancies' => JobVacanciesBlock::class,
         'key_features' => KeyFeaturesBlock::class,
