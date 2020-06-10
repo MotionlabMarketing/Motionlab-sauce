@@ -116,6 +116,7 @@ function _handleProductionSCSS(done) {
 // Handle the proccessing of any JavaScript files with compression
 function _handleProductionScripts(done) {
     gulp.src(["src/js/*.js"])
+        .pipe(babel())
         .pipe(concat("app.min.js"))
         .pipe(uglify())
         .pipe(gulp.dest("dist/js"));
