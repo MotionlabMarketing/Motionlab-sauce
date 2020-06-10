@@ -1,0 +1,21 @@
+
+@media (min-width: $breakpoint-md) {
+    [data-animation='zoom'] {
+        
+        [data-zoom] {
+            z-index: 10;
+            position: relative;
+            transform: scale(1);
+        }
+
+        &:hover {
+
+            [data-zoom] {
+                z-index: 100;
+                transform: scale(1.1);
+                transition: all 0.3s ease-in-out;
+                -webkit-transition: all 0.3s ease-in-out;
+            }
+        }
+    }
+}
