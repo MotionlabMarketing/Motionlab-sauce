@@ -1,3 +1,37 @@
+/**
+ * Accordions
+ */
+(function () {
+    // Get all of the indicators
+    var indicators = document.querySelectorAll("[data-accordion]");
+
+    // Loop over all of the indicators to add an event listener
+    indicators.forEach(function (indicator) {
+        indicator.addEventListener("click", function () {
+            if (this.dataset.accordionStatus == "open") {
+                this.dataset.accordionStatus = "closed";
+            } else {
+                const clicked = this.dataset.accordionCollection;
+
+                // Set all to closed
+                indicators.forEach(function (indicator) {
+                    if (indicator.dataset.accordionCollection == clicked) indicator.dataset.accordionStatus = "closed";
+                }, clicked);
+
+                // Set the current item to open
+                this.dataset.accordionStatus = "open";
+            }
+        }
+
+        );
+    }
+
+    );
+}
+
+)();
+
+
 // PLUGINS OUT THE BOX
 // 1: SLICK SLIDER
 // 2: HEADROOM
@@ -6,7 +40,7 @@
 jQuery(document).ready(function ($) {
 
 
-// PLUGINS ------------------------------------------------------------
+    // PLUGINS ------------------------------------------------------------
 
     // HEADROOM
     $("[headroom]").headroom({
@@ -55,7 +89,7 @@ jQuery(document).ready(function ($) {
     });
 
 
-// BESPOKE ------------------------------------------------------------
+    // BESPOKE ------------------------------------------------------------
 
     // MENU TRIGGER
     var hamburger = document.querySelector(".hamburger");
