@@ -31,6 +31,10 @@ $border-sides: (
 
 }
 
+.border-solid {
+  border-style: solid;
+}
+
 .border-top{
     border-top-style: solid;
     border-top-width: $border-width
