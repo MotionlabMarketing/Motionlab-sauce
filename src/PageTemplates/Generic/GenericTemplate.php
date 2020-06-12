@@ -273,6 +273,37 @@ class GenericTemplate extends TemplateBase
                         'min' => '',
                         'max' => '',
                     ),
+                    'layout_e783206d9aad09' => array(
+                        'key' => 'layout_e783206d9aad09',
+                        'name' => 'faqs',
+                        'label' => 'FAQs',
+                        'display' => 'block',
+                        'sub_fields' => array(
+                            array(
+                                'key' => 'layout_e783206d9aad00',
+                                'label' => 'FAQs',
+                                'name' => 'faqs',
+                                'type' => 'clone',
+                                'instructions' => '',
+                                'required' => 0,
+                                'conditional_logic' => 0,
+                                'wrapper' => array(
+                                    'width' => '',
+                                    'class' => '',
+                                    'id' => '',
+                                ),
+                                'clone' => array(
+                                    0 => 'group_5ed9030c87109',
+                                ),
+                                'display' => 'seamless',
+                                'layout' => 'block',
+                                'prefix_label' => 0,
+                                'prefix_name' => 0,
+                            ),
+                        ),
+                        'min' => '',
+                        'max' => '',
+                    ),
                     'layout_5ddd6635a5bf6' => array(
                         'key' => 'layout_5ddd6635a5bf6',
                         'name' => 'form',
