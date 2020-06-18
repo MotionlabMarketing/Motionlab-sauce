@@ -42,7 +42,7 @@ class TemplateBase
             $this->getBlocks($post_id);
         }
 
-        if(isset($this->blocks["generic_blocks"]) && count($this->blocks["generic_blocks"]) > 0) {
+        if($this->blocks["generic_blocks"] && count($this->blocks["generic_blocks"]) > 0) {
 
             $bp = new BlockProvider();
             BlockPositionAuthority::instance()->resetBlockPosition();

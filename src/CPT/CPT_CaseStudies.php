@@ -1,6 +1,6 @@
 <?php
 
-namespace Motionlab\Masterframe\Consumer\CPT;
+namespace Motionlab\Masterframe\Sauce\CPT;
 
 use Motionlab\Sauce\CPT\CPTBase;
 
