@@ -335,6 +335,37 @@ class GenericTemplate extends TemplateBase
                         'min' => '',
                         'max' => '',
                     ),
+                    'layout_5c93310dd0291' => array(
+                        'key' => 'layout_5c93310dd0291',
+                        'name' => 'gallery',
+                        'label' => 'Gallery',
+                        'display' => 'block',
+                        'sub_fields' => array(
+                            array(
+                                'key' => 'field_1f59ed35df706',
+                                'label' => 'Gallery',
+                                'name' => 'gallery',
+                                'type' => 'clone',
+                                'instructions' => '',
+                                'required' => 0,
+                                'conditional_logic' => 0,
+                                'wrapper' => array(
+                                    'width' => '',
+                                    'class' => '',
+                                    'id' => '',
+                                ),
+                                'clone' => array(
+                                    0 => 'group_5ed9030c87109',
+                                ),
+                                'display' => 'seamless',
+                                'layout' => 'block',
+                                'prefix_label' => 0,
+                                'prefix_name' => 0,
+                            ),
+                        ),
+                        'min' => '',
+                        'max' => '',
+                    ),
                     'layout_5df0d0b0d688c' => array(
                         'key' => 'layout_5df0d0b0d688c',
                         'name' => 'job_vacancies',

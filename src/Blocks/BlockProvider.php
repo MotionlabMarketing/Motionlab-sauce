@@ -13,6 +13,7 @@ use Motionlab\Sauce\Blocks\CallToActionBlock\CallToActionBlock;
 use Motionlab\Sauce\Blocks\CaseStudiesBlock\CaseStudiesBlock;
 use Motionlab\Sauce\Blocks\FAQBlock\FAQBlock;
 use Motionlab\Sauce\Blocks\FormBlock\FormBlock;
+use Motionlab\Sauce\Blocks\GalleryBlock\GalleryBlock;
 use Motionlab\Sauce\Blocks\JobVacanciesBlock\JobVacanciesBlock;
 use Motionlab\Sauce\Blocks\KeyFeaturesBlock\KeyFeaturesBlock;
 use Motionlab\Sauce\Blocks\LocationBlock\LocationBlock;
@@ -42,6 +43,7 @@ class BlockProvider
         'case_studies' => CaseStudiesBlock::class,
         'faqs' => FAQBlock::class,
         'form' => FormBlock::class,
+        'gallery' => GalleryBlock::class,
         'job_vacancies' => JobVacanciesBlock::class,
         'key_features' => KeyFeaturesBlock::class,
         'location' => LocationBlock::class,
