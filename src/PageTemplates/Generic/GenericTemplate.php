@@ -355,7 +355,7 @@ class GenericTemplate extends TemplateBase
                                     'id' => '',
                                 ),
                                 'clone' => array(
-                                    0 => 'group_5ed9030c87109',
+                                    0 => 'group_2767cc3ede759',
                                 ),
                                 'display' => 'seamless',
                                 'layout' => 'block',

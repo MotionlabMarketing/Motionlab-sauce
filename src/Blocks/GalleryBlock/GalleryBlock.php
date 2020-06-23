@@ -9,7 +9,7 @@ class GalleryBlock extends Block
 {
 
     public static $blockAcf = array(
-        'key' => 'group_5ed9030c87109',
+        'key' => 'group_2767cc3ede759',
         'title' => 'Gallery',
         'fields' => array(
             array(
