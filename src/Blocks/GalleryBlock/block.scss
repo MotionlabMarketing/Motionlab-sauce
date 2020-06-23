@@ -1,0 +1,31 @@
+@import "../../scss/settings";
+
+    .carousel-grid {
+
+        .spacing {
+            > div {
+                &:first-child {
+                    margin-bottom: 5px;
+                }
+                &:last-child {
+                    margin-top: 5px;
+                }
+            }
+        }
+
+        .img-wrapper {
+            height: 20.45vh;        
+            
+            @media (min-width: $breakpoint-md) {
+                height: 40vh;
+            }
+        }
+        
+        .img-wrapper.tall {
+            height: 41.5vh;
+
+            @media (min-width: $breakpoint-md) {
+                height: 80.5vh;
+            }
+        }
+    }
