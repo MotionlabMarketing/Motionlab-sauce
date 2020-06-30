@@ -16,7 +16,7 @@
             <?php
                 // LOAD FORM INTO THE PAGE.
                 if ( class_exists( 'Ninja_Forms' ) ) {
-                    Ninja_Forms()->display( $this->blockConfiguration['form_form'] );
+                    Ninja_Forms()->display( $this->blockConfiguration['form_form']['id'] );
                 }
             ?>
         </div>
