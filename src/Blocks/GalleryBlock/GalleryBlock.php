@@ -48,8 +48,7 @@ class GalleryBlock extends Block
                     'standard' => 'Standard Grid',
                     'alternating' => 'Alternating Grid',
                 ),
-                'default_value' => array(
-                ),
+                'default_value' => array(),
                 'allow_null' => 0,
                 'multiple' => 0,
                 'ui' => 0,
@@ -122,7 +121,8 @@ class GalleryBlock extends Block
         'description' => '',
     );
 
-    public function init() {
+    public function init()
+    {
         include(__DIR__ . '/block.php');
     }
 }
