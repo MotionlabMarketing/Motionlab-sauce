@@ -46,7 +46,7 @@ class GalleryBlock extends Block
                 ),
                 'choices' => array(
                     'standard' => 'Standard Grid',
-                    'alternating: Alternating Grid' => 'alternating: Alternating Grid',
+                    'alternating' => 'Alternating Grid',
                 ),
                 'default_value' => array(
                 ),
