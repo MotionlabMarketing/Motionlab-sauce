@@ -40,8 +40,6 @@ $caseStudies = $this->getCaseStudies();
 <script>
     jQuery(document).ready(function($) {
 
-        console.log("Count: ", );
-
         if($(".carousel-<?php echo $this->getBlockPositionID(); ?> > div").length > 1) {
             $(".carousel-<?php echo $this->getBlockPositionID(); ?>").owlCarousel({
                 nav: true,
