@@ -34,7 +34,7 @@ class KeyFeaturesBlock extends Block
                 'prefix_name' => 0,
             ),
             array(
-                'key' => 'field_5dfc9c23f9ad4',
+                'key' => 'field_03a845284c6a7a',
                 'label' => 'Layout',
                 'name' => 'features_layout',
                 'type' => 'select',
