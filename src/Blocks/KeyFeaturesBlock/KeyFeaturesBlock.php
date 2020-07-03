@@ -228,6 +228,29 @@ class KeyFeaturesBlock extends Block
                         'media_upload' => 1,
                         'delay' => 0,
                     ),
+                    array(
+                        'key' => 'field_d0a0ef9f8265b',
+                        'label' => 'Link To',
+                        'name' => 'feature_url',
+                        'type' => 'link',
+                        'instructions' => '',
+                        'required' => 0,
+                        'conditional_logic' => array(
+                            array(
+                                array(
+                                    'field' => 'field_03a845284c6a7a',
+                                    'operator' => '==',
+                                    'value' => 'carousel',
+                                ),
+                            ),
+                        ),
+                        'wrapper' => array(
+                            'width' => '',
+                            'class' => '',
+                            'id' => '',
+                        ),
+                        'return_format' => 'array',
+                    ),
                 ),
             ),
         ),
