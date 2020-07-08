@@ -109,6 +109,25 @@ class TwoColumnBlock extends Block
                 'ui_on_text' => '',
                 'ui_off_text' => '',
             ),
+            array(
+                'key' => 'field_ac00968ea09ae',
+                'label' => 'Contain To Grid',
+                'name' => 'two_columns_grid_contain',
+                'type' => 'true_false',
+                'instructions' => 'Do you want the content columns to be width aligned to the page grid?',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'message' => '',
+                'default_value' => 0,
+                'ui' => 1,
+                'ui_on_text' => '',
+                'ui_off_text' => '',
+            ),
         ),
         'location' => array(
             array(
