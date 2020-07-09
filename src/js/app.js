@@ -219,5 +219,9 @@ jQuery(document).ready(function ($) {
     // WORDPRESS - REMOVE P TAG FROM AROUND IMAGES WHEN USED IN A WYSIWYG
     $('p > img').unwrap();
 
+    //TIPPY
+    if(typeof window.tippy !== "undefined") {
+        tippy('[data-tippy-content]');
+    }
 
 });
