@@ -48,6 +48,7 @@ class BannerBlock extends Block
                     'min-height-v100' => 'Full Screen Height',
                     'min-height-v75' => '75% Screen Height',
                     'min-height-v50' => '50% Screen Height',
+                    'min-height-v25' => '25% Screen Height'
                 ),
                 'default_value' => array(
                 ),
