@@ -5,7 +5,7 @@
  */
 ?>
 
-<div class="owl-carousel owl-theme carousel-<?php echo $this->getBlockPositionID(); ?>">
+<div class="owl-carousel owl-theme carousel-<?php echo $this->getBlockPositionID(); ?>" data-aos="fade-in">
     <?php foreach ($this->blockConfiguration['gallery_images'] as $key => $image) : ?>
         <div class="item">
             <img src="<?php echo $image['gallery_images_image']['url']; ?>" alt="<?php echo $image['gallery_images_image']['alt']; ?>">

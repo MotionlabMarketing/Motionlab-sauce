@@ -9,7 +9,7 @@ Images: $this->blockConfiguration['gallery_images']; - Repeater
 ~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*|Block Settings|~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*/
 ?>
 
-<section class="px4" <?php echo $this->getAttributeString() ?>>
+<section class="px4" <?php echo $this->getAttributeString() ?> data-aos="fade-in">
 
     <div class="container">
         <div class="wysiwyg text-center lg-max-width-50 mx-auto mb5">

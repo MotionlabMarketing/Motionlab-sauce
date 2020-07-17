@@ -6,13 +6,13 @@ $rightPods = array_slice($this->blockConfiguration['pods_pods'], 3, 2);
 
 ?>
 
-<section class="py6 px4 display-none md-block"  <?php echo $this->getAttributeString() ?>>
+<section class="py6 px4 display-none md-block" <?php echo $this->getAttributeString() ?> data-aos="fade-in">
     <div class="container">
         <div class="mxn3 flex flex-wrap lg-flex-nowrap">
             <div class="px3 col-12 sm-col-6 lg-col-6 lg-mb0">
-                <?php foreach($leftPods as $index => $lPod) : ?>
+                <?php foreach ($leftPods as $index => $lPod) : ?>
 
-                    <?php if( $index == 0 ) : ?>
+                    <?php if ($index == 0) : ?>
                         <div class="block mb5 bg-primary relative">
                             <div class="ratio-4-3"></div>
                             <div class="p4 absolute left-0 top-0 width-100 height-100 flex items-center">
@@ -23,9 +23,10 @@ $rightPods = array_slice($this->blockConfiguration['pods_pods'], 3, 2);
                                 </div>
                             </div>
                         </div>
-                    <?php continue; endif; ?>
+                    <?php continue;
+                    endif; ?>
 
-                    <a href="<?php echo $lPod['pod_link']; ?>" class="block bg-black bg-cover bg-center relative hover-reveal" style="background-image: url('<?php echo $lPod['pod_background_image']['sizes']['medium'];?>');">
+                    <a href="<?php echo $lPod['pod_link']; ?>" class="block bg-black bg-cover bg-center relative hover-reveal" style="background-image: url('<?php echo $lPod['pod_background_image']['sizes']['medium']; ?>');">
                         <div class="ratio-4-3"></div>
                         <div class="py3 px4 absolute top-0 height-100 width-100 bg-darken-8 flex items-center z2 reveal">
                             <div class="">
@@ -42,9 +43,9 @@ $rightPods = array_slice($this->blockConfiguration['pods_pods'], 3, 2);
                 <?php endforeach; ?>
             </div>
 
-            <?php foreach($centralPod as $cPod) : ?>
+            <?php foreach ($centralPod as $cPod) : ?>
                 <div class="px3 col-12 sm-col-6 lg-col-6 mb5 lg-mb0">
-                    <a href="<?php echo $cPod['pod_link']; ?>" class="block mb5 bg-black height-100 bg-cover bg-center relative hover-reveal" style="background-image: url('<?php echo $cPod['pod_background_image']['sizes']['large'];?>');">
+                    <a href="<?php echo $cPod['pod_link']; ?>" class="block mb5 bg-black height-100 bg-cover bg-center relative hover-reveal" style="background-image: url('<?php echo $cPod['pod_background_image']['sizes']['large']; ?>');">
                         <div class="py3 px4 absolute top-0 height-100 width-100 bg-darken-8 flex items-center z2 reveal">
                             <div class="">
                                 <h3 class="white width-100"><?php echo $cPod['pod_title']; ?></h3>
@@ -62,9 +63,9 @@ $rightPods = array_slice($this->blockConfiguration['pods_pods'], 3, 2);
 
             <div class="px3 col-12 lg-col-6">
                 <div class="mxn3 sm-flex lg-flex-wrap">
-                    <?php foreach($rightPods as $index => $rPod) : ?>
+                    <?php foreach ($rightPods as $index => $rPod) : ?>
                         <div class="px3 col-12 sm-col-6 md-col-12">
-                            <a href="#" class="block bg-black bg-cover bg-center relative <?php echo $index == 0 ? 'mb5' : '';?> hover-reveal" style="background-image: url('<?php echo $rPod['pod_background_image']['sizes']['medium'];?>');">
+                            <a href="#" class="block bg-black bg-cover bg-center relative <?php echo $index == 0 ? 'mb5' : ''; ?> hover-reveal" style="background-image: url('<?php echo $rPod['pod_background_image']['sizes']['medium']; ?>');">
                                 <div class="ratio-4-3"></div>
                                 <div class="py3 px4 absolute top-0 height-100 width-100 bg-darken-8 flex items-center z2 reveal">
                                     <div class="">

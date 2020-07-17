@@ -9,7 +9,7 @@
 $this->loadJobs(5);
 ?>
 
-<section class="px4 py5 <?php echo $this->blockConfiguration['background_colour'] ? $this->blockConfiguration['background_colour']  : ''; ?>" <?php echo $this->getAttributeString() ?>>
+<section class="px4 py5 <?php echo $this->blockConfiguration['background_colour'] ? $this->blockConfiguration['background_colour']  : ''; ?>" <?php echo $this->getAttributeString() ?> data-aos="fade-in">
 
     <div class="container">
 
@@ -17,24 +17,24 @@ $this->loadJobs(5);
 
         <div class="mb5 lg-col-9 mx-auto">
 
-            <?php if (count($this->getJobs()) <= 0) :?>
+            <?php if (count($this->getJobs()) <= 0) : ?>
                 <p class="mx-auto text-center">We currently have no job vacancies to show.</p>
             <?php endif; ?>
 
-            <?php foreach ($this->getJobs() as $job): ?>
+            <?php foreach ($this->getJobs() as $job) : ?>
                 <div class="border-bottom border-light-grey hover-border-white transition">
                     <a href="<?php echo $job['url']; ?>" class="flex space-between p3 hover-bg-light-grey rounded">
                         <div class="width-100">
                             <h3 class="mb2"><?php echo $job['title']; ?></h3>
-                            <?php if (isset($job['location_name'])): ?>
+                            <?php if (isset($job['location_name'])) : ?>
                                 <p class="m0"><?php echo $job['location_name']; ?></p>
-                            <?php else: ?>
-                                <?php echo \get_field('options_organisation_name', 'option');?>
+                            <?php else : ?>
+                                <?php echo \get_field('options_organisation_name', 'option'); ?>
                             <?php endif; ?>
                         </div>
                         <div class="" style="white-space:nowrap;">
-                            <?php if (count($job['tags']) > 0) :?>
-                                <?php foreach ($job['tags'] as $tag) :?>
+                            <?php if (count($job['tags']) > 0) : ?>
+                                <?php foreach ($job['tags'] as $tag) : ?>
                                     <?php echo $tag . "<br/>"; ?>
                                 <?php endforeach; ?>
                             <?php else : ?>

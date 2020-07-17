@@ -4,7 +4,7 @@
  */
 ?>
 
-<div class="owl-carousel owl-theme carousel-grid carousel-<?php echo $this->getBlockPositionID(); ?> carousel-grid" style="margin-right: -10px;">
+<div class="owl-carousel owl-theme carousel-grid carousel-<?php echo $this->getBlockPositionID(); ?> carousel-grid" style="margin-right: -10px;" data-aos="fade-in">
 
     <?php
     $sub = 0;

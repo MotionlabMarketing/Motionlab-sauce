@@ -31,6 +31,16 @@
 
 )();
 
+window.addEventListener('load', () => {
+
+    AOS.init({
+        offset: 120,
+        once: true,
+        duration: 1000,
+    });
+
+});
+
 
 // PLUGINS OUT THE BOX
 // 1: SLICK SLIDER
@@ -220,7 +230,7 @@ jQuery(document).ready(function ($) {
     $('p > img').unwrap();
 
     //TIPPY
-    if(typeof window.tippy !== "undefined") {
+    if (typeof window.tippy !== "undefined") {
         tippy('[data-tippy-content]');
     }
 
