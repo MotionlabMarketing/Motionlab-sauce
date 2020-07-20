@@ -10,7 +10,7 @@
 $buttons = $this->blockConfiguration['alternating_media_buttons'];
 ?>
 
-<section class="px4 <?php echo $this->blockConfiguration['alternating_media_padding'] == true ? 'py5' : '' ?> <?php echo $this->blockConfiguration['alternating_media_background_colour']; ?>"  <?php echo $this->getAttributeString() ?>>
+<section class="px4 <?php echo $this->blockConfiguration['alternating_media_padding'] == true ? 'py5' : '' ?> <?php echo $this->blockConfiguration['alternating_media_background_colour']; ?>" <?php echo $this->getAttributeString() ?> data-aos="fade-in">
     <div class="container">
         <div class="mxn3 md-flex <?php echo $this->blockConfiguration['alternating_media_image_position'] == 'left' ? '' : 'flex-row-reverse' ?> ">
             <div class="col-12 px3 min-height-100">
@@ -20,19 +20,19 @@ $buttons = $this->blockConfiguration['alternating_media_buttons'];
             </div>
             <div class="col-12 px3">
                 <div class="pt4 md-p4 md-py5 wysiwyg">
-                    <?php echo $this->blockConfiguration['alternating_media_content'];?>
-                    <?php if ($buttons):?>
-                    <div class="mxn1">
-                        <?php foreach ($buttons as $button): ?>
-                        <a href="<?php echo $button['button']['url'];?>" class="btn text-decoration-none btn-primary white bg-primary mx1">
-                            <?php echo $button['button']['title'];?>
-                            <?php if (!empty($button['icon'])) : ?>
-                                <span class="h5 ml2"><?php echo $button['icon'];?></span>
-                            <?php endif; ?>
-                        </a>
-                        <?php endforeach;?>
-                    </div>
-                    <?php endif;?>
+                    <?php echo $this->blockConfiguration['alternating_media_content']; ?>
+                    <?php if ($buttons) : ?>
+                        <div class="mxn1">
+                            <?php foreach ($buttons as $button) : ?>
+                                <a href="<?php echo $button['button']['url']; ?>" class="btn text-decoration-none btn-primary white bg-primary mx1">
+                                    <?php echo $button['button']['title']; ?>
+                                    <?php if (!empty($button['icon'])) : ?>
+                                        <span class="h5 ml2"><?php echo $button['icon']; ?></span>
+                                    <?php endif; ?>
+                                </a>
+                            <?php endforeach; ?>
+                        </div>
+                    <?php endif; ?>
                 </div>
             </div>
         </div>

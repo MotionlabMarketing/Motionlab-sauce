@@ -2,7 +2,7 @@
     $featuredImageUrl = get_the_post_thumbnail_url($this->blockConfiguration['call_to_action'], 'large');
 ?>
 
-    <section class="relative bg-cover bg-center py4 px4" style="background-image: url('<?php echo $featuredImageUrl; ?>');" data-element="download-booklet" <?php echo $this->getAttributeString() ?>>
+    <section class="relative bg-cover bg-center py4 px4" style="background-image: url('<?php echo $featuredImageUrl; ?>');" data-element="download-booklet" <?php echo $this->getAttributeString() ?> data-aos="fade-in">
         <div class="absolute top-0 left-0 right-0 bottom-0 bg-overlay width-100 height-100 z1"></div>
 
         <div class="container relative white py6 z2">

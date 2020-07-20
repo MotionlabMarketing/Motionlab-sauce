@@ -8,10 +8,10 @@ $caseStudies = $this->getCaseStudies();
 
 ?>
 
-<section class="px4 py5 <?php echo $this->blockConfiguration['background_colour'] ? $this->blockConfiguration['background_colour']  : ''; ?>" <?php echo $this->getAttributeString() ?>>
+<section class="px4 py5 <?php echo $this->blockConfiguration['background_colour'] ? $this->blockConfiguration['background_colour']  : ''; ?>" <?php echo $this->getAttributeString() ?> data-aos="fade-in">
 
-    <?php if(sizeof($caseStudies) > 1) : ?><div class="owl-carousel owl-theme carousel-<?php echo $this->getBlockPositionID(); ?>"> <?php endif; ?>
-        <?php foreach($caseStudies as $caseStudy): ?>
+    <?php if (sizeof($caseStudies) > 1) : ?><div class="owl-carousel owl-theme carousel-<?php echo $this->getBlockPositionID(); ?>"> <?php endif; ?>
+        <?php foreach ($caseStudies as $caseStudy) : ?>
             <div class="container">
                 <article class="bg-white rounded overflow-hidden shadow md-flex">
                     <a href="#" class="overflow-hidden block md-col-6 hover-zoom">
@@ -33,14 +33,14 @@ $caseStudies = $this->getCaseStudies();
             </div>
         <?php endforeach; ?>
 
-        <?php if(sizeof($caseStudies) > 1) : ?></div><?php endif; ?>
+        <?php if (sizeof($caseStudies) > 1) : ?></div><?php endif; ?>
 
 </section>
 
 <script>
     jQuery(document).ready(function($) {
 
-        if($(".carousel-<?php echo $this->getBlockPositionID(); ?> > div").length > 1) {
+        if ($(".carousel-<?php echo $this->getBlockPositionID(); ?> > div").length > 1) {
             $(".carousel-<?php echo $this->getBlockPositionID(); ?>").owlCarousel({
                 nav: true,
                 margin: 5,
