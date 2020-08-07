@@ -24,7 +24,7 @@
 
                     <p class="h4 black serif uppercase"><?php echo $feature['feature_title']; ?></p>
 
-                    <div class="mx-auto px4" style="">
+                    <div class="mx-auto px4" data-mh="keyFeatures-content">
                         <?php echo $feature['feature_content']; ?>
                     </div>
 
