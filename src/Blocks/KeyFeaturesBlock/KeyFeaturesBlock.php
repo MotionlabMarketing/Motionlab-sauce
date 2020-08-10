@@ -61,9 +61,9 @@ class KeyFeaturesBlock extends Block
             ),
             array(
                 'key' => 'field_5df261a08128b',
-                'label' => 'Title',
+                'label' => 'Intro',
                 'name' => 'features_title',
-                'type' => 'text',
+                'type' => 'wysiwyg',
                 'instructions' => '',
                 'required' => 0,
                 'conditional_logic' => 0,
