@@ -27,7 +27,7 @@ $post->category_primary = get_term($post->category_id);
             ?>
 
             <img
-                    src="<?php echo $post_img_src ?>"
+                    src="<?php echo $post_img_src ?? 'https://via.placeholder.com/600x400?text=Default archive background' ?>"
                     alt="<?php echo $post_img_alt ?>"
                     class="post-thumbnail « width-100 block"
             />
