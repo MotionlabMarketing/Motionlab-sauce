@@ -1,0 +1,16 @@
+@import '../../scss/settings';
+
+[data-element="cta"] {
+
+    &.bg-light-blue {
+
+        a {
+            color: $white;
+        }
+    }
+
+    [data-element="button"] {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+}

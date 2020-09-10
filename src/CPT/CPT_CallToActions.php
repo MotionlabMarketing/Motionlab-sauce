@@ -2,6 +2,8 @@
 
 namespace Motionlab\Sauce\CPT;
 
+use Motionlab\Sauce\CPT\CPTBase;
+
 class CPT_CallToActions extends CPTBase
 {
 
@@ -18,10 +20,10 @@ class CPT_CallToActions extends CPTBase
         'title' => 'CPT - CTA',
         'fields' => array(
             array(
-                'key' => 'field_ b39995828160',
-                'label' => 'Background Colour',
+                'key' => 'field_5dfb8802dd319',
+                'label' => 'Background Colours',
                 'name' => 'background_colour',
-                'type' => 'clone',
+                'type' => 'select',
                 'instructions' => '',
                 'required' => 0,
                 'conditional_logic' => 0,
@@ -30,13 +32,177 @@ class CPT_CallToActions extends CPTBase
                     'class' => '',
                     'id' => '',
                 ),
-                'clone' => array(
-                    0 => 'group_5dfb879fe9a51',
+                'choices' => array(
+                    'bg-white' => 'White',
+                    'bg-smoke' => 'Smoke',
+                    'bg-grey' => 'Gray',
+                    'bg-black' => 'Black',
+                    'bg-charcoal' => 'Charcoal',
+                    'bg-light-grey' => 'Light Grey',
+                    'bg-light-blue' => 'Light Blue',
                 ),
-                'display' => 'seamless',
-                'layout' => 'block',
-                'prefix_label' => 0,
-                'prefix_name' => 0,
+                'default_value' => array(
+                ),
+                'allow_null' => 0,
+                'multiple' => 0,
+                'ui' => 1,
+                'ajax' => 0,
+                'return_format' => 'value',
+                'placeholder' => '',
+            ),
+            array(
+                'key' => 'field_5eb5274404e7c',
+                'label' => 'Background Image',
+                'name' => 'background_image',
+                'type' => 'image',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'return_format' => 'array',
+                'preview_size' => 'medium',
+                'library' => 'all',
+                'min_width' => '',
+                'min_height' => '',
+                'min_size' => '',
+                'max_width' => '',
+                'max_height' => '',
+                'max_size' => '',
+                'mime_types' => '',
+            ),
+            array(
+                'key' => 'field_afd502a199a80',
+                'label' => 'Background Image Position Desktop',
+                'name' => 'background_image_position',
+                'type' => 'select',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'choices' => array(
+                    'bg-center-right' => 'Center Right',
+                    'bg-center' => 'Center Center',
+                    'bg-center-left' => 'Center Left',
+                ),
+                'default_value' => array(
+                    0 => 'bg-center',
+                ),
+                'allow_null' => 0,
+                'multiple' => 0,
+                'ui' => 0,
+                'return_format' => 'value',
+                'ajax' => 0,
+                'placeholder' => '',
+            ),
+            array(
+                'key' => 'field_8e56d1c9514f7',
+                'label' => 'Overlay Colour',
+                'name' => 'overlay_colour',
+                'type' => 'color_picker',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '50',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'default_value' => '',
+            ),
+            array(
+                'key' => 'field_ef44d1e0b9fc5',
+                'label' => 'Overlay Opacity',
+                'name' => 'overlay_opacity',
+                'type' => 'select',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '50',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'choices' => array(
+                    'opacity-1' => '1',
+                    'opacity-2' => '2',
+                    'opacity-3' => '3',
+                    'opacity-4' => '4',
+                    'opacity-5' => '5',
+                    'opacity-6' => '6',
+                ),
+                'default_value' => array(
+                ),
+                'allow_null' => 1,
+                'multiple' => 0,
+                'ui' => 0,
+                'return_format' => 'value',
+                'ajax' => 0,
+                'placeholder' => '',
+            ),
+            array(
+                'key' => 'field_c50e9489deb9b',
+                'label' => 'Bordered Content',
+                'name' => 'cta_bordered_content',
+                'type' => 'true_false',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '33%',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'message' => '',
+                'default_value' => 0,
+                'ui' => 1,
+                'ui_on_text' => 'Border',
+                'ui_off_text' => 'No Border',
+            ),
+            array(
+                'key' => 'field_53e8eb12f44aa',
+                'label' => 'Slimline',
+                'name' => 'cta_slimline',
+                'type' => 'true_false',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '33%',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'message' => '',
+                'default_value' => 0,
+                'ui' => 1,
+                'ui_on_text' => 'Slim',
+                'ui_off_text' => 'Full Height',
+            ),
+            array(
+                'key' => 'field_f7265c186d62a',
+                'label' => 'Boxed Content',
+                'name' => 'cta_boxed_content',
+                'type' => 'true_false',
+                'instructions' => 'Have the CTA render as a shadowed box that breaks the content flow.',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '33%',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'message' => '',
+                'default_value' => 0,
+                'ui' => 1,
+                'ui_on_text' => 'Boxed',
+                'ui_off_text' => 'Standard',
             ),
             array(
                 'key' => 'field_5fac6100199d3',
@@ -219,4 +385,12 @@ class CPT_CallToActions extends CPTBase
 
     public function registerSingleTemplate($single) { return $single; }
 
+    /**
+     * GET TAXONOMIES DETAILS
+     * This function returns an array of taxonomies for registation.
+     */
+    public function get_taxonomies_details()
+    {
+        return [];
+    }
 }

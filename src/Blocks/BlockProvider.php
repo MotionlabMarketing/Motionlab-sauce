@@ -22,6 +22,7 @@ use Motionlab\Sauce\Blocks\PodsBlock\PodsBlock;
 use Motionlab\Sauce\Blocks\SiteOptions\SiteOptions;
 use Motionlab\Sauce\Blocks\SliderTabsBlock\SliderTabsBlock;
 use Motionlab\Sauce\Blocks\SpacerBlock\SpacerBlock;
+use Motionlab\Sauce\Blocks\SpecificationsBlock\SpecificationsBlock;
 use Motionlab\Sauce\Blocks\StandardContentBlock\StandardContentBlock;
 use Motionlab\Sauce\Blocks\TabsBlock\TabsBlock;
 use Motionlab\Sauce\Blocks\TestimonialsBlock\TestimonialsBlock;
@@ -52,6 +53,7 @@ class BlockProvider
         'pods' => PodsBlock::class,
         'slider_and_tabs' => SliderTabsBlock::class,
         'spacer' => SpacerBlock::class,
+        'specifications' => SpecificationsBlock::class,
         'standard_content' => StandardContentBlock::class,
         'tabs' => TabsBlock::class,
         'testimonials' => TestimonialsBlock::class,
