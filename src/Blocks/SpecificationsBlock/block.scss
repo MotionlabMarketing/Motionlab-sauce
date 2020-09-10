@@ -1,0 +1,26 @@
+@import "../../scss/settings";
+
+[data-block-name="Motionlab\\Masterframe\\Trade\\Blocks\\SpecificationsBlock\\SpecificationsBlock"] {
+
+    .column-content {
+        
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+
+            li {
+                padding: 0.7rem 0;
+                border-bottom: 1px dashed rgba(255, 255,255, 0.7);
+
+                &:first-child {
+                    padding-top: 0;
+                }
+
+                &:last-child {
+                    padding-bottom: 0;
+                }
+            }
+        }
+    }
+}
