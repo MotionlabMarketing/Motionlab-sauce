@@ -593,6 +593,37 @@ class GenericTemplate extends TemplateBase
                         'min' => '',
                         'max' => '',
                     ),
+                    'layout_f3453ce446853' => array(
+                        'key' => 'layout_f3453ce446853',
+                        'name' => 'specifications',
+                        'label' => 'Specifications',
+                        'display' => 'block',
+                        'sub_fields' => array(
+                            array(
+                                'key' => 'field_f3453ce44',
+                                'label' => 'Specifications',
+                                'name' => 'specifications',
+                                'type' => 'clone',
+                                'instructions' => '',
+                                'required' => 0,
+                                'conditional_logic' => 0,
+                                'wrapper' => array(
+                                    'width' => '',
+                                    'class' => '',
+                                    'id' => '',
+                                ),
+                                'clone' => array(
+                                    0 => 'group_5f579e7edd902',
+                                ),
+                                'display' => 'seamless',
+                                'layout' => 'block',
+                                'prefix_label' => 0,
+                                'prefix_name' => 0,
+                            ),
+                        ),
+                        'min' => '',
+                        'max' => '',
+                    ),
                     'layout_5ddd66eaa5c00' => array(
                         'key' => 'layout_5ddd66eaa5c00',
                         'name' => 'standard_content',
