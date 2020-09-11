@@ -37,7 +37,7 @@
     }
   ],
   "require": {
-    "vlucas/phpdotenv": "^3.4.0",
+    "vlucas/phpdotenv": "^4.1.8",
     "bostondv/acf-ninja-forms": "^1.0",
     "advanced-custom-fields/advanced-custom-fields-pro": "^5.8",
     "wordpress-plugins-purchased/ninja-forms-addon-manager": "^3.0",
