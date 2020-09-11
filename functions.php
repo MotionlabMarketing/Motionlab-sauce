@@ -1,9 +1,10 @@
 <?php
 
-if(strpos(__DIR__, '/web/app/') !== FALSE)
+if(strpos(__DIR__, DIRECTORY_SEPARATOR.'web'.DIRECTORY_SEPARATOR.'app'.DIRECTORY_SEPARATOR) !== FALSE) {
     require_once(__DIR__ . '/../../../../vendor/autoload.php');
-else
+} else {
     require_once(__DIR__ . '/../../../vendor/autoload.php');
+}
 
 /**
 MOTIONLAB FUNCTIONS
