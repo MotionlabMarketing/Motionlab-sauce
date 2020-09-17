@@ -273,6 +273,37 @@ class GenericTemplate extends TemplateBase
                         'min' => '',
                         'max' => '',
                     ),
+                    'layout_5ddbc459b6015' => array(
+                        'key' => 'layout_5ddbc459b6015',
+                        'name' => 'category_listings',
+                        'label' => 'Category Listings',
+                        'display' => 'block',
+                        'sub_fields' => array(
+                            array(
+                                'key' => 'field_5eebc3a3fa4c1',
+                                'label' => 'Banner',
+                                'name' => 'banner',
+                                'type' => 'clone',
+                                'instructions' => '',
+                                'required' => 0,
+                                'conditional_logic' => 0,
+                                'wrapper' => array(
+                                    'width' => '',
+                                    'class' => '',
+                                    'id' => '',
+                                ),
+                                'clone' => array(
+                                    0 => 'group_5f621e44af40a',
+                                ),
+                                'display' => 'seamless',
+                                'layout' => 'block',
+                                'prefix_label' => 0,
+                                'prefix_name' => 0,
+                            ),
+                        ),
+                        'min' => '',
+                        'max' => '',
+                    ),
                     'layout_e783206d9aad09' => array(
                         'key' => 'layout_e783206d9aad09',
                         'name' => 'faqs',
