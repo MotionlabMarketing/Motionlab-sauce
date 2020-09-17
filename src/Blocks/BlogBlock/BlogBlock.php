@@ -29,6 +29,7 @@ class BlogBlock extends Block
                     'basic' => '3 Column',
                     '4col' => '4 Column',
                     'slider' => 'Slider (9 posts)',
+                    'row' => '3x2 Grid'
                 ),
                 'default_value' => array(
                 ),
@@ -306,6 +307,10 @@ class BlogBlock extends Block
             case '4col':
                 $this->loadPosts($this->blockConfiguration['blog_count'] == 0 ? 4 : $this->blockConfiguration['blog_count']);
                 include (__DIR__ . '/four-column.php');
+                break;
+            case 'row':
+                $this->loadPosts(6);
+                include (__DIR__ . '/rows-3-2.php');
                 break;
             default:
                 $this->loadPosts($this->blockConfiguration['blog_count'] == 0 ? 6 : $this->blockConfiguration['blog_count']);
