@@ -111,6 +111,25 @@ class CategoryListingsBlock extends Block
                 'ajax' => 0,
                 'placeholder' => '',
             ),
+            array(
+                'key' => 'field_5de8e50df7083',
+                'label' => 'With Search',
+                'name' => 'category_listings_with_search',
+                'type' => 'true_false',
+                'instructions' => 'Include a search button at the end of the list.',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'message' => '',
+                'default_value' => 1,
+                'ui' => 1,
+                'ui_on_text' => '',
+                'ui_off_text' => '',
+            )
         ),
         'location' => array(
             array(
@@ -135,10 +154,12 @@ class CategoryListingsBlock extends Block
     public $pluralisation;
     public $taxonomy;
     public $taxonomyTerms;
+    public $withSearch;
 
     public function init()
     {
         $this->title = $this->blockConfiguration['category_listings_title'];
+        $this->withSearch = $this->blockConfiguration['category_listings_with_search'];
         $this->pluralisation =
             (strlen($this->blockConfiguration['category_listings_pluralisation']))
                 ? $this->blockConfiguration['category_listings_pluralisation']
