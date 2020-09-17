@@ -10,7 +10,7 @@
             <?php foreach($this->taxonomyTerms as $term): ?>
                 <?php $icon = get_field('term_icon', $term) ?>
                 <div>
-                    <a href="<?php get_term_link($term->name, $this->taxonomy) ?>">
+                    <a href="<?php echo get_term_link($term->name, $this->taxonomy) ?>">
                         <?php if($icon): ?><span>$icon</span><?php endif; ?>
                         <span><?php echo $term->name; ?></span>
                         <span><?php echo $term->count . ' ' . $this->pluralisation ; ?></span>
@@ -21,7 +21,7 @@
             <?php if($this->withSearch): ?>
                 <?php $taxonomy = get_taxonomy($this->taxonomy); ?>
                 <div>
-                    <a href="<?php $taxonomy->url ?>">
+                    <a href="<?php echo $taxonomy->url ?>">
                         <span>Search Icon</span>
                         <span><?php echo 'View All ' . ucwords($this->pluralisation) ?></span>
                     </a>
