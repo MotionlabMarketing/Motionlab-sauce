@@ -19,10 +19,10 @@
             <?php endforeach; ?>
 
             <?php if($this->withSearch): ?>
-                <?php $taxonomy = get_taxonomy($this->taxonomy); ?>
+                <?php $cptPermalink = get_post_type_archive_link($this->postType); ?>
                 <div>
-                    <a href="<?php echo $taxonomy->url ?>">
-                        <span>Search Icon</span>
+                    <a href="<?php echo $cptPermalink ?>">
+                        <span><i class="far fa-search"></i></span>
                         <span><?php echo 'View All ' . ucwords($this->pluralisation) ?></span>
                     </a>
                 </div>
