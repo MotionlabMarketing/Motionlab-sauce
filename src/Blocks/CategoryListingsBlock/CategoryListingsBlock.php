@@ -43,7 +43,7 @@ class CategoryListingsBlock extends Block
                     'class' => '',
                     'id' => '',
                 ),
-                'default_value' => 'posts',
+                'default_value' => 'post',
                 'placeholder' => '',
                 'prepend' => '',
                 'append' => '',
