@@ -173,6 +173,7 @@ class CategoryListingsBlock extends Block
 
     public $title;
     public $pluralisation;
+    public $postType;
     public $taxonomy;
     public $taxonomyTerms;
     public $withSearch;
@@ -198,11 +199,11 @@ class CategoryListingsBlock extends Block
 
     private function loadTaxonomyTerms()
     {
-        $postType = $this->blockConfiguration['category_listings_post_type'];
+        $this->postType = $this->blockConfiguration['category_listings_post_type'];
         $this->taxonomy = $this->blockConfiguration['category_listings_taxonomy'];
 
         $postIds = get_posts([
-            'post_type' => $postType,
+            'post_type' => $this->postType,
             'posts_per_page' => -1,
             'fields' => 'ids',
             'tax_query' => [
