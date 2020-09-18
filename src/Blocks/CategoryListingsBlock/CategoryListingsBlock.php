@@ -129,7 +129,28 @@ class CategoryListingsBlock extends Block
                 'ui' => 1,
                 'ui_on_text' => '',
                 'ui_off_text' => '',
-            )
+            ),
+            array(
+                'key' => 'field_5dfb9d691993e',
+                'label' => 'Background Colour',
+                'name' => 'background_colour',
+                'type' => 'clone',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'clone' => array(
+                    0 => 'group_5dfb879fe9a51',
+                ),
+                'display' => 'seamless',
+                'layout' => 'block',
+                'prefix_label' => 0,
+                'prefix_name' => 0,
+            ),
         ),
         'location' => array(
             array(

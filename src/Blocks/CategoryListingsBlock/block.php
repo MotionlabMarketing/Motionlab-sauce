@@ -22,7 +22,7 @@
                 <?php $taxonomy = get_taxonomy($this->taxonomy); ?>
                 <div>
                     <a href="<?php echo $taxonomy->url ?>">
-                        <span>Search Icon</span>
+                        <span><i class="far fa-search"></i></span>
                         <span><?php echo 'View All ' . ucwords($this->pluralisation) ?></span>
                     </a>
                 </div>
