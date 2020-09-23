@@ -43,7 +43,7 @@ class CategoryListingsBlock extends Block
                     'class' => '',
                     'id' => '',
                 ),
-                'default_value' => 'posts',
+                'default_value' => 'post',
                 'placeholder' => '',
                 'prepend' => '',
                 'append' => '',
@@ -129,7 +129,28 @@ class CategoryListingsBlock extends Block
                 'ui' => 1,
                 'ui_on_text' => '',
                 'ui_off_text' => '',
-            )
+            ),
+            array(
+                'key' => 'field_5dfb9d691993e',
+                'label' => 'Background Colour',
+                'name' => 'background_colour',
+                'type' => 'clone',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'clone' => array(
+                    0 => 'group_5dfb879fe9a51',
+                ),
+                'display' => 'seamless',
+                'layout' => 'block',
+                'prefix_label' => 0,
+                'prefix_name' => 0,
+            ),
         ),
         'location' => array(
             array(
@@ -152,6 +173,7 @@ class CategoryListingsBlock extends Block
 
     public $title;
     public $pluralisation;
+    public $postType;
     public $taxonomy;
     public $taxonomyTerms;
     public $withSearch;
@@ -177,11 +199,11 @@ class CategoryListingsBlock extends Block
 
     private function loadTaxonomyTerms()
     {
-        $postType = $this->blockConfiguration['category_listings_post_type'];
+        $this->postType = $this->blockConfiguration['category_listings_post_type'];
         $this->taxonomy = $this->blockConfiguration['category_listings_taxonomy'];
 
         $postIds = get_posts([
-            'post_type' => $postType,
+            'post_type' => $this->postType,
             'posts_per_page' => -1,
             'fields' => 'ids',
             'tax_query' => [
