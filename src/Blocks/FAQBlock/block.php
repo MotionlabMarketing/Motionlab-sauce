@@ -49,7 +49,7 @@ FAQs: $this->blockConfiguration['faq_faqs']; - Repeater
                 </div>
             <?php endif; ?>
 
-            <?php if($this->blockConfiguration['faq_footer_button'] && $this->blockConfiguration['faq_footer_button'] != "") : ?>
+            <?php if(isset($this->blockConfiguration['faq_footer_button']) && !empty($this->blockConfiguration['faq_footer_button']['url'])) : ?>
                 <div class="faq-button-wrapper">
                     <a href="<?php echo $this->blockConfiguration['faq_footer_button']['url']; ?>" class="faq-button btn" target="<?php echo $this->blockConfiguration['faq_footer_button']['target']; ?>"><?php echo $this->blockConfiguration['faq_footer_button']['title']; ?></a>
                 </div>
