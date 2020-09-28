@@ -266,6 +266,21 @@ class FAQBlock extends Block
                     ),
                 ),
             ),
+            array(
+                'key' => 'field_5846d7eeaf22c',
+                'label' => 'Footer Button',
+                'name' => 'faq_footer_button',
+                'type' => 'link',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'return_format' => 'array',
+            ),
         ),
         'location' => array(
             array(
