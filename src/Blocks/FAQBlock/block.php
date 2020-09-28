@@ -35,7 +35,7 @@ FAQs: $this->blockConfiguration['faq_faqs']; - Repeater
                                     <span class="v"></span>
                                 </div>
                             </div>
-                            <div class="acc-body text-left" style="display: none;">
+                            <div class="acc-body text-left" style="<?php echo $key != 0 ? 'display: none;' : ''; ?>">
 
                                 <div class="body-content">
                                     <?php echo $row['faq_faqs_answer']; ?>
