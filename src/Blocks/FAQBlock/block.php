@@ -49,9 +49,11 @@ FAQs: $this->blockConfiguration['faq_faqs']; - Repeater
                 </div>
             <?php endif; ?>
 
-            <div class="faq-button-wrapper">
-                <a href="#" class="faq-button btn">View All</a>
-            </div>
+            <?php if($this->blockConfiguration['faq_footer_button'] && $this->blockConfiguration['faq_footer_button'] != "") : ?>
+                <div class="faq-button-wrapper">
+                    <a href="<?php echo $this->blockConfiguration['faq_footer_button']['url']; ?>" class="faq-button btn" target="<?php echo $this->blockConfiguration['faq_footer_button']['target']; ?>"><?php echo $this->blockConfiguration['faq_footer_button']['title']; ?></a>
+                </div>
+            <?php endif; ?>
         </div>
     </div>
 
