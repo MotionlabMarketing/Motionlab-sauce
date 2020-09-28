@@ -11,7 +11,7 @@ $rightPods = array_slice($this->blockConfiguration['pods_pods'], 3, 2);
  * options include:
  * $this->blockConfiguration['pods_content_layout'] == "standard" -> /partials/standard.php
  * $this->blockConfiguration['pods_content_layout'] == "top" -> /partials/content-top.php
- * $this->blockConfiguration['pods_content_layout'] == "standard" -> /partials/content-bottom.php
+ * $this->blockConfiguration['pods_content_layout'] == "bottom" -> /partials/content-bottom.php
  */
 ?>
 
