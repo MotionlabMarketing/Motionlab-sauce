@@ -1,88 +1,154 @@
-$s-4: 1rem;
+$space-2: 1rem;
 $smoke: #e7e7e7;
 $primary: #000000;
-$border-radius: 0px;
+// $border-radius: 0px;
 
-$accordionBorder: 1px solid $smoke;
+// $accordionBorder: 1px solid $smoke;
 
-$indicatorSide: left;
-$indicatorBox: 30px;
-$indicatorColor: $primary;
-$indicatorThickness: 2px;
+// $indicatorSide: left;
+// $indicatorBox: 30px;
+// $indicatorColor: $primary;
+// $indicatorThickness: 2px;
 
-[data-accordion] {
-    padding: $s-4;
-    max-width: 900px;
-    margin: 0 auto 1rem auto;
-    border: $accordionBorder;
-    border-radius: $border-radius;
+// [data-accordion] {
+//     padding: $s-4;
+//     max-width: 900px;
+//     margin: 0 auto 1rem auto;
+//     border: $accordionBorder;
+//     border-radius: $border-radius;
 
-    .acc-head {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
+//     .acc-head {
+//         display: flex;
+//         align-items: center;
+//         justify-content: space-between;
+//     }
 
-    .acc-indicator {
-        margin-#{$indicatorSide}: 1rem;
-        width: $indicatorBox;
-        height: $indicatorBox;
-        position: relative;
+//     .acc-indicator {
+//         margin-#{$indicatorSide}: 1rem;
+//         width: $indicatorBox;
+//         height: $indicatorBox;
+//         position: relative;
 
-        .v {
-            position: absolute;
-            background-color: $indicatorColor;
-            width: $indicatorThickness;
-            height: $indicatorBox - 10px;
-            left: 50%;
-            margin-left: -2.5px;
-            top: 50%;
-            margin-top: -12px;
+//         .v {
+//             position: absolute;
+//             background-color: $indicatorColor;
+//             width: $indicatorThickness;
+//             height: $indicatorBox - 10px;
+//             left: 50%;
+//             margin-left: -2.5px;
+//             top: 50%;
+//             margin-top: -12px;
 
-            transition: all 0.5s ease-in-out;
-            transform: rotate(-90deg);
-        }
+//             transition: all 0.5s ease-in-out;
+//             transform: rotate(-90deg);
+//         }
 
-        .h {
-            position: absolute;
-            background-color: $indicatorColor;
-            width: $indicatorBox - 10px;
-            height: $indicatorThickness;
-            left: 50%;
-            margin-left: -11px;
-            top: 50%;
-            margin-top: -2.5px;
+//         .h {
+//             position: absolute;
+//             background-color: $indicatorColor;
+//             width: $indicatorBox - 10px;
+//             height: $indicatorThickness;
+//             left: 50%;
+//             margin-left: -11px;
+//             top: 50%;
+//             margin-top: -2.5px;
 
-            transition: all 0.5s ease-in-out;
-            transform: rotate(-90deg);
-            opacity: 1;
-        }
-    }
+//             transition: all 0.5s ease-in-out;
+//             transform: rotate(-90deg);
+//             opacity: 1;
+//         }
+//     }
 
-    .acc-body {
-        display: none;
-        width: 100%;
-    }
+//     .acc-body {
+//         display: none;
+//         width: 100%;
+//     }
 
-    &[data-accordion-status="open"] {
+//     &[data-accordion-status="open"] {
+//         .acc-head {
+//             margin-bottom: 1rem;
+//             border-bottom: $accordionBorder;
+
+//             .v {
+//                 transition: all 0.5s ease-in-out;
+//                 transform: rotate(90deg);
+//             }
+
+//             .h {
+//                 transition: all 0.5s ease-in-out;
+//                 transform: rotate(90deg);
+//                 opacity: 0;
+//             }
+//         }
+
+//         .acc-body {
+//             display: block;
+//         }
+//     }
+// }
+
+[data-block="accordian"] {
+    $accordionBorder: 0px solid $smoke;
+    $indicatorSide: left;
+    $indicatorBox: 16px;
+    $indicatorColor: $primary;
+    $indicatorThickness: 0px;
+
+    [data-accordion] {
+        padding: $space-2 0;
+        margin: 0 auto 1rem auto;
+        border: $accordionBorder;
+        border-radius: 0;
+
         .acc-head {
-            margin-bottom: 1rem;
-            border-bottom: $accordionBorder;
+            display: flex;
+            cursor: pointer;
+            font-weight: bold;
+            align-items: center;
+            // justify-content: space-between;
+        }
 
-            .v {
-                transition: all 0.5s ease-in-out;
-                transform: rotate(90deg);
-            }
+        .acc-indicator {
+            margin-#{$indicatorSide}: 1rem;
+            width: $indicatorBox;
+            height: $indicatorBox;
+            position: relative;
+            margin-right: $space-2;
 
-            .h {
-                transition: all 0.5s ease-in-out;
-                transform: rotate(90deg);
-                opacity: 0;
+            &:before {
+                content: "\f0da";
+                font-family: "FontAwesome";
             }
+        }
+
+        label {
+            color: $primary;
+            font-size: 1.2rem;
         }
 
         .acc-body {
-            display: block;
+            display: none;
+            width: 100%;
+            padding-left: $space-2 + 2.2rem;
+        }
+
+        &[data-accordion-status="open"] {
+            .acc-head {
+                margin-bottom: 1rem;
+                border-bottom: $accordionBorder;
+
+            }
+            
+            .acc-indicator {
+
+                &:before {
+                    content: "\f0d7";
+                }
+            }
+
+            .acc-body {
+                display: block;
+            }
         }
     }
 }
