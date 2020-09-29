@@ -1,0 +1,74 @@
+@import '../../scss/settings';
+
+
+[data-block-name="Motionlab\\Sauce\\Blocks\\CategoryListingsBlock\\CategoryListingsBlock"] {
+
+    .block-categories-pod {
+        padding: $space-2;
+        
+        a.block-categories-link {
+            display: block;
+            overflow: hidden;
+            padding: $space-4;
+            position: relative;
+            background: $smoke;
+            border-radius: $border-radius;
+
+            .block-categories-icon-wrapper {
+                display: flex;
+                align-items: center;
+                margin-bottom: 0.6rem;
+                justify-content: center;
+                
+                .block-categories-icon {
+                    font-size: $h2;
+                }
+            }
+
+            .block-categories-name-wrapper {
+                display: flex;
+                align-items: center;
+                margin-bottom: 1rem;
+                justify-content: center;
+
+                .block-categories-name {
+                    margin: 0;
+                    font-weight: bold;
+                    text-align: center;
+                }
+            }
+
+            .block-categories-count {
+                color: $white;
+                font-size: $h6;
+                padding: 0.1rem;
+                margin-bottom: 0;
+                font-weight: bold;
+                text-align: center;
+                border-radius: 8px;
+                background-color: $primary;
+            }
+        }
+    }
+
+    .block-categories-pod-search {
+        a.block-categories-link {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+
+            .block-categories-icon {
+                color: $white;
+            }
+
+            .block-categories-icon-wrapper {
+                margin-bottom: 0.5rem;
+            }
+
+            .block-categories-name-wrapper {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
