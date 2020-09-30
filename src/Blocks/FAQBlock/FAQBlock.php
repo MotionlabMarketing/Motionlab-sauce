@@ -10,7 +10,7 @@ class FAQBlock extends Block
 
     public static $blockAcf = array(
         'key' => 'group_5ed9030c87109',
-        'title' => 'FAQ',
+        'title' => 'Accordion',
         'fields' => array(
             array(
                 'key' => 'field_5dfba00b6b97b',
@@ -209,7 +209,7 @@ class FAQBlock extends Block
             ),
             array(
                 'key' => 'field_5ed9046411316',
-                'label' => 'FAQs',
+                'label' => 'Accordions',
                 'name' => 'faq_faqs',
                 'type' => 'repeater',
                 'instructions' => '',
@@ -228,7 +228,7 @@ class FAQBlock extends Block
                 'sub_fields' => array(
                     array(
                         'key' => 'field_5ed9047a11317',
-                        'label' => 'Question',
+                        'label' => 'Header',
                         'name' => 'faq_faqs_question',
                         'type' => 'text',
                         'instructions' => '',
@@ -246,8 +246,35 @@ class FAQBlock extends Block
                         'maxlength' => '',
                     ),
                     array(
+                        'key' => 'field_a50f87832a36f',
+                        'label' => 'Content Type',
+                        'name' => 'faq_faqs_content_type',
+                        'type' => 'select',
+                        'instructions' => '',
+                        'required' => 0,
+                        'conditional_logic' => 0,
+                        'wrapper' => array(
+                            'width' => '',
+                            'class' => '',
+                            'id' => '',
+                        ),
+                        'choices' => array(
+                            'standard' => 'Standard Text',
+                            'table' => 'Table',
+                        ),
+                        'default_value' => array(
+                            0 => 'justify-left',
+                        ),
+                        'allow_null' => 0,
+                        'multiple' => 0,
+                        'ui' => 0,
+                        'return_format' => 'value',
+                        'ajax' => 0,
+                        'placeholder' => '',
+                    ),
+                    array(
                         'key' => 'field_5ed9048b11318',
-                        'label' => 'Answer',
+                        'label' => 'Content',
                         'name' => 'faq_faqs_answer',
                         'type' => 'wysiwyg',
                         'instructions' => '',
