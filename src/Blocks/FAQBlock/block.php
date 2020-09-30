@@ -24,7 +24,7 @@ FAQs: $this->blockConfiguration['faq_faqs']; - Repeater
                 <div class="accordion mt-6">
 
                     <?php foreach ($this->blockConfiguration['faq_faqs'] as $key => $row) : ?>
-                        <div data-accordion-collection="<?= get_the_id() ?>" data-accordion-active="<?php echo $key != 0 ? 'display: false;' : 'true'; ?>" class="w-100 py-3 cursor-pointer">
+                        <div data-accordion-collection="<?= get_the_id() ?>" data-accordion-active="<?php echo $key != 0 ? 'display: false;' : 'true'; ?>" class="w-100 py-3 cursor-pointer <?php echo $key != 0 ? '' : 'toggle-open'; ?>">
 
                             <div class="acc-head">
                                 <label for="" class="h4">
