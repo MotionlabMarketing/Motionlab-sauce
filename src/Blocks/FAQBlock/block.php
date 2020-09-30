@@ -38,7 +38,16 @@ FAQs: $this->blockConfiguration['faq_faqs']; - Repeater
                             <div class="acc-body text-left" style="<?php echo $key != 0 ? 'display: none;' : ''; ?>">
 
                                 <div class="body-content">
-                                    <?php echo $row['faq_faqs_answer']; ?>
+
+                                    <?php if(isset($this->blockConfiguration['faq_faqs_content_type']) && !empty($this->blockConfiguration['faq_faqs_content_type'])):?>
+                                        <?php if($this->blockConfiguration['faq_faqs_content_type'] == "standard"): ?>
+                                            <?php echo $row['faq_faqs_answer']; ?>
+                                        <?php else: ?>
+                                            <?php echo $row['faq_faqs_table_content']; ?>
+                                        <?php endif; ?>
+                                    <?php else: ?>
+                                        <?php echo $row['faq_faqs_answer']; ?>
+                                    <?php endif; ?>
                                 </div>
 
                             </div>
