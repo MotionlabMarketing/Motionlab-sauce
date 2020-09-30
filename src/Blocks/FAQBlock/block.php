@@ -43,7 +43,7 @@ FAQs: $this->blockConfiguration['faq_faqs']; - Repeater
                                         <?php if($this->blockConfiguration['faq_faqs_content_type'] == "standard"): ?>
                                             <?php echo $row['faq_faqs_answer']; ?>
                                         <?php else: ?>
-                                            <?php echo $row['faq_faqs_table_content']; ?>
+                                            <?php include(__DIR__ . "/partials/_table-content.php") ?>
                                         <?php endif; ?>
                                     <?php else: ?>
                                         <?php echo $row['faq_faqs_answer']; ?>
