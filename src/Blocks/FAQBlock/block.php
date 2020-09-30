@@ -24,7 +24,7 @@ FAQs: $this->blockConfiguration['faq_faqs']; - Repeater
                 <div class="accordion mt-6">
 
                     <?php foreach ($this->blockConfiguration['faq_faqs'] as $key => $row) : ?>
-                        <div data-accordion-collection="<?= get_the_id() ?>" data-accordion-active="false" class="w-100 py-3 cursor-pointer">
+                        <div data-accordion-collection="<?= get_the_id() ?>" data-accordion-active="<?php echo $key != 0 ? 'display: false;' : 'true'; ?>" class="w-100 py-3 cursor-pointer <?php echo $key != 0 ? '' : 'toggle-open'; ?>">
 
                             <div class="acc-head">
                                 <label for="" class="h4">
@@ -38,7 +38,16 @@ FAQs: $this->blockConfiguration['faq_faqs']; - Repeater
                             <div class="acc-body text-left" style="<?php echo $key != 0 ? 'display: none;' : ''; ?>">
 
                                 <div class="body-content">
-                                    <?php echo $row['faq_faqs_answer']; ?>
+
+                                    <?php if(isset($row['faq_faqs_content_type']) && !empty($row['faq_faqs_content_type'])):?>
+                                        <?php if($row['faq_faqs_content_type'] == "standard"): ?>
+                                            <?php echo $row['faq_faqs_answer']; ?>
+                                        <?php else: ?>
+                                            <?php include(__DIR__ . "/partials/_table-content.php") ?>
+                                        <?php endif; ?>
+                                    <?php else: ?>
+                                        <?php echo $row['faq_faqs_answer']; ?>
+                                    <?php endif; ?>
                                 </div>
 
                             </div>
