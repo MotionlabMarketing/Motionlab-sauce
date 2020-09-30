@@ -279,7 +279,15 @@ class FAQBlock extends Block
                         'type' => 'wysiwyg',
                         'instructions' => '',
                         'required' => 0,
-                        'conditional_logic' => 0,
+                        'conditional_logic' => array(
+                            array(
+                                array(
+                                    'field' => 'field_a50f87832a36f',
+                                    'operator' => '==',
+                                    'value' => 'standard',
+                                ),
+                            ),
+                        ),
                         'wrapper' => array(
                             'width' => '',
                             'class' => '',
@@ -290,6 +298,30 @@ class FAQBlock extends Block
                         'toolbar' => 'full',
                         'media_upload' => 1,
                         'delay' => 0,
+                    ),
+                    array(
+                        'key' => 'field_5f74937bf4ac6',
+                        'label' => 'Table',
+                        'name' => 'faq_faqs_table_content',
+                        'type' => 'table',
+                        'instructions' => '',
+                        'required' => 0,
+                        'conditional_logic' => array(
+                            array(
+                                array(
+                                    'field' => 'field_a50f87832a36f',
+                                    'operator' => '==',
+                                    'value' => 'table',
+                                ),
+                            ),
+                        ),
+                        'wrapper' => array(
+                            'width' => '',
+                            'class' => '',
+                            'id' => '',
+                        ),
+                        'use_header' => 0,
+                        'use_caption' => 2,
                     ),
                 ),
             ),
