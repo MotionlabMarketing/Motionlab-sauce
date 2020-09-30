@@ -35,6 +35,7 @@ class BlockProvider
 {
 
     private static $blocks = [
+        'faqs' => FAQBlock::class, //This is first alphabetically as the block has been renamed as "Accordion"
         'accreditations' => AccreditationsBlock::class,
         'alternating_media' => AlternatingMediaBlock::class,
         'banner' =>  BannerBlock::class,
@@ -44,7 +45,6 @@ class BlockProvider
         'call_to_action' => CallToActionBlock::class,
         'case_studies' => CaseStudiesBlock::class,
         'category_listings' => CategoryListingsBlock::class,
-        'faqs' => FAQBlock::class,
         'form' => FormBlock::class,
         'gallery' => GalleryBlock::class,
         'job_vacancies' => JobVacanciesBlock::class,

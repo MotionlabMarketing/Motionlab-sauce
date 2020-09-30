@@ -307,12 +307,12 @@ class GenericTemplate extends TemplateBase
                     'layout_e783206d9aad09' => array(
                         'key' => 'layout_e783206d9aad09',
                         'name' => 'faqs',
-                        'label' => 'FAQs',
+                        'label' => 'Accordion',
                         'display' => 'block',
                         'sub_fields' => array(
                             array(
                                 'key' => 'layout_e783206d9aad00',
-                                'label' => 'FAQs',
+                                'label' => 'Accordion',
                                 'name' => 'faqs',
                                 'type' => 'clone',
                                 'instructions' => '',
