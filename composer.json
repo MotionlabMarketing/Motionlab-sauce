@@ -62,6 +62,7 @@
     "wpackagist-plugin/wordpress-importer": "^0.6.4",
     "nesbot/carbon": "^2.27",
     "wpackagist-plugin/megamenu": "^2.7.3",
-    "wpackagist-plugin/naked-social-share": "^1.5"
+    "wpackagist-plugin/naked-social-share": "^1.5",
+    "wpackagist-plugin/advanced-custom-fields-table-field": "^1.3"
   }
 }

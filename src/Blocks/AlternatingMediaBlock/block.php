@@ -13,18 +13,18 @@ $buttons = $this->blockConfiguration['alternating_media_buttons'];
 <section class="px4 <?php echo $this->blockConfiguration['alternating_media_padding'] == true ? 'py5' : '' ?> <?php echo $this->blockConfiguration['alternating_media_background_colour']; ?>" <?php echo $this->getAttributeString() ?> data-aos="fade-in">
     <div class="container">
         <div class="mxn3 md-flex <?php echo $this->blockConfiguration['alternating_media_image_position'] == 'left' ? '' : 'flex-row-reverse' ?> ">
-            <div class="col-12 px3 min-height-100">
+            <div class="col-12 px3 min-height-100" data-element="panel-image">
                 <div class="bg-cover bg-center height-100 img-rounded" style="background-image:url('<?php echo $this->blockConfiguration['alternating_media_image']['sizes']['medium_large']; ?>');">
                     <div class="ratio-4-3"></div>
                 </div>
             </div>
-            <div class="col-12 px3">
+            <div class="col-12 px3" data-element="panel-content">
                 <div class="pt4 md-p4 md-py5 wysiwyg">
                     <?php echo $this->blockConfiguration['alternating_media_content']; ?>
                     <?php if ($buttons) : ?>
-                        <div class="mxn1">
+                        <div class="mxn1" data-element="buttons">
                             <?php foreach ($buttons as $button) : ?>
-                                <a href="<?php echo $button['button']['url']; ?>" class="btn text-decoration-none btn-primary white bg-primary mx1">
+                                <a href="<?php echo $button['button']['url']; ?>" class="btn text-decoration-none btn-primary white bg-primary mx1" data-element="button">
                                     <?php echo $button['button']['title']; ?>
                                     <?php if (!empty($button['icon'])) : ?>
                                         <span class="h5 ml2"><?php echo $button['icon']; ?></span>

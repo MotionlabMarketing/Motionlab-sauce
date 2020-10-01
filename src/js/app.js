@@ -1,35 +1,57 @@
 /**
  * Accordions
  */
-(function () {
-    // Get all of the indicators
-    var indicators = document.querySelectorAll("[data-accordion]");
+/**
+ * ACCORDIONS WITH COLLECTIONS.
+ * This function opens and closes the accordions menus based on there collection allow multiple blocks to be include
+ * on the page.
+ *
+ * @author  Joe Curran
+ * @created 22 Mar 2018
+ */
+(function ($) {
 
-    // Loop over all of the indicators to add an event listener
-    indicators.forEach(function (indicator) {
-        indicator.addEventListener("click", function () {
-            if (this.dataset.accordionStatus == "open") {
-                this.dataset.accordionStatus = "closed";
-            } else {
-                const clicked = this.dataset.accordionCollection;
+    // OPEN AND CLOSE ACCORDION COLLECTIONS.
+    var isAnimating = false;
+    $('[data-accordion-collection]').on('click', function () {
 
-                // Set all to closed
-                indicators.forEach(function (indicator) {
-                    if (indicator.dataset.accordionCollection == clicked) indicator.dataset.accordionStatus = "closed";
-                }, clicked);
+        if (isAnimating) {
+            return;
+        }
+        isAnimating = true;
 
-                // Set the current item to open
-                this.dataset.accordionStatus = "open";
-            }
+        // GET THE NUMBER OF THE ROW COLLECTION.
+        var collecton = $(this).data('accordion-collection');
+        var selector = '[data-accordion-collection="' + collecton + '"]';
+
+        // IF THE ITEM CLICKED IS NOT ALREADY OPEN.
+        if (!$(this).hasClass('toggle-open')) {
+
+            // ALL ITEMS IN COLLECTION.
+            $(selector).removeClass('toggle-open');
+            $(selector).find('.acc-indicator').removeClass('negative').addClass('plus');
+            $(selector).attr('data-accordion-active', false);
+            $(selector).find('.acc-body').slideUp();
+
+            // CLICKED ITEM.
+            $(this).addClass('toggle-open').find('i').toggleClass('fa-angle-up fa-angle-down');
+            $(this).attr('data-accordion-active', true);
+            $(this).find('.acc-indicator').toggleClass('negative plus');
+            $(this).find('.acc-body').slideToggle();
+        } else {
+            $(this).removeClass('toggle-open').find('i').toggleClass('fa-angle-down fa-angle-up');
+            $(this).attr('data-accordion-active', false);
+            $(this).find('.acc-indicator').toggleClass('negative plus');
+            $(this).find('.acc-body').slideUp();
         }
 
-        );
-    }
+        setTimeout(function () {
+            isAnimating = false;
+        }, 500);
 
-    );
-}
+    });
 
-)();
+})(jQuery);
 
 window.addEventListener('load', () => {
 
