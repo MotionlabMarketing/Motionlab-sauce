@@ -187,7 +187,7 @@ class CPT_Packages extends CPTBase
                 array(
                     'param' => 'post_type',
                     'operator' => '==',
-                    'value' => 'post',
+                    'value' => 'packages',
                 ),
             ),
         ),
@@ -197,7 +197,7 @@ class CPT_Packages extends CPTBase
         'label_placement' => 'top',
         'instruction_placement' => 'label',
         'hide_on_screen' => '',
-        'active' => false,
+        'active' => true,
         'description' => '',
     );
 
