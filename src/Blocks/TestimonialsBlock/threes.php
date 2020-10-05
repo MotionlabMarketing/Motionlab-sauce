@@ -15,25 +15,23 @@ $testimonials = $this->getTestimonials();
     <div class="container clearfix">
         <div class="js-testimonial-carousel-new pb4">
 
-            <div>
-                <?php
-                $i = 1;
-                $numTestimonials = count($testimonials);
-                ?>
+            <?php
+            $i = 1;
+            $numTestimonials = count($testimonials);
+            ?>
 
-                <?php foreach ($testimonials as $testimonial) : ?>
-                    <?php if(($i + 2) % 3 == 0): ?>
-                        <div>
-                    <?php endif; ?>
-                    <article class="col col-12 md-col-4 p4">
-                        <?php echo strip_empty_tags($testimonial['content']); ?>
-                    </article>
-                    <?php if(($i) % 3 == 0 || $i == $numTestimonials): ?>
-                        </div>
-                    <?php endif; ?>
-                    <?php $i++; ?>
-                <?php endforeach; ?>
-            </div>
+            <?php foreach ($testimonials as $testimonial) : ?>
+                <?php if(($i + 2) % 3 == 0): ?>
+                    <div>
+                <?php endif; ?>
+                <article class="col col-12 md-col-4 p4">
+                    <?php echo strip_empty_tags($testimonial['content']); ?>
+                </article>
+                <?php if(($i) % 3 == 0 || $i == $numTestimonials): ?>
+                    </div>
+                <?php endif; ?>
+                <?php $i++; ?>
+            <?php endforeach; ?>
 
         </div>
     </div>
