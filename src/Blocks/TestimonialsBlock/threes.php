@@ -1,6 +1,6 @@
 <?php
 /*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*|Block Settings|~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*
-Full Size: $this->blockConfiguration['testimonials_layout']
+Full Size: $this->blockConfiguration['testimonials_full_size']
 Content: $this->blockConfiguration['testimonials_content']
 Display Type: $this->blockConfiguration['testimonials_posts_to_display']
 Selected Posts (only if display type is not latest): $this->blockConfiguration['testimonials_selected']
@@ -13,7 +13,14 @@ $testimonials = $this->getTestimonials();
 <section class="bg-light-grey py5" <?php echo $this->getAttributeString() ?> data-aos="fade-in">
     <div class="js-testimonial-carousel pb4">
 
+        <?php
+        $i = 1;
+        $numTestimonials = count($testimonials);
+        ?>
         <?php foreach ($testimonials as $testimonial) : ?>
+            <?php if(($i + 2) % 3 == 0): ?>
+                <div>
+            <?php endif; ?>
             <article class="bg-white col-12 mx3 rounded overflow-hidden shadow mb4 md-mb0">
                 <div class="js-match-height p4 text-center flex items-center justify-center flex-column">
                     <h3 class="lh2 bold"><?php echo $testimonial['title']; ?></h3>
@@ -21,6 +28,10 @@ $testimonials = $this->getTestimonials();
                     <p class="bold dark-purple mb0"><?php echo $testimonial['reviewer']; ?></p>
                 </div>
             </article>
+            <?php if(($i) % 3 == 0 || $i == $numTestimonials): ?>
+                </div>
+            <?php endif; ?>
+            <?php $i++; ?>
         <?php endforeach; ?>
     </div>
 </section>
