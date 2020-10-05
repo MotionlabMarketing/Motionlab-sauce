@@ -13,11 +13,11 @@ class TestimonialsBlock extends Block
         'title' => 'Block - Testimonials',
         'fields' => array(
             array(
-                'key' => 'field_5ddd5af4ba821',
-                'label' => 'Full Size',
-                'name' => 'testimonials_full_size',
-                'type' => 'true_false',
-                'instructions' => 'If full size, testimonials will display in a slider with their content. Mini will show testimonials with only their rating in a scrolling ticker-like bar.',
+                'key' => 'field_522d69bbae2d2',
+                'label' => 'Layout',
+                'name' => 'testimonials_layout',
+                'type' => 'select',
+                'instructions' => '',
                 'required' => 0,
                 'conditional_logic' => 0,
                 'wrapper' => array(
@@ -25,11 +25,19 @@ class TestimonialsBlock extends Block
                     'class' => '',
                     'id' => '',
                 ),
-                'message' => '',
-                'default_value' => 0,
+                'choices' => array(
+                    'default' => 'Default',
+                    'threes' => 'Groups of Three',
+                    'mini_block' => 'Mini',
+                ),
+                'default_value' => array(
+                ),
+                'allow_null' => 0,
+                'multiple' => 0,
                 'ui' => 1,
-                'ui_on_text' => 'Mini',
-                'ui_off_text' => 'Full Size',
+                'ajax' => 0,
+                'return_format' => 'value',
+                'placeholder' => '',
             ),
             array(
                 'key' => 'field_5dd6c54257bba',
@@ -131,10 +139,13 @@ class TestimonialsBlock extends Block
     );
 
     public function init() {
-        if($this->blockConfiguration['testimonials_full_size'] == 'mini') {
+        if($this->blockConfiguration['testimonials_layout'] == 'mini') {
             $this->layout = 'mini_block';
             include(__DIR__ . '/mini_block.php');
-        }else{
+        } elseif ($this->blockConfiguration['testimonials_layout'] == 'threes') {
+            $this->layout = 'threes';
+            include(__DIR__ . '/threes.php');
+        } else{
             include(__DIR__ . '/block.php');
         }
     }
@@ -176,7 +187,7 @@ class TestimonialsBlock extends Block
     {
         $instance = new TestimonialsBlock([
             'testimonials_posts_to_display' => 'latest',
-            'testimonials_full_size' => $layout
+            'testimonials_layout' => $layout
         ],false);
         $instance->init();
         return $instance;
