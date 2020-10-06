@@ -5,7 +5,9 @@
     <?php endif; ?>
 
     <div class="content mx-auto relative z1 <?php echo $this->callToAction['cta_bordered_content'] ? 'bordered' : ''; ?>">
-        <img src="<?php echo $this->callToAction['cta_image']['sizes']['medium']; ?>" />
+        <?php if (!empty($this->callToAction['cta_image']['sizes']['medium'])): ?>
+            <img src="<?php echo $this->callToAction['cta_image']['sizes']['medium']; ?>" />
+        <?php endif; ?>
 
         <div class="wysiwyg">
             <?php echo str_ireplace(array('<h1>', '</h1>'), array('<h2>', '</h2>'), $this->callToAction['cta_content']); ?>
