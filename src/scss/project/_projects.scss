@@ -81,10 +81,6 @@ address {
 
 .wysiwyg {
 
-  a:not(.btn):not([data-element="button"]) {
-    text-decoration: underline;
-  }
-
   [data-element="button"] {
     &:first-child {
       margin-left: 0;

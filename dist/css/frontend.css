@@ -8551,10 +8551,7 @@ address {
   .xxl-two-col {
     column-count: 2;
     column-gap: 1.5rem; } }
-
-.wysiwyg a:not(.btn):not([data-element="button"]) {
-  text-decoration: underline; }
-
+    
 .wysiwyg [data-element="button"]:first-child {
   margin-left: 0; }
 
