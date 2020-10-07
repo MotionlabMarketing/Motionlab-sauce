@@ -142,28 +142,23 @@ class PackagesBlock extends Block
     );
 
     public function init() {
-        if($this->blockConfiguration['packages_full_size'] == 'mini') {
-            $this->layout = 'mini_block';
-            include(__DIR__ . '/mini_block.php');
+        if($this->blockConfiguration['packages_layout'] == 'full') {
+            $this->layout = 'three';
+            include(__DIR__ . '/block_full.php');
         }else{
-            include(__DIR__ . '/block.php');
+            $this->layout = 'full';
+            include(__DIR__ . '/block_three.php');
         }
     }
 
-    private function getPackages() {
+    private function getPackages()
+    {
+        $packages = new \WP_Query(array(
+            'post_type' => 'packages',
+            'post_status' => 'publish',
+        ));
 
-        if($this->blockConfiguration['packages_posts_to_display'] != "latest") {
-            //Fetch ACF field and loop over posts
-            $packages = $this->blockConfiguration['packages_selected'];
-        } else {
-            //Make wp query for the latest posts
-            $packages = new \WP_Query(array(
-                'post_type' => 'packages',
-                'post_status' => 'publish',
-            ));
-
-            $packages = $packages->posts;
-        }
+        $packages = $packages->posts;
 
         $packagesToPrint = [];
 
@@ -186,8 +181,7 @@ class PackagesBlock extends Block
     public static function unleash($layout = 'default')
     {
         $instance = new PackagesBlock([
-            'packages_posts_to_display' => 'latest',
-            'packages_full_size' => $layout
+            'packages_layout' => $layout
         ],false);
         $instance->init();
         return $instance;
