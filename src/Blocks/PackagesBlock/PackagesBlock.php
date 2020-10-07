@@ -26,10 +26,10 @@ class PackagesBlock extends Block
                     'id' => '',
                 ),
                 'choices' => array(
-                    'three' => 'Three Packages',
+                    //'three' => 'Three Packages',
                     'full: Full Page' => 'full: Full Page',
                 ),
-                'default_value' => 'three',
+                'default_value' => 'full',
                 'allow_null' => 0,
                 'multiple' => 0,
                 'ui' => 0,
