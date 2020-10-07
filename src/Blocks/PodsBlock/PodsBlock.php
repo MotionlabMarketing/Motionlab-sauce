@@ -14,10 +14,10 @@ class PodsBlock extends Block
         'fields' => array(
             array(
                 'key' => 'field_5e32b01e3ab59',
-                'label' => 'Layout',
+                'label' => 'Section Layout',
                 'name' => 'pods_layout',
                 'type' => 'select',
-                'instructions' => '',
+                'instructions' => 'This controls the way the pods are rendered out in their list.',
                 'required' => 0,
                 'conditional_logic' => 0,
                 'wrapper' => array(
@@ -28,6 +28,33 @@ class PodsBlock extends Block
                 'choices' => array(
                     'standard' => 'Standard (6 pods)',
                     'central' => 'Central Feature (4 pods)',
+                ),
+                'default_value' => array(
+                ),
+                'allow_null' => 0,
+                'multiple' => 0,
+                'ui' => 1,
+                'ajax' => 0,
+                'return_format' => 'value',
+                'placeholder' => '',
+            ),
+            array(
+                'key' => 'field_2d19add19f084',
+                'label' => 'Layout',
+                'name' => 'pods_content_layout',
+                'type' => 'select',
+                'instructions' => 'This controls the way in which the content for each individual pod is rendered.',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'choices' => array(
+                    'standard' => 'Content on Hover',
+                    'top' => 'Content on Top',
+                    'bottom' => 'Content on Bottom',
                 ),
                 'default_value' => array(
                 ),
