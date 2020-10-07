@@ -16,7 +16,7 @@ $packages = $this->getPackages();
             </ul>
             <span><?php echo $package['price'] ?></span>
             <div>
-                <a href="<?php echo $package['link_location'] ?>"><?php echo $package['link_text'] ?></a>
+                <a href="<?php echo $package['link_location'] ?>"><?php echo $package['link_title'] ?></a>
             </div>
         </div>
     <?php endforeach; ?>
