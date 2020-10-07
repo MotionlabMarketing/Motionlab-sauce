@@ -166,10 +166,13 @@ class PackagesBlock extends Block
             $_package = array();
 
             $_package['title'] = $package->post_title;
-            $_package['content'] = \get_field('package_content', $package->ID);
-            $_package['reviewer'] = \get_field('package_reviewer_name', $package->ID);
-            $_package['date'] = \get_field('package_date', $package->ID);
-            $_package['star_rating'] = \get_field('package_star_rating', $package->ID);
+            $_package['subtitle'] = \get_field('subtitle', $package->ID);
+            $_package['background_colour'] = \get_field('background_colour', $package->ID);
+            $_package['features_header'] = \get_field('features_header', $package->ID);
+            $_package['features'] = \get_field('features', $package->ID);
+            $_package['price'] = \get_field('price', $package->ID);
+            $_package['link_title'] = \get_field('link_title', $package->ID);
+            $_package['link_location'] = \get_field('link_location', $package->ID);
 
             $packagesToPrint[] = $_package;
         }

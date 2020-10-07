@@ -165,7 +165,7 @@ class CPT_Packages extends CPTBase
             array(
                 'key' => 'field_5f75fce9c18d6',
                 'label' => 'Link Location',
-                'name' => '',
+                'name' => 'link_location',
                 'type' => 'text',
                 'instructions' => '',
                 'required' => 0,
