@@ -12,7 +12,115 @@ class PackagesBlock extends Block
         'key' => 'group_5dd6c54248573',
         'title' => 'Block - Packages',
         'fields' => array(
-
+            array(
+                'key' => 'field_5f7dbaa8c7f3a',
+                'label' => 'Layout',
+                'name' => 'packages_layout',
+                'type' => 'select',
+                'instructions' => '',
+                'required' => 1,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'choices' => array(
+                    'three' => 'Three Packages',
+                    'full: Full Page' => 'full: Full Page',
+                ),
+                'default_value' => 'three',
+                'allow_null' => 0,
+                'multiple' => 0,
+                'ui' => 0,
+                'return_format' => 'value',
+                'ajax' => 0,
+                'placeholder' => '',
+            ),
+            array(
+                'key' => 'field_5f7dbb53c7f3b',
+                'label' => 'Package One',
+                'name' => 'packages_package_1',
+                'type' => 'post_object',
+                'instructions' => '',
+                'required' => 1,
+                'conditional_logic' => array(
+                    array(
+                        array(
+                            'field' => 'field_5f7dbaa8c7f3a',
+                            'operator' => '==',
+                            'value' => 'three',
+                        ),
+                    ),
+                ),
+                'wrapper' => array(
+                    'width' => '33.33',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'post_type' => '',
+                'taxonomy' => '',
+                'allow_null' => 0,
+                'multiple' => 0,
+                'return_format' => 'object',
+                'ui' => 1,
+            ),
+            array(
+                'key' => 'field_5f7dbbdf288d1',
+                'label' => 'Package Two',
+                'name' => 'packages_package_2',
+                'type' => 'post_object',
+                'instructions' => '',
+                'required' => 1,
+                'conditional_logic' => array(
+                    array(
+                        array(
+                            'field' => 'field_5f7dbaa8c7f3a',
+                            'operator' => '==',
+                            'value' => 'three',
+                        ),
+                    ),
+                ),
+                'wrapper' => array(
+                    'width' => '33.33',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'post_type' => '',
+                'taxonomy' => '',
+                'allow_null' => 0,
+                'multiple' => 0,
+                'return_format' => 'object',
+                'ui' => 1,
+            ),
+            array(
+                'key' => 'field_5f7dbbe6288d2',
+                'label' => 'Package Three',
+                'name' => 'packages_package_3',
+                'type' => 'post_object',
+                'instructions' => '',
+                'required' => 1,
+                'conditional_logic' => array(
+                    array(
+                        array(
+                            'field' => 'field_5f7dbaa8c7f3a',
+                            'operator' => '==',
+                            'value' => 'three',
+                        ),
+                    ),
+                ),
+                'wrapper' => array(
+                    'width' => '33.33',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'post_type' => '',
+                'taxonomy' => '',
+                'allow_null' => 0,
+                'multiple' => 0,
+                'return_format' => 'object',
+                'ui' => 1,
+            ),
         ),
         'location' => array(
             array(
