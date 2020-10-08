@@ -27,6 +27,7 @@ use Motionlab\Sauce\Blocks\SpecificationsBlock\SpecificationsBlock;
 use Motionlab\Sauce\Blocks\StandardContentBlock\StandardContentBlock;
 use Motionlab\Sauce\Blocks\TabsBlock\TabsBlock;
 use Motionlab\Sauce\Blocks\TestimonialsBlock\TestimonialsBlock;
+use Motionlab\Sauce\Blocks\TitleBlock\TitleBlock;
 use Motionlab\Sauce\Blocks\TwoColumnBlock\TwoColumnBlock;
 use Motionlab\Sauce\Blocks\AlternatingMediaBlock\AlternatingMediaBlock;
 use Motionlab\Sauce\Blocks\MeetTheTeamBlock\MeetTheTeamBlock;
@@ -59,6 +60,7 @@ class BlockProvider
         'standard_content' => StandardContentBlock::class,
         'tabs' => TabsBlock::class,
         'testimonials' => TestimonialsBlock::class,
+        'title' => TitleBlock::class,
         'two_columns' => TwoColumnBlock::class,
 
         'background_colour' => BackgroundColour::class,
