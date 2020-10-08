@@ -41,7 +41,6 @@ $testimonials = $this->getTestimonials();
     jQuery(document).ready(function($) {
         $('.js-testimonial-carousel-new').slick({
             centerMode: true,
-            initialSlide: 1,
             arrows: false,
             infinite: true,
             dots: true,
