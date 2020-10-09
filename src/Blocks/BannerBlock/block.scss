@@ -1,139 +1,90 @@
 @import '../../scss/settings';
 
-[data-block-name="Motionlab\\Masterframe\\Trade\\Blocks\\BannerBlock\\BannerBlock"] {
-    
-    &[data-block-position="1"] {
-        margin-bottom: 0;
+[data-block-name="Motionlab\\Sauce\\Blocks\\BannerBlock\\BannerBlock"] {
 
-        @media (min-width: $breakpoint-md) {
-            padding-bottom: 50px;
+    [data-element="slide"] {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+
+        @media (min-width: $breakpoint-lg) {
+            padding-top: 0;
+            padding-bottom: 0;
         }
 
-        p {
-            font-size: 20px;
-        }
+        &[data-slide-type="featured"] {
 
-        [data-button-alignment="left"] {
-
-            @media (max-width: $breakpoint-md) {
-                justify-content: center;
+            [data-element="background-image"] {
+                background-position: right;
             }
+
+            [data-element="feature-image"] {
+                bottom: 0;
+                right: -5%;
+                z-index: 200;
+                display: none;
+                max-height: 100%;
+                position: absolute;
+                
+                @media (min-width: $breakpoint-md) {
+                    right: 3%;
+                    display: block;
+                }
+                @media (min-width: $breakpoint-lg) {
+                    right: 10%;
+                }
+                @media (min-width: $breakpoint-xl) {
+                    right: 18%;
+                }
+            }
+
         }
     }
-
-    // .slick-prev,
-    // .slick-next {
-    //     display: none !important;
-
-    //     @media (min-width: $breakpoint-md) {
-    //         display: block;
-    //     }
-    // }
-
-    @media (max-width: $breakpoint-md) {
-
-        h2 {
-            line-height: 1.2;
-            font-size: 1.6rem;
-        }
-    }
-
 
     .slick-dots {
-        bottom: -10px;
-        max-width: 85rem;
+        bottom: 0;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        padding: 0 $space-4;
+        max-width: $container-width;
 
-        @media (min-height: 740px) {
-            bottom: 0px;
-        }
-
-        @media (min-height: 820px) {
-           bottom: 80px;
+        @media (min-width: $breakpoint-md) {
+            left: 50%;
+            text-align: left;
+            transform: translateX(-50%);
         }
 
         li {
-            button {
+            width: 50px;
+            margin-left: 0.3rem;
+            margin-right: 0.3rem;
 
+            &:first-child {
+                margin-left: 0;
+            }
+
+            &:last-child {
+                margin-right: 0;
+            }
+
+            button {
+                width: 50px;
+                
                 &:before {
-                    opacity: 0.7;
-                    font-size: 3rem;
-                    color: $dark-blue;
+                    content: "";
+                    width: 50px;
+                    height: 5px;
+                    background-color: $white;
                 }
             }
 
             &.slick-active {
                 button {
                     &:before {
-                        opacity: 1;
+                        background-color: $white;
                     }
                 }
             }
-        }
-
-        @media (min-width: $breakpoint-md) {
-            text-align: left;
-            position: relative;
-            padding: 0 0 0 100px;
-            margin: -150px auto 0;
-
-            li {
-                button {
-
-                    &:before {
-                        color: $white;
-                    }
-                }
-            }
-        }
-
-        @media (min-width: 1360px) {
-            padding: 0 0 0 90px;
-        }
-    }
-
-    .slide-content-padding {
-
-        @media (min-width: $breakpoint-md) {
-            padding-left: 80px;
-        }
-
-        @media (min-width: 1400px) {
-            padding-right: 120px;
-        }
-    }
-}
-
-.banner-featured {
-
-    [data-element="buttons"] {
-        [data-element="button"] {
-            text-decoration: none;
-            
-            &:first-child {
-                margin-left: 0;
-            }
-        }
-    }
-
-    .featured-image {
-        max-width: none;
-        @media (min-width: $breakpoint-md) {
-            max-width: 550px;
-        }
-    }
-
-    .reduced-height {
-        height: 80%;
-        
-        @media (min-width: $breakpoint-md) {
-            height: 85%;
-        }
-    }
-
-    .padding-correction {
-
-        @media (min-width: $breakpoint-md) {
-            margin-bottom: 4rem;
         }
     }
 }
