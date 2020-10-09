@@ -34,11 +34,64 @@ class AccreditationsBlock extends Block
                 'prefix_name' => 0,
             ),
             array(
+                'key' => 'field_63151a00307d8',
+                'label' => 'Layout',
+                'name' => 'accreditation_layout',
+                'type' => 'select',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'choices' => array(
+                    'carousel' => 'Carousel',
+                    'static' => 'Static',
+                ),
+                'default_value' => array(
+                ),
+                'allow_null' => 0,
+                'multiple' => 0,
+                'ui' => 0,
+                'return_format' => 'value',
+                'ajax' => 0,
+                'placeholder' => '',
+            ),
+            array(
+                'key' => 'field_3900161560699',
+                'label' => 'Content',
+                'name' => 'accreditation_content',
+                'type' => 'wysiwyg',
+                'instructions' => 'Displayed to the left of accreditation logos',
+                'required' => 0,
+                'conditional_logic' => array(
+                    array(
+                        array(
+                            'field' => 'field_63151a00307d8',
+                            'operator' => '==',
+                            'value' => 'static',
+                        ),
+                    ),
+                ),
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'default_value' => '',
+                'tabs' => 'all',
+                'toolbar' => 'full',
+                'media_upload' => 1,
+                'delay' => 0,
+            ),
+            array(
                 'key' => 'field_5dfa473a48625',
                 'label' => 'Accreditations',
                 'name' => 'accreditations_accreditations',
                 'type' => 'repeater',
-                'instructions' => '',
+                'instructions' => 'The static layout will only show the first 5 accreditations added.',
                 'required' => 0,
                 'conditional_logic' => 0,
                 'wrapper' => array(
@@ -99,6 +152,15 @@ class AccreditationsBlock extends Block
     );
 
     public function init() {
-        include(__DIR__ . '/block.php');
+        switch($this->blockConfiguration['accreditation_layout']) {
+            case 'carousel':
+                include(__DIR__ . '/block.php');
+                break;
+            case 'static':
+                include(__DIR__ . '/static.php');
+                break;
+            default:
+                include(__DIR__ . '/block.php');
+        }
     }
 }

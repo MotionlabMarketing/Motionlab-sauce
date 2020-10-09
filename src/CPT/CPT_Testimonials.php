@@ -101,28 +101,6 @@ class CPT_Testimonials extends CPTBase
                 'return_format' => 'value',
                 'placeholder' => '',
             ),
-            array(
-                'key' => 'field_5de528e726319',
-                'label' => 'Treatment',
-                'name' => 'testimonial_treatment',
-                'type' => 'post_object',
-                'instructions' => 'Which treatment is this testimonial related to?',
-                'required' => 0,
-                'conditional_logic' => 0,
-                'wrapper' => array(
-                    'width' => '',
-                    'class' => '',
-                    'id' => '',
-                ),
-                'post_type' => array(
-                    0 => 'treatments',
-                ),
-                'taxonomy' => '',
-                'allow_null' => 0,
-                'multiple' => 0,
-                'return_format' => 'object',
-                'ui' => 1,
-            ),
         ),
         'location' => array(
             array(

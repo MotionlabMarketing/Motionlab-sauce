@@ -13,6 +13,7 @@ class CPTProvider
         'Testimonials' => CPT_Testimonials::class,
         'Jobs' => CPT_Jobs::class,
         'Locations' => CPT_Locations::class,
+        'Packages' => CPT_Packages::class,
     ];
 
     public function __construct()
