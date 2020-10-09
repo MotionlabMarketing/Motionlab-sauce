@@ -2,6 +2,10 @@
 
 [data-block-name="Motionlab\\Sauce\\Blocks\\BannerBlock\\BannerBlock"] {
 
+    .slick-slider {
+        margin-bottom: 0;
+    }
+
     [data-element="slide"] {
         padding-top: 1rem;
         padding-bottom: 1rem;

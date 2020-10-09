@@ -35,7 +35,7 @@ class AccreditationsBlock extends Block
             ),
             array(
                 'key' => 'field_63151a00307d8',
-                'label' => 'Height',
+                'label' => 'Layout',
                 'name' => 'accreditation_layout',
                 'type' => 'select',
                 'instructions' => '',
@@ -152,7 +152,7 @@ class AccreditationsBlock extends Block
     );
 
     public function init() {
-        switch($this->blockConfiguration['']) {
+        switch($this->blockConfiguration['accreditation_layout']) {
             case 'carousel':
                 include(__DIR__ . '/block.php');
                 break;
@@ -162,6 +162,5 @@ class AccreditationsBlock extends Block
             default:
                 include(__DIR__ . '/block.php');
         }
-        include(__DIR__ . '/block.php');
     }
 }
