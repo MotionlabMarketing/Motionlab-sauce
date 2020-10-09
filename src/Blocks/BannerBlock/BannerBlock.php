@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Motionlab\Masterframe\Trade\Blocks\BannerBlock;
+namespace Motionlab\Sauce\Blocks\BannerBlock;
 
 use Motionlab\Sauce\Blocks\Block;
 
