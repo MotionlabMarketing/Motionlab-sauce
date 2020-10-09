@@ -13,48 +13,28 @@
 
 
 $banners = $this->blockConfiguration['banner_banners'];
+
 ?>
 
-<section class="js-hero-slider" <?php echo $this->getAttributeString() ?> data-aos="fade-in">
+<section class="clearfix overflow-hidden banner-slider <?php echo $this->blockConfiguration['banner_height']; ?>" <?php echo $this->getAttributeString() ?> data-aos="fade-in">
 
-    <?php foreach ($banners as $banner) : ?>
 
-        <div class="banner-block <?php echo $this->blockConfiguration['banner_full_width'] == true ? '' : 'container' ?>">
+    <?php foreach ($banners as $key => $banner) : ?>
 
-            <div class="flex items-center px4 py5 relative <?php echo $this->blockConfiguration['banner_height']; ?>">
+        <?php
+        $layout = $banner['banner_layout_style'];
 
-                <?php
-                $bannerImage = $banner['banner_background_image'];
-                $buttons = $banner['banner_buttons'];
-                ?>
-
-                <div class="absolute top-0 left-0 width-100 height-100 z1 bg-cover xl-show" style="background-image:url('<?php echo $bannerImage['sizes']['post-thumbnail']; ?>'); background-position: 80% 50%;"></div>
-                <div class="absolute top-0 left-0 width-100 height-100 z1 bg-cover xl-hide" style="background-image:url('<?php echo $bannerImage['sizes']['large']; ?>'); background-position: <?php echo $banner['background_image_position_mobile']['horizontal']; ?>% <?php echo $banner['background_image_position_mobile']['vertical']; ?>%;"></div>
-
-                <?php if ($banner['banner_overlay_opacity']) : ?>
-                    <div class="absolute top-0 left-0 width-100 height-100 z2 <?php echo $banner['banner_overlay_opacity']; ?>" style="background-color:  <?php echo $banner['banner_overlay_colour'] ?>;"></div>
-                <?php endif; ?>
-
-                <div class="banner-block-content relative z3 <?php echo $this->blockConfiguration['banner_full_width'] == true ? 'container' : '' ?> flex lg-px7 <?php echo $banner['banner_content_alignment']; ?> items-center width-100">
-                    <div class="col-9 lg-pl5 md-col-6 relative banner-content-holder js-match-height">
-                        <?php echo preg_replace('/<p>(\s|&nbsp;)*<\/p>/im', '', $banner['banner_content']); ?>
-                        <?php echo preg_replace('/<p>(\s|&nbsp;)*<\/p>/im', '', $banner['banner_content_html']); ?>
-                        <?php if ($banner['banner_buttons']) : ?>
-                            <div class="mxn1">
-                                <?php foreach ($banner['banner_buttons'] as $button) : ?>
-                                    <a href="<?php echo $button['button']['url']; ?>" class="btn btn-primary white bg-primary mx1">
-                                        <span class="h4 mr2"><?php echo $button['icon'] ?></span>
-                                        <?php echo $button['button']['title']; ?>
-                                    </a>
-                                <?php endforeach; ?>
-                            </div>
-                        <?php endif; ?>
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
+        switch ($layout) {
+            case "feature-image":
+                include('parts/layout-featured.php');
+                break;
+            case "standard":
+                include('parts/layout-standard.php');
+                break;
+            default:
+                include('parts/layout-standard.php');
+        }
+        ?>
 
     <?php endforeach; ?>
 
@@ -64,7 +44,7 @@ $banners = $this->blockConfiguration['banner_banners'];
     <?php foreach ($banners as $banner) : ?>
         <div class="p4 py6">
             <div class="container js-match-height-alt">
-                <?php echo preg_replace('/<p>(\s|&nbsp;)*<\/p>/im', '', $banner['banner_content']); ?>
+                <?php echo preg_replace('/<p>(\s|&nbsp;)*<\/p>/im', '', str_replace("h1", "h2", $banner['banner_content'])); ?>
                 <?php echo preg_replace('/<p>(\s|&nbsp;)*<\/p>/im', '', $banner['banner_content_html']); ?>
                 <?php if ($banner['banner_buttons']) : ?>
                     <div class="mxn1">
@@ -80,3 +60,19 @@ $banners = $this->blockConfiguration['banner_banners'];
         </div>
     <?php endforeach; ?>
 </section>
+
+<script>
+    jQuery(document).ready(function($) {
+        $('.banner-slider').slick({
+            arrows: true,
+            // autoplay: true,
+            // autoplaySpeed: 4000,
+            dots: true,
+            prevArrow: '<span class="slick-prev prev fal fa-chevron-left"></span>',
+            nextArrow: '<span class="slick-next next fal fa-chevron-right"></span>',
+            mobileFirst: true,
+            slidesToShow: 1,
+            cssEase: 'cubic-bezier(0.645, 0.045, 0.355, 1)'
+        });
+    });
+</script>

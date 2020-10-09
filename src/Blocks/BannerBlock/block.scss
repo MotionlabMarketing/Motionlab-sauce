@@ -1,0 +1,139 @@
+@import '../../scss/settings';
+
+[data-block-name="Motionlab\\Masterframe\\Trade\\Blocks\\BannerBlock\\BannerBlock"] {
+    
+    &[data-block-position="1"] {
+        margin-bottom: 0;
+
+        @media (min-width: $breakpoint-md) {
+            padding-bottom: 50px;
+        }
+
+        p {
+            font-size: 20px;
+        }
+
+        [data-button-alignment="left"] {
+
+            @media (max-width: $breakpoint-md) {
+                justify-content: center;
+            }
+        }
+    }
+
+    // .slick-prev,
+    // .slick-next {
+    //     display: none !important;
+
+    //     @media (min-width: $breakpoint-md) {
+    //         display: block;
+    //     }
+    // }
+
+    @media (max-width: $breakpoint-md) {
+
+        h2 {
+            line-height: 1.2;
+            font-size: 1.6rem;
+        }
+    }
+
+
+    .slick-dots {
+        bottom: -10px;
+        max-width: 85rem;
+
+        @media (min-height: 740px) {
+            bottom: 0px;
+        }
+
+        @media (min-height: 820px) {
+           bottom: 80px;
+        }
+
+        li {
+            button {
+
+                &:before {
+                    opacity: 0.7;
+                    font-size: 3rem;
+                    color: $dark-blue;
+                }
+            }
+
+            &.slick-active {
+                button {
+                    &:before {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+
+        @media (min-width: $breakpoint-md) {
+            text-align: left;
+            position: relative;
+            padding: 0 0 0 100px;
+            margin: -150px auto 0;
+
+            li {
+                button {
+
+                    &:before {
+                        color: $white;
+                    }
+                }
+            }
+        }
+
+        @media (min-width: 1360px) {
+            padding: 0 0 0 90px;
+        }
+    }
+
+    .slide-content-padding {
+
+        @media (min-width: $breakpoint-md) {
+            padding-left: 80px;
+        }
+
+        @media (min-width: 1400px) {
+            padding-right: 120px;
+        }
+    }
+}
+
+.banner-featured {
+
+    [data-element="buttons"] {
+        [data-element="button"] {
+            text-decoration: none;
+            
+            &:first-child {
+                margin-left: 0;
+            }
+        }
+    }
+
+    .featured-image {
+        max-width: none;
+        @media (min-width: $breakpoint-md) {
+            max-width: 550px;
+        }
+    }
+
+    .reduced-height {
+        height: 80%;
+        
+        @media (min-width: $breakpoint-md) {
+            height: 85%;
+        }
+    }
+
+    .padding-correction {
+
+        @media (min-width: $breakpoint-md) {
+            margin-bottom: 4rem;
+        }
+    }
+}
