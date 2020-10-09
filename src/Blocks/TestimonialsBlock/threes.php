@@ -10,9 +10,16 @@ $testimonials = $this->getTestimonials();
 //$this->blockConfiguration['background_colour'] ? $this->blockConfiguration['background_colour']  : 'bg-light-grey';
 ?>
 
-<section class="bg-light-grey py5" <?php echo $this->getAttributeString() ?> data-aos="fade-in">
+<section class="bg-white py5" <?php echo $this->getAttributeString() ?> data-aos="fade-in">
 
     <div class="container clearfix">
+
+        <?php if (!empty($this->blockConfiguration['testimonials_content'])): ?>
+            <div class="wysiwyg" data-element="content-area">
+                <?php echo $this->blockConfiguration['testimonials_content']; ?>
+            </div>
+        <?php endif; ?>
+
         <div class="js-testimonial-carousel-new pb4">
 
             <?php
@@ -35,17 +42,15 @@ $testimonials = $this->getTestimonials();
 
         </div>
     </div>
-</section>
-
-<script>
-    jQuery(document).ready(function($) {
-        $('.js-testimonial-carousel-new').slick({
-            centerMode: true,
-            initialSlide: 1,
-            arrows: false,
-            infinite: true,
-            dots: true,
-            slidesToShow: 1
+    <script>
+        jQuery(document).ready(function($) {
+            $('.js-testimonial-carousel-new').slick({
+                centerMode: true,
+                arrows: false,
+                infinite: true,
+                dots: true,
+                slidesToShow: 1
+            });
         });
-    });
-</script>
+    </script>
+</section>

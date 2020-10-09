@@ -159,7 +159,9 @@ class AlternatingMediaBlock extends Block
                 ),
                 'choices' => array(
                     'bg-white' => 'White',
-                    'bg-light-grey' => 'Grey',
+                    'bg-smoke' => 'Smoke',
+                    'bg-grey' => 'Grey',
+                    'bg-black' => 'Black',
                 ),
                 'default_value' => array(
                     0 => 'bg-white',

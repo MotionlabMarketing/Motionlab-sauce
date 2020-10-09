@@ -13,9 +13,20 @@
 
 
 $banners = $this->blockConfiguration['banner_banners'];
+
+$bannerOverflow = "0";
+
+if(isset($this->blockConfiguration['banner_overflow'])) {
+    if (is_front_page() && $this->blockConfiguration['banner_overflow']) {
+        $bannerOverflow = "margin-bottom: -20rem";
+    } else if ($this->blockConfiguration['banner_overflow']) {
+        $bannerOverflow = "margin-bottom: -12rem";
+    }
+}
+
 ?>
 
-<section class="js-hero-slider" <?php echo $this->getAttributeString() ?> data-aos="fade-in">
+<section class="js-hero-slider" <?php echo $this->getAttributeString() ?> data-aos="fade-in" <?php echo ($bannerOverflow !== "0") ? "style='" . $bannerOverflow . "'" : ""; ?>>
 
     <?php foreach ($banners as $banner) : ?>
 
@@ -35,8 +46,8 @@ $banners = $this->blockConfiguration['banner_banners'];
                     <div class="absolute top-0 left-0 width-100 height-100 z2 <?php echo $banner['banner_overlay_opacity']; ?>" style="background-color:  <?php echo $banner['banner_overlay_colour'] ?>;"></div>
                 <?php endif; ?>
 
-                <div class="banner-block-content relative z3 <?php echo $this->blockConfiguration['banner_full_width'] == true ? 'container' : '' ?> flex lg-px7 <?php echo $banner['banner_content_alignment']; ?> items-center width-100">
-                    <div class="col-9 lg-pl5 md-col-6 relative banner-content-holder js-match-height">
+                <div class="banner-block-content relative z3 <?php echo $this->blockConfiguration['banner_full_width'] == true ? 'container' : '' ?> flex lg-px7 <?php echo $banner['banner_content_alignment']; ?> items-center width-100" style="<?php echo $bannerOverflow; ?>">
+                    <div class="col-12 md-col-6 relative js-match-height">
                         <?php echo preg_replace('/<p>(\s|&nbsp;)*<\/p>/im', '', $banner['banner_content']); ?>
                         <?php echo preg_replace('/<p>(\s|&nbsp;)*<\/p>/im', '', $banner['banner_content_html']); ?>
                         <?php if ($banner['banner_buttons']) : ?>
@@ -58,25 +69,4 @@ $banners = $this->blockConfiguration['banner_banners'];
 
     <?php endforeach; ?>
 
-</section>
-
-<section class="lg-hide js-hero-slider bg-light-grey banner-content-mobile">
-    <?php foreach ($banners as $banner) : ?>
-        <div class="p4 py6">
-            <div class="container js-match-height-alt">
-                <?php echo preg_replace('/<p>(\s|&nbsp;)*<\/p>/im', '', $banner['banner_content']); ?>
-                <?php echo preg_replace('/<p>(\s|&nbsp;)*<\/p>/im', '', $banner['banner_content_html']); ?>
-                <?php if ($banner['banner_buttons']) : ?>
-                    <div class="mxn1">
-                        <?php foreach ($banner['banner_buttons'] as $button) : ?>
-                            <a href="<?php echo $button['button']['url']; ?>" class="btn btn-primary white bg-primary mx1">
-                                <?php echo $button['button']['title']; ?>
-                                <span class="h5 ml2"><?php echo $button['icon'] ?></span>
-                            </a>
-                        <?php endforeach; ?>
-                    </div>
-                <?php endif; ?>
-            </div>
-        </div>
-    <?php endforeach; ?>
 </section>

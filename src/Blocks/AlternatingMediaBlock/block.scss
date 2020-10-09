@@ -1,0 +1,26 @@
+@import "../../scss/settings";
+
+[data-block-name="Motionlab\\Sauce\\Blocks\\AlternatingMediaBlock\\AlternatingMediaBlock"] {
+
+    
+    [data-element="alternating_media-panel_image"],
+    [data-element="alternating_media-panel_content"] {
+        min-height: 16rem;
+
+        @media (min-width: $breakpoint-md) {
+            min-height: 22rem;
+        }
+    }
+
+    [data-element="alternating_media-panel_content"] {
+        > div {
+            max-width: $container-width / 2;
+        }
+    }
+
+    &[data-media-side="right"] {
+        [data-element="alternating_media-panel_content"] {
+            justify-content: flex-end;
+        }
+    }
+}
