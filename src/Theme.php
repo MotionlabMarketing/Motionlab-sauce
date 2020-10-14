@@ -66,6 +66,9 @@ class Theme
         add_image_size('block-team-grid', 310, 200, true);
         add_image_size('block-team-grid-modal', 600, 400, true);
         add_image_size('block-accreditation-static', 120, 80, false);
+        
+        add_image_size('block-blog-featured-large', 630, 540, true);
+        add_image_size('block-blog-featured-standard', 630, 250, true);
 
         // \add_image_size('icon', 60, 60);
         // \add_image_size('location-block-image', 470, 225);

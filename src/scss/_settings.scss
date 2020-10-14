@@ -13,7 +13,7 @@ $primary: $black;
 $secondary: $black;
 $white: #ffffff !default;
 $smoke: #EDEDE5;
-$grey: #707070;
+$grey: #74716f;
 
 $colors: (
     "black": $black,
@@ -21,7 +21,8 @@ $colors: (
 	"primary": $black,
 	"secondary": $black,
     "white": $white,
-    "smoke": $smoke
+	"smoke": $smoke,
+	"grey": $grey
 );
 
 

@@ -1,7 +1,4 @@
 /**
- * Accordions
- */
-/**
  * ACCORDIONS WITH COLLECTIONS.
  * This function opens and closes the accordions menus based on there collection allow multiple blocks to be include
  * on the page.
@@ -257,3 +254,55 @@ jQuery(document).ready(function ($) {
     }
 
 });
+
+/**
+ * RESPONSIVE TABLES
+ */
+window.addEventListener('load', () => {
+    responsive_tables();
+});
+
+function responsive_tables() {
+    const tables = document.querySelectorAll('table');
+
+    if (tables !== null && tables !== undefined) {
+        tables.forEach((table, index) => {
+            table.dataset.table = "responsive";
+
+            const rows = table.querySelectorAll('tr');
+            const cellsPerRow = rows[0].childElementCount;
+
+            // Get Titles
+            let titles = [];
+            const titleCells = rows[0].querySelectorAll('td');
+            titleCells.forEach((cell, index) => {
+                if (cell.childElementCount === 0) {
+                    titles[index] = "";
+                } else {
+                    titles[index] = cell.innerHTML.replace(/(<([^>]+)>)/ig, "");
+                }
+            });
+
+            // For each row
+            rows.forEach((row, index) => {
+
+                if (index === 0)
+                    return;
+
+                // Find Cells 
+                const cells = row.querySelectorAll('td');
+                cells.forEach((cell, index) => {
+
+                    // Find empty cells.
+                    if (cell.children.length === 0) {
+                        cell.dataset.empty = "true";
+                    }
+                    let label = document.createElement('span');
+                    label.innerHTML = titles[index];
+                    cell.prepend(label);
+
+                });
+            });
+        });
+    }
+}
