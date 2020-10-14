@@ -7,18 +7,30 @@ FAQs: $this->blockConfiguration['faq_faqs']; - Repeater
         faq_faqs_question - WYSIWYG
         faq_faqs_answer - WYSIWYG
 ~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*|Block Settings|~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*/
+
+$backgroundPosition = "";
+if (isset($this->blockConfiguration['banner_background_image_position']) && !empty($this->blockConfiguration['banner_background_image_position']))
+    $backgroundPosition = $this->blockConfiguration['banner_background_image_position'];
+
+$backgroundImage = "";
+if (isset($this->blockConfiguration['banner_background_image']) && !empty($this->blockConfiguration['banner_background_image']))
+    $backgroundImage = "style='background-image: url(" . $this->blockConfiguration['banner_background_image']['url'] . "); background-size: cover;'";
+
 ?>
 
-<section class="px4 py5 <?php echo $this->blockConfiguration['background_colour'] ? $this->blockConfiguration['background_colour']  : '';
-                        echo " " . $this->blockConfiguration['banner_background_image_position'] . " "; ?> <?php echo $this->blockConfiguration['banner_background_image_position']; ?> bg-cover height-100 zoom" <?php echo $this->getAttributeString() ?> style="background-image:url('<?php echo $this->blockConfiguration['banner_background_image']['url']; ?>')" data-aos="fade-in">
+<section class="px4 py5 <?php echo $this->blockConfiguration['background_colour'] ? $this->blockConfiguration['background_colour']  : ''; ?> <?php echo $backgroundPosition; ?> bg-cover height-100 zoom" <?php echo $this->getAttributeString() ?> <?php echo $backgroundImage; ?> data-aos="fade-in">
     <div class="container clearfix relative flex flex-column <?php echo $this->blockConfiguration['faq_alignment']; ?>">
 
         <div class="col <?php echo $this->blockConfiguration['faq_width']; ?>">
 
-            <h2><?php echo $this->blockConfiguration['faq_title']; ?></h2>
-            <div class="wysiwyg text-center lg-max-width-50 mx-auto mb5">
-                <?php echo $this->blockConfiguration['faq_introduction']; ?>
-            </div>
+            <?php if (!empty($this->blockConfiguration['faq_title'])): ?>
+                <h2><?php echo $this->blockConfiguration['faq_title']; ?></h2>
+            <?php endif; ?>
+            <?php if (!empty($this->blockConfiguration['faq_introduction'])): ?>
+                <div class="wysiwyg text-center lg-max-width-50 mx-auto mb5">
+                    <?php echo $this->blockConfiguration['faq_introduction']; ?>
+                </div>
+            <?php endif; ?>
 
             <?php if (!empty($this->blockConfiguration['faq_faqs'])) : ?>
                 <div class="accordion mt-6">

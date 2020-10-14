@@ -10,9 +10,16 @@ $testimonials = $this->getTestimonials();
 //$this->blockConfiguration['background_colour'] ? $this->blockConfiguration['background_colour']  : 'bg-light-grey';
 ?>
 
-<section class="bg-light-grey py5" <?php echo $this->getAttributeString() ?> data-aos="fade-in">
+<section class="bg-white py5" <?php echo $this->getAttributeString() ?> data-aos="fade-in">
 
     <div class="container clearfix">
+
+        <?php if (!empty($this->blockConfiguration['testimonials_content'])) : ?>
+            <div class="wysiwyg" data-element="content-area">
+                <?php echo $this->blockConfiguration['testimonials_content']; ?>
+            </div>
+        <?php endif; ?>
+
         <div class="js-testimonial-carousel-new pb4">
 
             <?php
@@ -21,30 +28,30 @@ $testimonials = $this->getTestimonials();
             ?>
 
             <?php foreach ($testimonials as $testimonial) : ?>
-                <?php if(($i + 2) % 3 == 0): ?>
-                    <div>
-                <?php endif; ?>
-                <article class="col col-12 md-col-4 p4">
-                    <?php echo strip_empty_tags($testimonial['content']); ?>
-                </article>
-                <?php if(($i) % 3 == 0 || $i == $numTestimonials): ?>
-                    </div>
-                <?php endif; ?>
-                <?php $i++; ?>
+                    <article class="col col-12 md-col-4 p4">
+                        <?php echo strip_empty_tags($testimonial['content']); ?>
+                    </article>
             <?php endforeach; ?>
 
         </div>
     </div>
-</section>
-
-<script>
-    jQuery(document).ready(function($) {
-        $('.js-testimonial-carousel-new').slick({
-            centerMode: true,
-            arrows: false,
-            infinite: true,
-            dots: true,
-            slidesToShow: 1
+    <script>
+        jQuery(document).ready(function($) {
+            $('.js-testimonial-carousel-new').slick({
+                centerMode: false,
+                arrows: false,
+                infinite: false,
+                dots: true,
+                slidesToShow: 3,
+                slidesToScroll: 3,
+                responsive: [{
+                    breakpoint: 600,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                }]
+            });
         });
-    });
-</script>
+    </script>
+</section>
