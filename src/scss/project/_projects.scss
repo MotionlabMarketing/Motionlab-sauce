@@ -452,3 +452,70 @@ html.menu-open {
         }
     }
 }
+
+
+/**
+ * RESPONSIVE TABLES
+ */
+@media (max-width: $breakpoint-md) {
+    [data-table="responsive"] {
+        display: flex;
+        flex-direction: column;
+
+        tr {
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            border-bottom: 5px solid $smoke;
+
+            &:first-child {
+                display: none;
+            }
+
+            td {
+                padding-left: 0;
+                padding-right: 0;
+
+                > span {
+                  color: $grey;
+                  font-weight: bold;
+                  text-transform: uppercase;
+                }
+
+                p {
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+                }
+
+                &[data-empty="true"] {
+                    display: none;
+                }
+            }
+        }
+
+        &:before,
+        &:after {
+            content: "";
+            display: table;
+        }
+
+        &:after {
+            clear: both;
+        }
+    }
+}
+
+@media (min-width: $breakpoint-md) {
+    [data-table="responsive"] {
+        tbody {
+          tr {
+            td {
+                > span:first-of-type {
+                    display: none;
+                }
+            }
+          }
+        }
+    }
+}
