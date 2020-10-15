@@ -91,4 +91,30 @@
             }
         }
     }
+
+    [data-slider-arrow] {
+        z-index: 4;
+        width: 60px;
+        height: 50px;
+        cursor: pointer;
+        position: absolute;
+
+        display: flex;
+        color: $white;
+        font-size: 2.5rem;
+        align-items: center;
+        justify-content: center;
+    }
+
+    [data-slider-arrow="left"] {
+        top: 50%;
+        left: 2rem;
+        transform: translateY(-50%);
+    }
+
+    [data-slider-arrow="right"] {
+        top: 50%;
+        right: 2rem;
+        transform: translateY(-50%);
+    }
 }
