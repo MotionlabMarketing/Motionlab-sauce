@@ -31,7 +31,11 @@ class MenuLocations
         $locations = \get_nav_menu_locations();
 
         // Get object id by location
-        $object = \wp_get_nav_menu_object($locations[$location]);
+        if(array_key_exists($location, $locations)) {
+            $object = \wp_get_nav_menu_object($locations[$location]);
+        } else {
+            $object = false;
+        }
 
         if($object !== false) {
             // Get menu items by menu name
