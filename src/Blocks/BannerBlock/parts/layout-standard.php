@@ -21,7 +21,7 @@ $buttons = $banner['banner_buttons'];
 
     <div class="absolute top-0 left-0 right-0 bottom-0 width-100 z3 flex items-center justify-center">
 
-        <div class="col-8 relative">
+        <div class="col-10 md-col-8 relative">
 
             <?php if (!empty($banner['banner_content'])) : ?>
                 <div class="wysiwyg" data-mh="banner-content">

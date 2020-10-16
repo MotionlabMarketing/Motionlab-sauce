@@ -63,9 +63,16 @@ $banners = $this->blockConfiguration['banner_banners'];
                     autoplaySpeed: 6000,
                     prevArrow: '<span data-slider-arrow="left"><i class="fal fa-chevron-left"></i></span>',
                     nextArrow: '<span data-slider-arrow="right"><i class="fal fa-chevron-right"></i></span>',
-                    mobileFirst: true,
+                    mobileFirst: false,
                     slidesToShow: 1,
-                    cssEase: 'cubic-bezier(0.645, 0.045, 0.355, 1)'
+                    cssEase: 'cubic-bezier(0.645, 0.045, 0.355, 1)',
+                    responsive: [{
+                        breakpoint: 680,
+                        settings: {
+                            dots: true,
+                            arrows: false,
+                        }
+                    }]
                 });
             });
         </script>
