@@ -70,6 +70,9 @@ class Theme
         add_image_size('block-blog-featured-large', 630, 540, true);
         add_image_size('block-blog-featured-standard', 630, 250, true);
 
+        add_image_size('hd-full', 1920, 1080, true);
+        add_image_size('hd-short', 1920, 640, true);
+
         // \add_image_size('icon', 60, 60);
         // \add_image_size('location-block-image', 470, 225);
         // \add_image_size('banner', 1920, 800);
