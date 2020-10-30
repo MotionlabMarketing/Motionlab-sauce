@@ -188,8 +188,10 @@ class PodsBlock extends Block
             case 'central':
                 $this->layout = 'central';
                 include(__DIR__ . '/central.php');
+                break;
             default:
                 include(__DIR__ . '/block.php');
+                break;
         }
     }
 }
