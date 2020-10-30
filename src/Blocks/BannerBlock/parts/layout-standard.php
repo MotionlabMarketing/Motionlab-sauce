@@ -30,7 +30,7 @@ $buttons = $banner['banner_buttons'];
             <?php endif; ?>
 
             <?php if (isset($banner['banner_buttons']) && !empty($banner['banner_buttons'])) : ?>
-                <div data-element="buttons" data-button-alignment="<?php echo $banner['button_alignment']; ?>" class="mt4 <?php echo $banner['banner_content_alignment'] == 'justify-center' ? 'text-center' : '' ?>">
+                <div data-element="buttons" data-button-alignment="<?php echo $banner['button_alignment']; ?>" class="mt4 <?php echo 'text-' . $banner['button_alignment']; ?>">
                     <?php
                     if (!empty($banner['banner_buttons'])) :
                         foreach ($banner['banner_buttons'] as $index => $button) : ?>
