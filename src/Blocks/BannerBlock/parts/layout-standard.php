@@ -19,7 +19,7 @@ $buttons = $banner['banner_buttons'];
         <div class="absolute top-0 left-0 right-0 bottom-0 width-100 z2 <?php echo $banner['banner_overlay_opacity']; ?> reduced-height" style=" background-color: <?php echo $banner['banner_overlay_colour'] ?>;" data-element="overlay"></div>
     <?php endif; ?>
 
-    <div class="absolute top-0 left-0 right-0 bottom-0 width-100 z3 flex items-center justify-center">
+    <div class="absolute top-0 left-0 right-0 bottom-0 width-100 z3 flex items-center <?php echo $banner['banner_content_alignment']; ?>">
 
         <div class="col-8 relative">
 
