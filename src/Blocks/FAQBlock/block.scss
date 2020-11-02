@@ -124,8 +124,7 @@ $primary: #000000;
         }
 
         label {
-            color: $primary;
-            font-size: 1.2rem;
+            
         }
 
         .acc-body {
@@ -164,11 +163,16 @@ $primary: #000000;
             color: $white;
             background: $grey;
             position: relative;
-            padding: 0.6rem 1rem;
             margin-bottom: 0.2rem;
+            padding: .6rem 4rem 0.6rem 1rem;
 
             > label {
+                font-size: 1rem;
                 font-weight: bold;
+
+                @media (min-width: $breakpoint-md) {
+                    font-size: 1.2rem;
+                }
             }
 
             .acc-indicator {
@@ -228,10 +232,6 @@ $primary: #000000;
 
         .acc-body {
             padding: 1rem;
-        }
-
-        table {
-            
         }
     }
 }

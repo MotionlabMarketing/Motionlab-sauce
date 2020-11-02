@@ -9,9 +9,11 @@
             <div class="owl-carousel owl-theme carousel-<?php echo $this->getBlockPositionID(); ?>">
                 <?php foreach($this->taxonomyTerms as $term): ?>
                     <?php $icon = get_field('partner_sector_icon', $term) ?>
-                    <div class="content">
+                    <div class="content" data-mh="category-panel">
                         <a href="<?php echo get_term_link($term->name, $this->taxonomy) ?>">
-                            <?php if($icon): ?><img src="<?php echo $icon['sizes']['thumbnail']; ?>" /><?php endif; ?>
+                            <div data-mh="category-inner">
+                                <?php if($icon): ?><img src="<?php echo $icon['sizes']['thumbnail']; ?>" /><?php endif; ?>
+                            </div>
                             <p><?php echo $term->name; ?></p>
                             <span><?php echo $term->count . ' ' . $this->pluralisation ; ?></span>
                         </a>
@@ -40,7 +42,7 @@
         let carouselCount = $(".carousel-<?php echo $this->getBlockPositionID(); ?> > div").length;
 
         $(".carousel-<?php echo $this->getBlockPositionID(); ?>").owlCarousel({
-            nav: true,
+            nav: false,
             margin: 25,
             slideBy: 1,
             loop: false,
