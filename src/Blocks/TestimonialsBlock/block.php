@@ -7,6 +7,7 @@ Selected Posts (only if display type is not latest): $this->blockConfiguration['
 ~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*|Block Settings|~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*/
 
 $testimonials = $this->getTestimonials();
+$uid = uniqid();
 ?>
 
 <section class="bg-white py5" <?php echo $this->getAttributeString() ?> data-aos="fade-in">
@@ -19,7 +20,7 @@ $testimonials = $this->getTestimonials();
             </div>
         <?php endif; ?>
 
-        <div class="js-testimonial-carousel-default « pb4">
+        <div class="js-testimonial-carousel-<?php echo $uid;?> « pb4">
 
             <?php foreach ($testimonials as $testimonial) : ?>
                 <div>
@@ -35,7 +36,7 @@ $testimonials = $this->getTestimonials();
     </div>
     <script>
         jQuery(document).ready(function($) {
-            $('.js-testimonial-carousel-default').slick({
+            $('.js-testimonial-carousel-<?php echo $uid;?>').slick({
                 centerMode: true,
                 arrows: false,
                 infinite: true,

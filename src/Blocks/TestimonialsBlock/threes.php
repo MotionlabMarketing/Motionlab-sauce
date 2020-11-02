@@ -8,6 +8,7 @@ Selected Posts (only if display type is not latest): $this->blockConfiguration['
 
 $testimonials = $this->getTestimonials();
 //$this->blockConfiguration['background_colour'] ? $this->blockConfiguration['background_colour']  : 'bg-light-grey';
+$uid = uniqid();
 ?>
 
 <section class="bg-white py5" <?php echo $this->getAttributeString() ?> data-aos="fade-in">
@@ -20,7 +21,7 @@ $testimonials = $this->getTestimonials();
             </div>
         <?php endif; ?>
 
-        <div class="js-testimonial-carousel-new pb4">
+        <div class="js-testimonial-carousel-<?php echo $uid;?> pb4">
 
             <?php
             $i = 1;
@@ -37,7 +38,7 @@ $testimonials = $this->getTestimonials();
     </div>
     <script>
         jQuery(document).ready(function($) {
-            $('.js-testimonial-carousel-new').slick({
+            $('.js-testimonial-carousel-<?php echo $uid;?>').slick({
                 centerMode: false,
                 arrows: false,
                 infinite: false,

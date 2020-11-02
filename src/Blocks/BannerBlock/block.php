@@ -13,13 +13,13 @@
 
 
 $banners = $this->blockConfiguration['banner_banners'];
-
+$uid = uniqid();
 ?>
 
 <section class="clearfix overflow-hidden" <?php echo $this->getAttributeString() ?> data-aos="fade-in">
 
     <div class="<?php echo $this->blockConfiguration['banner_full_width'] == true ? '' : 'container ' ?>">
-        <div class="banner-slider">
+        <div class="banner-slider-<?php echo $uid;?>">
             <?php foreach ($banners as $key => $banner) : ?>
                 <?php
                 $layout = $banner['banner_layout_style'];
@@ -42,7 +42,7 @@ $banners = $this->blockConfiguration['banner_banners'];
     <?php if ($layout = $banner['banner_layout_style'] == "feature-image") : ?>
         <script>
             jQuery(document).ready(function($) {
-                $('.banner-slider').slick({
+                $('.banner-slider-<?php echo $uid;?>').slick({
                     dots: true,
                     arrows: false,
                     autoplay: true,
@@ -56,7 +56,7 @@ $banners = $this->blockConfiguration['banner_banners'];
     <?php else : ?>
         <script>
             jQuery(document).ready(function($) {
-                $('.banner-slider').slick({
+                $('.banner-slider-<?php echo $uid;?>').slick({
                     dots: false,
                     arrows: true,
                     autoplay: true,
