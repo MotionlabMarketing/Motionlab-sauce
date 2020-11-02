@@ -10,14 +10,14 @@
 $buttons = $this->blockConfiguration['alternating_media_buttons'];
 ?>
 
-<section class="<?php echo $this->blockConfiguration['alternating_media_padding'] == true ? 'py5' : '' ?> <?php echo $this->blockConfiguration['alternating_media_background_colour']; ?>" data-media-side="<?php echo $this->blockConfiguration['alternating_media_image_position'] == 'left' ? 'left' : 'right' ?>" <?php echo $this->getAttributeString() ?> data-aos="fade-in">
+<section class="px4 xl-px0 <?php echo $this->blockConfiguration['alternating_media_padding'] == true ? 'py5' : '' ?> <?php echo $this->blockConfiguration['alternating_media_background_colour']; ?>" data-media-side="<?php echo $this->blockConfiguration['alternating_media_image_position'] == 'left' ? 'left' : 'right' ?>" <?php echo $this->getAttributeString() ?> data-aos="fade-in">
     <?php if (!empty($this->blockConfiguration['alternating_media_contain_to_grid'])) : ?>
         <div class="container">
         <?php endif; ?>
 
         <div class="clearfix">
             <div class="<?php echo $this->blockConfiguration['alternating_media_image_position'] == 'left' ? 'left' : 'right' ?> col col-12 md-col-6 bg-cover bg-center" data-element="alternating_media-panel_image" data-mh="alternating_media_panels" style="background-image:url('<?php echo $this->blockConfiguration['alternating_media_image']['sizes']['medium_large']; ?>');"></div>
-            <div class="left col col-12 md-col-6 py5 px6 md-p5 flex items-center justifiy-center" data-element="alternating_media-panel_content" data-mh="alternating_media_panels">
+            <div class="left col col-12 md-col-6 py5 md-px6 md-p5 flex items-center justifiy-center" data-element="alternating_media-panel_content" data-mh="alternating_media_panels">
                 <div class="wysiwyg width-100">
                     <?php echo $this->blockConfiguration['alternating_media_content']; ?>
 
