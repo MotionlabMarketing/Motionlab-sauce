@@ -12,7 +12,7 @@ $pods = array_slice($this->blockConfiguration['pods_pods'], 0, 6);
  */
 ?>
 
-<section class="py6 px4 display-none md-block" <?php echo $this->getAttributeString() ?> data-aos="fade-in">
+<section class="py6 px4" <?php echo $this->getAttributeString() ?> data-aos="fade-in">
     <div class="container">
         <div class="clearfix mxn3">
             <?php
