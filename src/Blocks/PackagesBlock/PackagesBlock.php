@@ -9,7 +9,7 @@ class PackagesBlock extends Block
 {
 
     public static $blockAcf = array(
-        'key' => 'group_5dd6c54248573',
+        'key' => 'group_3a57fa2d28e85',
         'title' => 'Block - Packages',
         'fields' => array(
             array(
@@ -26,8 +26,8 @@ class PackagesBlock extends Block
                     'id' => '',
                 ),
                 'choices' => array(
-                    //'three' => 'Three Packages',
-                    'full: Full Page' => 'full: Full Page',
+                    'three' => 'Three Packages',
+                    'full' => 'Full Page',
                 ),
                 'default_value' => 'full',
                 'allow_null' => 0,
