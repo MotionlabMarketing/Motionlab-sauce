@@ -13,7 +13,7 @@ class PackagesBlock extends Block
         'title' => 'Block - Packages',
         'fields' => array(
             array(
-                'key' => 'field_5f7dbaa8c7f3a',
+                'key' => 'field_3e1114d34330b',
                 'label' => 'Layout',
                 'name' => 'packages_layout',
                 'type' => 'select',
@@ -38,7 +38,7 @@ class PackagesBlock extends Block
                 'placeholder' => '',
             ),
             array(
-                'key' => 'field_5f7dbb53c7f3b',
+                'key' => 'field_2047eaf6f1a96',
                 'label' => 'Package One',
                 'name' => 'packages_package_1',
                 'type' => 'post_object',
@@ -47,7 +47,7 @@ class PackagesBlock extends Block
                 'conditional_logic' => array(
                     array(
                         array(
-                            'field' => 'field_5f7dbaa8c7f3a',
+                            'field' => 'field_3e1114d34330b',
                             'operator' => '==',
                             'value' => 'three',
                         ),
@@ -66,7 +66,7 @@ class PackagesBlock extends Block
                 'ui' => 1,
             ),
             array(
-                'key' => 'field_5f7dbbdf288d1',
+                'key' => 'field_c27dbc6360d8a',
                 'label' => 'Package Two',
                 'name' => 'packages_package_2',
                 'type' => 'post_object',
@@ -75,7 +75,7 @@ class PackagesBlock extends Block
                 'conditional_logic' => array(
                     array(
                         array(
-                            'field' => 'field_5f7dbaa8c7f3a',
+                            'field' => 'field_3e1114d34330b',
                             'operator' => '==',
                             'value' => 'three',
                         ),
@@ -94,7 +94,7 @@ class PackagesBlock extends Block
                 'ui' => 1,
             ),
             array(
-                'key' => 'field_5f7dbbe6288d2',
+                'key' => 'field_b6f032cfb59ed',
                 'label' => 'Package Three',
                 'name' => 'packages_package_3',
                 'type' => 'post_object',
@@ -103,7 +103,7 @@ class PackagesBlock extends Block
                 'conditional_logic' => array(
                     array(
                         array(
-                            'field' => 'field_5f7dbaa8c7f3a',
+                            'field' => 'field_3e1114d34330b',
                             'operator' => '==',
                             'value' => 'three',
                         ),
