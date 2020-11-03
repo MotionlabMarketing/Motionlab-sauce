@@ -49,7 +49,7 @@ if (isset($this->blockConfiguration['banner_background_image']) && !empty($this-
                             </div>
                             <div class="acc-body text-left" style="<?php echo $key != 0 ? 'display: none;' : ''; ?>">
 
-                                <div class="body-content">
+                                <div class="body-content clearfix">
 
                                     <?php if(isset($row['faq_faqs_content_type']) && !empty($row['faq_faqs_content_type'])):?>
                                         <?php if($row['faq_faqs_content_type'] == "standard"): ?>

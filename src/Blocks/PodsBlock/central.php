@@ -15,8 +15,6 @@ $rightPods = array_slice($this->blockConfiguration['pods_pods'], 3, 2);
  */
 ?>
 
-?>
-
 <section class="py6 px4 display-none md-block" <?php echo $this->getAttributeString() ?> data-aos="fade-in">
     <div class="container">
         <div class="mxn3 flex flex-wrap lg-flex-nowrap">
