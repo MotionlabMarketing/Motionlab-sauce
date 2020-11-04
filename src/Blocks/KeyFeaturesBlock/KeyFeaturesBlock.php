@@ -60,6 +60,33 @@ class KeyFeaturesBlock extends Block
                 'placeholder' => '',
             ),
             array(
+                'key' => 'field_f7fc35b4b7a2d',
+                'label' => 'Show Borders',
+                'name' => 'features_show_borders',
+                'type' => 'true_false',
+                'instructions' => 'Turn on/off visible borders on each key feature.',
+                'required' => 0,
+                'conditional_logic' => array(
+                    array(
+                        array(
+                            'field' => 'field_03a845284c6a7a',
+                            'operator' => '==',
+                            'value' => 'carousel',
+                        ),
+                    ),
+                ),
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'message' => '',
+                'default_value' => 1,
+                'ui' => 1,
+                'ui_on_text' => '',
+                'ui_off_text' => '',
+            ),
+            array(
                 'key' => 'field_5df261a08128b',
                 'label' => 'Intro',
                 'name' => 'features_title',
