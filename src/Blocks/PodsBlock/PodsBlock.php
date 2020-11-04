@@ -34,7 +34,7 @@ class PodsBlock extends Block
             array(
                 'key' => 'field_cbd90cd80d59132f3',
                 'label' => 'Section Background Image',
-                'name' => 'pod_section_background_image',
+                'name' => 'pods_section_background_image',
                 'type' => 'image',
                 'instructions' => '',
                 'required' => 0,
