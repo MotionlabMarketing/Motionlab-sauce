@@ -26,7 +26,7 @@ class PodsBlock extends Block
                     'id' => '',
                 ),
                 'message' => '',
-                'default_value' => 1,
+                'default_value' => 0,
                 'ui' => 1,
                 'ui_on_text' => '',
                 'ui_off_text' => '',
@@ -43,7 +43,7 @@ class PodsBlock extends Block
                         array(
                             'field' => 'field_a6f7f4acfe082',
                             'operator' => '==',
-                            'value' => 'true',
+                            'value' => 1,
                         ),
                     ),
                 ),
