@@ -5,7 +5,7 @@ $packages = $this->getPackages();
 <section data-element="cta" class="relative mb4" <?php echo $this->getAttributeString() ?> data-aos="fade-in">
 
     <?php foreach($packages as $package): ?>
-        <div class="<?php echo $package['background_colour']['background_colour'] ?>">
+        <div class="<?php echo ($package['is_featured']) ? "featured-package" : "" ?> <?php echo $package['background_colour']['background_colour'] ?>">
             <span><?php echo $package['title'] ?></span>
             <span><?php echo $package['subtitle'] ?></span>
             <span><?php echo $package['features_header'] ?></span>

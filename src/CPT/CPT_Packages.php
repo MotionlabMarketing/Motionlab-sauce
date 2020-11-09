@@ -45,6 +45,25 @@ class CPT_Packages extends CPTBase
                 'maxlength' => '',
             ),
             array(
+                'key' => 'field_a6f7f4acfe872',
+                'label' => 'Featured',
+                'name' => 'is_featured',
+                'type' => 'true_false',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '10%',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'message' => '',
+                'default_value' => 0,
+                'ui' => 1,
+                'ui_on_text' => '',
+                'ui_off_text' => '',
+            ),
+            array(
                 'key' => 'field_5dfb9c135ee43',
                 'label' => 'Background Colour',
                 'name' => 'background_colour',
@@ -53,7 +72,7 @@ class CPT_Packages extends CPTBase
                 'required' => 0,
                 'conditional_logic' => 0,
                 'wrapper' => array(
-                    'width' => '',
+                    'width' => '90%',
                     'class' => '',
                     'id' => '',
                 ),
@@ -214,5 +233,65 @@ class CPT_Packages extends CPTBase
         }
 
         return $archive;
+    }
+
+    /**
+     * REGISTER THE CPT
+     * This function setup and registers the custom CPT.
+     */
+    protected function register_CPT()
+    {
+        // Set the menu labels
+        $labels = array(
+            'name'                           => __($this->plural),
+            'singular_name'                  => __($this->singular),
+            'menu_name'                      => __($this->plural),
+            'parent_item_colon'              => __('Parent ' . $this->group),
+            'all_items'                      => __('All ' . $this->plural),
+            'view_item'                      => __('View ' . $this->singular),
+            'add_new_item'                   => __('Add New ' . $this->singular),
+            'add_new'                        => __('Add New ' . $this->singular),
+            'edit_item'                      => __('Edit ' . $this->singular),
+            'update_item'                    => __('Update ' . $this->singular),
+            'search_items'                   => __('Search ' . $this->plural),
+            'not_found'                      => __('Not Found'),
+            'not_found_in_trash'             => __('Not found in Bin')
+        );
+
+        $taxNames = [];
+        if(!empty($this->taxonomies)) {
+            foreach($this->taxonomies as $tax) {
+                $taxNames[] = str_replace(' ', '-', strtolower($tax['plural']));
+            }
+        }
+
+        // Set the CPT options
+        $args = array(
+            'label'                          => __(strtolower($this->group)),
+            'description'                    => __('Manage your ' . $this->plural . '.'),
+            'labels'                         => $labels,
+            'supports'                       => array('title', 'thumbnail'),
+            'public'                         => true,
+            'hierarchical'                   => false,
+            'show_ui'                        => true,
+            'show_in_menu'                   => true,
+            'show_in_nav_menus'              => true,
+            'show_in_admin_bar'              => true,
+            'has_archive'                    => false,
+            'can_export'                     => true,
+            'exclude_from_search'            => false,
+            'yarpp_support'                  => true,
+            'taxonomies'                     => $taxNames,
+            'publicly_queryable'             => false,
+            'capability_type'                => 'page',
+            'menu_icon'                      => $this->dashicon,
+            'rewrite'                        => array(
+                'slug'                       => str_replace(' ', '-', strtolower($this->plural)),
+                'with_front'                 => false
+            )
+        );
+
+        // Register the post type
+        \register_post_type(strtolower($this->name), $args);
     }
 }
