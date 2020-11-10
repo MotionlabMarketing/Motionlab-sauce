@@ -166,6 +166,7 @@ class PackagesBlock extends Block
             $_package = array();
 
             $_package['title'] = $package->post_title;
+            $_package['is_featured'] = \get_field('is_featured', $package->ID);
             $_package['subtitle'] = \get_field('subtitle', $package->ID);
             $_package['background_colour'] = \get_field('background_colour', $package->ID);
             $_package['features_header'] = \get_field('features_header', $package->ID);

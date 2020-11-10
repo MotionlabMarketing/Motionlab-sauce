@@ -6,8 +6,8 @@ $packages = $this->getPackages();
 
     <div class="clearfix container">
 
-        <?php foreach ($packages as $package) :  ?>
-            <div class="col col-12 md-col-6 p4" data-element="package" data-package-type="<?php echo ($package['is_featured']) ? "featured" : "" ?>" data-mh="package">
+        <?php foreach ($packages as $package) : var_dump($package);  ?>
+            <div class="col col-12 md-col-6 p4" data-element="package" data-package-type="<?php echo (isset($package['is_featured']) && $package['is_featured'] == true) ? "featured" : "standard" ?>" data-mh="package">
                 <?php // @@ DEVELOPER : Remove bg-grey when background_colour is ficed; 
                 $package['background_colour']['background_colour'] = "bg-grey"
                 ?>
