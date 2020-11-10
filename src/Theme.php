@@ -12,6 +12,8 @@ class Theme
 {
     private static $instance;
 
+    protected $themeColours;
+
     /**
      * SELF CLASS INSTANTIATION
      * This allows WordPress to instantiate this class on load.
@@ -22,6 +24,11 @@ class Theme
             self::$instance = new Theme();
         }
         return self::$instance;
+    }
+
+    private function __construct()
+    {
+        $this->themeColours = new ThemeColours();
     }
 
     /**
@@ -167,5 +174,10 @@ class Theme
     public function renderOrganisationName($args)
     {
         return \get_field('options_organisation_name', 'option');
+    }
+
+    public function getThemeColours() : ThemeColours
+    {
+        return $this->themeColours;
     }
 }
