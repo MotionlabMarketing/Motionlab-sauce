@@ -1,0 +1,38 @@
+@import '../../scss/settings';
+
+[data-element="package"] {
+    
+    &[data-package-type="standard"] {
+
+        &.bg-grey {
+            background-color: #C4C4C4;
+        }
+
+        &.grey {
+            color: #C4C4C4;
+        }
+
+        h2 {
+            line-height: 1;
+            font-size: 1.4rem;
+            // margin-bottom: 1.5rem;
+        }
+
+        h3 {
+            line-height: 1;
+            // margin-bottom: 1.5rem;
+        }
+
+        .sub-title {
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid $white;
+        }
+
+        .price,
+        .button {
+            font-size: 1.2rem;
+        }
+
+    }
+}
