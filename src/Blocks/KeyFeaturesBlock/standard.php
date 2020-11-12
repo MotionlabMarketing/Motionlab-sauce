@@ -16,7 +16,7 @@
                                     <?php echo file_get_contents(get_attached_file($feature['icon_image']['id'])); ?>
                                 </div>
                             <?php else : ?>
-                                <img src="<?php echo $feature['icon_image']['sizes']['icon']; ?>" alt="<?php echo $feature['icon_image']['alt']; ?>" style="max-height: 64px; max-width: 64px;">
+                                <img src="<?php echo $feature['icon_image']['url']; ?>" alt="<?php echo $feature['icon_image']['alt']; ?>" style="max-height: 64px; max-width: 64px;">
                             <?php endif; ?>
                         <?php else : ?>
                             <span class="dark-purple h00"><?php echo $feature['feature_icon']; ?></span>
