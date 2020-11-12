@@ -6,14 +6,10 @@ $packages = $this->getPackages();
 
     <div class="clearfix container">
 
-        <div class="col-9 mx-auto">
         <?php foreach ($packages as $package) : ?>
-            <div class="col col-12 md-col-6 p2" data-element="package" data-package-type="<?php echo (isset($package['is_featured']) && $package['is_featured'] == true) ? "featured" : "standard" ?>">
-                <?php // @@ DEVELOPER : Remove bg-grey when background_colour is ficed; 
-                $package['background_colour']['background_colour'] = "bg-grey"
-                ?>
-                <div class="relative p4 <?php echo $package['background_colour']['background_colour'] ?>" data-mh="package">
-                    <h2 class="title white heading-font h2 <?php echo (!empty($package['subtitle'])) ? "mb2" : "mb3"; ?>"><?php echo $package['title']; ?></h2>
+            <div class="col col-12 md-col-6 p4" data-element="package" data-package-type="<?php echo (isset($package['is_featured']) && $package['is_featured'] == true) ? "featured" : "standard" ?>" data-mh="package">
+                <div class="p4 <?php echo $package['background_colour'] ?>">
+                    <h2 class="title white heading-font h2 max-width-16 <?php echo (!empty($package['subtitle'])) ? "mb2" : "mb3"; ?>"><?php echo $package['title']; ?></h2>
                     <?php if (!empty($package['subtitle'])) : ?>
                         <h3 class="mb3 white heading-font h4 uppercase"><?php echo $package['subtitle'] ?></h3>
                     <?php endif; ?>

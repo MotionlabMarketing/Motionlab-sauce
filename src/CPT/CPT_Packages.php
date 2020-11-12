@@ -2,6 +2,8 @@
 
 namespace Motionlab\Sauce\CPT;
 
+use Motionlab\Sauce\Theme;
+
 class CPT_Packages extends CPTBase
 {
 
@@ -17,6 +19,8 @@ class CPT_Packages extends CPTBase
     {
         //Register the archive template for this post type.
         \add_filter('archive_template', [$this, "registerArchiveTemplate"]);
+
+        self::$acf['fields'][2]['choices'] = Theme::instance()->getThemeColours()->getAssocColourClasses();
 
         parent::__construct();
     }
@@ -64,25 +68,27 @@ class CPT_Packages extends CPTBase
                 'ui_off_text' => '',
             ),
             array(
-                'key' => 'field_5dfb9c135ee43',
+                'key' => 'field_5dfbaa02aa319',
                 'label' => 'Background Colour',
                 'name' => 'background_colour',
-                'type' => 'clone',
+                'type' => 'select',
                 'instructions' => '',
                 'required' => 0,
                 'conditional_logic' => 0,
                 'wrapper' => array(
-                    'width' => '90%',
+                    'width' => '',
                     'class' => '',
                     'id' => '',
                 ),
-                'clone' => array(
-                    0 => 'group_5dfb879fe9a51',
+                'choices' => [],
+                'default_value' => array(
                 ),
-                'display' => 'seamless',
-                'layout' => 'block',
-                'prefix_label' => 0,
-                'prefix_name' => 0,
+                'allow_null' => 0,
+                'multiple' => 0,
+                'ui' => 1,
+                'ajax' => 0,
+                'return_format' => 'value',
+                'placeholder' => '',
             ),
             array(
                 'key' => 'field_5f75fcb9c18d2',
