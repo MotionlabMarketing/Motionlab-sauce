@@ -2,7 +2,7 @@
     <div class="container">
 
         <?php if (!empty($this->blockConfiguration['features_title'])) : ?>
-            <h2 class="h1 text-center mb5"><?php echo $this->blockConfiguration['features_title']; ?></h2>
+            <div class="text-center mb5"><?php echo $this->blockConfiguration['features_title']; ?></div>
         <?php endif; ?>
 
         <div class="mxn4 md-flex flex-wrap">
