@@ -1,7 +1,11 @@
 @import '../../scss/settings';
 
 [data-element="package"] {
-    
+
+    > div {
+        padding-bottom: 110px;
+    }
+
     &[data-package-type="standard"] {
 
         &.bg-grey {
@@ -14,6 +18,7 @@
 
         h2 {
             line-height: 1;
+            max-width: 16rem;
             font-size: 1.4rem;
             // margin-bottom: 1.5rem;
         }
@@ -22,17 +27,37 @@
             line-height: 1;
             // margin-bottom: 1.5rem;
         }
+    }
 
-        .sub-title {
-            margin-bottom: 1rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 2px solid $white;
+    &[data-package-type="featured"] {
+
+        h2 {
+            line-height: 1;
+            font-size: 2rem;
+            margin-bottom: 0;
         }
 
-        .price,
-        .button {
+        h3 {
             font-size: 1.2rem;
         }
+    }
 
+    .sub-title {
+        margin-bottom: 1rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 2px solid $white;
+    }
+
+    .price,
+    .button {
+        font-size: 1.2rem;
+    }
+
+    .footer {
+        left: 0;
+        right: 0;
+        bottom: 0;
+        padding: 1.5rem;
+        position: absolute;
     }
 }
