@@ -876,6 +876,13 @@ class GenericTemplate extends TemplateBase
                     'value' => 'testimonials-template.php',
                 ),
             ),
+            array(
+                array(
+                    'param' => 'post_template',
+                    'operator' => '==',
+                    'value' => 'attend-page-template.php',
+                ),
+            ),
         ),
         'menu_order' => 0,
         'position' => 'acf_after_title',
