@@ -883,6 +883,13 @@ class GenericTemplate extends TemplateBase
                     'value' => 'attend-page-template.php',
                 ),
             ),
+            array(
+                array(
+                    'param' => 'post_template',
+                    'operator' => '==',
+                    'value' => 'partners-page-template.php',
+                ),
+            ),
         ),
         'menu_order' => 0,
         'position' => 'acf_after_title',
