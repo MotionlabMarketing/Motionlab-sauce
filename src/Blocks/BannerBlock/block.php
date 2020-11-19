@@ -39,7 +39,7 @@ $uid = uniqid();
         </div>
     </div>
 
-    <?php if ($layout = $banner['banner_layout_style'] == "feature-image") : ?>
+    <?php if ($layout == "feature-image") : ?>
         <script>
             jQuery(document).ready(function($) {
                 $('.banner-slider-<?php echo $uid;?>').slick({
