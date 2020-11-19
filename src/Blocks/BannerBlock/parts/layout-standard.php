@@ -3,7 +3,7 @@ $bannerImage = $banner['banner_background_image'];
 $buttons = $banner['banner_buttons'];
 ?>
 
-<div class="relative clearfix <?php echo $this->blockConfiguration['banner_height']; ?>" data-element="slide" data-slide-type="standard">
+<div class="relative clearfix <?php echo $banner['background_colour']; ?> <?php echo $this->blockConfiguration['banner_height']; ?>" data-element="slide" data-slide-type="standard">
 
     <?php
     // Include the background image
