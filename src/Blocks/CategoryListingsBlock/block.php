@@ -1,6 +1,8 @@
 <section class="<?php echo $this->blockConfiguration['background_colour'] ? $this->blockConfiguration['background_colour']  : 'bg-light-grey'; ?> px4 py5 lg-mx0" <?php echo $this->getAttributeString() ?> data-aos="fade-in">
     <div class="container">
-        <h2><?php echo $this->title ?></h2>
+        <div class="flex justify-center">
+            <h2><?php echo $this->title ?></h2>
+        </div>
         <?php if(!is_array($this->taxonomyTerms) && get_class($this->taxonomyTerms) === WP_Error::class): ?>
 
             <p><?php echo 'An error occurred: "' . $this->taxonomy . '" is not a valid taxonomy.'?></p>
@@ -15,7 +17,7 @@
                                 <?php if($icon): ?><img src="<?php echo $icon['sizes']['thumbnail']; ?>" /><?php endif; ?>
                             </div>
                             <p><?php echo $term->name; ?></p>
-                            <span><?php echo $term->count . ' ' . $this->pluralisation ; ?></span>
+                            <?php /*<span><?php echo $term->count . ' ' . $this->pluralisation ; ?></span>*/ ?>
                         </a>
                     </div>
                 <?php endforeach; ?>
