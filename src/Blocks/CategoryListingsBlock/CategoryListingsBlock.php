@@ -102,6 +102,7 @@ class CategoryListingsBlock extends Block
                 ),
                 'choices' => array(
                     'default' => 'Default',
+                    'detailed' => 'Detailed',
                 ),
                 'default_value' => 'default',
                 'allow_null' => 0,
@@ -191,6 +192,9 @@ class CategoryListingsBlock extends Block
         $this->loadTaxonomyTerms();
 
         switch($layout) {
+            case 'detailed':
+                include(__DIR__) . '/detailed.php';
+                break;
             default:
                 include(__DIR__ . '/block.php');
                 break;
