@@ -1,7 +1,9 @@
 <section class="<?php echo $this->blockConfiguration['background_colour'] ? $this->blockConfiguration['background_colour']  : 'bg-light-grey'; ?> px4 py5 lg-mx0" <?php echo $this->getAttributeString() ?> data-aos="fade-in">
     <div class="container">
         <div class="flex items-center justify-center">
-            <h2><?php echo $this->title ?></h2>
+            <?php if (!empty(trim($this->title))): ?>
+                <h2><?php echo $this->title ?></h2>
+            <?php endif; ?>
         </div>
         <?php if (!is_array($this->taxonomyTerms) && get_class($this->taxonomyTerms) === WP_Error::class) : ?>
 
@@ -34,18 +36,6 @@
                     </div>
                 </div>
             <?php endforeach; ?>
-
-            <div class="clearfix mx-auto text-center mt4">
-                <?php if ($this->withSearch) : ?>
-                    <?php $cptPermalink = get_post_type_archive_link($this->postType); ?>
-                    <div data-element="buttons">
-                        <a class="btn text-decoration-none btn-primary white bg-primary mx1" href="<?php echo $cptPermalink ?>" data-element="button">
-                            <span><i class="far fa-search"></i></span>
-                            <span><?php echo 'View All ' . ucwords($this->pluralisation) ?></span>
-                        </a>
-                    </div>
-                <?php endif; ?>
-            </div>
         <?php endif; ?>
     </div>
 </section>
