@@ -30,7 +30,17 @@
                                 <?php endif; ?>
                             </div>
                             <div class="post-button-wrapper mt4">
-                                <a href="<?php echo get_category_link($term); ?>" class="post-button width-100">Read more</a>
+
+                                <?php
+                                $cptPermalink = get_post_type_archive_link($this->postType);
+                                $cptAssociatedPage = get_field('partner_sector_associated_page', $term);
+                                $outputLink = $cptPermalink;
+                                if(isset($cptAssociatedPage) && $cptAssociatedPage !== "") :
+                                    $outputLink = $cptAssociatedPage;
+                                endif;
+                                ?>
+
+                                <a href="<?php echo $outputLink; ?>" class="post-button width-100">Read more</a>
                             </div>
                         </div>
                     </div>
