@@ -30,7 +30,7 @@
                                 <?php endif; ?>
                             </div>
                             <div class="post-button-wrapper mt4">
-                                <a href="<?php echo get_term_link($term); ?>" class="post-button width-100">Read more</a>
+                                <a href="<?php echo get_category_link($term); ?>" class="post-button width-100">Read more</a>
                             </div>
                         </div>
                     </div>

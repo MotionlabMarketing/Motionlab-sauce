@@ -12,7 +12,7 @@
                 <?php foreach($this->taxonomyTerms as $term): ?>
                     <?php $icon = get_field('partner_sector_icon', $term) ?>
                     <div class="content" data-mh="category-panel">
-                        <a href="<?php echo get_term_link($term->name, $this->taxonomy) ?>">
+                        <a href="<?php echo get_category_link($term) ?>">
                             <div data-mh="category-inner">
                                 <?php if($icon): ?><img src="<?php echo $icon['sizes']['thumbnail']; ?>" /><?php endif; ?>
                             </div>
