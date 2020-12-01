@@ -10,8 +10,10 @@
 
 <section class="<?php echo $this->blockConfiguration['background_colour'] ? $this->blockConfiguration['background_colour']  : 'bg-light-grey'; ?> px4 py5" <?php echo $this->getAttributeString() ?> data-aos="fade-in">
     <div class="container text-center">
-        <h2 class="h1 dark-purple"><?php echo $this->blockConfiguration['form_title']; ?></h2>
-        <p><?php echo $this->blockConfiguration['form_subtitle']; ?></p>
+        <div class="flex justify-center">
+            <h2 class="h1 dark-purple"><?php echo $this->blockConfiguration['form_title']; ?></h2>
+            <p><?php echo $this->blockConfiguration['form_subtitle']; ?></p>
+        </div>
         <div class="mx-auto" style="max-width:60rem;">
             <?php
             // LOAD FORM INTO THE PAGE.

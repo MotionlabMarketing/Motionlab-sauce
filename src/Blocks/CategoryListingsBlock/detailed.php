@@ -1,4 +1,4 @@
-<section class="<?php echo $this->blockConfiguration['background_colour'] ? $this->blockConfiguration['background_colour']  : 'bg-light-grey'; ?> px4 py5 lg-mx0" <?php echo $this->getAttributeString() ?> data-aos="fade-in">
+<section class="<?php echo $this->blockConfiguration['background_colour'] ? $this->blockConfiguration['background_colour']  : 'bg-light-grey'; ?> clearfix px4 py5 lg-mx0" <?php echo $this->getAttributeString() ?> data-aos="fade-in">
     <div class="container">
         <div class="flex items-center justify-center">
             <?php if (!empty(trim($this->title))): ?>
@@ -19,7 +19,7 @@
                             <div class="flex items-center justify-center mb3" data-mh="category-inner">
                                 <?php if ($icon) : ?><img src="<?php echo $icon['sizes']['thumbnail']; ?>" /><?php endif; ?>
                             </div>
-                            <p class="bold light-blue text-center"><?php echo $term->name; ?></p>
+                            <p class="bold light-blue text-center" data-mh="partner-title"><?php echo $term->name; ?></p>
                         </div>
                         <div class="p3 bg-light-blue" data-mh="category-content">
                             <div class="wysiwyg white">
@@ -30,7 +30,7 @@
                                 <?php endif; ?>
                             </div>
                             <div class="post-button-wrapper mt4">
-                                <a href="<?php echo get_term_link($term); ?>" class="post-button width-100">Read more</a>
+                                <a href="<?php echo get_category_link($term); ?>" class="post-button width-100">Read more</a>
                             </div>
                         </div>
                     </div>
