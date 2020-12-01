@@ -19,7 +19,7 @@
                             <div class="flex items-center justify-center mb3" data-mh="category-inner">
                                 <?php if ($icon) : ?><img src="<?php echo $icon['sizes']['thumbnail']; ?>" /><?php endif; ?>
                             </div>
-                            <p class="bold light-blue text-center"><?php echo $term->name; ?></p>
+                            <p class="bold light-blue text-center" data-mh="partner-title"><?php echo $term->name; ?></p>
                         </div>
                         <div class="p3 bg-light-blue" data-mh="category-content">
                             <div class="wysiwyg white">
