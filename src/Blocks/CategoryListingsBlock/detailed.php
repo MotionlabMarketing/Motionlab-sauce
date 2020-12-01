@@ -1,4 +1,4 @@
-<section class="<?php echo $this->blockConfiguration['background_colour'] ? $this->blockConfiguration['background_colour']  : 'bg-light-grey'; ?> px4 py5 lg-mx0" <?php echo $this->getAttributeString() ?> data-aos="fade-in">
+<section class="<?php echo $this->blockConfiguration['background_colour'] ? $this->blockConfiguration['background_colour']  : 'bg-light-grey'; ?> clearfix px4 py5 lg-mx0" <?php echo $this->getAttributeString() ?> data-aos="fade-in">
     <div class="container">
         <div class="flex items-center justify-center">
             <?php if (!empty(trim($this->title))): ?>
