@@ -25,9 +25,16 @@
 
             <div class="mx-auto text-center mt4">
                 <?php if($this->withSearch): ?>
-                    <?php $cptPermalink = get_post_type_archive_link($this->postType); ?>
+                    <?php
+                        $cptPermalink = get_post_type_archive_link($this->postType);
+                        $cptAssociatedPage = get_field('partner_sector_associated_page');
+                        $outputLink = $cptPermalink;
+                        if(isset($cptAssociatedPage) && $cptAssociatedPage !== "") :
+                            $outputLink = $cptAssociatedPage;
+                        endif;
+                    ?>
                     <div data-element="buttons">
-                        <a class="btn text-decoration-none btn-primary white bg-primary mx1" href="<?php echo $cptPermalink ?>" data-element="button">
+                        <a class="btn text-decoration-none btn-primary white bg-primary mx1" href="<?php echo $outputLink ?>" data-element="button">
                             <span><i class="far fa-search"></i></span>
                             <span><?php echo 'View All ' . ucwords($this->pluralisation) ?></span>
                         </a>
