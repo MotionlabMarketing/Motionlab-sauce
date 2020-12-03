@@ -32,7 +32,7 @@
                             <div class="post-button-wrapper mt4">
 
                                 <?php
-                                $cptPermalink = get_post_type_archive_link($this->postType);
+                                $cptPermalink = get_category_link($term);
                                 $cptAssociatedPage = get_field('partner_sector_associated_page', $term);
                                 $outputLink = $cptPermalink;
                                 if(isset($cptAssociatedPage) && $cptAssociatedPage !== "") :
