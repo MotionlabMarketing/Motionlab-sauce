@@ -15,7 +15,7 @@
                     <p class="pod-title h3 body heading"><?php echo $pod['pod_title']; ?></p>
                 <?php endif; ?>
                 <?php if (!empty($pod['pod_content'])) : ?>
-                    <div class="pod-content h4 body"><?php echo strip_tags($pod['pod_content'], "<p><h2><h3><h4><span>"); ?></div>
+                    <div class="pod-content h4 body"><?php echo strip_tags($pod['pod_content'], "<p><h2><h3><h4><span><a>"); ?></div>
                 <?php endif; ?>
             </div>
         </div>

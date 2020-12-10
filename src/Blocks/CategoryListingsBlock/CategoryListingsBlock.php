@@ -152,6 +152,21 @@ class CategoryListingsBlock extends Block
                 'prefix_label' => 0,
                 'prefix_name' => 0,
             ),
+            array(
+                'key' => 'field_5df2525aa6a26',
+                'label' => 'Link',
+                'name' => 'button_link',
+                'type' => 'link',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'return_format' => 'array',
+            ),
         ),
         'location' => array(
             array(
