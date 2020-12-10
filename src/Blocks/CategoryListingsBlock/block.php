@@ -40,14 +40,9 @@
                         if ($button_link = get_field('button_link')) {
                             $cptPermalink = $button_link;
                         }
-                        $cptAssociatedPage = get_field('partner_sector_associated_page');
-                        $outputLink = $cptPermalink;
-                        if(isset($cptAssociatedPage) && $cptAssociatedPage !== "") :
-                            $outputLink = $cptAssociatedPage;
-                        endif;
                     ?>
                     <div data-element="buttons">
-                        <a class="btn text-decoration-none btn-primary white bg-primary mx1" href="<?php echo $outputLink ?>" data-element="button">
+                        <a class="btn text-decoration-none btn-primary white bg-primary mx1" href="<?php echo $cptPermalink ?>" data-element="button">
                             <span><i class="far fa-search"></i></span>
                             <span><?php echo 'View All ' . ucwords($this->pluralisation) ?></span>
                         </a>
