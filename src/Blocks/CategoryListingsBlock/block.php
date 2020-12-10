@@ -37,6 +37,9 @@
                 <?php if($this->withSearch): ?>
                     <?php
                         $cptPermalink = get_post_type_archive_link($this->postType);
+                        if ($button_link = get_field('button_link')) {
+                            $cptPermalink = $button_link;
+                        }
                         $cptAssociatedPage = get_field('partner_sector_associated_page');
                         $outputLink = $cptPermalink;
                         if(isset($cptAssociatedPage) && $cptAssociatedPage !== "") :
