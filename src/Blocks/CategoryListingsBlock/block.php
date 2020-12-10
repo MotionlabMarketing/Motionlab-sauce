@@ -37,8 +37,8 @@
                 <?php if($this->withSearch): ?>
                     <?php
                         $cptPermalink = get_post_type_archive_link($this->postType);
-                        if ($button_link = get_field('button_link')) {
-                            $cptPermalink = $button_link;
+                        if ($this->blockConfiguration['button_link']) {
+                            $cptPermalink = $this->blockConfiguration['button_link']['url'];
                         }
                     ?>
                     <div data-element="buttons">
