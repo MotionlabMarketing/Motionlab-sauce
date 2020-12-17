@@ -10,9 +10,11 @@
 
 <section class="<?php echo $this->blockConfiguration['background_colour'] ? $this->blockConfiguration['background_colour']  : 'bg-light-grey'; ?> px4 py5" <?php echo $this->getAttributeString() ?> data-aos="fade-in">
     <div class="container text-center">
-        <div class="flex justify-center">
-            <h2 class="h1 dark-purple mb2"><?php echo $this->blockConfiguration['form_title']; ?></h2>
-        </div>
+        <?php if (!empty($this->blockConfiguration['form_title'])): ?>
+            <div class="flex justify-center">
+                <h2 class="h1 dark-purple mb2"><?php echo $this->blockConfiguration['form_title']; ?></h2>
+            </div>
+        <?php endif; ?>
         <?php if (!empty($this->blockConfiguration['form_subtitle'])): ?>
             <p class="mx-auto md-max-width-70 mt-2"><?php echo $this->blockConfiguration['form_subtitle']; ?></p>
         <?php endif; ?>
