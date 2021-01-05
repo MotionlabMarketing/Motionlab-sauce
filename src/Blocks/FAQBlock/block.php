@@ -19,7 +19,7 @@ if (isset($this->blockConfiguration['banner_background_image']) && !empty($this-
 ?>
 
 <section class="px4 py5 <?php echo $this->blockConfiguration['background_colour'] ? $this->blockConfiguration['background_colour']  : ''; ?> <?php echo $backgroundPosition; ?> bg-cover height-100 zoom" <?php echo $this->getAttributeString() ?> <?php echo $backgroundImage; ?> data-aos="fade-in">
-    <div class="container clearfix relative flex flex-column <?php echo $this->blockConfiguration['faq_alignment']; ?>">
+    <div class="z2 container clearfix relative flex flex-column <?php echo $this->blockConfiguration['faq_alignment']; ?>">
 
         <div class="col col-12 md-<?php echo $this->blockConfiguration['faq_width']; ?>">
 
