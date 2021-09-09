@@ -102,20 +102,30 @@ class Breadcrumbs
         if(is_post_type_archive()){
             // TODO - get the post type name
         } else {
-            $term = get_term(get_queried_object()->term_id);
+            $post_object = get_queried_object();
 
-            array_push($trail, [
-                'label' => $term->name,
-                'href' => get_term_link($term->term_id),
-                'class' => 'mlsbc-archive'
-            ]);
+            if($post_object) {
+                $term = get_term($post_object->term_id);
 
-            $parentTerm = $term; // this just starts the loop correctly
-            while($parentTermId = wp_get_term_taxonomy_parent_id($parentTerm->term_id, $parentTerm->taxonomy)){
-                $parentTerm = get_term($parentTermId);
                 array_push($trail, [
-                    'label' => $parentTerm->name,
-                    'href' => get_term_link($parentTerm->term_id),
+                    'label' => $term->name,
+                    'href' => get_term_link($term->term_id),
+                    'class' => 'mlsbc-archive'
+                ]);
+
+                $parentTerm = $term; // this just starts the loop correctly
+                while($parentTermId = wp_get_term_taxonomy_parent_id($parentTerm->term_id, $parentTerm->taxonomy)){
+                    $parentTerm = get_term($parentTermId);
+                    array_push($trail, [
+                        'label' => $parentTerm->name,
+                        'href' => get_term_link($parentTerm->term_id),
+                        'class' => 'mlsbc-archive'
+                    ]);
+                }
+            } else {
+                array_push($trail, [
+                    'label' => get_the_archive_title(),
+                    'href' => "/",
                     'class' => 'mlsbc-archive'
                 ]);
             }

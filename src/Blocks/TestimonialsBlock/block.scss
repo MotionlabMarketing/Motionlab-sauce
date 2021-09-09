@@ -1,0 +1,62 @@
+@import "../../scss/settings";
+
+[data-block-name="Motionlab\\Sauce\\Blocks\\TestimonialsBlock\\TestimonialsBlock"] {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+
+    .slick-list {
+        padding: 0 !important;
+        overflow: hidden !important;
+    }
+
+    article {
+        box-shadow: none;
+        text-align: center;
+
+        p {
+            font-weight: bold;
+            font-size: 1.2rem;
+            font-style: italic;
+
+            &:last-child {
+                font-style: normal;
+                font-weight: normal;
+            }
+        }
+
+        img {
+            margin: 0 auto 2rem;
+            display: block;
+        }
+    }
+
+    .slick-dots li {
+        width: 50px;
+        margin-left: 0.3rem;
+        margin-right: 0.3rem;
+
+        button {
+            width: 50px;
+            
+            &:before {
+                content: "";
+                width: 50px;
+                height: 5px;
+                background-color: $grey;
+            }
+        }
+
+        &.slick-active {
+            button {
+                &:before {
+                    background-color: $grey;
+                }
+            }
+        }
+    }
+}
+
+[data-block-name="Motionlab\\Sauce\\Blocks\\TestimonialsBlock\\TestimonialsBlock"] + 
+[data-block-name="Motionlab\\Sauce\\Blocks\\TestimonialsBlock\\TestimonialsBlock"] {
+    padding-top: 0;
+}

@@ -13,11 +13,62 @@ class PodsBlock extends Block
         'title' => 'Block - Pods',
         'fields' => array(
             array(
+                'key' => 'field_a6f7f4acfe082',
+                'label' => 'Display Section Background Image',
+                'name' => 'pods_section_background_enabled',
+                'type' => 'true_false',
+                'instructions' => 'Turn on/off visible borders on each key feature.',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'message' => '',
+                'default_value' => 0,
+                'ui' => 1,
+                'ui_on_text' => '',
+                'ui_off_text' => '',
+            ),
+            array(
+                'key' => 'field_cbd90cd80d59132f3',
+                'label' => 'Section Background Image',
+                'name' => 'pods_section_background_image',
+                'type' => 'image',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => array(
+                    array(
+                        array(
+                            'field' => 'field_a6f7f4acfe082',
+                            'operator' => '==',
+                            'value' => 1,
+                        ),
+                    ),
+                ),
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'return_format' => 'array',
+                'preview_size' => 'medium',
+                'library' => 'all',
+                'min_width' => '',
+                'min_height' => '',
+                'min_size' => '',
+                'max_width' => '',
+                'max_height' => '',
+                'max_size' => '',
+                'mime_types' => '',
+            ),
+            array(
                 'key' => 'field_5e32b01e3ab59',
-                'label' => 'Layout',
+                'label' => 'Section Layout',
                 'name' => 'pods_layout',
                 'type' => 'select',
-                'instructions' => '',
+                'instructions' => 'This controls the way the pods are rendered out in their list.',
                 'required' => 0,
                 'conditional_logic' => 0,
                 'wrapper' => array(
@@ -28,6 +79,33 @@ class PodsBlock extends Block
                 'choices' => array(
                     'standard' => 'Standard (6 pods)',
                     'central' => 'Central Feature (4 pods)',
+                ),
+                'default_value' => array(
+                ),
+                'allow_null' => 0,
+                'multiple' => 0,
+                'ui' => 1,
+                'ajax' => 0,
+                'return_format' => 'value',
+                'placeholder' => '',
+            ),
+            array(
+                'key' => 'field_2d19add19f084',
+                'label' => 'Layout',
+                'name' => 'pods_content_layout',
+                'type' => 'select',
+                'instructions' => 'This controls the way in which the content for each individual pod is rendered.',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'choices' => array(
+                    'standard' => 'Content on Hover',
+                    'top' => 'Content on Top',
+                    'bottom' => 'Content on Bottom',
                 ),
                 'default_value' => array(
                 ),
@@ -161,8 +239,10 @@ class PodsBlock extends Block
             case 'central':
                 $this->layout = 'central';
                 include(__DIR__ . '/central.php');
+                break;
             default:
                 include(__DIR__ . '/block.php');
+                break;
         }
     }
 }

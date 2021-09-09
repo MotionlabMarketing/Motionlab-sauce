@@ -12,12 +12,14 @@
 
         <div class="container">
 
-            <h2 class="text-center h1"><?php echo $this->blockConfiguration['blog_title'] ?></h2>
+            <?php if (!empty($this->blockConfiguration['blog_title'])) : ?>
+                <h2 class="text-center h1"><?php echo $this->blockConfiguration['blog_title'] ?></h2>
+            <?php endif; ?>
 
             <div class="mxn3 js-article-slider">
                 <?php foreach ($this->posts as $p) : ?>
                     <article class="col col-4 px3">
-                        <a href="<?php echo get_the_permalink($p->ID); ?>" class="block hover-zoom overflow-hidden">
+                        <a href="<?php echo get_the_permalink($p->ID); ?>" class="block md-hover-zoom overflow-hidden">
                             <img src="<?php echo $p->featuredImage; ?>" alt="" class="zoom block">
                         </a>
 

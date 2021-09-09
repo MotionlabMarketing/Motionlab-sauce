@@ -25,6 +25,37 @@ class GenericTemplate extends TemplateBase
                     'id' => '',
                 ),
                 'layouts' => array(
+                    'layout_e783206d9aad09' => array(
+                        'key' => 'layout_e783206d9aad09',
+                        'name' => 'faqs',
+                        'label' => 'Accordion',
+                        'display' => 'block',
+                        'sub_fields' => array(
+                            array(
+                                'key' => 'layout_e783206d9aad00',
+                                'label' => 'Accordion',
+                                'name' => 'faqs',
+                                'type' => 'clone',
+                                'instructions' => '',
+                                'required' => 0,
+                                'conditional_logic' => 0,
+                                'wrapper' => array(
+                                    'width' => '',
+                                    'class' => '',
+                                    'id' => '',
+                                ),
+                                'clone' => array(
+                                    0 => 'group_5ed9030c87109',
+                                ),
+                                'display' => 'seamless',
+                                'layout' => 'block',
+                                'prefix_label' => 0,
+                                'prefix_name' => 0,
+                            ),
+                        ),
+                        'min' => '',
+                        'max' => '',
+                    ),
                     'layout_5de8cd1abc138' => array(
                         'key' => 'layout_5de8cd1abc138',
                         'name' => 'accreditations',
@@ -273,16 +304,16 @@ class GenericTemplate extends TemplateBase
                         'min' => '',
                         'max' => '',
                     ),
-                    'layout_e783206d9aad09' => array(
-                        'key' => 'layout_e783206d9aad09',
-                        'name' => 'faqs',
-                        'label' => 'FAQs',
+                    'layout_5ddbc459b6015' => array(
+                        'key' => 'layout_5ddbc459b6015',
+                        'name' => 'category_listings',
+                        'label' => 'Category Listings',
                         'display' => 'block',
                         'sub_fields' => array(
                             array(
-                                'key' => 'layout_e783206d9aad00',
-                                'label' => 'FAQs',
-                                'name' => 'faqs',
+                                'key' => 'field_5eebc3a3fa4c1',
+                                'label' => 'Banner',
+                                'name' => 'banner',
                                 'type' => 'clone',
                                 'instructions' => '',
                                 'required' => 0,
@@ -293,7 +324,7 @@ class GenericTemplate extends TemplateBase
                                     'id' => '',
                                 ),
                                 'clone' => array(
-                                    0 => 'group_5ed9030c87109',
+                                    0 => 'group_5f621e44af40a',
                                 ),
                                 'display' => 'seamless',
                                 'layout' => 'block',
@@ -521,6 +552,37 @@ class GenericTemplate extends TemplateBase
                         'min' => '',
                         'max' => '',
                     ),
+                    'layout_7cb4a2bb35388' => array(
+                        'key' => 'layout_7cb4a2bb35388',
+                        'name' => 'packages',
+                        'label' => 'Packages',
+                        'display' => 'block',
+                        'sub_fields' => array(
+                            array(
+                                'key' => 'field_7cb4a2ca35388',
+                                'label' => 'Packages',
+                                'name' => 'packages',
+                                'type' => 'clone',
+                                'instructions' => '',
+                                'required' => 0,
+                                'conditional_logic' => 0,
+                                'wrapper' => array(
+                                    'width' => '',
+                                    'class' => '',
+                                    'id' => '',
+                                ),
+                                'clone' => array(
+                                    0 => 'group_3a57fa2d28e85',
+                                ),
+                                'display' => 'seamless',
+                                'layout' => 'block',
+                                'prefix_label' => 0,
+                                'prefix_name' => 0,
+                            ),
+                        ),
+                        'min' => '',
+                        'max' => '',
+                    ),
                     'layout_7cb4a2bb35366' => array(
                         'key' => 'layout_7cb4a2bb35366',
                         'name' => 'pods',
@@ -589,6 +651,37 @@ class GenericTemplate extends TemplateBase
                         'label' => 'Spacer',
                         'display' => 'block',
                         'sub_fields' => array(
+                        ),
+                        'min' => '',
+                        'max' => '',
+                    ),
+                    'layout_f3453ce446853' => array(
+                        'key' => 'layout_f3453ce446853',
+                        'name' => 'specifications',
+                        'label' => 'Specifications',
+                        'display' => 'block',
+                        'sub_fields' => array(
+                            array(
+                                'key' => 'field_f3453ce44',
+                                'label' => 'Specifications',
+                                'name' => 'specifications',
+                                'type' => 'clone',
+                                'instructions' => '',
+                                'required' => 0,
+                                'conditional_logic' => 0,
+                                'wrapper' => array(
+                                    'width' => '',
+                                    'class' => '',
+                                    'id' => '',
+                                ),
+                                'clone' => array(
+                                    0 => 'group_5f579e7edd902',
+                                ),
+                                'display' => 'seamless',
+                                'layout' => 'block',
+                                'prefix_label' => 0,
+                                'prefix_name' => 0,
+                            ),
                         ),
                         'min' => '',
                         'max' => '',
@@ -686,6 +779,37 @@ class GenericTemplate extends TemplateBase
                         'min' => '',
                         'max' => '',
                     ),
+                    'layout_6a42c3227ae86' => array(
+                        'key' => 'layout_6a42c3227ae86',
+                        'name' => 'title',
+                        'label' => 'Title',
+                        'display' => 'block',
+                        'sub_fields' => array(
+                            array(
+                                'key' => 'field_6a42c3227ae86',
+                                'label' => 'Title',
+                                'name' => 'title',
+                                'type' => 'clone',
+                                'instructions' => '',
+                                'required' => 0,
+                                'conditional_logic' => 0,
+                                'wrapper' => array(
+                                    'width' => '',
+                                    'class' => '',
+                                    'id' => '',
+                                ),
+                                'clone' => array(
+                                    0 => 'group_7de84807eab4f',
+                                ),
+                                'display' => 'seamless',
+                                'layout' => 'block',
+                                'prefix_label' => 0,
+                                'prefix_name' => 0,
+                            ),
+                        ),
+                        'min' => '',
+                        'max' => '',
+                    ),
                     'layout_5ddd6745a5c08' => array(
                         'key' => 'layout_5ddd6745a5c08',
                         'name' => 'two_columns',
@@ -750,6 +874,20 @@ class GenericTemplate extends TemplateBase
                     'param' => 'page_template',
                     'operator' => '==',
                     'value' => 'testimonials-template.php',
+                ),
+            ),
+            array(
+                array(
+                    'param' => 'post_template',
+                    'operator' => '==',
+                    'value' => 'attend-page-template.php',
+                ),
+            ),
+            array(
+                array(
+                    'param' => 'post_template',
+                    'operator' => '==',
+                    'value' => 'partners-page-template.php',
                 ),
             ),
         ),

@@ -2,15 +2,17 @@
 
 namespace Motionlab\Sauce;
 
-use Motionlab\Sauce\Blocks\BlockInitialiser;
+use Motionlab\Sauce\MenuLocations;
 use Motionlab\Sauce\CPT\CPTProvider;
+use Motionlab\Sauce\Blocks\BlockInitialiser;
 use Motionlab\Sauce\PageTemplates\TemplateInitialiser;
 use Motionlab\Sauce\PageTemplates\PageTemplateProvider;
-use Motionlab\Sauce\MenuLocations;
 
 class Theme
 {
     private static $instance;
+
+    protected $themeColours;
 
     /**
      * SELF CLASS INSTANTIATION
@@ -22,6 +24,11 @@ class Theme
             self::$instance = new Theme();
         }
         return self::$instance;
+    }
+
+    private function __construct()
+    {
+        $this->themeColours = new ThemeColours();
     }
 
     /**
@@ -39,6 +46,9 @@ class Theme
         // Rank Math - Remove Query String on Redirect.
         add_filter( 'rank_math/redirection/add_query_string', '__return_false' );
 
+        // Add names to theme images sizes.
+        add_filter('image_size_names_choose', array($this, 'set_size_names'));
+
         new MenuLocations();
         $this->registerImageSizes();
         $this->registerShortcodes();
@@ -50,16 +60,45 @@ class Theme
         $ptp->bootstrap();
     }
 
+    /**
+     * SET IMAGE SIZES
+     * Post Utility
+     */
     public function registerImageSizes()
     {
-        \add_image_size('icon', 60, 60);
-        \add_image_size('location-block-image', 470, 225);
-        \add_image_size('banner', 1920, 800);
-        \add_image_size('content_width', 700, null, true);
-        \add_image_size('post_thumbnail', 450, 300, true);
-        \add_image_size('location-block-image', 470, 225);
-        \add_image_size('blog-block-image', 750, 500);
-        \add_image_size('roundel', 600, 600);
+
+        // Add New Image Sizes
+        add_image_size('block-blog-4-column', 300, 160, true);
+        add_image_size('block-pods-image', 450, 290, true);
+        add_image_size('block-team-grid', 310, 200, true);
+        add_image_size('block-team-grid-modal', 600, 400, true);
+        add_image_size('block-accreditation-static', 120, 80, false);
+        
+        add_image_size('block-blog-featured-large', 630, 540, true);
+        add_image_size('block-blog-featured-standard', 630, 250, true);
+
+        add_image_size('hd-full', 1920, 1080, true);
+        add_image_size('hd-short', 1920, 640, true);
+
+        // \add_image_size('icon', 60, 60);
+        // \add_image_size('location-block-image', 470, 225);
+        // \add_image_size('banner', 1920, 800);
+        // \add_image_size('content_width', 700, null, true);
+        // \add_image_size('post_thumbnail', 450, 300, true);
+        // \add_image_size('location-block-image', 470, 225);
+        // \add_image_size('blog-block-image', 750, 500);
+        // \add_image_size('roundel', 600, 600);
+    }
+
+    public static function set_size_names($sizes)
+    {
+        return array_merge($sizes, array(
+            'block-blog-4-column' => __('Block: Blog - 4 Column'),
+            'block-pods-image' => __('Block: PODs Image'),
+            'block-team-grid' => __('Block: Team Grid Image'),
+            'block-team-grid-modal' => __('Block: Team Grid Modal Image'),
+            'block-accreditation-static' => __('Block: Accredication Static Logo'),
+        ));
     }
 
     public function registerShortcodes()
@@ -135,5 +174,10 @@ class Theme
     public function renderOrganisationName($args)
     {
         return \get_field('options_organisation_name', 'option');
+    }
+
+    public function getThemeColours() : ThemeColours
+    {
+        return $this->themeColours;
     }
 }

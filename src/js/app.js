@@ -1,35 +1,54 @@
 /**
- * Accordions
+ * ACCORDIONS WITH COLLECTIONS.
+ * This function opens and closes the accordions menus based on there collection allow multiple blocks to be include
+ * on the page.
+ *
+ * @author  Joe Curran
+ * @created 22 Mar 2018
  */
-(function () {
-    // Get all of the indicators
-    var indicators = document.querySelectorAll("[data-accordion]");
+(function ($) {
 
-    // Loop over all of the indicators to add an event listener
-    indicators.forEach(function (indicator) {
-        indicator.addEventListener("click", function () {
-            if (this.dataset.accordionStatus == "open") {
-                this.dataset.accordionStatus = "closed";
-            } else {
-                const clicked = this.dataset.accordionCollection;
+    // OPEN AND CLOSE ACCORDION COLLECTIONS.
+    var isAnimating = false;
+    $('[data-accordion-collection]').on('click', function () {
 
-                // Set all to closed
-                indicators.forEach(function (indicator) {
-                    if (indicator.dataset.accordionCollection == clicked) indicator.dataset.accordionStatus = "closed";
-                }, clicked);
+        if (isAnimating) {
+            return;
+        }
+        isAnimating = true;
 
-                // Set the current item to open
-                this.dataset.accordionStatus = "open";
-            }
+        // GET THE NUMBER OF THE ROW COLLECTION.
+        var collecton = $(this).data('accordion-collection');
+        var selector = '[data-accordion-collection="' + collecton + '"]';
+
+        // IF THE ITEM CLICKED IS NOT ALREADY OPEN.
+        if (!$(this).hasClass('toggle-open')) {
+
+            // ALL ITEMS IN COLLECTION.
+            $(selector).removeClass('toggle-open');
+            $(selector).find('.acc-indicator').removeClass('negative').addClass('plus');
+            $(selector).attr('data-accordion-active', false);
+            $(selector).find('.acc-body').slideUp();
+
+            // CLICKED ITEM.
+            $(this).addClass('toggle-open').find('i').toggleClass('fa-angle-up fa-angle-down');
+            $(this).attr('data-accordion-active', true);
+            $(this).find('.acc-indicator').toggleClass('negative plus');
+            $(this).find('.acc-body').slideToggle();
+        } else {
+            $(this).removeClass('toggle-open').find('i').toggleClass('fa-angle-down fa-angle-up');
+            $(this).attr('data-accordion-active', false);
+            $(this).find('.acc-indicator').toggleClass('negative plus');
+            $(this).find('.acc-body').slideUp();
         }
 
-        );
-    }
+        setTimeout(function () {
+            isAnimating = false;
+        }, 500);
 
-    );
-}
+    });
 
-)();
+})(jQuery);
 
 window.addEventListener('load', () => {
 
@@ -157,7 +176,7 @@ jQuery(document).ready(function ($) {
 
 
     // SMOOTH SCROLL
-    $('a[href*=#]:not([href=#]):not([data-toggle])').click(function () {
+    $('a[href*="#"]:not([href="#"]):not([data-toggle])').click(function () {
         if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
             var target = $(this.hash);
             target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
@@ -235,3 +254,55 @@ jQuery(document).ready(function ($) {
     }
 
 });
+
+/**
+ * RESPONSIVE TABLES
+ */
+window.addEventListener('load', () => {
+    responsive_tables();
+});
+
+function responsive_tables() {
+    const tables = document.querySelectorAll('table');
+
+    if (tables !== null && tables !== undefined) {
+        tables.forEach((table, index) => {
+            table.dataset.table = "responsive";
+
+            const rows = table.querySelectorAll('tr');
+            const cellsPerRow = rows[0].childElementCount;
+
+            // Get Titles
+            let titles = [];
+            const titleCells = rows[0].querySelectorAll('td');
+            titleCells.forEach((cell, index) => {
+                if (cell.childElementCount === 0) {
+                    titles[index] = "";
+                } else {
+                    titles[index] = cell.innerHTML.replace(/(<([^>]+)>)/ig, "");
+                }
+            });
+
+            // For each row
+            rows.forEach((row, index) => {
+
+                if (index === 0)
+                    return;
+
+                // Find Cells 
+                const cells = row.querySelectorAll('td');
+                cells.forEach((cell, index) => {
+
+                    // Find empty cells.
+                    if (cell.children.length === 0) {
+                        cell.dataset.empty = "true";
+                    }
+                    let label = document.createElement('span');
+                    label.innerHTML = titles[index];
+                    cell.prepend(label);
+
+                });
+            });
+        });
+    }
+}

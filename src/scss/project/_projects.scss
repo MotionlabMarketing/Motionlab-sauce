@@ -1,6 +1,9 @@
 
 @import '../../Blocks/FAQBlock/block.scss';
 @import '../../Blocks/GalleryBlock/block.scss';
+@import '../../Blocks/TestimonialsBlock/block.scss';
+@import '../../Blocks/BannerBlock/block.scss';
+@import '../../Blocks/PackagesBlock/block.scss';
 @import 'features/content';
 @import 'features/animations';
 
@@ -81,8 +84,10 @@ address {
 
 .wysiwyg {
 
-  a:not(.btn) {
-    text-decoration: underline;
+  [data-element="button"] {
+    &:first-child {
+      margin-left: 0;
+    }
   }
 
   p {
@@ -97,8 +102,8 @@ address {
   }
 }
 
-ul{
-    padding-left: 1rem;
+ul {
+    padding-left: 1.5rem;
 }
 
 .wysiwyg {
@@ -185,7 +190,6 @@ ul{
     list-style-type: none;
     li{
         position: relative;
-        display: flex;
     }
     li:before{
         content:'>';
@@ -446,6 +450,73 @@ html.menu-open {
                     display: block;
                 }
             }
+        }
+    }
+}
+
+
+/**
+ * RESPONSIVE TABLES
+ */
+@media (max-width: $breakpoint-md) {
+    [data-table="responsive"] {
+        display: flex;
+        flex-direction: column;
+
+        tr {
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            border-bottom: 5px solid $smoke;
+
+            &:first-child {
+                display: none;
+            }
+
+            td {
+                padding-left: 0;
+                padding-right: 0;
+
+                > span {
+                  color: $grey;
+                  font-weight: bold;
+                  text-transform: uppercase;
+                }
+
+                p {
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+                }
+
+                &[data-empty="true"] {
+                    display: none;
+                }
+            }
+        }
+
+        &:before,
+        &:after {
+            content: "";
+            display: table;
+        }
+
+        &:after {
+            clear: both;
+        }
+    }
+}
+
+@media (min-width: $breakpoint-md) {
+    [data-table="responsive"] {
+        tbody {
+          tr {
+            td {
+                > span:first-of-type {
+                    display: none;
+                }
+            }
+          }
         }
     }
 }

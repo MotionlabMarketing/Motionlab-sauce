@@ -6,7 +6,10 @@
 
         <div class="owl-carousel owl-theme carousel-<?php echo $this->getBlockPositionID(); ?>">
             <?php foreach ($this->blockConfiguration['features_feature'] as $feature) : ?>
-                <div class="js-match-height bg-white p4 mb4 col-12 md-col-4 text-center width-100" style="border: .5rem solid #f2f2f2;" data-animation="zoom">
+
+                <?php $borderSetting = isset($this->blockConfiguration['features_show_borders']) ? $this->blockConfiguration['features_show_borders'] : false?>
+
+                <div class="js-match-height bg-white mb4 col-12 md-col-4 text-center width-100 <?php echo $borderSetting ? 'p4' : 'p1';?>" style="<?php echo $borderSetting ? 'border: .5rem solid #f2f2f2;' : '';?>" data-animation="zoom">
                     <div class="flex items-center justify-center mb4" data-mh="icon-height" style="">
                         <?php if ($feature['icon_type'] === 'custom') : ?>
                             <?php
@@ -24,7 +27,7 @@
 
                     <p class="h4 black serif uppercase"><?php echo $feature['feature_title']; ?></p>
 
-                    <div class="mx-auto px4" style="">
+                    <div class="mx-auto px4" data-mh="keyFeatures-content">
                         <?php echo $feature['feature_content']; ?>
                     </div>
 

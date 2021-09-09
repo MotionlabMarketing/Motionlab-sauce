@@ -11,6 +11,7 @@ use Motionlab\Sauce\Blocks\BreadcrumbsBlock\BreadcrumbsBlock;
 use Motionlab\Sauce\Blocks\ButtonBlock\ButtonBlock;
 use Motionlab\Sauce\Blocks\CallToActionBlock\CallToActionBlock;
 use Motionlab\Sauce\Blocks\CaseStudiesBlock\CaseStudiesBlock;
+use Motionlab\Sauce\Blocks\CategoryListingsBlock\CategoryListingsBlock;
 use Motionlab\Sauce\Blocks\FAQBlock\FAQBlock;
 use Motionlab\Sauce\Blocks\FormBlock\FormBlock;
 use Motionlab\Sauce\Blocks\GalleryBlock\GalleryBlock;
@@ -18,13 +19,16 @@ use Motionlab\Sauce\Blocks\JobVacanciesBlock\JobVacanciesBlock;
 use Motionlab\Sauce\Blocks\KeyFeaturesBlock\KeyFeaturesBlock;
 use Motionlab\Sauce\Blocks\LocationBlock\LocationBlock;
 use Motionlab\Sauce\Blocks\LocationFinderBlock\LocationFinderBlock;
+use Motionlab\Sauce\Blocks\PackagesBlock\PackagesBlock;
 use Motionlab\Sauce\Blocks\PodsBlock\PodsBlock;
 use Motionlab\Sauce\Blocks\SiteOptions\SiteOptions;
 use Motionlab\Sauce\Blocks\SliderTabsBlock\SliderTabsBlock;
 use Motionlab\Sauce\Blocks\SpacerBlock\SpacerBlock;
+use Motionlab\Sauce\Blocks\SpecificationsBlock\SpecificationsBlock;
 use Motionlab\Sauce\Blocks\StandardContentBlock\StandardContentBlock;
 use Motionlab\Sauce\Blocks\TabsBlock\TabsBlock;
 use Motionlab\Sauce\Blocks\TestimonialsBlock\TestimonialsBlock;
+use Motionlab\Sauce\Blocks\TitleBlock\TitleBlock;
 use Motionlab\Sauce\Blocks\TwoColumnBlock\TwoColumnBlock;
 use Motionlab\Sauce\Blocks\AlternatingMediaBlock\AlternatingMediaBlock;
 use Motionlab\Sauce\Blocks\MeetTheTeamBlock\MeetTheTeamBlock;
@@ -33,6 +37,7 @@ class BlockProvider
 {
 
     private static $blocks = [
+        'faqs' => FAQBlock::class, //This is first alphabetically as the block has been renamed as "Accordion"
         'accreditations' => AccreditationsBlock::class,
         'alternating_media' => AlternatingMediaBlock::class,
         'banner' =>  BannerBlock::class,
@@ -41,7 +46,7 @@ class BlockProvider
         'button' => ButtonBlock::class,
         'call_to_action' => CallToActionBlock::class,
         'case_studies' => CaseStudiesBlock::class,
-        'faqs' => FAQBlock::class,
+        'category_listings' => CategoryListingsBlock::class,
         'form' => FormBlock::class,
         'gallery' => GalleryBlock::class,
         'job_vacancies' => JobVacanciesBlock::class,
@@ -49,12 +54,15 @@ class BlockProvider
         'location' => LocationBlock::class,
         'location_finder' => LocationFinderBlock::class,
         'meet_the_team' => MeetTheTeamBlock::class,
+        'packages' => PackagesBlock::class,
         'pods' => PodsBlock::class,
         'slider_and_tabs' => SliderTabsBlock::class,
         'spacer' => SpacerBlock::class,
+        'specifications' => SpecificationsBlock::class,
         'standard_content' => StandardContentBlock::class,
         'tabs' => TabsBlock::class,
         'testimonials' => TestimonialsBlock::class,
+        'title' => TitleBlock::class,
         'two_columns' => TwoColumnBlock::class,
 
         'background_colour' => BackgroundColour::class,

@@ -12,7 +12,9 @@
 
         <div class="container">
 
-            <h2 class="text-center h1"><?php echo $this->blockConfiguration['blog_title'] ?></h2>
+            <?php if (!empty($this->blockConfiguration['blog_title'])) : ?>
+                <h2 class="text-center h1"><?php echo $this->blockConfiguration['blog_title'] ?></h2>
+            <?php endif; ?>
 
             <div class="mxn3 flex flex-wrap">
                 <?php foreach ($this->posts as $p) :
@@ -20,7 +22,7 @@
                     $p->category_id = $p->category_id ? $p->category_id : wp_get_post_categories($p->ID)[0];
                     $p->category_primary = get_term($p->category_id);
                 ?>
-                    <article class="p3 col-12 md-col-3 rounded hover-zoom mb3">
+                    <article class="p3 col-12 md-col-3 rounded md-hover-zoom mb3">
                         <div class="bg-white shadow overflow-hidden zoom">
                             <a href="<?php echo get_the_permalink($p->ID); ?>" class="overflow-hidden block">
                                 <div class="bg-charcoal overflow-hidden bg-cover bg-center" style="height: 16rem; background-image: url('<?php echo $p->featuredImage; ?>');"></div>

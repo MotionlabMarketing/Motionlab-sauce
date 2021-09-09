@@ -1,0 +1,120 @@
+@import '../../scss/settings';
+
+[data-block-name="Motionlab\\Sauce\\Blocks\\BannerBlock\\BannerBlock"] {
+
+    .slick-slider {
+        margin-bottom: 0;
+    }
+
+    [data-element="slide"] {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+
+        @media (min-width: $breakpoint-lg) {
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+
+        &[data-slide-type="featured"] {
+
+            [data-element="background-image"] {
+                background-position: right;
+            }
+
+            [data-element="feature-image"] {
+                bottom: 0;
+                right: -5%;
+                z-index: 200;
+                display: none;
+                max-height: 100%;
+                position: absolute;
+                
+                @media (min-width: $breakpoint-md) {
+                    right: 3%;
+                    display: block;
+                }
+                @media (min-width: $breakpoint-lg) {
+                    right: 10%;
+                }
+                @media (min-width: $breakpoint-xl) {
+                    right: 18%;
+                }
+            }
+
+        }
+    }
+
+    .slick-dots {
+        bottom: 0;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        padding: 0 $space-4;
+        max-width: $container-width;
+
+        @media (min-width: $breakpoint-md) {
+            left: 50%;
+            text-align: left;
+            transform: translateX(-50%);
+        }
+
+        li {
+            width: 50px;
+            margin-left: 0.3rem;
+            margin-right: 0.3rem;
+
+            &:first-child {
+                margin-left: 0;
+            }
+
+            &:last-child {
+                margin-right: 0;
+            }
+
+            button {
+                width: 50px;
+                
+                &:before {
+                    content: "";
+                    width: 50px;
+                    height: 5px;
+                    background-color: $white;
+                }
+            }
+
+            &.slick-active {
+                button {
+                    &:before {
+                        background-color: $white;
+                    }
+                }
+            }
+        }
+    }
+
+    [data-slider-arrow] {
+        z-index: 4;
+        width: 60px;
+        height: 50px;
+        cursor: pointer;
+        position: absolute;
+
+        display: flex;
+        color: $white;
+        font-size: 2.5rem;
+        align-items: center;
+        justify-content: center;
+    }
+
+    [data-slider-arrow="left"] {
+        top: 50%;
+        left: 2rem;
+        transform: translateY(-50%);
+    }
+
+    [data-slider-arrow="right"] {
+        top: 50%;
+        right: 2rem;
+        transform: translateY(-50%);
+    }
+}

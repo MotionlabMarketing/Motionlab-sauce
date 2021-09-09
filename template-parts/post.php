@@ -17,7 +17,7 @@ $post->category_primary = get_term($post->category_id);
             if($thumbnail_id) {
                 $raw_thumbail = wp_get_attachment_metadata($thumbnail_id);
                 $post_img_src = wp_get_attachment_image_src($thumbnail_id, 'blog-block-image')[0];
-                $post_img_alt = (get_post_meta($thumbnail_id, '_wp_attachment_image_alt', TRUE)) ? "alt='" . get_post_meta($thumbnail_id, '_wp_attachment_image_alt', TRUE) . "'" : "";
+                $post_img_alt = (get_post_meta($thumbnail_id, '_wp_attachment_image_alt', TRUE)) ? get_post_meta($thumbnail_id, '_wp_attachment_image_alt', TRUE) : "";
             } else {
                 $post_img_array = get_field('options_archive_defaults','option');
                 $post_img_src = $post_img_array['default_archive_background']['sizes']['post-thumbnail'];
@@ -27,7 +27,7 @@ $post->category_primary = get_term($post->category_id);
             ?>
 
             <img
-                    src="<?php echo $post_img_src ?>"
+                    src="<?php echo $post_img_src ?? 'https://via.placeholder.com/600x400?text=Default archive background' ?>"
                     alt="<?php echo $post_img_alt ?>"
                     class="post-thumbnail « width-100 block"
             />

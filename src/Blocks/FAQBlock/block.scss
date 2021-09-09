@@ -1,88 +1,237 @@
-$s-4: 1rem;
+@import "../../scss/settings";
+
+$space-2: 1rem;
 $smoke: #e7e7e7;
 $primary: #000000;
-$border-radius: 0px;
+// $border-radius: 0px;
 
-$accordionBorder: 1px solid $smoke;
+// $accordionBorder: 1px solid $smoke;
 
-$indicatorSide: left;
-$indicatorBox: 30px;
-$indicatorColor: $primary;
-$indicatorThickness: 2px;
+// $indicatorSide: left;
+// $indicatorBox: 30px;
+// $indicatorColor: $primary;
+// $indicatorThickness: 2px;
 
-[data-accordion] {
-    padding: $s-4;
-    max-width: 900px;
-    margin: 0 auto 1rem auto;
-    border: $accordionBorder;
-    border-radius: $border-radius;
+// [data-accordion] {
+//     padding: $s-4;
+//     max-width: 900px;
+//     margin: 0 auto 1rem auto;
+//     border: $accordionBorder;
+//     border-radius: $border-radius;
 
-    .acc-head {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
+//     .acc-head {
+//         display: flex;
+//         align-items: center;
+//         justify-content: space-between;
+//     }
 
-    .acc-indicator {
-        margin-#{$indicatorSide}: 1rem;
-        width: $indicatorBox;
-        height: $indicatorBox;
-        position: relative;
+//     .acc-indicator {
+//         margin-#{$indicatorSide}: 1rem;
+//         width: $indicatorBox;
+//         height: $indicatorBox;
+//         position: relative;
 
-        .v {
-            position: absolute;
-            background-color: $indicatorColor;
-            width: $indicatorThickness;
-            height: $indicatorBox - 10px;
-            left: 50%;
-            margin-left: -2.5px;
-            top: 50%;
-            margin-top: -12px;
+//         .v {
+//             position: absolute;
+//             background-color: $indicatorColor;
+//             width: $indicatorThickness;
+//             height: $indicatorBox - 10px;
+//             left: 50%;
+//             margin-left: -2.5px;
+//             top: 50%;
+//             margin-top: -12px;
 
-            transition: all 0.5s ease-in-out;
-            transform: rotate(-90deg);
-        }
+//             transition: all 0.5s ease-in-out;
+//             transform: rotate(-90deg);
+//         }
 
-        .h {
-            position: absolute;
-            background-color: $indicatorColor;
-            width: $indicatorBox - 10px;
-            height: $indicatorThickness;
-            left: 50%;
-            margin-left: -11px;
-            top: 50%;
-            margin-top: -2.5px;
+//         .h {
+//             position: absolute;
+//             background-color: $indicatorColor;
+//             width: $indicatorBox - 10px;
+//             height: $indicatorThickness;
+//             left: 50%;
+//             margin-left: -11px;
+//             top: 50%;
+//             margin-top: -2.5px;
 
-            transition: all 0.5s ease-in-out;
-            transform: rotate(-90deg);
-            opacity: 1;
-        }
-    }
+//             transition: all 0.5s ease-in-out;
+//             transform: rotate(-90deg);
+//             opacity: 1;
+//         }
+//     }
 
-    .acc-body {
-        display: none;
-        width: 100%;
-    }
+//     .acc-body {
+//         display: none;
+//         width: 100%;
+//     }
 
-    &[data-accordion-status="open"] {
+//     &[data-accordion-status="open"] {
+//         .acc-head {
+//             margin-bottom: 1rem;
+//             border-bottom: $accordionBorder;
+
+//             .v {
+//                 transition: all 0.5s ease-in-out;
+//                 transform: rotate(90deg);
+//             }
+
+//             .h {
+//                 transition: all 0.5s ease-in-out;
+//                 transform: rotate(90deg);
+//                 opacity: 0;
+//             }
+//         }
+
+//         .acc-body {
+//             display: block;
+//         }
+//     }
+// }
+
+[data-block="accordian"] {
+    $accordionBorder: 0px solid $smoke;
+    $indicatorSide: left;
+    $indicatorBox: 16px;
+    $indicatorColor: $primary;
+    $indicatorThickness: 0px;
+
+    [data-accordion] {
+        padding: $space-2 0;
+        margin: 0 auto 1rem auto;
+        border: $accordionBorder;
+        border-radius: 0;
+
         .acc-head {
-            margin-bottom: 1rem;
-            border-bottom: $accordionBorder;
+            display: flex;
+            cursor: pointer;
+            font-weight: bold;
+            align-items: center;
+            // justify-content: space-between;
+        }
 
-            .v {
-                transition: all 0.5s ease-in-out;
-                transform: rotate(90deg);
+        .acc-indicator {
+            margin-#{$indicatorSide}: 1rem;
+            width: $indicatorBox;
+            height: $indicatorBox;
+            position: relative;
+            margin-right: $space-2;
+
+            &:before {
+                content: "\f0da";
+                font-family: "FontAwesome";
+            }
+        }
+
+        label {
+            
+        }
+
+        .acc-body {
+            display: none;
+            width: 100%;
+            padding-left: $space-2 + 2.2rem;
+        }
+
+        &[data-accordion-status="open"] {
+            .acc-head {
+                margin-bottom: 1rem;
+                border-bottom: $accordionBorder;
+
+            }
+            
+            .acc-indicator {
+
+                &:before {
+                    content: "\f0d7";
+                }
             }
 
-            .h {
-                transition: all 0.5s ease-in-out;
-                transform: rotate(90deg);
-                opacity: 0;
+            .acc-body {
+                display: block;
+            }
+        }
+    }
+}
+
+
+[data-block-name="Motionlab\\Sauce\\Blocks\\FAQBlock\\FAQBlock"] {
+
+    .accordion {
+
+        .acc-head {
+            color: $white;
+            background: $grey;
+            position: relative;
+            margin-bottom: 0.2rem;
+            padding: .6rem 4rem 0.6rem 1rem;
+
+            > label {
+                font-size: 1rem;
+                font-weight: bold;
+
+                @media (min-width: $breakpoint-md) {
+                    font-size: 1.2rem;
+                }
+            }
+
+            .acc-indicator {
+                top: 1.3rem;
+                width: 36px;
+                height: 36px;
+                right: 0.7rem;
+                position: absolute;
+                transform: translateY(-50%);
+                transition: all .4s ease-in-out;
+
+                &:before, &:after {
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    transition: all .4s ease-in-out;
+                }
+
+                &:before {
+                    top: 50%;
+                    left: 3px;
+                    height: 2px;
+                    width: 30px;
+                    background: white;
+                    transform: translateY(-50%);
+                }
+
+                &:after {
+                    top: 3px;
+                    left: 50%;
+                    width: 2px;
+                    height: 30px;
+                    background: white;
+                    transform: translateX(-50%);
+                }
+
+                &.negative {
+                    transition: all .4s ease-in-out;
+
+                    &:before, &:after {
+                        transform: rotate(-45deg);
+                    }
+
+                    &:before {
+                        top: 49%;
+                        left: 2px;
+                        width: 32px;
+                    }
+
+                    &:after {
+                        top: 2px;
+                        height: 32px;
+                    }
+                }
             }
         }
 
         .acc-body {
-            display: block;
+            padding: 1rem;
         }
     }
 }
